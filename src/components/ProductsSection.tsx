@@ -5,28 +5,28 @@ import { Package, Building, Archive, PackageOpen } from "lucide-react";
 
 const productCategories = [
   {
-    title: "Μεταλλικά Ντουλάπια",
-    description: "Ανθεκτικές, ασφαλείς λύσεις αποθήκευσης για σχολεία, γυμναστήρια και εργασιακούς χώρους.",
+    title: "Ντουλάπια Λευκά με Καφέ Πλαίσιο",
+    description: "Κλασικά μεταλλικά ντουλάπια τριών θέσεων με λευκές πόρτες και καφέ πλαίσιο για επαγγελματικούς χώρους.",
     icon: Package,
-    image: "https://images.unsplash.com/photo-1618220048045-10a6dbdf83e0?auto=format&fit=crop&w=500&h=300"
+    image: "/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png"
   },
   {
-    title: "Ντουλάπες σε Προσαρμοσμένα Μεγέθη",
-    description: "Μεταλλικά συστήματα αποθήκευσης ειδικά σχεδιασμένα για το δικό σας χώρο.",
+    title: "Κόκκινα Μεταλλικά Ντουλάπια",
+    description: "Μοντέρνα μεταλλικά ντουλάπια σε ζωηρό κόκκινο χρώμα με μαύρο πλαίσιο για χρήση σε γυμναστήρια και σχολεία.",
     icon: Building,
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&h=300"
+    image: "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png"
   },
   {
-    title: "Αποθήκευση Γραφείου",
-    description: "Λειτουργικά και κομψά μεταλλικά ντουλάπια ιδανικά για κάθε περιβάλλον γραφείου.",
+    title: "Κίτρινα Μεταλλικά Ντουλάπια",
+    description: "Φωτεινά κίτρινα ντουλάπια με καφέ πλαίσιο, ιδανικά για παιδικούς σταθμούς και σχολικές εγκαταστάσεις.",
     icon: PackageOpen,
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=500&h=300"
+    image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png"
   },
   {
-    title: "Βιομηχανική Αποθήκευση",
-    description: "Ισχυρές μεταλλικές λύσεις αποθήκευσης για αποθήκες και εργοστάσια.",
+    title: "Ντουλάπια Τυρκουάζ με Πορτοκαλί",
+    description: "Μοντέρνος συνδυασμός χρωμάτων με τυρκουάζ πόρτα και πορτοκαλί πλαίσιο, ιδανικά για δημιουργικούς χώρους εργασίας.",
     icon: Archive,
-    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=500&h=300"
+    image: "/lovable-uploads/3e491c70-934b-4056-b1e1-58c080f32010.png"
   }
 ];
 

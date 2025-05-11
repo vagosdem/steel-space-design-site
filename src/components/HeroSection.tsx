@@ -22,8 +22,8 @@ export default function HeroSection() {
         <div className="lg:w-1/2 mt-10 lg:mt-0">
           <div className="bg-metal-100 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1541623089466-8e46c03d4d27?auto=format&fit=crop&w=800&h=600" 
-              alt="Μεταλλικά ντουλάπια ποιότητας" 
+              src="/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png" 
+              alt="Μεταλλικά ντουλάπια Stereon" 
               className="w-full h-auto object-cover aspect-[4/3]"
             />
           </div>
