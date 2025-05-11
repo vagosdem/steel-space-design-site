@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -15,8 +16,12 @@ export default function HeroSection() {
             Κατασκευασμένα με υλικά ποιότητας και σχολαστική τεχνογνωσία.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <Button size="lg" className="text-base">Εξερευνήστε τα Προϊόντα</Button>
-            <Button size="lg" variant="outline" className="text-base">Ζητήστε Προσφορά</Button>
+            <Link to="#products">
+              <Button size="lg" className="text-base w-full sm:w-auto">Εξερευνήστε τα Προϊόντα</Button>
+            </Link>
+            <Link to="#contact">
+              <Button size="lg" variant="outline" className="text-base w-full sm:w-auto">Ζητήστε Προσφορά</Button>
+            </Link>
           </div>
         </div>
         <div className="lg:w-1/2 mt-10 lg:mt-0">

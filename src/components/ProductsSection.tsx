@@ -2,27 +2,32 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Package, Building, Archive, PackageOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const productCategories = [
   {
+    id: "white-brown-locker",
     title: "Ντουλάπια Λευκά με Καφέ Πλαίσιο",
     description: "Κλασικά μεταλλικά ντουλάπια τριών θέσεων με λευκές πόρτες και καφέ πλαίσιο για επαγγελματικούς χώρους.",
     icon: Package,
     image: "/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png"
   },
   {
+    id: "red-locker",
     title: "Κόκκινα Μεταλλικά Ντουλάπια",
     description: "Μοντέρνα μεταλλικά ντουλάπια σε ζωηρό κόκκινο χρώμα με μαύρο πλαίσιο για χρήση σε γυμναστήρια και σχολεία.",
     icon: Building,
     image: "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png"
   },
   {
+    id: "yellow-locker",
     title: "Κίτρινα Μεταλλικά Ντουλάπια",
     description: "Φωτεινά κίτρινα ντουλάπια με καφέ πλαίσιο, ιδανικά για παιδικούς σταθμούς και σχολικές εγκαταστάσεις.",
     icon: PackageOpen,
     image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png"
   },
   {
+    id: "turquoise-orange-locker",
     title: "Ντουλάπια Τυρκουάζ με Πορτοκαλί",
     description: "Μοντέρνος συνδυασμός χρωμάτων με τυρκουάζ πόρτα και πορτοκαλί πλαίσιο, ιδανικά για δημιουργικούς χώρους εργασίας.",
     icon: Archive,
@@ -59,7 +64,9 @@ export default function ProductsSection() {
                 <CardDescription className="text-metal-600">{category.description}</CardDescription>
               </CardHeader>
               <CardFooter>
-                <Button variant="outline" className="w-full">Λεπτομέρειες</Button>
+                <Link to={`/product/${category.id}`} className="w-full">
+                  <Button variant="outline" className="w-full">Λεπτομέρειες</Button>
+                </Link>
               </CardFooter>
             </Card>
           ))}
