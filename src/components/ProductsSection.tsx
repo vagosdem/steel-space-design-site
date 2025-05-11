@@ -5,26 +5,26 @@ import { Package, Building, Archive, PackageOpen } from "lucide-react";
 
 const productCategories = [
   {
-    title: "Metal Lockers",
-    description: "Durable, secure storage solutions for schools, gyms, and workplaces.",
+    title: "Μεταλλικά Ντουλάπια",
+    description: "Ανθεκτικές, ασφαλείς λύσεις αποθήκευσης για σχολεία, γυμναστήρια και εργασιακούς χώρους.",
     icon: Package,
     image: "https://images.unsplash.com/photo-1618220048045-10a6dbdf83e0?auto=format&fit=crop&w=500&h=300"
   },
   {
-    title: "Custom Closets",
-    description: "Tailor-made metal storage systems designed for your specific space.",
+    title: "Ντουλάπες σε Προσαρμοσμένα Μεγέθη",
+    description: "Μεταλλικά συστήματα αποθήκευσης ειδικά σχεδιασμένα για το δικό σας χώρο.",
     icon: Building,
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=500&h=300"
   },
   {
-    title: "Office Storage",
-    description: "Functional and stylish metal cabinets perfect for any office environment.",
+    title: "Αποθήκευση Γραφείου",
+    description: "Λειτουργικά και κομψά μεταλλικά ντουλάπια ιδανικά για κάθε περιβάλλον γραφείου.",
     icon: PackageOpen,
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=500&h=300"
   },
   {
-    title: "Industrial Storage",
-    description: "Heavy-duty metal storage solutions for warehouses and factories.",
+    title: "Βιομηχανική Αποθήκευση",
+    description: "Ισχυρές μεταλλικές λύσεις αποθήκευσης για αποθήκες και εργοστάσια.",
     icon: Archive,
     image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=500&h=300"
   }
@@ -35,9 +35,9 @@ export default function ProductsSection() {
     <section id="products" className="bg-metal-50">
       <div className="container-section">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-metal-900 mb-4">Our Products</h2>
+          <h2 className="text-metal-900 mb-4">Τα Προϊόντα Μας</h2>
           <p className="text-metal-600 text-lg">
-            Explore our range of high-quality metal storage solutions designed to meet your specific needs.
+            Ανακαλύψτε τη σειρά μεταλλικών λύσεων αποθήκευσης υψηλής ποιότητας, σχεδιασμένων για τις συγκεκριμένες ανάγκες σας.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function ProductsSection() {
                 <CardDescription className="text-metal-600">{category.description}</CardDescription>
               </CardHeader>
               <CardFooter>
-                <Button variant="outline" className="w-full">View Details</Button>
+                <Button variant="outline" className="w-full">Λεπτομέρειες</Button>
               </CardFooter>
             </Card>
           ))}

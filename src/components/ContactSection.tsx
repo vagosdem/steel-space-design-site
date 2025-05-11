@@ -30,8 +30,8 @@ export default function ContactSection() {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
+        title: "Το μήνυμα στάλθηκε!",
+        description: "Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.",
       });
       setLoading(false);
       setFormData({
@@ -50,12 +50,12 @@ export default function ContactSection() {
           <div>
             <div className="mb-6">
               <div className="inline-block rounded-lg bg-blue-100 px-3 py-1 text-sm text-blue-600 font-medium">
-                Get In Touch
+                Επικοινωνήστε Μαζί Μας
               </div>
             </div>
-            <h2 className="text-metal-900 mb-6">Contact Us</h2>
+            <h2 className="text-metal-900 mb-6">Επικοινωνία</h2>
             <p className="text-metal-600 mb-8">
-              Ready to discuss your custom metal storage needs? Fill out the form and our team will get back to you promptly.
+              Έτοιμοι να συζητήσετε τις εξατομικευμένες ανάγκες σας για μεταλλικούς χώρους αποθήκευσης; Συμπληρώστε τη φόρμα και η ομάδα μας θα επικοινωνήσει μαζί σας σύντομα.
             </p>
             
             <div className="space-y-4">
@@ -65,7 +65,7 @@ export default function ContactSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <span className="text-metal-700">(555) 123-4567</span>
+                <span className="text-metal-700">(30) 210 1234567</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="bg-blue-100 p-2 rounded-full">
@@ -73,7 +73,7 @@ export default function ContactSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <span className="text-metal-700">info@metalspace.com</span>
+                <span className="text-metal-700">info@stereon.gr</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="bg-blue-100 p-2 rounded-full">
@@ -82,7 +82,7 @@ export default function ContactSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <span className="text-metal-700">123 Metal Street, Anytown, USA 12345</span>
+                <span className="text-metal-700">Λεωφόρος Μεταλλικών 123, Αθήνα, 12345</span>
               </div>
             </div>
           </div>
@@ -91,13 +91,13 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="bg-metal-50 rounded-lg p-6 border border-metal-100">
               <div className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-metal-800 mb-1">Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-metal-800 mb-1">Όνομα</label>
                   <Input
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your name"
+                    placeholder="Το όνομά σας"
                     required
                   />
                 </div>
@@ -109,34 +109,34 @@ export default function ContactSection() {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="your.email@example.com"
+                    placeholder="το.email.σας@example.com"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-metal-800 mb-1">Phone</label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-metal-800 mb-1">Τηλέφωνο</label>
                   <Input
                     id="phone"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="(555) 123-4567"
+                    placeholder="(30) 210 1234567"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-metal-800 mb-1">Message</label>
+                  <label htmlFor="message" className="block text-sm font-medium text-metal-800 mb-1">Μήνυμα</label>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your project or inquiry"
+                    placeholder="Πείτε μας για το έργο ή το ερώτημά σας"
                     rows={4}
                     required
                   />
                 </div>
                 <Button type="submit" className="w-full" disabled={loading}>
-                  {loading ? "Sending..." : "Send Message"}
+                  {loading ? "Αποστολή..." : "Αποστολή Μηνύματος"}
                 </Button>
               </div>
             </form>

@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Package } from "lucide-react";
+import { Archive } from "lucide-react";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,26 +12,26 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <a href="#" className="flex items-center gap-2">
-              <Package className="h-6 w-6 text-blue-600" />
-              <span className="text-xl font-bold">MetalSpace</span>
+              <Archive className="h-6 w-6 text-blue-600" />
+              <span className="text-xl font-bold">Stereon</span>
             </a>
           </div>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-8">
             <a href="#products" className="text-metal-700 hover:text-metal-900 font-medium">
-              Products
+              Προϊόντα
             </a>
             <a href="#features" className="text-metal-700 hover:text-metal-900 font-medium">
-              Features
+              Χαρακτηριστικά
             </a>
             <a href="#about" className="text-metal-700 hover:text-metal-900 font-medium">
-              About Us
+              Σχετικά με εμάς
             </a>
             <a href="#contact" className="text-metal-700 hover:text-metal-900 font-medium">
-              Contact
+              Επικοινωνία
             </a>
-            <Button>Get a Quote</Button>
+            <Button>Ζητήστε Προσφορά</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -61,18 +61,18 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-4">
             <a href="#products" className="block text-metal-700 hover:text-metal-900 font-medium">
-              Products
+              Προϊόντα
             </a>
             <a href="#features" className="block text-metal-700 hover:text-metal-900 font-medium">
-              Features
+              Χαρακτηριστικά
             </a>
             <a href="#about" className="block text-metal-700 hover:text-metal-900 font-medium">
-              About Us
+              Σχετικά με εμάς
             </a>
             <a href="#contact" className="block text-metal-700 hover:text-metal-900 font-medium">
-              Contact
+              Επικοινωνία
             </a>
-            <Button className="w-full">Get a Quote</Button>
+            <Button className="w-full">Ζητήστε Προσφορά</Button>
           </div>
         )}
       </nav>

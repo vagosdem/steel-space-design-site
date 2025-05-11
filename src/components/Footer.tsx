@@ -1,5 +1,5 @@
 
-import { Package } from "lucide-react";
+import { Archive } from "lucide-react";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -10,47 +10,47 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Package className="h-6 w-6 text-blue-400" />
-              <span className="text-xl font-bold">MetalSpace</span>
+              <Archive className="h-6 w-6 text-blue-400" />
+              <span className="text-xl font-bold">Stereon</span>
             </div>
             <p className="text-metal-300 pr-4">
-              Premium metal lockers and closets designed for durability and style.
+              Μεταλλικά ντουλάπια και ντουλάπες ποιότητας, σχεδιασμένα για αντοχή και στυλ.
             </p>
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">Products</h4>
+            <h4 className="font-semibold text-lg mb-4">Προϊόντα</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Metal Lockers</a></li>
-              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Custom Closets</a></li>
-              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Office Storage</a></li>
-              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Industrial Storage</a></li>
+              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Μεταλλικά Ντουλάπια</a></li>
+              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Ντουλάπες σε Προσαρμοσμένα Μεγέθη</a></li>
+              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Αποθήκευση Γραφείου</a></li>
+              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Βιομηχανική Αποθήκευση</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">Company</h4>
+            <h4 className="font-semibold text-lg mb-4">Εταιρεία</h4>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-metal-300 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Our Process</a></li>
-              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Projects</a></li>
-              <li><a href="#contact" className="text-metal-300 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#about" className="text-metal-300 hover:text-white transition-colors">Σχετικά με εμάς</a></li>
+              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Η Διαδικασία μας</a></li>
+              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Έργα</a></li>
+              <li><a href="#contact" className="text-metal-300 hover:text-white transition-colors">Επικοινωνία</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">Legal</h4>
+            <h4 className="font-semibold text-lg mb-4">Νομικά</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Warranty</a></li>
+              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Πολιτική Απορρήτου</a></li>
+              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Όροι Χρήσης</a></li>
+              <li><a href="#" className="text-metal-300 hover:text-white transition-colors">Εγγύηση</a></li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-metal-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-metal-400 text-sm">
-            © {year} MetalSpace. All rights reserved.
+            © {year} Stereon. Με επιφύλαξη παντός δικαιώματος.
           </div>
           <div className="flex space-x-4">
             <a href="#" className="text-metal-400 hover:text-white transition-colors">
