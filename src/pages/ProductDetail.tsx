@@ -2,10 +2,9 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Input } from "@/components/ui/input";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { toast } from "@/components/ui/use-toast";
 import { ArrowLeft, ShoppingCart } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -184,12 +183,12 @@ export default function ProductDetail() {
                   {product.heights.map((height) => (
                     <div key={height.value} className="flex items-center space-x-2">
                       <RadioGroupItem value={height.value} id={`height-${height.value}`} />
-                      <FormLabel htmlFor={`height-${height.value}`} className="flex justify-between w-full">
+                      <Label htmlFor={`height-${height.value}`} className="flex justify-between w-full">
                         <span>{height.label}</span>
                         {height.priceModifier > 0 && (
                           <span className="text-blue-600">+{height.priceModifier}€</span>
                         )}
-                      </FormLabel>
+                      </Label>
                     </div>
                   ))}
                 </RadioGroup>
@@ -205,12 +204,12 @@ export default function ProductDetail() {
                   {product.widths.map((width) => (
                     <div key={width.value} className="flex items-center space-x-2">
                       <RadioGroupItem value={width.value} id={`width-${width.value}`} />
-                      <FormLabel htmlFor={`width-${width.value}`} className="flex justify-between w-full">
+                      <Label htmlFor={`width-${width.value}`} className="flex justify-between w-full">
                         <span>{width.label}</span>
                         {width.priceModifier > 0 && (
                           <span className="text-blue-600">+{width.priceModifier}€</span>
                         )}
-                      </FormLabel>
+                      </Label>
                     </div>
                   ))}
                 </RadioGroup>
@@ -226,12 +225,12 @@ export default function ProductDetail() {
                   {product.materials.map((material) => (
                     <div key={material.value} className="flex items-center space-x-2">
                       <RadioGroupItem value={material.value} id={`material-${material.value}`} />
-                      <FormLabel htmlFor={`material-${material.value}`} className="flex justify-between w-full">
+                      <Label htmlFor={`material-${material.value}`} className="flex justify-between w-full">
                         <span>{material.label}</span>
                         {material.priceModifier > 0 && (
                           <span className="text-blue-600">+{material.priceModifier}€</span>
                         )}
-                      </FormLabel>
+                      </Label>
                     </div>
                   ))}
                 </RadioGroup>
