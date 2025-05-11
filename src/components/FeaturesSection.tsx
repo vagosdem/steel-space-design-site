@@ -1,5 +1,5 @@
 
-import { Box, Cabinet, Building } from "lucide-react";
+import { Box, PackageOpen, Building } from "lucide-react";
 
 const features = [
   {
@@ -10,7 +10,7 @@ const features = [
   {
     title: "Custom Designs",
     description: "Every space is unique. We create custom solutions that perfectly fit your specific requirements.",
-    icon: Cabinet
+    icon: PackageOpen
   },
   {
     title: "Professional Installation",

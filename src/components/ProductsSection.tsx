@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Package, Building, Cabinet, Archive } from "lucide-react";
+import { Package, Building, Archive, PackageOpen } from "lucide-react";
 
 const productCategories = [
   {
@@ -19,7 +19,7 @@ const productCategories = [
   {
     title: "Office Storage",
     description: "Functional and stylish metal cabinets perfect for any office environment.",
-    icon: Cabinet,
+    icon: PackageOpen,
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=500&h=300"
   },
   {
