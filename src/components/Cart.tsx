@@ -1,7 +1,8 @@
+
 import { ShoppingCart, X, Minus, Plus, ArrowRight } from "lucide-react";
 import { useCart } from "./CartProvider";
 import { Button } from "@/components/ui/button";
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import { Separator } from "@/components/ui/separator";
 import { useNavigate } from "react-router-dom";
 
