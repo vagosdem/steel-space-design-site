@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Archive } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { CartButton } from "./Cart";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,6 +28,16 @@ export default function Navbar() {
       setMobileMenuOpen(false);
     }
   };
+  
+  // Function to navigate to products page
+  const navigateToProducts = () => {
+    navigate('/products');
+    
+    // Close mobile menu if open
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  };
 
   return (
     <header className="bg-white border-b border-metal-100 sticky top-0 z-40 w-full">
@@ -42,7 +53,7 @@ export default function Navbar() {
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-8">
             <button 
-              onClick={() => navigateToSection("products")}
+              onClick={navigateToProducts}
               className="text-metal-700 hover:text-metal-900 font-medium"
             >
               Προϊόντα
@@ -65,13 +76,14 @@ export default function Navbar() {
             >
               Επικοινωνία
             </button>
-            <Button>Ζητήστε Προσφορά</Button>
+            <CartButton />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <CartButton />
             <button
-              className="text-metal-500 hover:text-metal-900"
+              className="text-metal-500 hover:text-metal-900 ml-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <svg
@@ -95,7 +107,7 @@ export default function Navbar() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-4">
             <button 
-              onClick={() => navigateToSection("products")}
+              onClick={navigateToProducts}
               className="block w-full text-left text-metal-700 hover:text-metal-900 font-medium"
             >
               Προϊόντα
@@ -118,7 +130,6 @@ export default function Navbar() {
             >
               Επικοινωνία
             </button>
-            <Button className="w-full">Ζητήστε Προσφορά</Button>
           </div>
         )}
       </nav>

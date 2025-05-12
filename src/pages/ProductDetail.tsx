@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/use-toast";
 import { ArrowLeft, ShoppingCart } from "lucide-react";
+import { useCart, CartItem } from "@/components/CartProvider";
+import { v4 as uuidv4 } from "@/utils/uuid";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,8 @@ const products = [
     description: "Κλασικά μεταλλικά ντουλάπια τριών θέσεων με λευκές πόρτες και καφέ πλαίσιο για επαγγελματικούς χώρους.",
     image: "/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png",
     basePrice: 249.99,
+    doors: 3,
+    size: "medium",
     heights: [
       { value: "180", label: "180 εκ.", priceModifier: 0 },
       { value: "200", label: "200 εκ.", priceModifier: 25 },
@@ -104,6 +107,7 @@ export default function ProductDetail() {
   const { productId } = useParams();
   const navigate = useNavigate();
   const product = products.find(p => p.id === productId);
+  const { addItem } = useCart();
   
   const [selectedHeight, setSelectedHeight] = useState(product?.heights[0].value || "");
   const [selectedWidth, setSelectedWidth] = useState(product?.widths[0].value || "");
@@ -117,7 +121,7 @@ export default function ProductDetail() {
         <main className="flex-grow container-section flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-4">Το προϊόν δεν βρέθηκε</h1>
-            <Button onClick={() => navigate("/")}>Επιστροφή στην αρχική</Button>
+            <Button onClick={() => navigate("/products")}>Επιστροφή στα προϊόντα</Button>
           </div>
         </main>
         <Footer />
@@ -135,10 +139,25 @@ export default function ProductDetail() {
   };
   
   const handleAddToCart = () => {
-    toast({
-      title: "Προστέθηκε στο καλάθι",
-      description: `${product.title} x${quantity} - ${calculatePrice().toFixed(2)}€`,
-    });
+    const selectedHeightOption = product.heights.find(h => h.value === selectedHeight);
+    const selectedWidthOption = product.widths.find(w => w.value === selectedWidth);
+    const selectedMaterialOption = product.materials.find(m => m.value === selectedMaterial);
+    
+    if (!selectedHeightOption || !selectedWidthOption || !selectedMaterialOption) return;
+    
+    const cartItem: CartItem = {
+      id: uuidv4(),
+      productId: product.id,
+      title: product.title,
+      image: product.image,
+      price: calculatePrice() / quantity,
+      quantity,
+      height: selectedHeightOption.label,
+      width: selectedWidthOption.label,
+      material: selectedMaterialOption.label,
+    };
+    
+    addItem(cartItem);
   };
 
   // Function to handle navigation to a specific section on the home page
@@ -154,14 +173,14 @@ export default function ProductDetail() {
           <Button 
             variant="ghost" 
             className="flex items-center gap-2"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/products")}
           >
             <ArrowLeft size={18} />
             Επιστροφή στα προϊόντα
           </Button>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" onClick={() => navigateToSection("products")}>Όλα τα Προϊόντα</Button>
+            <Button variant="ghost" onClick={() => navigate("/products")}>Όλα τα Προϊόντα</Button>
             <Button variant="ghost" onClick={() => navigateToSection("features")}>Χαρακτηριστικά</Button>
             <Button variant="ghost" onClick={() => navigateToSection("about")}>Σχετικά με εμάς</Button>
             <Button variant="ghost" onClick={() => navigateToSection("contact")}>Επικοινωνία</Button>
