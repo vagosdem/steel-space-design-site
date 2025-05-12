@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -45,18 +46,14 @@ const products = [{
     label: "150 εκ.",
     priceModifier: 80
   }],
-  materials: [{
-    value: "standard",
-    label: "Τυπικό Μέταλλο",
+  lockTypes: [{
+    value: "regular",
+    label: "Κανονική Κλειδαριά",
     priceModifier: 0
   }, {
-    value: "reinforced",
-    label: "Ενισχυμένο Μέταλλο",
-    priceModifier: 70
-  }, {
     value: "premium",
-    label: "Premium Μέταλλο",
-    priceModifier: 150
+    label: "Premium Κλειδαριά",
+    priceModifier: 70
   }]
 }, {
   id: "red-locker",
@@ -86,13 +83,13 @@ const products = [{
     label: "120 εκ.",
     priceModifier: 90
   }],
-  materials: [{
-    value: "standard",
-    label: "Τυπικό Μέταλλο",
+  lockTypes: [{
+    value: "regular",
+    label: "Κανονική Κλειδαριά",
     priceModifier: 0
   }, {
-    value: "reinforced",
-    label: "Ενισχυμένο Μέταλλο",
+    value: "premium",
+    label: "Premium Κλειδαριά",
     priceModifier: 85
   }]
 }, {
@@ -127,17 +124,17 @@ const products = [{
     label: "120 εκ.",
     priceModifier: 60
   }],
-  materials: [{
-    value: "standard",
-    label: "Τυπικό Μέταλλο",
+  lockTypes: [{
+    value: "regular",
+    label: "Κανονική Κλειδαριά",
     priceModifier: 0
   }, {
-    value: "reinforced",
-    label: "Ενισχυμένο Μέταλλο",
+    value: "premium",
+    label: "Premium Κλειδαριά",
     priceModifier: 60
   }, {
     value: "kids",
-    label: "Παιδικό (Χωρίς Αιχμές)",
+    label: "Παιδική Κλειδαριά (Ασφαλείας)",
     priceModifier: 80
   }]
 }, {
@@ -172,18 +169,14 @@ const products = [{
     label: "120 εκ.",
     priceModifier: 80
   }],
-  materials: [{
-    value: "standard",
-    label: "Τυπικό Μέταλλο",
+  lockTypes: [{
+    value: "regular",
+    label: "Κανονική Κλειδαριά",
     priceModifier: 0
   }, {
-    value: "reinforced",
-    label: "Ενισχυμένο Μέταλλο",
-    priceModifier: 90
-  }, {
     value: "premium",
-    label: "Premium Μέταλλο",
-    priceModifier: 180
+    label: "Premium Κλειδαριά",
+    priceModifier: 90
   }]
 }];
 export default function ProductDetail() {
@@ -197,7 +190,7 @@ export default function ProductDetail() {
   } = useCart();
   const [selectedHeight, setSelectedHeight] = useState(product?.heights[0].value || "");
   const [selectedWidth, setSelectedWidth] = useState(product?.widths[0].value || "");
-  const [selectedMaterial, setSelectedMaterial] = useState(product?.materials[0].value || "");
+  const [selectedLockType, setSelectedLockType] = useState(product?.lockTypes[0].value || "");
   const [quantity, setQuantity] = useState(1);
   if (!product) {
     return <div className="flex flex-col min-h-screen">
@@ -216,14 +209,14 @@ export default function ProductDetail() {
   const calculatePrice = () => {
     const heightModifier = product.heights.find(h => h.value === selectedHeight)?.priceModifier || 0;
     const widthModifier = product.widths.find(w => w.value === selectedWidth)?.priceModifier || 0;
-    const materialModifier = product.materials.find(m => m.value === selectedMaterial)?.priceModifier || 0;
-    return (product.basePrice + heightModifier + widthModifier + materialModifier) * quantity;
+    const lockTypeModifier = product.lockTypes.find(m => m.value === selectedLockType)?.priceModifier || 0;
+    return (product.basePrice + heightModifier + widthModifier + lockTypeModifier) * quantity;
   };
   const handleAddToCart = () => {
     const selectedHeightOption = product.heights.find(h => h.value === selectedHeight);
     const selectedWidthOption = product.widths.find(w => w.value === selectedWidth);
-    const selectedMaterialOption = product.materials.find(m => m.value === selectedMaterial);
-    if (!selectedHeightOption || !selectedWidthOption || !selectedMaterialOption) return;
+    const selectedLockTypeOption = product.lockTypes.find(m => m.value === selectedLockType);
+    if (!selectedHeightOption || !selectedWidthOption || !selectedLockTypeOption) return;
     const cartItem: CartItem = {
       id: uuidv4(),
       productId: product.id,
@@ -233,15 +226,11 @@ export default function ProductDetail() {
       quantity,
       height: selectedHeightOption.label,
       width: selectedWidthOption.label,
-      material: selectedMaterialOption.label
+      material: selectedLockTypeOption.label
     };
     addItem(cartItem);
   };
 
-  // Function to handle navigation to a specific section on the home page
-  const navigateToSection = (sectionId: string) => {
-    navigate(`/#${sectionId}`);
-  };
   return <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow container-section">
@@ -301,13 +290,13 @@ export default function ProductDetail() {
               </div>
               
               <div>
-                <h3 className="text-lg font-medium mb-3">Επιλέξτε Υλικό</h3>
-                <RadioGroup value={selectedMaterial} onValueChange={setSelectedMaterial} className="flex flex-col space-y-2">
-                  {product.materials.map(material => <div key={material.value} className="flex items-center space-x-2">
-                      <RadioGroupItem value={material.value} id={`material-${material.value}`} />
-                      <Label htmlFor={`material-${material.value}`} className="flex justify-between w-full">
-                        <span>{material.label}</span>
-                        {material.priceModifier > 0 && <span className="text-blue-600">+{material.priceModifier}€</span>}
+                <h3 className="text-lg font-medium mb-3">Επιλέξτε Τύπο Κλειδαριάς</h3>
+                <RadioGroup value={selectedLockType} onValueChange={setSelectedLockType} className="flex flex-col space-y-2">
+                  {product.lockTypes.map(lockType => <div key={lockType.value} className="flex items-center space-x-2">
+                      <RadioGroupItem value={lockType.value} id={`lockType-${lockType.value}`} />
+                      <Label htmlFor={`lockType-${lockType.value}`} className="flex justify-between w-full">
+                        <span>{lockType.label}</span>
+                        {lockType.priceModifier > 0 && <span className="text-blue-600">+{lockType.priceModifier}€</span>}
                       </Label>
                     </div>)}
                 </RadioGroup>

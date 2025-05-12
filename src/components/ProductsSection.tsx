@@ -49,13 +49,13 @@ export default function ProductsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {productCategories.map((category, index) => (
             <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-[3/2] overflow-hidden">
+              <Link to={`/product/${category.id}`} className="aspect-[3/2] overflow-hidden block">
                 <img 
                   src={category.image} 
                   alt={category.title} 
                   className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                 />
-              </div>
+              </Link>
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-2 mb-2">
                   <category.icon className="h-5 w-5 text-blue-600" />

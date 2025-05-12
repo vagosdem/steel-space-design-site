@@ -200,7 +200,7 @@ export default function Products() {
             defaultValue={[200, 350]}
             min={200}
             max={350}
-            step={10}
+            step={1}
             value={priceRange}
             onValueChange={setPriceRange}
             className="my-6"
@@ -321,7 +321,10 @@ export default function Products() {
                     key={product.id} 
                     className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
                   >
-                    <div className="aspect-[3/2] overflow-hidden">
+                    <div 
+                      className="aspect-[3/2] overflow-hidden cursor-pointer" 
+                      onClick={() => navigate(`/product/${product.id}`)}
+                    >
                       <img 
                         src={product.image} 
                         alt={product.title} 
