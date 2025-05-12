@@ -1,4 +1,3 @@
-
 import { ShoppingCart, X, Minus, Plus, ArrowRight } from "lucide-react";
 import { useCart } from "./CartProvider";
 import { Button } from "@/components/ui/button";
@@ -10,17 +9,15 @@ export function CartButton() {
   const { totalItems, isCartOpen, setIsCartOpen } = useCart();
 
   return (
-    <DrawerTrigger asChild onClick={() => setIsCartOpen(true)}>
-      <Button className="relative">
-        <ShoppingCart className="mr-2 h-5 w-5" />
-        Καλάθι
-        {totalItems > 0 && (
-          <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-            {totalItems}
-          </span>
-        )}
-      </Button>
-    </DrawerTrigger>
+    <Button className="relative" onClick={() => setIsCartOpen(true)}>
+      <ShoppingCart className="mr-2 h-5 w-5" />
+      Καλάθι
+      {totalItems > 0 && (
+        <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+          {totalItems}
+        </span>
+      )}
+    </Button>
   );
 }
 
