@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Archive } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -12,15 +12,15 @@ export default function Navbar() {
   
   // Function to handle section navigation
   const navigateToSection = (sectionId: string) => {
-    if (location.pathname !== "/") {
-      // If we're not on the home page, navigate there first
-      navigate("/#" + sectionId);
-    } else {
+    if (location.pathname === "/") {
       // If we're already on the home page, just scroll to the section
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
+    } else {
+      // If we're not on the home page, navigate to the home page with the section in the URL
+      navigate(`/#${sectionId}`);
     }
     
     // Close mobile menu if open
@@ -28,6 +28,21 @@ export default function Navbar() {
       setMobileMenuOpen(false);
     }
   };
+  
+  // Effect to handle navigation when the component mounts or the URL hash changes
+  useEffect(() => {
+    if (location.hash) {
+      // Get the element with the ID that matches the hash
+      const id = location.hash.substring(1);
+      const element = document.getElementById(id);
+      
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
   
   // Function to navigate to products page
   const navigateToProducts = () => {
