@@ -1,50 +1,49 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: "",
+    message: ""
   });
   const [loading, setLoading] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
       ...prev,
-      [name]: value,
+      [name]: value
     }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       toast({
         title: "Το μήνυμα στάλθηκε!",
-        description: "Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.",
+        description: "Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό."
       });
       setLoading(false);
       setFormData({
         name: "",
         email: "",
         phone: "",
-        message: "",
+        message: ""
       });
     }, 1000);
   };
-
-  return (
-    <section id="contact" className="bg-white">
+  return <section id="contact" className="bg-white">
       <div className="container-section">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
@@ -82,7 +81,7 @@ export default function ContactSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <span className="text-metal-700">Λεωφόρος Μεταλλικών 123, Αθήνα, 12345</span>
+                <span className="text-metal-700">Αιγαλεω</span>
               </div>
             </div>
           </div>
@@ -92,48 +91,19 @@ export default function ContactSection() {
               <div className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-metal-800 mb-1">Όνομα</label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Το όνομά σας"
-                    required
-                  />
+                  <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Το όνομά σας" required />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-metal-800 mb-1">Email</label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="το.email.σας@example.com"
-                    required
-                  />
+                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="το.email.σας@example.com" required />
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-metal-800 mb-1">Τηλέφωνο</label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="(30) 210 1234567"
-                  />
+                  <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="(30) 210 1234567" />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-metal-800 mb-1">Μήνυμα</label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Πείτε μας για το έργο ή το ερώτημά σας"
-                    rows={4}
-                    required
-                  />
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Πείτε μας για το έργο ή το ερώτημά σας" rows={4} required />
                 </div>
                 <Button type="submit" className="w-full" disabled={loading}>
                   {loading ? "Αποστολή..." : "Αποστολή Μηνύματος"}
@@ -143,6 +113,5 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
