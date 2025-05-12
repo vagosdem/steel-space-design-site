@@ -2,35 +2,69 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Archive } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Function to handle section navigation
+  const navigateToSection = (sectionId: string) => {
+    if (location.pathname !== "/") {
+      // If we're not on the home page, navigate there first
+      navigate("/#" + sectionId);
+    } else {
+      // If we're already on the home page, just scroll to the section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    
+    // Close mobile menu if open
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  };
 
   return (
     <header className="bg-white border-b border-metal-100 sticky top-0 z-40 w-full">
       <nav className="container-section !py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="#" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2">
               <Archive className="h-6 w-6 text-blue-600" />
               <span className="text-xl font-bold">Stereon</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#products" className="text-metal-700 hover:text-metal-900 font-medium">
+            <button 
+              onClick={() => navigateToSection("products")}
+              className="text-metal-700 hover:text-metal-900 font-medium"
+            >
               Προϊόντα
-            </a>
-            <a href="#features" className="text-metal-700 hover:text-metal-900 font-medium">
+            </button>
+            <button 
+              onClick={() => navigateToSection("features")}
+              className="text-metal-700 hover:text-metal-900 font-medium"
+            >
               Χαρακτηριστικά
-            </a>
-            <a href="#about" className="text-metal-700 hover:text-metal-900 font-medium">
+            </button>
+            <button 
+              onClick={() => navigateToSection("about")}
+              className="text-metal-700 hover:text-metal-900 font-medium"
+            >
               Σχετικά με εμάς
-            </a>
-            <a href="#contact" className="text-metal-700 hover:text-metal-900 font-medium">
+            </button>
+            <button 
+              onClick={() => navigateToSection("contact")}
+              className="text-metal-700 hover:text-metal-900 font-medium"
+            >
               Επικοινωνία
-            </a>
+            </button>
             <Button>Ζητήστε Προσφορά</Button>
           </div>
 
@@ -60,18 +94,30 @@ export default function Navbar() {
         {/* Mobile navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-4">
-            <a href="#products" className="block text-metal-700 hover:text-metal-900 font-medium">
+            <button 
+              onClick={() => navigateToSection("products")}
+              className="block w-full text-left text-metal-700 hover:text-metal-900 font-medium"
+            >
               Προϊόντα
-            </a>
-            <a href="#features" className="block text-metal-700 hover:text-metal-900 font-medium">
+            </button>
+            <button 
+              onClick={() => navigateToSection("features")}
+              className="block w-full text-left text-metal-700 hover:text-metal-900 font-medium"
+            >
               Χαρακτηριστικά
-            </a>
-            <a href="#about" className="block text-metal-700 hover:text-metal-900 font-medium">
+            </button>
+            <button 
+              onClick={() => navigateToSection("about")}
+              className="block w-full text-left text-metal-700 hover:text-metal-900 font-medium"
+            >
               Σχετικά με εμάς
-            </a>
-            <a href="#contact" className="block text-metal-700 hover:text-metal-900 font-medium">
+            </button>
+            <button 
+              onClick={() => navigateToSection("contact")}
+              className="block w-full text-left text-metal-700 hover:text-metal-900 font-medium"
+            >
               Επικοινωνία
-            </a>
+            </button>
             <Button className="w-full">Ζητήστε Προσφορά</Button>
           </div>
         )}

@@ -141,18 +141,32 @@ export default function ProductDetail() {
     });
   };
 
+  // Function to handle navigation to a specific section on the home page
+  const navigateToSection = (sectionId: string) => {
+    navigate(`/#${sectionId}`);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow container-section">
-        <Button 
-          variant="ghost" 
-          className="mb-6 flex items-center gap-2"
-          onClick={() => navigate("/")}
-        >
-          <ArrowLeft size={18} />
-          Επιστροφή στα προϊόντα
-        </Button>
+        <div className="flex justify-between items-center mb-6">
+          <Button 
+            variant="ghost" 
+            className="flex items-center gap-2"
+            onClick={() => navigate("/")}
+          >
+            <ArrowLeft size={18} />
+            Επιστροφή στα προϊόντα
+          </Button>
+
+          <div className="hidden md:flex items-center gap-4">
+            <Button variant="ghost" onClick={() => navigateToSection("products")}>Όλα τα Προϊόντα</Button>
+            <Button variant="ghost" onClick={() => navigateToSection("features")}>Χαρακτηριστικά</Button>
+            <Button variant="ghost" onClick={() => navigateToSection("about")}>Σχετικά με εμάς</Button>
+            <Button variant="ghost" onClick={() => navigateToSection("contact")}>Επικοινωνία</Button>
+          </div>
+        </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product image */}
