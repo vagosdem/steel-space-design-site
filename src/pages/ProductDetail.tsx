@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -11,7 +11,7 @@ import { v4 as uuidv4 } from "@/utils/uuid";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// Product data with price options
+// Updated product data with color options instead of lock types
 const products = [{
   id: "white-brown-locker",
   title: "Ντουλάπια Λευκά με Καφέ Πλαίσιο",
@@ -46,15 +46,10 @@ const products = [{
     label: "150 εκ.",
     priceModifier: 80
   }],
-  lockTypes: [{
-    value: "regular",
-    label: "Κανονική Κλειδαριά",
-    priceModifier: 0
-  }, {
-    value: "premium",
-    label: "Premium Κλειδαριά",
-    priceModifier: 70
-  }]
+  multiColor: [
+    { value: "no", label: "Όχι", priceModifier: 0 },
+    { value: "yes", label: "Ναι", priceModifier: 50 }
+  ]
 }, {
   id: "red-locker",
   title: "Κόκκινα Μεταλλικά Ντουλάπια",
@@ -83,15 +78,10 @@ const products = [{
     label: "120 εκ.",
     priceModifier: 90
   }],
-  lockTypes: [{
-    value: "regular",
-    label: "Κανονική Κλειδαριά",
-    priceModifier: 0
-  }, {
-    value: "premium",
-    label: "Premium Κλειδαριά",
-    priceModifier: 85
-  }]
+  multiColor: [
+    { value: "no", label: "Όχι", priceModifier: 0 },
+    { value: "yes", label: "Ναι", priceModifier: 50 }
+  ]
 }, {
   id: "yellow-locker",
   title: "Κίτρινα Μεταλλικά Ντουλάπια",
@@ -124,19 +114,10 @@ const products = [{
     label: "120 εκ.",
     priceModifier: 60
   }],
-  lockTypes: [{
-    value: "regular",
-    label: "Κανονική Κλειδαριά",
-    priceModifier: 0
-  }, {
-    value: "premium",
-    label: "Premium Κλειδαριά",
-    priceModifier: 60
-  }, {
-    value: "kids",
-    label: "Παιδική Κλειδαριά (Ασφαλείας)",
-    priceModifier: 80
-  }]
+  multiColor: [
+    { value: "no", label: "Όχι", priceModifier: 0 },
+    { value: "yes", label: "Ναι", priceModifier: 50 }
+  ]
 }, {
   id: "turquoise-orange-locker",
   title: "Ντουλάπια Τυρκουάζ με Πορτοκαλί",
@@ -169,31 +150,63 @@ const products = [{
     label: "120 εκ.",
     priceModifier: 80
   }],
-  lockTypes: [{
-    value: "regular",
-    label: "Κανονική Κλειδαριά",
-    priceModifier: 0
-  }, {
-    value: "premium",
-    label: "Premium Κλειδαριά",
-    priceModifier: 90
-  }]
+  multiColor: [
+    { value: "no", label: "Όχι", priceModifier: 0 },
+    { value: "yes", label: "Ναι", priceModifier: 50 }
+  ]
 }];
+
+// Color options for frame and doors
+const frameColors = [
+  { value: "red", label: "Κόκκινο", color: "#ff0000" },
+  { value: "orange", label: "Πορτοκαλί", color: "#ff8800" },
+  { value: "yellow", label: "Κίτρινο", color: "#ffff00" },
+  { value: "green", label: "Πράσινο", color: "#00ff00" },
+  { value: "blue", label: "Μπλε", color: "#0000ff" },
+  { value: "indigo", label: "Λουλακί", color: "#4b0082" },
+  { value: "violet", label: "Βιολετί", color: "#ee82ee" },
+  { value: "black", label: "Μαύρο", color: "#000000" },
+  { value: "white", label: "Λευκό", color: "#ffffff" },
+  { value: "gray", label: "Γκρι", color: "#808080" }
+];
+
+const doorColors = [
+  { value: "red", label: "Κόκκινο", color: "#ff0000" },
+  { value: "orange", label: "Πορτοκαλί", color: "#ff8800" },
+  { value: "yellow", label: "Κίτρινο", color: "#ffff00" },
+  { value: "green", label: "Πράσινο", color: "#00ff00" },
+  { value: "blue", label: "Μπλε", color: "#0000ff" },
+  { value: "indigo", label: "Λουλακί", color: "#4b0082" },
+  { value: "violet", label: "Βιολετί", color: "#ee82ee" },
+  { value: "black", label: "Μαύρο", color: "#000000" },
+  { value: "white", label: "Λευκό", color: "#ffffff" },
+  { value: "gray", label: "Γκρι", color: "#808080" }
+];
+
 export default function ProductDetail() {
-  const {
-    productId
-  } = useParams();
+  const { productId } = useParams();
   const navigate = useNavigate();
+  const topRef = useRef<HTMLDivElement>(null);
   const product = products.find(p => p.id === productId);
-  const {
-    addItem
-  } = useCart();
+  const { addItem } = useCart();
   const [selectedHeight, setSelectedHeight] = useState(product?.heights[0].value || "");
   const [selectedWidth, setSelectedWidth] = useState(product?.widths[0].value || "");
-  const [selectedLockType, setSelectedLockType] = useState(product?.lockTypes[0].value || "");
+  const [selectedMultiColor, setSelectedMultiColor] = useState("no");
+  const [selectedFrameColor, setSelectedFrameColor] = useState("white");
+  const [selectedDoorColor, setSelectedDoorColor] = useState("white");
   const [quantity, setQuantity] = useState(1);
+  
+  // Scroll to top when component mounts
+  useEffect(() => {
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo(0, 0);
+    }
+  }, []);
+  
   if (!product) {
-    return <div className="flex flex-col min-h-screen">
+    return (
+      <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow container-section flex items-center justify-center">
           <div className="text-center">
@@ -202,21 +215,32 @@ export default function ProductDetail() {
           </div>
         </main>
         <Footer />
-      </div>;
+      </div>
+    );
   }
 
   // Calculate the final price based on selections
   const calculatePrice = () => {
     const heightModifier = product.heights.find(h => h.value === selectedHeight)?.priceModifier || 0;
     const widthModifier = product.widths.find(w => w.value === selectedWidth)?.priceModifier || 0;
-    const lockTypeModifier = product.lockTypes.find(m => m.value === selectedLockType)?.priceModifier || 0;
-    return (product.basePrice + heightModifier + widthModifier + lockTypeModifier) * quantity;
+    const multiColorModifier = product.multiColor.find(m => m.value === selectedMultiColor)?.priceModifier || 0;
+    return (product.basePrice + heightModifier + widthModifier + multiColorModifier) * quantity;
   };
+  
   const handleAddToCart = () => {
     const selectedHeightOption = product.heights.find(h => h.value === selectedHeight);
     const selectedWidthOption = product.widths.find(w => w.value === selectedWidth);
-    const selectedLockTypeOption = product.lockTypes.find(m => m.value === selectedLockType);
-    if (!selectedHeightOption || !selectedWidthOption || !selectedLockTypeOption) return;
+    const selectedMultiColorOption = product.multiColor.find(m => m.value === selectedMultiColor);
+    
+    if (!selectedHeightOption || !selectedWidthOption || !selectedMultiColorOption) return;
+    
+    let colorDetails = "Μονόχρωμο";
+    if (selectedMultiColor === "yes") {
+      const frameColorName = frameColors.find(c => c.value === selectedFrameColor)?.label || "";
+      const doorColorName = doorColors.find(c => c.value === selectedDoorColor)?.label || "";
+      colorDetails = `Πλαίσιο: ${frameColorName}, Πόρτες: ${doorColorName}`;
+    }
+    
     const cartItem: CartItem = {
       id: uuidv4(),
       productId: product.id,
@@ -226,14 +250,16 @@ export default function ProductDetail() {
       quantity,
       height: selectedHeightOption.label,
       width: selectedWidthOption.label,
-      material: selectedLockTypeOption.label
+      material: colorDetails
     };
+    
     addItem(cartItem);
   };
 
-  return <div className="flex flex-col min-h-screen">
+  return (
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-grow container-section">
+      <main ref={topRef} className="flex-grow container-section">
         <div className="flex justify-between items-center mb-6">
           <Button variant="ghost" className="flex items-center gap-2" onClick={() => navigate("/products")}>
             <ArrowLeft size={18} />
@@ -241,10 +267,6 @@ export default function ProductDetail() {
           </Button>
 
           <div className="hidden md:flex items-center gap-4">
-            
-            
-            
-            
           </div>
         </div>
         
@@ -266,41 +288,91 @@ export default function ProductDetail() {
               <div>
                 <h3 className="text-lg font-medium mb-3">Επιλέξτε Ύψος</h3>
                 <RadioGroup value={selectedHeight} onValueChange={setSelectedHeight} className="flex flex-col space-y-2">
-                  {product.heights.map(height => <div key={height.value} className="flex items-center space-x-2">
+                  {product.heights.map(height => (
+                    <div key={height.value} className="flex items-center space-x-2">
                       <RadioGroupItem value={height.value} id={`height-${height.value}`} />
                       <Label htmlFor={`height-${height.value}`} className="flex justify-between w-full">
                         <span>{height.label}</span>
                         {height.priceModifier > 0 && <span className="text-blue-600">+{height.priceModifier}€</span>}
                       </Label>
-                    </div>)}
+                    </div>
+                  ))}
                 </RadioGroup>
               </div>
               
               <div>
                 <h3 className="text-lg font-medium mb-3">Επιλέξτε Πλάτος</h3>
                 <RadioGroup value={selectedWidth} onValueChange={setSelectedWidth} className="flex flex-col space-y-2">
-                  {product.widths.map(width => <div key={width.value} className="flex items-center space-x-2">
+                  {product.widths.map(width => (
+                    <div key={width.value} className="flex items-center space-x-2">
                       <RadioGroupItem value={width.value} id={`width-${width.value}`} />
                       <Label htmlFor={`width-${width.value}`} className="flex justify-between w-full">
                         <span>{width.label}</span>
                         {width.priceModifier > 0 && <span className="text-blue-600">+{width.priceModifier}€</span>}
                       </Label>
-                    </div>)}
+                    </div>
+                  ))}
                 </RadioGroup>
               </div>
               
               <div>
-                <h3 className="text-lg font-medium mb-3">Επιλέξτε Τύπο Κλειδαριάς</h3>
-                <RadioGroup value={selectedLockType} onValueChange={setSelectedLockType} className="flex flex-col space-y-2">
-                  {product.lockTypes.map(lockType => <div key={lockType.value} className="flex items-center space-x-2">
-                      <RadioGroupItem value={lockType.value} id={`lockType-${lockType.value}`} />
-                      <Label htmlFor={`lockType-${lockType.value}`} className="flex justify-between w-full">
-                        <span>{lockType.label}</span>
-                        {lockType.priceModifier > 0 && <span className="text-blue-600">+{lockType.priceModifier}€</span>}
+                <h3 className="text-lg font-medium mb-3">Πολύχρωμη Επιλογή</h3>
+                <RadioGroup value={selectedMultiColor} onValueChange={setSelectedMultiColor} className="flex flex-col space-y-2">
+                  {product.multiColor.map(option => (
+                    <div key={option.value} className="flex items-center space-x-2">
+                      <RadioGroupItem value={option.value} id={`multiColor-${option.value}`} />
+                      <Label htmlFor={`multiColor-${option.value}`} className="flex justify-between w-full">
+                        <span>{option.label}</span>
+                        {option.priceModifier > 0 && <span className="text-blue-600">+{option.priceModifier}€</span>}
                       </Label>
-                    </div>)}
+                    </div>
+                  ))}
                 </RadioGroup>
               </div>
+              
+              {selectedMultiColor === "yes" && (
+                <>
+                  <div>
+                    <h3 className="text-lg font-medium mb-3">Χρώμα Πλαισίου</h3>
+                    <div className="grid grid-cols-5 gap-2">
+                      {frameColors.map(color => (
+                        <div 
+                          key={color.value} 
+                          className={`p-1 rounded-md cursor-pointer transition-all ${selectedFrameColor === color.value ? 'ring-2 ring-blue-600 ring-offset-2' : 'hover:ring-1 hover:ring-blue-300'}`}
+                          onClick={() => setSelectedFrameColor(color.value)}
+                          title={color.label}
+                        >
+                          <div 
+                            className="aspect-square rounded-md border border-gray-200" 
+                            style={{ backgroundColor: color.color }}
+                          ></div>
+                          <p className="text-xs text-center mt-1">{color.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg font-medium mb-3">Χρώμα Πορτών</h3>
+                    <div className="grid grid-cols-5 gap-2">
+                      {doorColors.map(color => (
+                        <div 
+                          key={color.value} 
+                          className={`p-1 rounded-md cursor-pointer transition-all ${selectedDoorColor === color.value ? 'ring-2 ring-blue-600 ring-offset-2' : 'hover:ring-1 hover:ring-blue-300'}`}
+                          onClick={() => setSelectedDoorColor(color.value)}
+                          title={color.label}
+                        >
+                          <div 
+                            className="aspect-square rounded-md border border-gray-200" 
+                            style={{ backgroundColor: color.color }}
+                          ></div>
+                          <p className="text-xs text-center mt-1">{color.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              )}
               
               <div>
                 <h3 className="text-lg font-medium mb-3">Ποσότητα</h3>
@@ -326,5 +398,6 @@ export default function ProductDetail() {
         </div>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 }

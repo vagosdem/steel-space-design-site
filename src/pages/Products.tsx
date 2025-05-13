@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { 
@@ -8,6 +9,7 @@ import {
   SelectTrigger, 
   SelectValue 
 } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
 import { Filter, SlidersHorizontal } from "lucide-react";
@@ -117,11 +119,46 @@ const products = [
 export default function Products() {
   const navigate = useNavigate();
   const location = useLocation();
+  const topRef = useRef<HTMLDivElement>(null);
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [sortOption, setSortOption] = useState("default");
   const [priceRange, setPriceRange] = useState([200, 350]);
+  const [minPrice, setMinPrice] = useState("200");
+  const [maxPrice, setMaxPrice] = useState("350");
   const [selectedDoors, setSelectedDoors] = useState<number[]>([]);
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
+  
+  // Scroll to top when component mounts
+  useEffect(() => {
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location]);
+  
+  // Update price range from input fields
+  const handleMinPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value === '' ? '0' : e.target.value;
+    setMinPrice(newValue);
+    const numValue = parseInt(newValue);
+    if (!isNaN(numValue) && numValue >= 0 && numValue <= priceRange[1]) {
+      setPriceRange([numValue, priceRange[1]]);
+    }
+  };
+  
+  const handleMaxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value === '' ? '0' : e.target.value;
+    setMaxPrice(newValue);
+    const numValue = parseInt(newValue);
+    if (!isNaN(numValue) && numValue >= priceRange[0]) {
+      setPriceRange([priceRange[0], numValue]);
+    }
+  };
+  
+  // Update input fields when slider changes
+  useEffect(() => {
+    setMinPrice(priceRange[0].toString());
+    setMaxPrice(priceRange[1].toString());
+  }, [priceRange]);
   
   // Filter and sort products
   useEffect(() => {
@@ -205,9 +242,27 @@ export default function Products() {
             onValueChange={setPriceRange}
             className="my-6"
           />
-          <div className="flex justify-between text-sm">
-            <span>{priceRange[0]}€</span>
-            <span>{priceRange[1]}€</span>
+          <div className="flex justify-between text-sm gap-4">
+            <div className="flex-1">
+              <Input
+                type="number"
+                value={minPrice}
+                onChange={handleMinPriceChange}
+                min={200}
+                max={parseInt(maxPrice)}
+                className="w-full text-center"
+              />
+            </div>
+            <div className="flex-1">
+              <Input
+                type="number"
+                value={maxPrice}
+                onChange={handleMaxPriceChange}
+                min={parseInt(minPrice)}
+                max={350}
+                className="w-full text-center"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -255,11 +310,16 @@ export default function Products() {
     </div>
   );
 
+  const handleProductClick = (productId: string) => {
+    navigate(`/product/${productId}`);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
-        <div className="container-section">
+        <div ref={topRef} className="container-section">
           <h1 className="text-3xl font-bold mb-8">Όλα τα Προϊόντα</h1>
           
           <div className="flex flex-col md:flex-row gap-8">
@@ -314,17 +374,15 @@ export default function Products() {
                 </div>
               </div>
               
-              {/* Products grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Products grid - 2 columns on mobile */}
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {filteredProducts.map((product) => (
                   <div 
                     key={product.id} 
                     className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                    onClick={() => handleProductClick(product.id)}
                   >
-                    <div 
-                      className="aspect-[3/2] overflow-hidden cursor-pointer" 
-                      onClick={() => navigate(`/product/${product.id}`)}
-                    >
+                    <div className="aspect-[3/2] overflow-hidden cursor-pointer">
                       <img 
                         src={product.image} 
                         alt={product.title} 
@@ -345,7 +403,10 @@ export default function Products() {
                         <Button 
                           variant="outline" 
                           className="w-full mt-2"
-                          onClick={() => navigate(`/product/${product.id}`)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleProductClick(product.id);
+                          }}
                         >
                           Λεπτομέρειες
                         </Button>
@@ -364,6 +425,8 @@ export default function Products() {
                     variant="outline"
                     onClick={() => {
                       setPriceRange([200, 350]);
+                      setMinPrice("200");
+                      setMaxPrice("350");
                       setSelectedDoors([]);
                       setSelectedSizes([]);
                       setSortOption("default");
