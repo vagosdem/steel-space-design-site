@@ -7,8 +7,23 @@ import { CartButton } from "./Cart";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   
   // Function to handle section navigation
   const navigateToSection = (sectionId: string) => {
@@ -55,13 +70,13 @@ export default function Navbar() {
   };
 
   return (
-    <header className="bg-white border-b border-metal-100 sticky top-0 z-40 w-full">
+    <header className={`sticky top-0 z-40 w-full transition-all duration-200 ${scrolled ? 'bg-metal-900 shadow-md' : 'bg-transparent'}`}>
       <nav className="container-section !py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
-              <Archive className="h-6 w-6 text-blue-600" />
-              <span className="text-xl font-bold">Stereon</span>
+              <Archive className={`h-6 w-6 ${scrolled ? 'text-blue-400' : 'text-blue-600'}`} />
+              <span className={`text-xl font-bold ${scrolled ? 'text-white' : 'text-metal-900'}`}>Stereon</span>
             </Link>
           </div>
 
@@ -69,36 +84,43 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             <button 
               onClick={navigateToProducts}
-              className="text-metal-700 hover:text-metal-900 font-medium"
+              className={`font-medium transition-colors ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-700 hover:text-metal-900'}`}
             >
               Προϊόντα
             </button>
             <button 
               onClick={() => navigateToSection("features")}
-              className="text-metal-700 hover:text-metal-900 font-medium"
+              className={`font-medium transition-colors ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-700 hover:text-metal-900'}`}
             >
-              Χαρακτηριστικά
+              Υπηρεσίες
             </button>
             <button 
-              onClick={() => navigateToSection("about")}
-              className="text-metal-700 hover:text-metal-900 font-medium"
+              onClick={() => navigateToSection("projects")}
+              className={`font-medium transition-colors ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-700 hover:text-metal-900'}`}
             >
-              Σχετικά με εμάς
+              Έργα
             </button>
             <button 
               onClick={() => navigateToSection("contact")}
-              className="text-metal-700 hover:text-metal-900 font-medium"
+              className={`font-medium transition-colors ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-700 hover:text-metal-900'}`}
             >
               Επικοινωνία
             </button>
             <CartButton />
+            <Link to="#contact">
+              <Button 
+                className={scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}
+              >
+                Ζήτα Προσφορά
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-2">
             <CartButton />
             <button
-              className="text-metal-500 hover:text-metal-900 ml-2"
+              className={`ml-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-500 hover:text-metal-900'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <svg
@@ -120,31 +142,38 @@ export default function Navbar() {
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
+          <div className={`md:hidden mt-4 pb-4 space-y-4 ${scrolled ? 'bg-metal-900' : 'bg-white'}`}>
             <button 
               onClick={navigateToProducts}
-              className="block w-full text-left text-metal-700 hover:text-metal-900 font-medium"
+              className={`block w-full text-left p-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-700 hover:text-metal-900'} font-medium`}
             >
               Προϊόντα
             </button>
             <button 
               onClick={() => navigateToSection("features")}
-              className="block w-full text-left text-metal-700 hover:text-metal-900 font-medium"
+              className={`block w-full text-left p-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-700 hover:text-metal-900'} font-medium`}
             >
-              Χαρακτηριστικά
+              Υπηρεσίες
             </button>
             <button 
-              onClick={() => navigateToSection("about")}
-              className="block w-full text-left text-metal-700 hover:text-metal-900 font-medium"
+              onClick={() => navigateToSection("projects")}
+              className={`block w-full text-left p-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-700 hover:text-metal-900'} font-medium`}
             >
-              Σχετικά με εμάς
+              Έργα
             </button>
             <button 
               onClick={() => navigateToSection("contact")}
-              className="block w-full text-left text-metal-700 hover:text-metal-900 font-medium"
+              className={`block w-full text-left p-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-700 hover:text-metal-900'} font-medium`}
             >
               Επικοινωνία
             </button>
+            <Link to="#contact" className="block w-full p-2">
+              <Button 
+                className={`w-full ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
+              >
+                Ζήτα Προσφορά
+              </Button>
+            </Link>
           </div>
         )}
       </nav>

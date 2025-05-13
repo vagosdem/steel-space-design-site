@@ -1,29 +1,30 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Phone, Mail, MapPin, Building } from "lucide-react";
+
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    company: "",
     message: ""
   });
   const [loading, setLoading] = useState(false);
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const {
-      name,
-      value
-    } = e.target;
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -31,87 +32,153 @@ export default function ContactSection() {
     // Simulate form submission
     setTimeout(() => {
       toast({
-        title: "Το μήνυμα στάλθηκε!",
-        description: "Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό."
+        title: "Το αίτημα προσφοράς στάλθηκε!",
+        description: "Η ομάδα μας θα επικοινωνήσει μαζί σας εντός 24 ωρών."
       });
       setLoading(false);
       setFormData({
         name: "",
         email: "",
         phone: "",
+        company: "",
         message: ""
       });
     }, 1000);
   };
-  return <section id="contact" className="bg-white">
+
+  return (
+    <section id="contact" className="bg-metal-900 text-white">
       <div className="container-section">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
             <div className="mb-6">
-              <div className="inline-block rounded-lg bg-blue-100 px-3 py-1 text-sm text-blue-600 font-medium">
+              <div className="inline-block rounded-lg bg-blue-900 px-3 py-1 text-sm text-blue-300 font-medium">
                 Επικοινωνήστε Μαζί Μας
               </div>
             </div>
-            <h2 className="text-metal-900 mb-6">Επικοινωνία</h2>
-            <p className="text-metal-600 mb-8">
-              Έτοιμοι να συζητήσετε τις εξατομικευμένες ανάγκες σας για μεταλλικούς χώρους αποθήκευσης; Συμπληρώστε τη φόρμα και η ομάδα μας θα επικοινωνήσει μαζί σας σύντομα.
+            <h2 className="text-white mb-6">Ζητήστε Προσφορά</h2>
+            <p className="text-metal-300 mb-8">
+              Περιγράψτε μας τις ανάγκες σας και θα επικοινωνήσουμε για να συζητήσουμε τις βέλτιστες λύσεις για τον επαγγελματικό σας χώρο.
             </p>
             
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="bg-blue-100 p-2 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="bg-metal-700 p-3 rounded-full">
+                  <Phone className="h-5 w-5 text-blue-400" />
                 </div>
-                <span className="text-metal-700">(30) 210 1234567</span>
+                <div>
+                  <p className="text-sm text-metal-400">Τηλέφωνο</p>
+                  <p className="text-white">(30) 210 1234567</p>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="bg-blue-100 p-2 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+              
+              <div className="flex items-center gap-4">
+                <div className="bg-metal-700 p-3 rounded-full">
+                  <Mail className="h-5 w-5 text-blue-400" />
                 </div>
-                <span className="text-metal-700">info@stereon.gr</span>
+                <div>
+                  <p className="text-sm text-metal-400">Email</p>
+                  <p className="text-white">info@stereon.gr</p>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="bg-blue-100 p-2 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+              
+              <div className="flex items-center gap-4">
+                <div className="bg-metal-700 p-3 rounded-full">
+                  <MapPin className="h-5 w-5 text-blue-400" />
                 </div>
-                <span className="text-metal-700">Αιγαλεω</span>
+                <div>
+                  <p className="text-sm text-metal-400">Διεύθυνση</p>
+                  <p className="text-white">Βιομηχανικό Πάρκο, Αιγάλεω 12244</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-4">
+                <div className="bg-metal-700 p-3 rounded-full">
+                  <Building className="h-5 w-5 text-blue-400" />
+                </div>
+                <div>
+                  <p className="text-sm text-metal-400">Ώρες Λειτουργίας</p>
+                  <p className="text-white">Δευ-Παρ: 09:00-17:00</p>
+                </div>
               </div>
             </div>
           </div>
           
           <div>
-            <form onSubmit={handleSubmit} className="bg-metal-50 rounded-lg p-6 border border-metal-100">
+            <form onSubmit={handleSubmit} className="bg-metal-800 rounded-lg p-6 border border-metal-700">
               <div className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-metal-800 mb-1">Όνομα</label>
-                  <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Το όνομά σας" required />
+                  <label htmlFor="name" className="block text-sm font-medium text-metal-300 mb-1">Ονοματεπώνυμο</label>
+                  <Input 
+                    id="name" 
+                    name="name" 
+                    value={formData.name} 
+                    onChange={handleChange} 
+                    placeholder="Το ονοματεπώνυμό σας" 
+                    className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400"
+                    required 
+                  />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-metal-800 mb-1">Email</label>
-                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="το.email.σας@example.com" required />
+                  <label htmlFor="company" className="block text-sm font-medium text-metal-300 mb-1">Επιχείρηση</label>
+                  <Input 
+                    id="company" 
+                    name="company" 
+                    value={formData.company} 
+                    onChange={handleChange} 
+                    placeholder="Η επωνυμία της επιχείρησής σας" 
+                    className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400"
+                  />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-metal-800 mb-1">Τηλέφωνο</label>
-                  <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="(30) 210 1234567" />
+                  <label htmlFor="email" className="block text-sm font-medium text-metal-300 mb-1">Email</label>
+                  <Input 
+                    id="email" 
+                    name="email" 
+                    type="email" 
+                    value={formData.email} 
+                    onChange={handleChange} 
+                    placeholder="το.email.σας@example.com" 
+                    className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400"
+                    required 
+                  />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-metal-800 mb-1">Μήνυμα</label>
-                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Πείτε μας για το έργο ή το ερώτημά σας" rows={4} required />
+                  <label htmlFor="phone" className="block text-sm font-medium text-metal-300 mb-1">Τηλέφωνο</label>
+                  <Input 
+                    id="phone" 
+                    name="phone" 
+                    value={formData.phone} 
+                    onChange={handleChange} 
+                    placeholder="(30) 210 1234567" 
+                    className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400"
+                  />
                 </div>
-                <Button type="submit" className="w-full" disabled={loading}>
-                  {loading ? "Αποστολή..." : "Αποστολή Μηνύματος"}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-metal-300 mb-1">Περιγραφή Αναγκών</label>
+                  <Textarea 
+                    id="message" 
+                    name="message" 
+                    value={formData.message} 
+                    onChange={handleChange} 
+                    placeholder="Περιγράψτε τις ανάγκες σας για να σας στείλουμε εξατομικευμένη προσφορά" 
+                    rows={4}
+                    className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400"
+                    required 
+                  />
+                </div>
+                <Button 
+                  type="submit" 
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white" 
+                  disabled={loading}
+                >
+                  {loading ? "Αποστολή..." : "Ζητήστε Προσφορά"}
                 </Button>
               </div>
             </form>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }
