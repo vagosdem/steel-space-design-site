@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button";
 import { Package, Building, Archive, PackageOpen } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const productCategories = [{
   id: "white-brown-locker",
@@ -37,37 +38,82 @@ const additionalImages = [
   { id: "turquoise-orange-locker", image: "/lovable-uploads/0f7b939c-3012-47f1-8cc8-13033e7dd152.png" }
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+};
+
 export default function ProductsSection() {
   return <section id="products" className="bg-metal-50">
       <div className="container-section">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
           <h2 className="text-metal-900 mb-4">Τα Προϊόντα Μας</h2>
           <p className="text-metal-600 text-lg">
             Ανακαλύψτε τη σειρά μεταλλικών λύσεων αποθήκευσης υψηλής ποιότητας, σχεδιασμένων για επαγγελματικούς χώρους και επιχειρήσεις.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
           {productCategories.map((category, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <Link to={`/product/${category.id}`} className="aspect-[3/2] overflow-hidden block">
-                <img src={category.image} alt={category.title} className="w-full h-full object-cover transition-transform hover:scale-105 duration-500" />
-              </Link>
-              <CardHeader className="pb-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <category.icon className="h-5 w-5 text-blue-600" />
-                  <CardTitle className="text-xl">{category.title}</CardTitle>
-                </div>
-                <CardDescription className="text-metal-600">{category.description}</CardDescription>
-              </CardHeader>
-              <CardFooter>
-                <Link to={`/product/${category.id}`} className="w-full">
-                  <Button variant="outline" className="w-full">Περισσότερα</Button>
+            <motion.div variants={item} key={index}>
+              <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                <Link to={`/product/${category.id}`} className="aspect-[3/2] overflow-hidden block">
+                  <img src={category.image} alt={category.title} className="w-full h-full object-cover transition-transform hover:scale-105 duration-500" />
                 </Link>
-              </CardFooter>
-            </Card>
+                <CardHeader className="pb-4 flex-grow">
+                  <div className="flex items-center gap-2 mb-2">
+                    <category.icon className="h-5 w-5 text-blue-600" />
+                    <CardTitle className="text-xl">{category.title}</CardTitle>
+                  </div>
+                  <CardDescription className="text-metal-600">{category.description}</CardDescription>
+                </CardHeader>
+                <CardFooter>
+                  <Link to={`/product/${category.id}`} className="w-full">
+                    <Button variant="default" className="w-full bg-blue-600 hover:bg-blue-700">
+                      Περισσότερες Πληροφορίες
+                    </Button>
+                  </Link>
+                </CardFooter>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 text-center"
+        >
+          <Link to="/products">
+            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+              Δείτε Όλα τα Προϊόντα
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </section>;
 }

@@ -10,6 +10,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Index = () => {
   const location = useLocation();
@@ -50,24 +51,60 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <div ref={featuresRef}>
+        <motion.div 
+          ref={featuresRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <FeaturesSection />
-        </div>
-        <div ref={industryRef}>
+        </motion.div>
+        <motion.div 
+          ref={industryRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <IndustrySection />
-        </div>
-        <div ref={productsRef}>
+        </motion.div>
+        <motion.div 
+          ref={productsRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <ProductsSection />
-        </div>
-        <div ref={projectsRef}>
+        </motion.div>
+        <motion.div 
+          ref={projectsRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <ProjectsSection />
-        </div>
-        <div ref={aboutRef}>
+        </motion.div>
+        <motion.div 
+          ref={aboutRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <AboutSection />
-        </div>
-        <div ref={contactRef}>
+        </motion.div>
+        <motion.div 
+          ref={contactRef}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <ContactSection />
-        </div>
+        </motion.div>
       </main>
       <Footer />
     </div>

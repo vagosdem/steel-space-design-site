@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Building } from "lucide-react";
+import { Phone, Mail, MapPin, Building, Download, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -46,11 +47,21 @@ export default function ContactSection() {
     }, 1000);
   };
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
   return (
     <section id="contact" className="bg-metal-900 text-white">
       <div className="container-section">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
             <div className="mb-6">
               <div className="inline-block rounded-lg bg-blue-900 px-3 py-1 text-sm text-blue-300 font-medium">
                 Επικοινωνήστε Μαζί Μας
@@ -61,7 +72,7 @@ export default function ContactSection() {
               Περιγράψτε μας τις ανάγκες σας και θα επικοινωνήσουμε για να συζητήσουμε τις βέλτιστες λύσεις για τον επαγγελματικό σας χώρο.
             </p>
             
-            <div className="space-y-6">
+            <div className="space-y-6 mb-8">
               <div className="flex items-center gap-4">
                 <div className="bg-metal-700 p-3 rounded-full">
                   <Phone className="h-5 w-5 text-blue-400" />
@@ -102,10 +113,28 @@ export default function ContactSection() {
                 </div>
               </div>
             </div>
-          </div>
+            
+            <div className="space-y-4">
+              <Button className="w-full flex justify-center items-center gap-2 bg-blue-800 hover:bg-blue-700">
+                <Download className="h-4 w-4" />
+                Κατεβάστε τον Κατάλογο Προϊόντων
+              </Button>
+              
+              <Button variant="outline" className="w-full flex justify-center items-center gap-2 border-metal-600 text-white hover:bg-metal-800">
+                <Calendar className="h-4 w-4" />
+                Κλείστε Ραντεβού για Δωρεάν Αυτοψία
+              </Button>
+            </div>
+          </motion.div>
           
-          <div>
-            <form onSubmit={handleSubmit} className="bg-metal-800 rounded-lg p-6 border border-metal-700">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            transition={{ delay: 0.2 }}
+          >
+            <form onSubmit={handleSubmit} className="bg-metal-800 rounded-lg p-6 border border-metal-700 shadow-xl">
               <div className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-metal-300 mb-1">Ονοματεπώνυμο</label>
@@ -169,14 +198,18 @@ export default function ContactSection() {
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white" 
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white relative overflow-hidden group" 
                   disabled={loading}
                 >
-                  {loading ? "Αποστολή..." : "Ζητήστε Προσφορά"}
+                  <span className="relative z-10">{loading ? "Αποστολή..." : "Ζητήστε Προσφορά"}</span>
+                  <span className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                 </Button>
+                <p className="text-xs text-center text-metal-400">
+                  Συμπληρώνοντας τη φόρμα αποδέχεστε την <a href="#" className="text-blue-400 hover:underline">Πολιτική Απορρήτου</a> μας
+                </p>
               </div>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

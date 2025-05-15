@@ -9,9 +9,10 @@ import {
   SelectTrigger, 
   SelectValue 
 } from "@/components/ui/select";
-import { SlidersHorizontal } from "lucide-react";
+import { SlidersHorizontal, Phone, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 // Product data
 const products = [
@@ -61,6 +62,21 @@ const products = [
 const additionalImages = {
   "red-locker": "/lovable-uploads/c4658bc3-024c-4602-beec-fb6449e32749.png",
   "yellow-locker": "/lovable-uploads/7cc3aac9-9af0-4f81-b131-0622591eebc1.png"
+};
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
 };
 
 export default function Products() {
@@ -119,10 +135,22 @@ export default function Products() {
       <Navbar />
       <main className="flex-grow">
         <div ref={topRef} className="container-section">
-          <h1 className="text-3xl font-bold mb-8">Όλα τα Προϊόντα</h1>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold mb-8"
+          >
+            Όλα τα Προϊόντα
+          </motion.h1>
           
           {/* Filters */}
-          <div className="flex flex-wrap gap-4 items-center justify-between mb-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-wrap gap-4 items-center justify-between mb-8"
+          >
             <div className="flex flex-wrap gap-4">
               <Select value={categoryFilter} onValueChange={setCategoryFilter}>
                 <SelectTrigger className="w-[180px]">
@@ -162,14 +190,20 @@ export default function Products() {
                 </SelectContent>
               </Select>
             </div>
-          </div>
+          </motion.div>
           
           {/* Products grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {filteredProducts.map((product) => (
-              <div 
+              <motion.div 
                 key={product.id} 
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-gray-100 cursor-pointer"
+                variants={item}
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 cursor-pointer transform hover:-translate-y-1"
                 onClick={() => handleProductClick(product.id)}
               >
                 <div className="aspect-[4/3] overflow-hidden">
@@ -187,18 +221,23 @@ export default function Products() {
                       e.stopPropagation();
                       handleProductClick(product.id);
                     }}
-                    className="w-full"
+                    className="w-full bg-blue-600 hover:bg-blue-700"
                   >
                     Περισσότερες Πληροφορίες
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
           
           {/* Empty state */}
           {filteredProducts.length === 0 && (
-            <div className="text-center py-12">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="text-center py-12"
+            >
               <h3 className="text-lg font-medium mb-2">Δεν βρέθηκαν προϊόντα</h3>
               <p className="text-gray-500 mb-4">Δοκιμάστε να αλλάξετε τα φίλτρα σας</p>
               <Button
@@ -211,24 +250,32 @@ export default function Products() {
               >
                 Επαναφορά φίλτρων
               </Button>
-            </div>
+            </motion.div>
           )}
           
           {/* Contact CTA */}
-          <div className="mt-20 bg-metal-100 rounded-lg p-8 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mt-20 bg-gradient-to-r from-blue-900 to-metal-900 rounded-lg p-8 text-center text-white"
+          >
             <h2 className="text-2xl font-bold mb-4">Χρειάζεστε μια εξατομικευμένη λύση;</h2>
-            <p className="text-metal-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-metal-200 mb-6 max-w-2xl mx-auto">
               Σχεδιάζουμε και κατασκευάζουμε προσαρμοσμένα μεταλλικά ντουλάπια βάσει των συγκεκριμένων αναγκών και προδιαγραφών σας.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button onClick={() => navigate("/contact")}>
+              <Button onClick={() => navigate("/contact")} className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2">
+                <Mail className="h-4 w-4" />
                 Ζητήστε Προσφορά
               </Button>
-              <Button variant="outline" onClick={() => window.location.href = "tel:+302109999999"}>
+              <Button variant="outline" onClick={() => window.location.href = "tel:+302109999999"} className="border-blue-400 text-white hover:bg-blue-800 flex items-center gap-2">
+                <Phone className="h-4 w-4" />
                 Καλέστε μας
               </Button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </main>
       <Footer />
