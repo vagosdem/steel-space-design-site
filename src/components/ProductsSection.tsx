@@ -1,7 +1,9 @@
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Package, Building, Archive, PackageOpen } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const productCategories = [{
   id: "white-brown-locker",
   title: "Ντουλάπια Λευκά με Καφέ Πλαίσιο",
@@ -27,18 +29,27 @@ const productCategories = [{
   icon: Archive,
   image: "/lovable-uploads/3e491c70-934b-4056-b1e1-58c080f32010.png"
 }];
+
+// Add new images to the product categories
+const additionalImages = [
+  { id: "red-locker", image: "/lovable-uploads/c4658bc3-024c-4602-beec-fb6449e32749.png" },
+  { id: "yellow-locker", image: "/lovable-uploads/7cc3aac9-9af0-4f81-b131-0622591eebc1.png" },
+  { id: "turquoise-orange-locker", image: "/lovable-uploads/0f7b939c-3012-47f1-8cc8-13033e7dd152.png" }
+];
+
 export default function ProductsSection() {
   return <section id="products" className="bg-metal-50">
       <div className="container-section">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-metal-900 mb-4">Τα Προϊόντα Μας</h2>
           <p className="text-metal-600 text-lg">
-            Ανακαλύψτε τη σειρά μεταλλικών λύσεων αποθήκευσης υψηλής ποιότητας, σχεδιασμένων για τις συγκεκριμένες ανάγκες σας.
+            Ανακαλύψτε τη σειρά μεταλλικών λύσεων αποθήκευσης υψηλής ποιότητας, σχεδιασμένων για επαγγελματικούς χώρους και επιχειρήσεις.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {productCategories.map((category, index) => <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+          {productCategories.map((category, index) => (
+            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
               <Link to={`/product/${category.id}`} className="aspect-[3/2] overflow-hidden block">
                 <img src={category.image} alt={category.title} className="w-full h-full object-cover transition-transform hover:scale-105 duration-500" />
               </Link>
@@ -51,10 +62,11 @@ export default function ProductsSection() {
               </CardHeader>
               <CardFooter>
                 <Link to={`/product/${category.id}`} className="w-full">
-                  <Button variant="outline" className="w-full">Λεπτομέρειες</Button>
+                  <Button variant="outline" className="w-full">Περισσότερα</Button>
                 </Link>
               </CardFooter>
-            </Card>)}
+            </Card>
+          ))}
         </div>
       </div>
     </section>;
