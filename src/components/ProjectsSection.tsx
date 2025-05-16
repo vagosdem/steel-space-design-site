@@ -1,10 +1,17 @@
 
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Sample project data - replace with actual data
 const projects = [
@@ -64,40 +71,24 @@ const projects = [
   }
 ];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
+const categories = [
+  { value: "all", label: "Όλα" },
+  { value: "gym", label: "Γυμναστήρια" },
+  { value: "office", label: "Γραφεία" },
+  { value: "industrial", label: "Βιομηχανία" },
+  { value: "education", label: "Εκπαίδευση" },
+  { value: "healthcare", label: "Υγεία" },
+  { value: "hospitality", label: "Φιλοξενία" }
+];
 
 export default function ProjectsSection() {
-  const categories = [
-    { value: "all", label: "Όλα" },
-    { value: "gym", label: "Γυμναστήρια" },
-    { value: "office", label: "Γραφεία" },
-    { value: "industrial", label: "Βιομηχανία" },
-    { value: "education", label: "Εκπαίδευση" },
-    { value: "healthcare", label: "Υγεία" },
-    { value: "hospitality", label: "Φιλοξενία" }
-  ];
-  
   const [activeCategory, setActiveCategory] = useState("all");
-  
   const filteredProjects = activeCategory === "all" 
     ? projects 
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="projects" className="bg-white">
+    <section id="projects" className="bg-white py-20">
       <div className="container-section">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <motion.h2 
@@ -120,66 +111,79 @@ export default function ProjectsSection() {
           </motion.p>
         </div>
 
-        <Tabs defaultValue="all" className="w-full" onValueChange={setActiveCategory}>
-          <div className="flex justify-center mb-8">
-            <TabsList className="bg-metal-100">
-              {categories.map(category => (
-                <TabsTrigger 
-                  key={category.value} 
-                  value={category.value}
-                  className="data-[state=active]:bg-metal-800 data-[state=active]:text-white"
-                >
-                  {category.label}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+        <div className="flex justify-center mb-8">
+          <div className="bg-metal-100 rounded-full p-1 flex gap-1">
+            {categories.map((category) => (
+              <button
+                key={category.value}
+                onClick={() => setActiveCategory(category.value)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  activeCategory === category.value
+                    ? "bg-metal-800 text-white"
+                    : "hover:bg-metal-200"
+                }`}
+              >
+                {category.label}
+              </button>
+            ))}
           </div>
-          
-          <TabsContent value={activeCategory} className="mt-0">
-            <motion.div 
-              variants={container}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
-              {filteredProjects.map(project => (
-                <motion.div 
-                  key={project.id} 
-                  variants={item}
-                  className="group bg-metal-50 rounded-lg overflow-hidden border border-metal-100 shadow-sm hover:shadow-md transition-all"
-                >
-                  <div className="aspect-video overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm text-metal-500">{project.location}</span>
-                      <Badge variant="outline" className="bg-metal-100">
-                        {categories.find(c => c.value === project.category)?.label || project.category}
-                      </Badge>
+        </div>
+        
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-12"
+        >
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {filteredProjects.map((project) => (
+                <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3 pl-6">
+                  <div className="bg-metal-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all h-full">
+                    <div className="aspect-video overflow-hidden">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                    <div className="mb-4 italic text-sm text-metal-600 border-l-2 border-blue-300 pl-3 py-2 bg-blue-50 rounded-sm">
-                      "{project.testimonial}" - {project.clientName}
+                    <div className="p-6">
+                      <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-sm text-metal-500">{project.location}</span>
+                        <Badge variant="outline" className="bg-metal-100">
+                          {categories.find(c => c.value === project.category)?.label || project.category}
+                        </Badge>
+                      </div>
+                      <div className="mb-4 italic text-sm text-metal-600 border-l-2 border-blue-300 pl-3 py-2 bg-blue-50 rounded-sm">
+                        "{project.testimonial}" - {project.clientName}
+                      </div>
                     </div>
                   </div>
-                </motion.div>
+                </CarouselItem>
               ))}
-            </motion.div>
-            <div className="mt-12 text-center">
-              <Link to="/contact">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                  Θέλω κι Εγώ Παρόμοια Λύση
-                </Button>
-              </Link>
+            </CarouselContent>
+            <div className="flex justify-center mt-8 gap-4">
+              <CarouselPrevious className="relative static left-0 translate-y-0 h-9 w-9" />
+              <CarouselNext className="relative static right-0 translate-y-0 h-9 w-9" />
             </div>
-          </TabsContent>
-        </Tabs>
+          </Carousel>
+        </motion.div>
+        
+        <div className="mt-12 text-center">
+          <Link to="/contact">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              Θέλω κι Εγώ Παρόμοια Λύση
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   );

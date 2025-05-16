@@ -46,62 +46,77 @@ const Index = () => {
     }
   }, [location.hash]);
 
+  // Animation variants for sections
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { duration: 0.6 }
+    }
+  };
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
       <main>
         <HeroSection />
-        <motion.div 
-          ref={featuresRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <FeaturesSection />
-        </motion.div>
-        <motion.div 
-          ref={industryRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <IndustrySection />
-        </motion.div>
+        
         <motion.div 
           ref={productsRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
         >
           <ProductsSection />
         </motion.div>
+        
+        <motion.div 
+          ref={featuresRef}
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <FeaturesSection />
+        </motion.div>
+        
+        <motion.div 
+          ref={industryRef}
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <IndustrySection />
+        </motion.div>
+        
         <motion.div 
           ref={projectsRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
         >
           <ProjectsSection />
         </motion.div>
+        
         <motion.div 
           ref={aboutRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
         >
           <AboutSection />
         </motion.div>
+        
         <motion.div 
           ref={contactRef}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
         >
           <ContactSection />
         </motion.div>

@@ -5,49 +5,48 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="bg-metal-900 text-white">
-      <div className="container-section flex flex-col lg:flex-row lg:items-center lg:gap-12">
+    <section className="bg-white text-metal-900 pt-24 pb-16">
+      <div className="container-section text-center">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="lg:w-1/2 space-y-6"
+          className="space-y-6 max-w-4xl mx-auto"
         >
-          <h1 className="font-bold text-white leading-tight">
-            Μεταλλικές Ντουλάπες & Συρταριέρες Αρχειοθέτησης <br className="hidden sm:inline" />
-            <span className="text-blue-400">για Επαγγελματικούς Χώρους</span>
+          <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl text-metal-900 tracking-tight">
+            Μεταλλικές Ντουλάπες & Συρταριέρες Αρχειοθέτησης
+            <br className="hidden sm:inline" />
+            <span className="text-blue-600"> για Επαγγελματικούς Χώρους</span>
           </h1>
-          <p className="text-lg md:text-xl text-metal-200 max-w-2xl text-pretty">
+          <p className="text-lg md:text-xl text-metal-600 max-w-3xl mx-auto">
             Custom lockers, συρταριέρες πολλαπλών θέσεων & industrial αποθηκευτικές λύσεις, 
             σχεδιασμένες και κατασκευασμένες στην Ελλάδα.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row justify-center gap-5 pt-4">
             <Link to="#contact">
-              <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 relative overflow-hidden group">
-                <span className="relative z-10">Ζητήστε Προσφορά</span>
-                <span className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+              <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg">
+                Ζητήστε Προσφορά
               </Button>
             </Link>
             <Link to="#projects">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-metal-600 text-white hover:bg-metal-800">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-metal-300 text-metal-900 hover:bg-metal-100 px-8 py-6 text-lg">
                 Δείτε τα Έργα Μας
               </Button>
             </Link>
           </div>
         </motion.div>
+        
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="lg:w-1/2 mt-10 lg:mt-0"
+          className="mt-16 max-w-5xl mx-auto"
         >
-          <div className="bg-metal-800 rounded-lg overflow-hidden shadow-lg border border-metal-700">
-            <img 
-              src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&h=600" 
-              alt="Industrial lockers and storage solutions" 
-              className="w-full h-auto object-cover aspect-[4/3]" 
-            />
-          </div>
+          <img 
+            src="/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png" 
+            alt="Industrial lockers and storage solutions" 
+            className="w-full h-auto object-contain mx-auto" 
+          />
         </motion.div>
       </div>
     </section>
