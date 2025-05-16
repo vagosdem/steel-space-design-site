@@ -1,0 +1,67 @@
+
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+interface ProductShowcaseProps {
+  product: {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    type: string;
+  };
+  alignment: "left" | "right";
+}
+
+export default function ProductShowcase({ product, alignment }: ProductShowcaseProps) {
+  const imageOrder = alignment === "left" ? "order-first" : "order-last";
+  const contentOrder = alignment === "left" ? "order-last" : "order-first";
+  
+  return (
+    <section className="bg-white py-20">
+      <div className="container px-4 mx-auto">
+        <div className="flex flex-col md:flex-row items-center gap-16">
+          <motion.div 
+            className={`w-full md:w-1/2 ${imageOrder}`}
+            initial={{ opacity: 0, x: alignment === "left" ? -50 : 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <img 
+              src={product.image} 
+              alt={product.title}
+              className="w-full h-auto object-contain mx-auto max-h-[500px]"
+            />
+          </motion.div>
+          
+          <motion.div 
+            className={`w-full md:w-1/2 ${contentOrder} space-y-6`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div>
+              <h2 className="text-3xl font-medium text-metal-900 mb-4">{product.title}</h2>
+              <p className="text-metal-600 text-lg mb-6">{product.description}</p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to={`/product/${product.id}`}>
+                  <Button className="bg-blue-600 hover:bg-blue-700">
+                    Περισσότερες Πληροφορίες
+                  </Button>
+                </Link>
+                <Link to="#contact">
+                  <Button variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50">
+                    Ζητήστε Προσφορά
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
