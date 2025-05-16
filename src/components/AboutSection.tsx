@@ -1,23 +1,24 @@
-
 import { Package, Shield, Clock, Award, Users, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
-
 const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
+  hidden: {
+    opacity: 0,
+    y: 20
+  },
+  visible: {
+    opacity: 1,
+    y: 0
+  }
 };
-
 export default function AboutSection() {
   return <section id="about" className="bg-metal-50">
       <div className="container-section">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial="hidden" whileInView="visible" viewport={{
+          once: true
+        }} variants={fadeIn} transition={{
+          duration: 0.6
+        }}>
             <div className="mb-6">
               <div className="inline-block rounded-lg bg-blue-100 px-3 py-1 text-sm text-blue-600 font-medium">
                 Σχετικά με την εταιρία μας
@@ -79,13 +80,17 @@ export default function AboutSection() {
             </div>
           </motion.div>
           
-          <motion.div 
-            className="relative"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
+          <motion.div className="relative" initial={{
+          opacity: 0,
+          scale: 0.95
+        }} whileInView={{
+          opacity: 1,
+          scale: 1
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.7
+        }}>
             <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-600 rounded-lg opacity-20"></div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-600 rounded-lg opacity-20"></div>
             <div className="relative rounded-lg overflow-hidden shadow-xl">
@@ -95,7 +100,7 @@ export default function AboutSection() {
               <p className="text-sm italic text-metal-600">
                 "Η ποιότητα των προϊόντων και η εξυπηρέτησή τους ξεπέρασαν τις προσδοκίες μας."
               </p>
-              <p className="text-right text-metal-900 font-medium mt-2">- Γιώργος Δημητρίου, CEO</p>
+              <p className="text-right text-metal-900 font-medium mt-2">- Αντώνιος Δεμερούτης, CEO</p>
             </div>
           </motion.div>
         </div>
