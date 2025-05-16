@@ -203,14 +203,14 @@ export default function Products() {
               <motion.div 
                 key={product.id} 
                 variants={item}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 cursor-pointer transform hover:-translate-y-1"
+                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 cursor-pointer transform hover:-translate-y-1"
                 onClick={() => handleProductClick(product.id)}
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
                     src={product.image} 
                     alt={product.title} 
-                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                    className="w-full h-full object-contain transition-transform hover:scale-105 duration-500 p-2"
                   />
                 </div>
                 <div className="p-6">
@@ -221,7 +221,7 @@ export default function Products() {
                       e.stopPropagation();
                       handleProductClick(product.id);
                     }}
-                    className="w-full bg-blue-600 hover:bg-blue-700"
+                    className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl"
                   >
                     Περισσότερες Πληροφορίες
                   </Button>

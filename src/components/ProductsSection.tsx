@@ -65,15 +65,19 @@ export default function ProductsSection() {
                   <Card className="overflow-hidden border-none shadow-none">
                     <div className="flex flex-col md:flex-row items-center gap-8 py-6">
                       <div className="w-full md:w-1/2">
-                        <motion.img 
+                        <motion.div
                           initial={{ opacity: 0, scale: 0.95 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.7, delay: 0.2 }}
-                          src={product.image} 
-                          alt={product.title}
-                          className="w-full h-auto object-contain mx-auto"
-                        />
+                          className="p-4 border border-gray-200 rounded-2xl shadow-sm"
+                        >
+                          <img 
+                            src={product.image} 
+                            alt={product.title}
+                            className="w-full h-auto object-contain mx-auto rounded-xl"
+                          />
+                        </motion.div>
                       </div>
                       <div className="w-full md:w-1/2 space-y-6">
                         <motion.div
@@ -92,13 +96,13 @@ export default function ProductsSection() {
                           transition={{ duration: 0.5, delay: 0.2 }}
                           className="flex flex-col sm:flex-row gap-4"
                         >
-                          <Link to="/contact" className="w-full sm:w-auto">
-                            <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                          <Link to="#contact" className="w-full sm:w-auto">
+                            <Button className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl">
                               Ζητήστε Προσφορά
                             </Button>
                           </Link>
                           <Link to={`/product/${product.id}`} className="w-full sm:w-auto">
-                            <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50">
+                            <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl">
                               Περισσότερες Πληροφορίες
                             </Button>
                           </Link>
@@ -111,8 +115,8 @@ export default function ProductsSection() {
             ))}
           </CarouselContent>
           <div className="flex justify-center mt-8 gap-4">
-            <CarouselPrevious className="relative static left-0 translate-y-0 h-9 w-9" />
-            <CarouselNext className="relative static right-0 translate-y-0 h-9 w-9" />
+            <CarouselPrevious className="relative static left-0 translate-y-0 h-9 w-9 rounded-xl" />
+            <CarouselNext className="relative static right-0 translate-y-0 h-9 w-9 rounded-xl" />
           </div>
         </Carousel>
         
@@ -124,7 +128,7 @@ export default function ProductsSection() {
           className="mt-12 text-center"
         >
           <Link to="/products">
-            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-xl">
               Δείτε Όλα τα Προϊόντα
             </Button>
           </Link>

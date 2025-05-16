@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Archive } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { CartButton } from "./Cart";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -106,10 +105,9 @@ export default function Navbar() {
             >
               Επικοινωνία
             </button>
-            <CartButton />
             <Link to="#contact">
               <Button 
-                className={scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}
+                className={`rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
               >
                 Ζήτα Προσφορά
               </Button>
@@ -117,8 +115,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center gap-2">
-            <CartButton />
+          <div className="md:hidden flex items-center">
             <button
               className={`ml-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-500 hover:text-metal-900'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -169,7 +166,7 @@ export default function Navbar() {
             </button>
             <Link to="#contact" className="block w-full p-2">
               <Button 
-                className={`w-full ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
+                className={`w-full rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
               >
                 Ζήτα Προσφορά
               </Button>
