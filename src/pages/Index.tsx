@@ -55,21 +55,21 @@ const Index = () => {
     }
   };
 
-  // Product showcase data with updated images
+  // Product showcase data with updated images - changed order to put the second image first
   const products = [
-    {
-      id: "white-brown-locker",
-      title: "Ντουλάπια Locker Πολλαπλών Θέσεων",
-      description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για επαγγελματικούς χώρους και αποδυτήρια.",
-      image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
-      type: "locker"
-    },
     {
       id: "metal-cabinet",
       title: "Μεταλλική Ντουλάπα Αρχειοθέτησης",
       description: "Επαγγελματική μεταλλική ντουλάπα αρχειοθέτησης με γυάλινες πόρτες, ιδανική για γραφεία, ιατρεία και επαγγελματικούς χώρους.",
       image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
       type: "cabinet"
+    },
+    {
+      id: "white-brown-locker",
+      title: "Ντουλάπια Locker Πολλαπλών Θέσεων",
+      description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για επαγγελματικούς χώρους και αποδυτήρια.",
+      image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
+      type: "locker"
     },
     {
       id: "metal-drawers",

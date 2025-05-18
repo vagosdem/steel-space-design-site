@@ -14,55 +14,108 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-// Product data
+// Updated product data with all new images
 const products = [
   {
-    id: "white-brown-locker",
-    title: "Ντουλάπια Λευκά με Καφέ Πλαίσιο",
-    description: "Κλασικά μεταλλικά ντουλάπια τριών θέσεων με λευκές πόρτες και καφέ πλαίσιο για επαγγελματικούς χώρους.",
-    image: "/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png",
-    category: "lockers",
-    type: "office"
+    id: "metal-cabinet-glass",
+    title: "Μεταλλική Ντουλάπα με Τζάμια",
+    description: "Επαγγελματική μεταλλική ντουλάπα με γυάλινες πόρτες, ιδανική για αρχειοθέτηση σε γραφεία και χώρους υγείας.",
+    image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
+    category: "cabinets",
+    type: "office",
+    color: "white",
+    material: "metal",
+    features: ["glass-doors", "adjustable-shelves"]
   },
   {
-    id: "red-locker",
-    title: "Κόκκινα Μεταλλικά Ντουλάπια",
-    description: "Μοντέρνα μεταλλικά ντουλάπια σε ζωηρό κόκκινο χρώμα με μαύρο πλαίσιο για χρήση σε γυμναστήρια και σχολεία.",
-    image: "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png",
+    id: "orange-white-locker",
+    title: "Ντουλάπια Πορτοκαλί με Λευκό Πλαίσιο",
+    description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για αποδυτήρια και γυμναστήρια.",
+    image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
     category: "lockers",
-    type: "sport"
+    type: "gym",
+    color: "orange",
+    material: "metal",
+    features: ["multiple-units", "ventilation", "key-lock"]
   },
   {
-    id: "yellow-locker",
-    title: "Κίτρινα Μεταλλικά Ντουλάπια",
-    description: "Φωτεινά κίτρινα ντουλάπια με καφέ πλαίσιο, ιδανικά για παιδικούς σταθμούς και σχολικές εγκαταστάσεις.",
-    image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
-    category: "lockers",
-    type: "school"
+    id: "metal-drawers-multi",
+    title: "Συρταριέρες Μεταλλικές Πολλαπλών Χρωμάτων",
+    description: "Μεταλλικές συρταριέρες σε διάφορα χρώματα για αρχειοθέτηση και αποθήκευση αντικειμένων σε επαγγελματικούς χώρους.",
+    image: "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
+    category: "drawers",
+    type: "creative",
+    color: "multi",
+    material: "metal",
+    features: ["portable", "colorful", "drawer-dividers"]
   },
   {
     id: "turquoise-orange-locker",
-    title: "Ντουλάπια Τυρκουάζ με Πορτοκαλί",
+    title: "Ντουλάπι Τυρκουάζ με Πορτοκαλί",
     description: "Μοντέρνος συνδυασμός χρωμάτων με τυρκουάζ πόρτα και πορτοκαλί πλαίσιο, ιδανικά για δημιουργικούς χώρους εργασίας.",
-    image: "/lovable-uploads/3e491c70-934b-4056-b1e1-58c080f32010.png",
+    image: "/lovable-uploads/de48c2ac-8f96-4f1d-987f-3fa9c559618f.png",
     category: "lockers",
-    type: "creative"
+    type: "creative",
+    color: "turquoise",
+    material: "metal",
+    features: ["colorful", "modern-design", "key-lock"]
   },
   {
-    id: "metal-cabinet",
-    title: "Μεταλλική Ντουλάπα με Τζάμια",
-    description: "Επαγγελματική μεταλλική ντουλάπα με τζάμια, ιδανική για αρχειοθέτηση και αποθήκευση σε γραφεία και επαγγελματικούς χώρους.",
+    id: "blue-metallic-locker",
+    title: "Μπλε Μεταλλικά Ντουλάπια",
+    description: "Κομψά μεταλλικά ντουλάπια σε μπλε απόχρωση με ειδικό σχεδιασμό για επαγγελματικούς χώρους και εκπαιδευτικά ιδρύματα.",
+    image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png",
+    category: "lockers",
+    type: "school",
+    color: "blue",
+    material: "metal",
+    features: ["ventilation", "number-plates", "key-lock"]
+  },
+  {
+    id: "orange-display-cabinet", 
+    title: "Πορτοκαλί Βιτρίνα Αποθήκευσης",
+    description: "Μεταλλική βιτρίνα με γυάλινη πόρτα σε έντονο πορτοκαλί χρώμα, ιδανική για εκθετήρια και αποθήκευση προϊόντων.",
+    image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png",
+    category: "cabinets",
+    type: "retail",
+    color: "orange",
+    material: "metal",
+    features: ["glass-doors", "display", "adjustable-shelves"]
+  },
+  {
+    id: "wall-mounted-cabinet", 
+    title: "Επιτοίχια Ντουλάπα Αρχειοθέτησης",
+    description: "Επιτοίχια μεταλλική ντουλάπα αρχειοθέτησης με ρυθμιζόμενα ράφια, ιδανική για εξοικονόμηση χώρου σε γραφεία και επαγγελματικούς χώρους.",
     image: "/lovable-uploads/0f7b939c-3012-47f1-8cc8-13033e7dd152.png",
     category: "cabinets",
-    type: "office"
+    type: "office",
+    color: "white",
+    material: "metal",
+    features: ["wall-mounted", "adjustable-shelves", "multi-purpose"]
+  },
+  {
+    id: "red-school-lockers",
+    title: "Κόκκινα Σχολικά Ντουλάπια",
+    description: "Ανθεκτικά μεταλλικά ντουλάπια σε κόκκινο χρώμα, σχεδιασμένα για σχολεία και εκπαιδευτικά ιδρύματα με αριθμημένες θήκες.",
+    image: "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png",
+    category: "lockers",
+    type: "school",
+    color: "red",
+    material: "metal",
+    features: ["numbered", "ventilation", "key-lock"]
+  },
+  {
+    id: "yellow-lockers",
+    title: "Κίτρινα Μεταλλικά Ντουλάπια",
+    description: "Φωτεινά κίτρινα ντουλάπια με μεταλλική κατασκευή, ιδανικά για παιδικούς σταθμούς, σχολικές εγκαταστάσεις και χαρούμενους χώρους.",
+    image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
+    category: "lockers",
+    type: "school",
+    color: "yellow",
+    material: "metal",
+    features: ["colorful", "ventilation", "child-friendly"]
   }
 ];
-
-// Add thumbnails of the new images
-const additionalImages = {
-  "red-locker": "/lovable-uploads/c4658bc3-024c-4602-beec-fb6449e32749.png",
-  "yellow-locker": "/lovable-uploads/7cc3aac9-9af0-4f81-b131-0622591eebc1.png"
-};
 
 const container = {
   hidden: { opacity: 0 },
@@ -87,6 +140,8 @@ export default function Products() {
   const [sortOption, setSortOption] = useState("default");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [typeFilter, setTypeFilter] = useState("all");
+  const [colorFilter, setColorFilter] = useState("all");
+  const [featureFilter, setFeatureFilter] = useState("all");
   
   // Scroll to top when component mounts
   useEffect(() => {
@@ -110,6 +165,18 @@ export default function Products() {
       result = result.filter(product => product.type === typeFilter);
     }
     
+    // Apply color filter
+    if (colorFilter !== "all") {
+      result = result.filter(product => product.color === colorFilter);
+    }
+    
+    // Apply feature filter
+    if (featureFilter !== "all") {
+      result = result.filter(product => 
+        product.features && product.features.includes(featureFilter)
+      );
+    }
+    
     // Apply sorting
     switch(sortOption) {
       case "title-asc":
@@ -123,7 +190,7 @@ export default function Products() {
     }
     
     setFilteredProducts(result);
-  }, [sortOption, categoryFilter, typeFilter]);
+  }, [sortOption, categoryFilter, typeFilter, colorFilter, featureFilter]);
 
   const handleProductClick = (productId: string) => {
     navigate(`/product/${productId}`);
@@ -144,43 +211,82 @@ export default function Products() {
             Όλα τα Προϊόντα
           </motion.h1>
           
-          {/* Filters */}
+          {/* Enhanced Filters */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-wrap gap-4 items-center justify-between mb-8"
+            className="flex flex-wrap gap-4 items-center mb-8"
           >
+            <div className="flex flex-wrap gap-4 items-center">
+              <SlidersHorizontal className="h-4 w-4 text-gray-500" />
+              <span className="text-sm font-medium">Φίλτρα:</span>
+            </div>
+            
             <div className="flex flex-wrap gap-4">
               <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-[180px] rounded-xl">
                   <SelectValue placeholder="Όλες οι Κατηγορίες" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Όλες οι Κατηγορίες</SelectItem>
                   <SelectItem value="lockers">Ντουλάπες Locker</SelectItem>
                   <SelectItem value="cabinets">Ντουλάπες Αρχειοθέτησης</SelectItem>
+                  <SelectItem value="drawers">Συρταριέρες</SelectItem>
                 </SelectContent>
               </Select>
               
               <Select value={typeFilter} onValueChange={setTypeFilter}>
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-[180px] rounded-xl">
                   <SelectValue placeholder="Όλοι οι Τύποι" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">Όλοι οι Τύποι</SelectItem>
                   <SelectItem value="office">Γραφείου</SelectItem>
-                  <SelectItem value="sport">Αθλητικών Χώρων</SelectItem>
+                  <SelectItem value="gym">Αθλητικών Χώρων</SelectItem>
                   <SelectItem value="school">Σχολείων</SelectItem>
                   <SelectItem value="creative">Δημιουργικών Χώρων</SelectItem>
+                  <SelectItem value="retail">Καταστημάτων</SelectItem>
+                </SelectContent>
+              </Select>
+              
+              <Select value={colorFilter} onValueChange={setColorFilter}>
+                <SelectTrigger className="w-[180px] rounded-xl">
+                  <SelectValue placeholder="Όλα τα Χρώματα" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">Όλα τα Χρώματα</SelectItem>
+                  <SelectItem value="white">Λευκό</SelectItem>
+                  <SelectItem value="orange">Πορτοκαλί</SelectItem>
+                  <SelectItem value="blue">Μπλε</SelectItem>
+                  <SelectItem value="red">Κόκκινο</SelectItem>
+                  <SelectItem value="yellow">Κίτρινο</SelectItem>
+                  <SelectItem value="turquoise">Τυρκουάζ</SelectItem>
+                  <SelectItem value="multi">Πολύχρωμο</SelectItem>
+                </SelectContent>
+              </Select>
+              
+              <Select value={featureFilter} onValueChange={setFeatureFilter}>
+                <SelectTrigger className="w-[220px] rounded-xl">
+                  <SelectValue placeholder="Όλα τα Χαρακτηριστικά" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">Όλα τα Χαρακτηριστικά</SelectItem>
+                  <SelectItem value="glass-doors">Γυάλινες Πόρτες</SelectItem>
+                  <SelectItem value="adjustable-shelves">Ρυθμιζόμενα Ράφια</SelectItem>
+                  <SelectItem value="key-lock">Κλειδαριά</SelectItem>
+                  <SelectItem value="ventilation">Εξαερισμός</SelectItem>
+                  <SelectItem value="multiple-units">Πολλαπλές Θέσεις</SelectItem>
+                  <SelectItem value="wall-mounted">Επιτοίχια Τοποθέτηση</SelectItem>
+                  <SelectItem value="colorful">Έντονα Χρώματα</SelectItem>
+                  <SelectItem value="modern-design">Μοντέρνος Σχεδιασμός</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
-            <div className="flex items-center gap-2">
-              <SlidersHorizontal className="h-4 w-4 text-gray-500" />
+            <div className="ml-auto">
               <Select value={sortOption} onValueChange={setSortOption}>
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-[180px] rounded-xl">
                   <SelectValue placeholder="Ταξινόμηση κατά" />
                 </SelectTrigger>
                 <SelectContent>
@@ -206,11 +312,11 @@ export default function Products() {
                 className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 cursor-pointer transform hover:-translate-y-1"
                 onClick={() => handleProductClick(product.id)}
               >
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="aspect-square p-4 flex items-center justify-center bg-white overflow-hidden">
                   <img 
                     src={product.image} 
                     alt={product.title} 
-                    className="w-full h-full object-contain transition-transform hover:scale-105 duration-500 p-2"
+                    className="w-auto h-auto max-w-full max-h-full object-contain transition-transform hover:scale-105 duration-500 rounded-xl"
                   />
                 </div>
                 <div className="p-6">
@@ -245,8 +351,11 @@ export default function Products() {
                 onClick={() => {
                   setCategoryFilter("all");
                   setTypeFilter("all");
+                  setColorFilter("all");
+                  setFeatureFilter("all");
                   setSortOption("default");
                 }}
+                className="rounded-xl"
               >
                 Επαναφορά φίλτρων
               </Button>
@@ -266,11 +375,18 @@ export default function Products() {
               Σχεδιάζουμε και κατασκευάζουμε προσαρμοσμένα μεταλλικά ντουλάπια βάσει των συγκεκριμένων αναγκών και προδιαγραφών σας.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button onClick={() => navigate("/contact")} className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2">
+              <Button className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 rounded-xl" onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  navigate('/#contact');
+                }
+              }}>
                 <Mail className="h-4 w-4" />
                 Ζητήστε Προσφορά
               </Button>
-              <Button variant="outline" onClick={() => window.location.href = "tel:+302109999999"} className="border-blue-400 text-white hover:bg-blue-800 flex items-center gap-2">
+              <Button variant="outline" onClick={() => window.location.href = "tel:+302109999999"} className="border-blue-400 text-white hover:bg-blue-800 flex items-center gap-2 rounded-xl">
                 <Phone className="h-4 w-4" />
                 Καλέστε μας
               </Button>
