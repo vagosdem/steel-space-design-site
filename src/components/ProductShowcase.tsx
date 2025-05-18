@@ -21,7 +21,7 @@ export default function ProductShowcase({ product, alignment }: ProductShowcaseP
   
   // Handler to navigate to the contact section on the home page
   const handleRequestQuote = () => {
-    navigate("/#contact");
+    navigate("/?scrollTo=contact");
   };
   
   return (

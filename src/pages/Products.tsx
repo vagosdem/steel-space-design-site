@@ -86,7 +86,7 @@ const products = [
     id: "red-school-lockers",
     title: "Κόκκινα Σχολικά Ντουλάπια",
     description: "Ανθεκτικά μεταλλικά ντουλάπια σε κόκκινο χρώμα με μαύρο πλαίσιο, σχεδιασμένα για σχολεία και εκπαιδευτικά ιδρύματα.",
-    image: "/lovable-uploads/cb3b7ccd-56d5-4cb0-99ce-dfb7b75f6400.png",
+    image: "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
     category: "lockers",
     type: "school",
     color: "red",
@@ -97,7 +97,7 @@ const products = [
     id: "yellow-lockers",
     title: "Κίτρινα Μεταλλικά Ντουλάπια",
     description: "Φωτεινά κίτρινα ντουλάπια με μεταλλική κατασκευή, ιδανικά για παιδικούς σταθμούς, σχολικές εγκαταστάσεις και χαρούμενους χώρους.",
-    image: "/lovable-uploads/00772ab6-6083-4b70-8f34-b4542e7c725b.png",
+    image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
     category: "lockers",
     type: "school",
     color: "yellow",
@@ -183,12 +183,11 @@ export default function Products() {
 
   const handleProductClick = (productId: string) => {
     navigate(`/product/${productId}`);
-    window.scrollTo(0, 0);
   };
 
   // Handler for the "Ζητήστε Προσφορά" button - redirects to contact section on home page
   const handleRequestQuote = () => {
-    navigate("/#contact");
+    navigate("/?scrollTo=contact");
   };
 
   return (
@@ -302,28 +301,29 @@ export default function Products() {
               <motion.div 
                 key={product.id} 
                 variants={item}
-                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 cursor-pointer transform hover:-translate-y-1 flex flex-col"
-                onClick={() => handleProductClick(product.id)}
+                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 flex flex-col h-full"
               >
-                <div className="aspect-square p-4 flex items-center justify-center bg-white overflow-hidden">
+                <div 
+                  className="aspect-square p-4 flex items-center justify-center bg-white overflow-hidden cursor-pointer"
+                  onClick={() => handleProductClick(product.id)}
+                >
                   <img 
                     src={product.image} 
                     alt={product.title} 
                     className="w-auto h-auto max-w-full max-h-full object-contain transition-transform hover:scale-105 duration-500 rounded-xl"
                   />
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-6 flex flex-col h-full">
                   <h3 className="text-xl font-semibold mb-3">{product.title}</h3>
-                  <p className="text-metal-600 mb-4 flex-grow">{product.description}</p>
-                  <Button 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleProductClick(product.id);
-                    }}
-                    className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl mt-auto"
-                  >
-                    Περισσότερες Πληροφορίες
-                  </Button>
+                  <p className="text-metal-600 mb-6 flex-grow">{product.description}</p>
+                  <div className="mt-auto">
+                    <Button 
+                      onClick={() => handleProductClick(product.id)}
+                      className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl"
+                    >
+                      Περισσότερες Πληροφορίες
+                    </Button>
+                  </div>
                 </div>
               </motion.div>
             ))}
