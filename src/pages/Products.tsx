@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-// Updated product data with all new images
+// Updated product data with new images
 const products = [
   {
     id: "metal-cabinet-glass",
@@ -108,7 +107,7 @@ const products = [
     id: "yellow-lockers",
     title: "Κίτρινα Μεταλλικά Ντουλάπια",
     description: "Φωτεινά κίτρινα ντουλάπια με μεταλλική κατασκευή, ιδανικά για παιδικούς σταθμούς, σχολικές εγκαταστάσεις και χαρούμενους χώρους.",
-    image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
+    image: "/lovable-uploads/00772ab6-6083-4b70-8f34-b4542e7c725b.png",
     category: "lockers",
     type: "school",
     color: "yellow",

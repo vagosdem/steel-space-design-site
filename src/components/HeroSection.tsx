@@ -3,8 +3,26 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
+  const [currentImage, setCurrentImage] = useState(0);
+  
+  const productImages = [
+    "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
+    "/lovable-uploads/00772ab6-6083-4b70-8f34-b4542e7c725b.png",
+    "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
+    "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % productImages.length);
+    }, 5000); // Change image every 5 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="bg-white text-metal-900 pt-24 pb-16">
       <div className="container-section text-center">
@@ -43,12 +61,27 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.3 }} 
           className="mt-16 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8"
         >
-          <div className="md:w-1/2">
-            <img 
-              src="/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png" 
-              alt="Orange metal lockers" 
-              className="w-full h-auto object-contain mx-auto border border-gray-200 rounded-2xl shadow-sm p-4 hover:shadow-md transition-all duration-300"
-            />
+          <div className="md:w-1/2 relative h-[400px]">
+            {productImages.map((image, index) => (
+              <img 
+                key={index}
+                src={image} 
+                alt={`Product showcase ${index + 1}`} 
+                className={`w-full h-auto object-contain mx-auto border border-gray-200 rounded-2xl shadow-sm p-4 hover:shadow-md transition-all duration-300 absolute top-0 left-0 ${
+                  currentImage === index ? "opacity-100" : "opacity-0"
+                } transition-opacity duration-1000`}
+                style={{ maxHeight: "400px" }}
+              />
+            ))}
+            <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2 z-10">
+              {productImages.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-2.5 h-2.5 rounded-full ${currentImage === index ? 'bg-blue-600' : 'bg-gray-300'}`}
+                  onClick={() => setCurrentImage(index)}
+                />
+              ))}
+            </div>
           </div>
           <div className="md:w-1/2 text-left space-y-4">
             <h2 className="text-2xl font-semibold text-metal-900">Ποιοτικές Λύσεις Αποθήκευσης</h2>

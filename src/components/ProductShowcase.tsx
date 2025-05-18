@@ -54,7 +54,7 @@ export default function ProductShowcase({ product, alignment }: ProductShowcaseP
                     Περισσότερες Πληροφορίες
                   </Button>
                 </Link>
-                <Link to="#contact">
+                <Link to="/#contact">
                   <Button variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl">
                     Ζητήστε Προσφορά
                   </Button>

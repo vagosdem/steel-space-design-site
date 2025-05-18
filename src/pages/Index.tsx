@@ -55,28 +55,28 @@ const Index = () => {
     }
   };
 
-  // Product showcase data with updated images - changed order to put the second image first
+  // Product showcase data with updated images
   const products = [
     {
-      id: "metal-cabinet",
-      title: "Μεταλλική Ντουλάπα Αρχειοθέτησης",
-      description: "Επαγγελματική μεταλλική ντουλάπα αρχειοθέτησης με γυάλινες πόρτες, ιδανική για γραφεία, ιατρεία και επαγγελματικούς χώρους.",
-      image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
-      type: "cabinet"
+      id: "yellow-lockers",
+      title: "Κίτρινα Μεταλλικά Ντουλάπια",
+      description: "Φωτεινά κίτρινα ντουλάπια με μαύρο πλαίσιο και μεταλλική κατασκευή, ιδανικά για παιδικούς σταθμούς, σχολικές εγκαταστάσεις και χαρούμενους χώρους.",
+      image: "/lovable-uploads/00772ab6-6083-4b70-8f34-b4542e7c725b.png",
+      type: "locker"
     },
     {
-      id: "white-brown-locker",
+      id: "orange-white-locker",
       title: "Ντουλάπια Locker Πολλαπλών Θέσεων",
       description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για επαγγελματικούς χώρους και αποδυτήρια.",
       image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
       type: "locker"
     },
     {
-      id: "metal-drawers",
-      title: "Συρταριέρες Μεταλλικές Πολλαπλών Χρωμάτων",
-      description: "Μεταλλικές συρταριέρες σε ποικιλία χρωμάτων, ιδανικές για αρχειοθέτηση εγγράφων και αποθήκευση αντικειμένων σε επαγγελματικούς χώρους.",
-      image: "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
-      type: "drawer"
+      id: "red-school-lockers",
+      title: "Κόκκινα Σχολικά Ντουλάπια",
+      description: "Ανθεκτικά μεταλλικά ντουλάπια σε κόκκινο χρώμα με μαύρο πλαίσιο, σχεδιασμένα για σχολεία και εκπαιδευτικά ιδρύματα με αριθμημένες θήκες.",
+      image: "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
+      type: "locker"
     }
   ];
 
@@ -168,6 +168,7 @@ const Index = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          id="contact"
         >
           <ContactSection />
         </motion.div>
