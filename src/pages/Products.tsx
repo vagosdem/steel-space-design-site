@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-// Updated product data with new images
+// Updated product data with new red locker image
 const products = [
   {
     id: "metal-cabinet-glass",
@@ -82,21 +83,10 @@ const products = [
     features: ["glass-doors", "display", "adjustable-shelves"]
   },
   {
-    id: "wall-mounted-cabinet", 
-    title: "Επιτοίχια Ντουλάπα Αρχειοθέτησης",
-    description: "Επιτοίχια μεταλλική ντουλάπα αρχειοθέτησης με ρυθμιζόμενα ράφια, ιδανική για εξοικονόμηση χώρου σε γραφεία και επαγγελματικούς χώρους.",
-    image: "/lovable-uploads/0f7b939c-3012-47f1-8cc8-13033e7dd152.png",
-    category: "cabinets",
-    type: "office",
-    color: "white",
-    material: "metal",
-    features: ["wall-mounted", "adjustable-shelves", "multi-purpose"]
-  },
-  {
     id: "red-school-lockers",
     title: "Κόκκινα Σχολικά Ντουλάπια",
-    description: "Ανθεκτικά μεταλλικά ντουλάπια σε κόκκινο χρώμα, σχεδιασμένα για σχολεία και εκπαιδευτικά ιδρύματα με αριθμημένες θήκες.",
-    image: "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png",
+    description: "Ανθεκτικά μεταλλικά ντουλάπια σε κόκκινο χρώμα με μαύρο πλαίσιο, σχεδιασμένα για σχολεία και εκπαιδευτικά ιδρύματα.",
+    image: "/lovable-uploads/cb3b7ccd-56d5-4cb0-99ce-dfb7b75f6400.png",
     category: "lockers",
     type: "school",
     color: "red",
@@ -196,6 +186,11 @@ export default function Products() {
     window.scrollTo(0, 0);
   };
 
+  // Handler for the "Ζητήστε Προσφορά" button - redirects to contact section on home page
+  const handleRequestQuote = () => {
+    navigate("/#contact");
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -276,7 +271,6 @@ export default function Products() {
                   <SelectItem value="key-lock">Κλειδαριά</SelectItem>
                   <SelectItem value="ventilation">Εξαερισμός</SelectItem>
                   <SelectItem value="multiple-units">Πολλαπλές Θέσεις</SelectItem>
-                  <SelectItem value="wall-mounted">Επιτοίχια Τοποθέτηση</SelectItem>
                   <SelectItem value="colorful">Έντονα Χρώματα</SelectItem>
                   <SelectItem value="modern-design">Μοντέρνος Σχεδιασμός</SelectItem>
                 </SelectContent>
@@ -297,7 +291,7 @@ export default function Products() {
             </div>
           </motion.div>
           
-          {/* Products grid */}
+          {/* Products grid with aligned buttons */}
           <motion.div 
             variants={container}
             initial="hidden"
@@ -308,7 +302,7 @@ export default function Products() {
               <motion.div 
                 key={product.id} 
                 variants={item}
-                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 cursor-pointer transform hover:-translate-y-1"
+                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 cursor-pointer transform hover:-translate-y-1 flex flex-col"
                 onClick={() => handleProductClick(product.id)}
               >
                 <div className="aspect-square p-4 flex items-center justify-center bg-white overflow-hidden">
@@ -318,15 +312,15 @@ export default function Products() {
                     className="w-auto h-auto max-w-full max-h-full object-contain transition-transform hover:scale-105 duration-500 rounded-xl"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold mb-3">{product.title}</h3>
-                  <p className="text-metal-600 mb-4">{product.description}</p>
+                  <p className="text-metal-600 mb-4 flex-grow">{product.description}</p>
                   <Button 
                     onClick={(e) => {
                       e.stopPropagation();
                       handleProductClick(product.id);
                     }}
-                    className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl"
+                    className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl mt-auto"
                   >
                     Περισσότερες Πληροφορίες
                   </Button>
@@ -374,14 +368,10 @@ export default function Products() {
               Σχεδιάζουμε και κατασκευάζουμε προσαρμοσμένα μεταλλικά ντουλάπια βάσει των συγκεκριμένων αναγκών και προδιαγραφών σας.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 rounded-xl" onClick={() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  navigate('/#contact');
-                }
-              }}>
+              <Button 
+                className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 rounded-xl" 
+                onClick={handleRequestQuote}
+              >
                 <Mail className="h-4 w-4" />
                 Ζητήστε Προσφορά
               </Button>

@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 interface ProductShowcaseProps {
@@ -17,6 +17,12 @@ interface ProductShowcaseProps {
 export default function ProductShowcase({ product, alignment }: ProductShowcaseProps) {
   const imageOrder = alignment === "left" ? "order-first" : "order-last";
   const contentOrder = alignment === "left" ? "order-last" : "order-first";
+  const navigate = useNavigate();
+  
+  // Handler to navigate to the contact section on the home page
+  const handleRequestQuote = () => {
+    navigate("/#contact");
+  };
   
   return (
     <section className="bg-white py-20">
@@ -54,11 +60,13 @@ export default function ProductShowcase({ product, alignment }: ProductShowcaseP
                     Περισσότερες Πληροφορίες
                   </Button>
                 </Link>
-                <Link to="/#contact">
-                  <Button variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl">
-                    Ζητήστε Προσφορά
-                  </Button>
-                </Link>
+                <Button 
+                  variant="outline" 
+                  className="border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl"
+                  onClick={handleRequestQuote}
+                >
+                  Ζητήστε Προσφορά
+                </Button>
               </div>
             </div>
           </motion.div>

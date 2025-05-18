@@ -6,7 +6,7 @@ import { ArrowLeft, Mail, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// Updated product data with more professional descriptions
+// Updated product data with measurements
 const products = [{
   id: "white-brown-locker",
   title: "Ντουλάπια Λευκά με Καφέ Πλαίσιο",
@@ -26,6 +26,13 @@ const products = [{
     "Αποθήκες", 
     "Εκπαιδευτικά ιδρύματα"
   ],
+  measurements: {
+    height: "180 εκ.",
+    width: "90 εκ.",
+    depth: "45 εκ.",
+    weight: "57 κιλά",
+    shelves: "3 ρυθμιζόμενα ράφια"
+  },
   image: "/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png",
   gallery: [
     "/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png",
@@ -50,6 +57,13 @@ const products = [{
     "Εργοστάσια & βιομηχανικούς χώρους",
     "Δημόσιες υπηρεσίες"
   ],
+  measurements: {
+    height: "185 εκ.",
+    width: "80 εκ.", 
+    depth: "50 εκ.",
+    weight: "52 κιλά",
+    shelves: "2 ρυθμιζόμενα ράφια"
+  },
   image: "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png",
   gallery: [
     "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png", 
@@ -74,6 +88,13 @@ const products = [{
     "Παιδικές βιβλιοθήκες", 
     "Αθλητικές εγκαταστάσεις για παιδιά"
   ],
+  measurements: {
+    height: "160 εκ.",
+    width: "75 εκ.",
+    depth: "40 εκ.",
+    weight: "45 κιλά",
+    shelves: "3 ρυθμιζόμενα ράφια"
+  },
   image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
   gallery: [
     "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
@@ -98,6 +119,13 @@ const products = [{
     "Εταιρείες τεχνολογίας",
     "Χώροι coworking"
   ],
+  measurements: {
+    height: "175 εκ.",
+    width: "85 εκ.",
+    depth: "40 εκ.",
+    weight: "49 κιλά",
+    shelves: "2 ρυθμιζόμενα ράφια"
+  },
   image: "/lovable-uploads/3e491c70-934b-4056-b1e1-58c080f32010.png",
   gallery: [
     "/lovable-uploads/3e491c70-934b-4056-b1e1-58c080f32010.png",
@@ -133,6 +161,12 @@ export default function ProductDetail() {
       </div>
     );
   }
+
+  // Handler for the "Ζητήστε Προσφορά" button
+  const handleRequestQuote = () => {
+    // Navigate to the home page and scroll to the contact section
+    navigate("/#contact");
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -176,6 +210,33 @@ export default function ProductDetail() {
               <p className="text-metal-600">{product.longDescription}</p>
             </div>
             
+            {/* Measurements section */}
+            <div className="border-t border-gray-200 pt-6">
+              <h3 className="text-xl font-semibold mb-4">Διαστάσεις</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="bg-metal-50 p-4 rounded-lg text-center">
+                  <p className="text-sm text-metal-500">Ύψος</p>
+                  <p className="font-medium text-metal-800">{product.measurements.height}</p>
+                </div>
+                <div className="bg-metal-50 p-4 rounded-lg text-center">
+                  <p className="text-sm text-metal-500">Πλάτος</p>
+                  <p className="font-medium text-metal-800">{product.measurements.width}</p>
+                </div>
+                <div className="bg-metal-50 p-4 rounded-lg text-center">
+                  <p className="text-sm text-metal-500">Βάθος</p>
+                  <p className="font-medium text-metal-800">{product.measurements.depth}</p>
+                </div>
+                <div className="bg-metal-50 p-4 rounded-lg text-center">
+                  <p className="text-sm text-metal-500">Βάρος</p>
+                  <p className="font-medium text-metal-800">{product.measurements.weight}</p>
+                </div>
+                <div className="bg-metal-50 p-4 rounded-lg text-center md:col-span-2">
+                  <p className="text-sm text-metal-500">Ράφια</p>
+                  <p className="font-medium text-metal-800">{product.measurements.shelves}</p>
+                </div>
+              </div>
+            </div>
+            
             <div className="border-t border-gray-200 pt-6">
               <h3 className="text-xl font-semibold mb-4">Χαρακτηριστικά</h3>
               <ul className="space-y-2">
@@ -205,7 +266,7 @@ export default function ProductDetail() {
             <div className="border-t border-gray-200 pt-6">
               <h3 className="text-xl font-semibold mb-6">Ενδιαφέρεστε για αυτό το προϊόν;</h3>
               <div className="space-y-4">
-                <Button className="w-full py-6" onClick={() => navigate("/contact")}>
+                <Button className="w-full py-6" onClick={handleRequestQuote}>
                   <Mail className="mr-2" />
                   Ζητήστε Προσφορά
                 </Button>

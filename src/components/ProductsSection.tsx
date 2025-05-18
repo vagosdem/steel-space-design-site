@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   Carousel,
@@ -9,7 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 // Product data with updated images
 const productCategories = [{
@@ -35,6 +35,13 @@ const productCategories = [{
 }];
 
 export default function ProductsSection() {
+  const navigate = useNavigate();
+  
+  // Handler to navigate to the contact section on the home page
+  const handleRequestQuote = () => {
+    navigate("/#contact");
+  };
+  
   return (
     <section id="products" className="bg-metal-50 py-20">
       <div className="container-section">
@@ -96,11 +103,12 @@ export default function ProductsSection() {
                           transition={{ duration: 0.5, delay: 0.2 }}
                           className="flex flex-col sm:flex-row gap-4"
                         >
-                          <Link to="#contact" className="w-full sm:w-auto">
-                            <Button className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl">
-                              Ζητήστε Προσφορά
-                            </Button>
-                          </Link>
+                          <Button 
+                            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-xl"
+                            onClick={handleRequestQuote}
+                          >
+                            Ζητήστε Προσφορά
+                          </Button>
                           <Link to={`/product/${product.id}`} className="w-full sm:w-auto">
                             <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl">
                               Περισσότερες Πληροφορίες
