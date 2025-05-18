@@ -1,11 +1,7 @@
-
 import { Archive, Facebook, Instagram, Linkedin } from "lucide-react";
-
 export default function Footer() {
   const year = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-metal-900 text-white">
+  return <footer className="bg-metal-900 text-white">
       <div className="container-section !py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-4">
@@ -53,19 +49,8 @@ export default function Footer() {
           <div className="text-metal-500 text-sm">
             © {year} Stereon. Με επιφύλαξη παντός δικαιώματος.
           </div>
-          <div className="flex space-x-4">
-            <a href="#" className="bg-metal-800 p-2 rounded-full text-metal-400 hover:text-white hover:bg-metal-700 transition-colors">
-              <Facebook className="h-5 w-5" />
-            </a>
-            <a href="#" className="bg-metal-800 p-2 rounded-full text-metal-400 hover:text-white hover:bg-metal-700 transition-colors">
-              <Instagram className="h-5 w-5" />
-            </a>
-            <a href="#" className="bg-metal-800 p-2 rounded-full text-metal-400 hover:text-white hover:bg-metal-700 transition-colors">
-              <Linkedin className="h-5 w-5" />
-            </a>
-          </div>
+          
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 }
