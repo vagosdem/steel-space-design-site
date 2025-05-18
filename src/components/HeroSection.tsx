@@ -45,9 +45,9 @@ export default function HeroSection() {
         >
           <div className="md:w-1/2">
             <img 
-              src="/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png" 
-              alt="Industrial lockers and storage solutions" 
-              className="w-full h-auto object-contain mx-auto border border-gray-200 rounded-2xl shadow-sm p-4"
+              src="/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png" 
+              alt="Orange metal lockers" 
+              className="w-full h-auto object-contain mx-auto border border-gray-200 rounded-2xl shadow-sm p-4 hover:shadow-md transition-all duration-300"
             />
           </div>
           <div className="md:w-1/2 text-left space-y-4">

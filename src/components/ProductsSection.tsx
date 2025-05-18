@@ -11,27 +11,27 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
-// Product data
+// Product data with updated images
 const productCategories = [{
   id: "white-brown-locker",
-  title: "Ντουλάπια Λευκά με Καφέ Πλαίσιο",
-  description: "Κλασικά μεταλλικά ντουλάπια τριών θέσεων με λευκές πόρτες και καφέ πλαίσιο για επαγγελματικούς χώρους.",
-  image: "/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png"
+  title: "Ντουλάπια Πορτοκαλί με Λευκό Πλαίσιο",
+  description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για επαγγελματικούς χώρους.",
+  image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png"
 }, {
-  id: "red-locker",
-  title: "Κόκκινα Μεταλλικά Ντουλάπια",
-  description: "Μοντέρνα μεταλλικά ντουλάπια σε ζωηρό κόκκινο χρώμα με μαύρο πλαίσιο για χρήση σε γυμναστήρια και σχολεία.",
-  image: "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png"
+  id: "blue-locker",
+  title: "Μπλε Μεταλλικά Ντουλάπια",
+  description: "Μοντέρνα μεταλλικά ντουλάπια σε μπλε χρώμα με λευκό πλαίσιο για χρήση σε γυμναστήρια και σχολεία.",
+  image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png"
 }, {
-  id: "yellow-locker",
-  title: "Κίτρινα Μεταλλικά Ντουλάπια",
-  description: "Φωτεινά κίτρινα ντουλάπια με καφέ πλαίσιο, ιδανικά για παιδικούς σταθμούς και σχολικές εγκαταστάσεις.",
-  image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png"
+  id: "orange-display-cabinet",
+  title: "Πορτοκαλί Βιτρίνα",
+  description: "Μεταλλική βιτρίνα με γυάλινη πόρτα σε έντονο πορτοκαλί χρώμα, ιδανική για εκθετήρια και αποθήκευση προϊόντων.",
+  image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png"
 }, {
   id: "turquoise-orange-locker",
-  title: "Ντουλάπια Τυρκουάζ με Πορτοκαλί",
+  title: "Ντουλάπι Τυρκουάζ με Πορτοκαλί",
   description: "Μοντέρνος συνδυασμός χρωμάτων με τυρκουάζ πόρτα και πορτοκαλί πλαίσιο, ιδανικά για δημιουργικούς χώρους εργασίας.",
-  image: "/lovable-uploads/3e491c70-934b-4056-b1e1-58c080f32010.png"
+  image: "/lovable-uploads/de48c2ac-8f96-4f1d-987f-3fa9c559618f.png"
 }];
 
 export default function ProductsSection() {
@@ -70,12 +70,12 @@ export default function ProductsSection() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.7, delay: 0.2 }}
-                          className="p-4 border border-gray-200 rounded-2xl shadow-sm"
+                          className="p-6 border border-gray-200 bg-white rounded-3xl shadow-sm hover:shadow-md transition-all duration-300"
                         >
                           <img 
                             src={product.image} 
                             alt={product.title}
-                            className="w-full h-auto object-contain mx-auto rounded-xl"
+                            className="w-full h-auto object-contain mx-auto rounded-2xl"
                           />
                         </motion.div>
                       </div>

@@ -29,11 +29,13 @@ export default function ProductShowcase({ product, alignment }: ProductShowcaseP
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <img 
-              src={product.image} 
-              alt={product.title}
-              className="w-full h-auto object-contain mx-auto max-h-[500px]"
-            />
+            <div className="bg-white border border-gray-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+              <img 
+                src={product.image} 
+                alt={product.title}
+                className="w-full h-auto object-contain mx-auto max-h-[500px] rounded-2xl"
+              />
+            </div>
           </motion.div>
           
           <motion.div 
@@ -48,12 +50,12 @@ export default function ProductShowcase({ product, alignment }: ProductShowcaseP
               <p className="text-metal-600 text-lg mb-6">{product.description}</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to={`/product/${product.id}`}>
-                  <Button className="bg-blue-600 hover:bg-blue-700">
+                  <Button className="bg-blue-600 hover:bg-blue-700 rounded-xl">
                     Περισσότερες Πληροφορίες
                   </Button>
                 </Link>
                 <Link to="#contact">
-                  <Button variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50">
+                  <Button variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl">
                     Ζητήστε Προσφορά
                   </Button>
                 </Link>
