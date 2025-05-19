@@ -35,11 +35,11 @@ export default function ProductShowcase({ product, alignment }: ProductShowcaseP
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="bg-white border border-gray-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="bg-white border border-gray-200 rounded-2xl p-3 shadow-sm hover:shadow-md transition-all duration-300">
               <img 
                 src={product.image} 
                 alt={product.title}
-                className="w-full h-auto object-contain mx-auto max-h-[500px] rounded-2xl"
+                className="w-full h-auto object-contain mx-auto max-h-[500px] rounded-xl"
               />
             </div>
           </motion.div>

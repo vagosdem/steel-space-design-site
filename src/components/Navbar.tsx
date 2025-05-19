@@ -34,7 +34,7 @@ export default function Navbar() {
       }
     } else {
       // If we're not on the home page, navigate to the home page with the section in the URL
-      navigate(`/#${sectionId}`);
+      navigate(`/?scrollTo=${sectionId}`);
     }
     
     // Close mobile menu if open
@@ -66,6 +66,12 @@ export default function Navbar() {
     if (mobileMenuOpen) {
       setMobileMenuOpen(false);
     }
+  };
+
+  // Handle the quote request button click
+  const handleQuoteRequest = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigateToSection("contact");
   };
 
   return (
@@ -105,13 +111,12 @@ export default function Navbar() {
             >
               Επικοινωνία
             </button>
-            <Link to="#contact">
-              <Button 
-                className={`rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
-              >
-                Ζήτα Προσφορά
-              </Button>
-            </Link>
+            <Button 
+              onClick={handleQuoteRequest}
+              className={`rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
+            >
+              Ζήτα Προσφορά
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -164,13 +169,12 @@ export default function Navbar() {
             >
               Επικοινωνία
             </button>
-            <Link to="#contact" className="block w-full p-2">
-              <Button 
-                className={`w-full rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
-              >
-                Ζήτα Προσφορά
-              </Button>
-            </Link>
+            <Button 
+              onClick={handleQuoteRequest}
+              className={`w-full rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
+            >
+              Ζήτα Προσφορά
+            </Button>
           </div>
         )}
       </nav>
