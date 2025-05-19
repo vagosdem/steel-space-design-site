@@ -1,8 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-
 interface ProductShowcaseProps {
   product: {
     id: string;
@@ -13,44 +11,49 @@ interface ProductShowcaseProps {
   };
   alignment: "left" | "right";
 }
-
-export default function ProductShowcase({ product, alignment }: ProductShowcaseProps) {
+export default function ProductShowcase({
+  product,
+  alignment
+}: ProductShowcaseProps) {
   const imageOrder = alignment === "left" ? "order-first" : "order-last";
   const contentOrder = alignment === "left" ? "order-last" : "order-first";
   const navigate = useNavigate();
-  
+
   // Handler to navigate to the contact section on the home page
   const handleRequestQuote = () => {
     navigate("/?scrollTo=contact");
   };
-  
-  return (
-    <section className="bg-white py-20">
+  return <section className="bg-white py-20">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-16">
-          <motion.div 
-            className={`w-full md:w-1/2 ${imageOrder}`}
-            initial={{ opacity: 0, x: alignment === "left" ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <div className="bg-white border border-gray-200 rounded-2xl p-1 shadow-sm hover:shadow-md transition-all duration-300">
-              <img 
-                src={product.image} 
-                alt={product.title}
-                className="w-full h-auto object-contain mx-auto max-h-[500px] rounded-xl"
-              />
+          <motion.div className={`w-full md:w-1/2 ${imageOrder}`} initial={{
+          opacity: 0,
+          x: alignment === "left" ? -50 : 50
+        }} whileInView={{
+          opacity: 1,
+          x: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.7,
+          delay: 0.2
+        }}>
+            <div className="bg-white border border-gray-200 p-1 shadow-sm hover:shadow-md transition-all duration-300 rounded-2xl px-px mx-[104px] my-0 py-0">
+              <img src={product.image} alt={product.title} className="w-full h-auto object-contain mx-auto max-h-[500px] rounded-xl" />
             </div>
           </motion.div>
           
-          <motion.div 
-            className={`w-full md:w-1/2 ${contentOrder} space-y-6`}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <motion.div className={`w-full md:w-1/2 ${contentOrder} space-y-6`} initial={{
+          opacity: 0,
+          y: 30
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.5
+        }}>
             <div>
               <h2 className="text-3xl font-medium text-metal-900 mb-4">{product.title}</h2>
               <p className="text-metal-600 text-lg mb-6">{product.description}</p>
@@ -60,11 +63,7 @@ export default function ProductShowcase({ product, alignment }: ProductShowcaseP
                     Περισσότερες Πληροφορίες
                   </Button>
                 </Link>
-                <Button 
-                  variant="outline" 
-                  className="border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl"
-                  onClick={handleRequestQuote}
-                >
+                <Button variant="outline" className="border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl" onClick={handleRequestQuote}>
                   Ζητήστε Προσφορά
                 </Button>
               </div>
@@ -72,6 +71,5 @@ export default function ProductShowcase({ product, alignment }: ProductShowcaseP
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
