@@ -80,6 +80,15 @@
   .btn-outline {
     @apply border border-metal-300 hover:border-metal-400 px-5 py-3 rounded-md font-medium transition-colors;
   }
+  
+  /* Add gradient transition classes */
+  .gradient-top-white-to-dark {
+    @apply bg-gradient-to-b from-white to-metal-800;
+  }
+  
+  .gradient-bottom-dark-to-white {
+    @apply bg-gradient-to-t from-white to-metal-800;
+  }
 }
 
 @layer utilities {
@@ -128,3 +137,17 @@ a:focus-visible {
 .shadow-industrial {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
+
+/* Smooth section transitions */
+.section-transition {
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.5s ease;
+}
+
+/* Gradient transition elements */
+.gradient-transition {
+  height: 100px;
+  background-image: linear-gradient(to bottom, transparent, currentColor);
+}
+

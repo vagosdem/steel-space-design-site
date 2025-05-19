@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -23,7 +24,7 @@ export default function ProductShowcase({
   const handleRequestQuote = () => {
     navigate("/?scrollTo=contact");
   };
-  return <section className="bg-white py-20">
+  return <section className="bg-white py-20 relative z-10">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <motion.div className={`w-full md:w-1/2 ${imageOrder}`} initial={{
@@ -38,7 +39,7 @@ export default function ProductShowcase({
           duration: 0.7,
           delay: 0.2
         }}>
-            <div className="bg-white border border-gray-200 p-1 shadow-sm hover:shadow-md transition-all duration-300 rounded-2xl px-px mx-[104px] my-0 py-0">
+            <div className="bg-white border border-gray-200 p-px shadow-sm hover:shadow-md transition-all duration-300 rounded-2xl mx-[104px] my-0 py-0">
               <img src={product.image} alt={product.title} className="w-full h-auto object-contain mx-auto max-h-[500px] rounded-xl" />
             </div>
           </motion.div>

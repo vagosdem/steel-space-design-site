@@ -26,7 +26,10 @@ const industries = [
 
 export default function IndustrySection() {
   return (
-    <section id="industries" className="bg-metal-800 text-white">
+    <section id="industries" className="bg-metal-800 text-white relative">
+      {/* Transition gradient at the top */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white to-metal-800 w-full"></div>
+      
       <div className="container-section">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-white mb-4">Για Ποιους Είναι</h2>
@@ -47,6 +50,9 @@ export default function IndustrySection() {
           ))}
         </div>
       </div>
+      
+      {/* Transition gradient at the bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-metal-800 w-full"></div>
     </section>
   );
 }
