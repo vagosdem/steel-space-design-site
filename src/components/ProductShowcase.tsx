@@ -35,7 +35,7 @@ export default function ProductShowcase({ product, alignment }: ProductShowcaseP
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="bg-white border border-gray-200 rounded-2xl p-3 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="bg-white border border-gray-200 rounded-2xl p-1 shadow-sm hover:shadow-md transition-all duration-300">
               <img 
                 src={product.image} 
                 alt={product.title}

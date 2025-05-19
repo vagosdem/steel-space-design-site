@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -304,7 +303,7 @@ export default function Products() {
                 className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 flex flex-col h-full"
               >
                 <div 
-                  className="aspect-square p-3 flex items-center justify-center bg-white overflow-hidden cursor-pointer"
+                  className="aspect-square p-1 flex items-center justify-center bg-white overflow-hidden cursor-pointer"
                   onClick={() => handleProductClick(product.id)}
                 >
                   <img 

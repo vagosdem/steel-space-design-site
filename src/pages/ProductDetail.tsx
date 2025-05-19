@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -345,7 +344,7 @@ export default function ProductDetail() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product images */}
           <div className="space-y-6">
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg p-1">
               <img src={product.image} alt={product.title} className="w-full h-auto object-contain aspect-video" />
             </div>
             
@@ -353,7 +352,7 @@ export default function ProductDetail() {
             {product.gallery && product.gallery.length > 1 && (
               <div className="grid grid-cols-2 gap-4">
                 {product.gallery.slice(1).map((img, index) => (
-                  <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
+                  <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md p-1">
                     <img src={img} alt={`${product.title} ${index + 2}`} className="w-full h-auto object-cover aspect-square" />
                   </div>
                 ))}
