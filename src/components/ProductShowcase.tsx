@@ -49,11 +49,11 @@ export default function ProductShowcase({
               delay: 0.2
             }}
           >
-            <div className="bg-white transition-all duration-300 rounded-2xl mx-auto my-0 py-0">
+            <div className="transition-all duration-300 mx-auto my-0 py-0">
               <img 
                 src={product.image} 
                 alt={product.title} 
-                className="w-full h-auto object-contain mx-auto max-h-[500px] rounded-xl" 
+                className="w-full h-auto object-contain mx-auto max-h-[500px]" 
               />
             </div>
           </motion.div>
@@ -76,7 +76,7 @@ export default function ProductShowcase({
             }}
           >
             <div>
-              <h2 className="text-3xl font-medium text-metal-900 mb-4">{product.title}</h2>
+              <h2 className="text-3xl font-medium text-black mb-4">{product.title}</h2>
               <p className="text-metal-600 text-lg mb-6">{product.description}</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to={`/product/${product.id}`}>
@@ -99,3 +99,4 @@ export default function ProductShowcase({
     </section>
   );
 }
+

@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -309,12 +310,12 @@ export default function Products() {
                   <img 
                     src={product.image} 
                     alt={product.title} 
-                    className="w-auto h-auto max-w-full max-h-full object-contain transition-transform hover:scale-105 duration-500 rounded-xl"
+                    className="w-auto h-auto max-w-full max-h-full object-contain transition-transform hover:scale-105 duration-500"
                   />
                 </div>
-                <div className="p-6 flex flex-col h-full">
-                  <h3 className="text-xl font-semibold mb-3">{product.title}</h3>
-                  <p className="text-metal-600 mb-6 flex-grow">{product.description}</p>
+                <div className="p-4 flex flex-col">
+                  <h3 className="text-xl font-semibold mb-2 text-black">{product.title}</h3>
+                  <p className="text-metal-600 mb-4">{product.description}</p>
                   <div className="mt-auto">
                     <Button 
                       onClick={() => handleProductClick(product.id)}
@@ -386,3 +387,4 @@ export default function Products() {
     </div>
   );
 }
+

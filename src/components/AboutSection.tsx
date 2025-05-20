@@ -35,7 +35,7 @@ export default function AboutSection() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div className="flex gap-4">
-                <div className="bg-metal-700 p-2 rounded-lg shadow-sm">
+                <div className="bg-metal-700 p-2 rounded-lg shadow-sm h-10 w-10 flex items-center justify-center">
                   <Package className="h-6 w-6 text-blue-400" />
                 </div>
                 <div>
@@ -44,7 +44,7 @@ export default function AboutSection() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="bg-metal-700 p-2 rounded-lg shadow-sm">
+                <div className="bg-metal-700 p-2 rounded-lg shadow-sm h-10 w-10 flex items-center justify-center">
                   <Shield className="h-6 w-6 text-blue-400" />
                 </div>
                 <div>
@@ -53,7 +53,7 @@ export default function AboutSection() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="bg-metal-700 p-2 rounded-lg shadow-sm">
+                <div className="bg-metal-700 p-2 rounded-lg shadow-sm h-10 w-10 flex items-center justify-center">
                   <Clock className="h-6 w-6 text-blue-400" />
                 </div>
                 <div>
@@ -62,7 +62,7 @@ export default function AboutSection() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="bg-metal-700 p-2 rounded-lg shadow-sm">
+                <div className="bg-metal-700 p-2 rounded-lg shadow-sm h-10 w-10 flex items-center justify-center">
                   <Award className="h-6 w-6 text-blue-400" />
                 </div>
                 <div>
@@ -114,3 +114,4 @@ export default function AboutSection() {
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-metal-800 w-full"></div>
     </section>;
 }
+
