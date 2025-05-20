@@ -39,7 +39,7 @@ export default function ProductShowcase({
           duration: 0.7,
           delay: 0.2
         }}>
-            <div className="bg-white border border-gray-200 p-px shadow-sm hover:shadow-md transition-all duration-300 rounded-2xl mx-[104px] my-0 py-0">
+            <div className="bg-white shadow-sm hover:shadow-md transition-all duration-300 rounded-2xl mx-[104px] my-0 py-0">
               <img src={product.image} alt={product.title} className="w-full h-auto object-contain mx-auto max-h-[500px] rounded-xl" />
             </div>
           </motion.div>

@@ -77,7 +77,7 @@ export default function ProductsSection() {
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.7, delay: 0.2 }}
-                          className="p-6 border border-gray-200 bg-white rounded-3xl shadow-sm hover:shadow-md transition-all duration-300"
+                          className="p-0 bg-white rounded-3xl shadow-sm hover:shadow-md transition-all duration-300"
                         >
                           <img 
                             src={product.image} 

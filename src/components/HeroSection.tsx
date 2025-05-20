@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
+  const isMobile = useIsMobile();
   
   const productImages = [
     "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
@@ -61,16 +63,16 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.3 }} 
           className="mt-16 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8"
         >
-          <div className="md:w-1/2 relative h-[400px]">
+          <div className="md:w-1/2 relative h-[300px] sm:h-[400px] w-full">
             {productImages.map((image, index) => (
               <img 
                 key={index}
                 src={image} 
                 alt={`Product showcase ${index + 1}`} 
-                className={`w-full h-auto object-contain mx-auto border border-gray-200 rounded-2xl shadow-sm p-4 hover:shadow-md transition-all duration-300 absolute top-0 left-0 ${
+                className={`w-full h-auto object-contain mx-auto rounded-2xl shadow-sm p-0 hover:shadow-md transition-all duration-300 absolute top-0 left-0 ${
                   currentImage === index ? "opacity-100" : "opacity-0"
                 } transition-opacity duration-1000`}
-                style={{ maxHeight: "400px" }}
+                style={{ maxHeight: isMobile ? "300px" : "400px" }}
               />
             ))}
             <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2 z-10">
