@@ -81,9 +81,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-white overflow-hidden">
       <Navbar />
-      <main>
+      <main className="overflow-hidden">
         <HeroSection />
         
         <motion.div 
