@@ -1,3 +1,4 @@
+
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Ruler, Package, Square } from "lucide-react";
@@ -43,7 +44,7 @@ const products = [
       height: "160 εκ.",
       depth: "35 εκ."
     },
-    image: "/lovable-uploads/00772ab6-6083-4b70-8f34-b4542e7c725b.png",
+    image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
     details: "Τα κίτρινα μεταλλικά ντουλάπια είναι ειδικά σχεδιασμένα για εκπαιδευτικούς χώρους και παιδικές εγκαταστάσεις. Το φωτεινό χρώμα προάγει τη θετική διάθεση και διευκολύνει τα παιδιά να αναγνωρίζουν τον προσωπικό τους χώρο αποθήκευσης."
   },
   {
@@ -85,7 +86,7 @@ const products = [
     details: "Τα κόκκινα σχολικά ντουλάπια είναι ειδικά σχεδιασμένα για το απαιτητικό περιβάλλον των εκπαιδευτικών ιδρυμάτων. Διαθέτουν ενισχυμένη κατασκευή που αντέχει στην καθημερινή χρήση από μαθητές, με έμφαση στην ασφάλεια και την πρακτικότητα."
   },
   {
-    id: "blue-locker",
+    id: "blue-metallic-locker",
     title: "Μπλε Μεταλλικά Ντουλάπια",
     description: "Μοντέρνα μεταλλικά ντουλάπια σε μπλε χρώμα με λευκό πλαίσιο για χρήση σε γυμναστήρια και σχολεία.",
     features: [
@@ -159,6 +160,44 @@ const products = [
     },
     image: "/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png",
     details: "Το γκρι ντουλάπι αποθήκευσης είναι μια διαχρονική επιλογή για επαγγελματικούς χώρους που θέλουν να συνδυάσουν την πρακτικότητα με τη διακριτικότητα. Προσφέρει μεγάλο αποθηκευτικό χώρο με προσαρμόσιμα ράφια για βέλτιστη οργάνωση του χώρου και των αντικειμένων."
+  },
+  {
+    id: "metal-cabinet-glass",
+    title: "Μεταλλική Ντουλάπα με Τζάμια",
+    description: "Επαγγελματική μεταλλική ντουλάπα με γυάλινες πόρτες, ιδανική για αρχειοθέτηση σε γραφεία και χώρους υγείας.",
+    features: [
+      "Γυάλινες πόρτες για εύκολη προβολή περιεχομένου",
+      "Ανθεκτική μεταλλική κατασκευή",
+      "Ρυθμιζόμενα εσωτερικά ράφια",
+      "Κλειδαριά ασφαλείας",
+      "Αντιχαρακτική επιφάνεια"
+    ],
+    dimensions: {
+      width: "95 εκ.",
+      height: "195 εκ.",
+      depth: "45 εκ."
+    },
+    image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
+    details: "Η μεταλλική ντουλάπα με γυάλινες πόρτες συνδυάζει την ασφάλεια και την αντοχή της μεταλλικής κατασκευής με τη λειτουργικότητα της άμεσης προβολής του περιεχομένου. Είναι ιδανική για χώρους γραφείων, ιατρεία, φαρμακεία και άλλους επαγγελματικούς χώρους όπου απαιτείται εύκολη πρόσβαση και οργάνωση των αντικειμένων."
+  },
+  {
+    id: "metal-drawers-multi",
+    title: "Συρταριέρες Μεταλλικές Πολλαπλών Χρωμάτων",
+    description: "Μεταλλικές συρταριέρες σε διάφορα χρώματα για αρχειοθέτηση και αποθήκευση αντικειμένων σε επαγγελματικούς χώρους.",
+    features: [
+      "Πολύχρωμος σχεδιασμός",
+      "Συρτάρια με τηλεσκοπικούς οδηγούς",
+      "Ανθεκτική μεταλλική κατασκευή",
+      "Κεντρική κλειδαριά ασφαλείας",
+      "Εργονομικές λαβές"
+    ],
+    dimensions: {
+      width: "70 εκ.",
+      height: "110 εκ.",
+      depth: "50 εκ."
+    },
+    image: "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
+    details: "Οι μεταλλικές συρταριέρες πολλαπλών χρωμάτων προσφέρουν μια ζωηρή και δημιουργική λύση αποθήκευσης για επαγγελματικούς χώρους. Ο μοντέρνος πολύχρωμος σχεδιασμός τους, σε συνδυασμό με τη λειτουργικότητα της μεταλλικής κατασκευής, τις καθιστά ιδανικές για διαφορετικά περιβάλλοντα εργασίας, από δημιουργικά γραφεία μέχρι εκπαιδευτικούς χώρους."
   }
 ];
 
@@ -184,6 +223,12 @@ export default function ProductDetail() {
     );
   }
   
+  // Get similar products, excluding the current product and limiting to 3
+  // Also make sure we don't show the same product twice
+  const similarProducts = products
+    .filter(p => p.id !== productId)  // Exclude current product
+    .slice(0, 3);  // Limit to 3 products
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -282,34 +327,31 @@ export default function ProductDetail() {
         >
           <h2 className="text-2xl font-semibold text-black mb-6">Παρόμοια Προϊόντα</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products
-              .filter(p => p.id !== productId)
-              .slice(0, 3)
-              .map(relatedProduct => (
-                <div key={relatedProduct.id} className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                  <div className="flex items-center justify-center h-64 p-2">
-                    <img 
-                      src={relatedProduct.image} 
-                      alt={relatedProduct.title} 
-                      className="max-w-full max-h-full object-contain"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold text-black mb-2">{relatedProduct.title}</h3>
-                    <p className="text-metal-600 line-clamp-2">{relatedProduct.description}</p>
-                    <Button 
-                      variant="outline" 
-                      className="mt-4 border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl w-full"
-                      onClick={() => {
-                        navigate(`/product/${relatedProduct.id}`);
-                        window.scrollTo(0, 0);
-                      }}
-                    >
-                      Περισσότερες Πληροφορίες
-                    </Button>
-                  </div>
+            {similarProducts.map(relatedProduct => (
+              <div key={relatedProduct.id} className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="flex items-center justify-center h-64 p-2">
+                  <img 
+                    src={relatedProduct.image} 
+                    alt={relatedProduct.title} 
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
-              ))}
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-black mb-2">{relatedProduct.title}</h3>
+                  <p className="text-metal-600 line-clamp-2">{relatedProduct.description}</p>
+                  <Button 
+                    variant="outline" 
+                    className="mt-4 border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl w-full"
+                    onClick={() => {
+                      navigate(`/product/${relatedProduct.id}`);
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    Περισσότερες Πληροφορίες
+                  </Button>
+                </div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
