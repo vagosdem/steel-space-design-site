@@ -1,4 +1,3 @@
-
 import { Package, Shield, Clock, Award, Users, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 const fadeIn = {
@@ -100,12 +99,7 @@ export default function AboutSection() {
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&h=600" alt="Το εργαστήριό μας" className="w-full h-auto" />
             </div>
-            <div className="absolute -bottom-6 right-10 bg-metal-700 p-4 rounded-lg shadow-lg max-w-xs">
-              <p className="text-sm italic text-metal-300">
-                "Η ποιότητα των προϊόντων και η εξυπηρέτησή τους ξεπέρασαν τις προσδοκίες μας."
-              </p>
-              <p className="text-right text-white font-medium mt-2">- Αντώνιος Δεμερούτης, CEO</p>
-            </div>
+            
           </motion.div>
         </div>
       </div>
@@ -114,4 +108,3 @@ export default function AboutSection() {
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-metal-800 w-full"></div>
     </section>;
 }
-
