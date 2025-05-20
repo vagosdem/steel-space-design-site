@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import IndustrySection from "@/components/IndustrySection";
-import ProjectsSection from "@/components/ProjectsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -17,7 +16,6 @@ const Index = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
   const industryRef = useRef<HTMLDivElement>(null);
   const productsRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   
@@ -28,7 +26,6 @@ const Index = () => {
         features: featuresRef,
         industry: industryRef,
         products: productsRef,
-        projects: projectsRef,
         about: aboutRef,
         contact: contactRef
       };
@@ -150,16 +147,6 @@ const Index = () => {
             product={products[2]}
             alignment="right"
           />
-        </motion.div>
-        
-        <motion.div 
-          ref={projectsRef}
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <ProjectsSection />
         </motion.div>
         
         <motion.div 

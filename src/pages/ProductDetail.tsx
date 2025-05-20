@@ -1,10 +1,11 @@
 
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Ruler, Package, Dimensions } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
 
 // Product data
 const products = [
@@ -19,6 +20,11 @@ const products = [
       "Εξαερισμός στις πόρτες",
       "Αντισκωριακή βαφή"
     ],
+    dimensions: {
+      width: "80 εκ.",
+      height: "180 εκ.",
+      depth: "40 εκ."
+    },
     image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
     details: "Τα μεταλλικά ντουλάπια πορτοκαλί με λευκό πλαίσιο είναι ιδανικά για εργασιακούς χώρους, αποδυτήρια γυμναστηρίων και αθλητικές εγκαταστάσεις. Προσφέρουν ασφαλή αποθήκευση προσωπικών αντικειμένων, με μοντέρνα αισθητική που ταιριάζει σε σύγχρονους επαγγελματικούς χώρους."
   },
@@ -33,6 +39,11 @@ const products = [
       "Πολλαπλές θέσεις αποθήκευσης",
       "Φωτεινό χρώμα που διευκολύνει την αναγνώριση"
     ],
+    dimensions: {
+      width: "75 εκ.",
+      height: "160 εκ.",
+      depth: "35 εκ."
+    },
     image: "/lovable-uploads/00772ab6-6083-4b70-8f34-b4542e7c725b.png",
     details: "Τα κίτρινα μεταλλικά ντουλάπια είναι ειδικά σχεδιασμένα για εκπαιδευτικούς χώρους και παιδικές εγκαταστάσεις. Το φωτεινό χρώμα προάγει τη θετική διάθεση και διευκολύνει τα παιδιά να αναγνωρίζουν τον προσωπικό τους χώρο αποθήκευσης."
   },
@@ -47,6 +58,11 @@ const products = [
       "Αντισκωριακή επεξεργασία",
       "Εύκολη εγκατάσταση και προσαρμογή"
     ],
+    dimensions: {
+      width: "80 εκ.",
+      height: "180 εκ.",
+      depth: "40 εκ."
+    },
     image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
     details: "Τα ντουλάπια locker πολλαπλών θέσεων είναι ιδανικά για χώρους με υψηλή κινητικότητα, όπως γυμναστήρια, σχολεία και επαγγελματικοί χώροι. Προσφέρουν οργανωμένη αποθήκευση για πολλούς χρήστες ταυτόχρονα, με έμφαση στην ασφάλεια και τη λειτουργικότητα."
   },
@@ -61,6 +77,11 @@ const products = [
       "Αντιβανδαλιστική κατασκευή",
       "Μεγάλη διάρκεια ζωής"
     ],
+    dimensions: {
+      width: "85 εκ.",
+      height: "175 εκ.",
+      depth: "42 εκ."
+    },
     image: "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
     details: "Τα κόκκινα σχολικά ντουλάπια είναι ειδικά σχεδιασμένα για το απαιτητικό περιβάλλον των εκπαιδευτικών ιδρυμάτων. Διαθέτουν ενισχυμένη κατασκευή που αντέχει στην καθημερινή χρήση από μαθητές, με έμφαση στην ασφάλεια και την πρακτικότητα."
   },
@@ -75,6 +96,11 @@ const products = [
       "Εσωτερικά ράφια και γάντζοι",
       "Διαθέσιμα σε διάφορες διαστάσεις"
     ],
+    dimensions: {
+      width: "78 εκ.",
+      height: "185 εκ.",
+      depth: "38 εκ."
+    },
     image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png",
     details: "Τα μπλε μεταλλικά ντουλάπια συνδυάζουν τη μοντέρνα αισθητική με τη λειτουργικότητα. Το ηρεμιστικό μπλε χρώμα δημιουργεί θετική ατμόσφαιρα σε επαγγελματικούς χώρους, ενώ η ανθεκτική κατασκευή τους εξασφαλίζει μεγάλη διάρκεια ζωής."
   },
@@ -89,6 +115,11 @@ const products = [
       "Ανθεκτική βαφή υψηλής αντοχής",
       "Εύκολη συναρμολόγηση"
     ],
+    dimensions: {
+      width: "90 εκ.",
+      height: "200 εκ.",
+      depth: "45 εκ."
+    },
     image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png",
     details: "Η πορτοκαλί βιτρίνα είναι ιδανική για χώρους όπου απαιτείται η προβολή προϊόντων ή αντικειμένων με ασφάλεια. Συνδυάζει τη λειτουργικότητα με την εντυπωσιακή εμφάνιση, προσθέτοντας χρώμα και χαρακτήρα στον επαγγελματικό σας χώρο."
   },
@@ -103,6 +134,11 @@ const products = [
       "Προσαρμοσμένες λύσεις αποθήκευσης",
       "Εύκολη συντήρηση και καθαρισμός"
     ],
+    dimensions: {
+      width: "82 εκ.",
+      height: "190 εκ.",
+      depth: "40 εκ."
+    },
     image: "/lovable-uploads/de48c2ac-8f96-4f1d-987f-3fa9c559618f.png",
     details: "Το ντουλάπι με τυρκουάζ πόρτα και πορτοκαλί πλαίσιο είναι ιδανικό για σύγχρονους, δημιουργικούς χώρους όπως start-ups, γραφεία design και συνεργατικούς χώρους. Ο τολμηρός συνδυασμός χρωμάτων προσθέτει ενέργεια και προσωπικότητα στο χώρο."
   },
@@ -117,6 +153,11 @@ const products = [
       "Κλασικό σχέδιο που ταιριάζει παντού",
       "Αντικραδασμική προστασία"
     ],
+    dimensions: {
+      width: "95 εκ.",
+      height: "210 εκ.",
+      depth: "50 εκ."
+    },
     image: "/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png",
     details: "Το γκρι ντουλάπι αποθήκευσης είναι μια διαχρονική επιλογή για επαγγελματικούς χώρους που θέλουν να συνδυάσουν την πρακτικότητα με τη διακριτικότητα. Προσφέρει μεγάλο αποθηκευτικό χώρο με προσαρμόσιμα ράφια για βέλτιστη οργάνωση του χώρου και των αντικειμένων."
   }
@@ -127,6 +168,11 @@ export default function ProductDetail() {
   const navigate = useNavigate();
   
   const product = products.find(p => p.id === productId);
+  
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [productId]);
   
   if (!product) {
     return (
@@ -162,11 +208,11 @@ export default function ProductDetail() {
             transition={{ duration: 0.5 }}
             className="flex items-center justify-center"
           >
-            <div className="bg-white rounded-3xl shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="transition-all duration-300">
               <img 
                 src={product.image} 
                 alt={product.title} 
-                className="w-full h-auto object-contain max-h-[500px] rounded-xl p-0"
+                className="w-full h-auto object-contain max-h-[500px]"
               />
             </div>
           </motion.div>
@@ -178,12 +224,33 @@ export default function ProductDetail() {
             className="space-y-6"
           >
             <div>
-              <h1 className="text-3xl font-semibold text-metal-900">{product.title}</h1>
+              <h1 className="text-3xl font-semibold text-black">{product.title}</h1>
               <p className="text-lg text-metal-600 mt-2">{product.description}</p>
             </div>
             
+            <div className="flex flex-wrap gap-6 my-4">
+              <div className="flex items-center gap-2">
+                <div className="bg-blue-100 p-2 rounded-full">
+                  <Dimensions size={18} className="text-blue-600" />
+                </div>
+                <span className="text-sm">Πλάτος: {product.dimensions?.width || "N/A"}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="bg-blue-100 p-2 rounded-full">
+                  <Ruler size={18} className="text-blue-600" />
+                </div>
+                <span className="text-sm">Ύψος: {product.dimensions?.height || "N/A"}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="bg-blue-100 p-2 rounded-full">
+                  <Package size={18} className="text-blue-600" />
+                </div>
+                <span className="text-sm">Βάθος: {product.dimensions?.depth || "N/A"}</span>
+              </div>
+            </div>
+            
             <div>
-              <h2 className="text-xl font-medium text-metal-900 mb-2">Χαρακτηριστικά</h2>
+              <h2 className="text-xl font-medium text-black mb-2">Χαρακτηριστικά</h2>
               <ul className="list-disc list-inside space-y-1 text-metal-600">
                 {product.features.map((feature, index) => (
                   <li key={index}>{feature}</li>
@@ -194,7 +261,7 @@ export default function ProductDetail() {
             <div className="pt-4">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 rounded-xl"
+                className="bg-blue-600 hover:bg-blue-700 rounded-xl w-full mb-3"
                 onClick={() => navigate("/#contact")}
               >
                 Ζητήστε Προσφορά
@@ -209,7 +276,7 @@ export default function ProductDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <h2 className="text-2xl font-semibold text-metal-900 mb-4">Περισσότερες Πληροφορίες</h2>
+            <h2 className="text-2xl font-semibold text-black mb-4">Περισσότερες Πληροφορίες</h2>
             <p className="text-metal-600">{product.details}</p>
           </motion.div>
         </div>
@@ -220,27 +287,30 @@ export default function ProductDetail() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-2xl font-semibold text-metal-900 mb-6">Παρόμοια Προϊόντα</h2>
+          <h2 className="text-2xl font-semibold text-black mb-6">Παρόμοια Προϊόντα</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products
               .filter(p => p.id !== productId)
               .slice(0, 3)
               .map(relatedProduct => (
                 <div key={relatedProduct.id} className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                  <div className="p-0">
+                  <div className="flex items-center justify-center h-48 p-2">
                     <img 
                       src={relatedProduct.image} 
                       alt={relatedProduct.title} 
-                      className="w-full h-48 object-cover object-center"
+                      className="max-w-full max-h-full object-contain"
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-semibold text-metal-900 mb-2">{relatedProduct.title}</h3>
+                    <h3 className="text-lg font-semibold text-black mb-2">{relatedProduct.title}</h3>
                     <p className="text-metal-600 line-clamp-2">{relatedProduct.description}</p>
                     <Button 
                       variant="outline" 
                       className="mt-4 border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl w-full"
-                      onClick={() => navigate(`/product/${relatedProduct.id}`)}
+                      onClick={() => {
+                        navigate(`/product/${relatedProduct.id}`);
+                        window.scrollTo(0, 0);
+                      }}
                     >
                       Περισσότερες Πληροφορίες
                     </Button>

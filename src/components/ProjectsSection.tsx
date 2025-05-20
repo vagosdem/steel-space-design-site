@@ -11,7 +11,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Sample project data - replace with actual data
 const projects = [
@@ -178,9 +177,9 @@ export default function ProjectsSection() {
         </motion.div>
         
         <div className="mt-12 text-center">
-          <Link to="/contact">
+          <Link to="/products">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Θέλω κι Εγώ Παρόμοια Λύση
+              Δείτε τα Προϊόντα μας
             </Button>
           </Link>
         </div>
