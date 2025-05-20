@@ -1,7 +1,6 @@
-
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Ruler, Package, Dimensions } from "lucide-react";
+import { ArrowLeft, Ruler, Package, Square } from "lucide-react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -126,7 +125,7 @@ const products = [
   {
     id: "turquoise-orange-locker",
     title: "Ντουλάπι Τυρκουάζ με Πορτοκαλί",
-    description: "Μοντέρνος συνδυασμός χρωμάτων με τυρκουάζ πόρτα και πορτοκαλί πλαίσιο, ιδανικά για δημιουργικούς χώρους εργασίας.",
+    description: "Μοντέρνος συνδυασμός χρωμάτων με τυρκουάζ πόρτα και πορτοκαλί πλαίσιο, ιδανικά για δημιουργικούς χώρους υποσχετικής εργασίας.",
     features: [
       "Μοντέρνος σχεδιασμός δύο χρωμάτων",
       "Εργονομικές λαβές",
@@ -231,7 +230,7 @@ export default function ProductDetail() {
             <div className="flex flex-wrap gap-6 my-4">
               <div className="flex items-center gap-2">
                 <div className="bg-blue-100 p-2 rounded-full">
-                  <Dimensions size={18} className="text-blue-600" />
+                  <Square size={18} className="text-blue-600" />
                 </div>
                 <span className="text-sm">Πλάτος: {product.dimensions?.width || "N/A"}</span>
               </div>
@@ -258,6 +257,11 @@ export default function ProductDetail() {
               </ul>
             </div>
             
+            <div>
+              <h2 className="text-xl font-medium text-black mb-2">Περισσότερες Πληροφορίες</h2>
+              <p className="text-metal-600">{product.details}</p>
+            </div>
+            
             <div className="pt-4">
               <Button 
                 size="lg" 
@@ -267,17 +271,6 @@ export default function ProductDetail() {
                 Ζητήστε Προσφορά
               </Button>
             </div>
-          </motion.div>
-        </div>
-        
-        <div className="mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <h2 className="text-2xl font-semibold text-black mb-4">Περισσότερες Πληροφορίες</h2>
-            <p className="text-metal-600">{product.details}</p>
           </motion.div>
         </div>
         
@@ -294,7 +287,7 @@ export default function ProductDetail() {
               .slice(0, 3)
               .map(relatedProduct => (
                 <div key={relatedProduct.id} className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
-                  <div className="flex items-center justify-center h-48 p-2">
+                  <div className="flex items-center justify-center h-64 p-2">
                     <img 
                       src={relatedProduct.image} 
                       alt={relatedProduct.title} 
