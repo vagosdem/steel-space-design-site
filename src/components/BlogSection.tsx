@@ -5,30 +5,30 @@ import { Image } from "@/components/ui/image";
 const blogPosts = [
   {
     id: 1,
-    title: "How to Choose the Perfect Steel Locker for Your Gym",
-    excerpt: "Learn about the key factors to consider when selecting steel lockers for your fitness facility, from size to security features.",
+    title: "Πώς να επιλέξετε την τέλεια μεταλλική ντουλάπα για το γυμναστήριό σας",
+    excerpt: "Μάθετε για τους βασικούς παράγοντες που πρέπει να λάβετε υπόψη κατά την επιλογή μεταλλικών ντουλαπών για την εγκατάστασή σας, από το μέγεθος έως τα χαρακτηριστικά ασφαλείας.",
     image: "/images/blog/gym-lockers.jpg",
     date: "2024-03-15",
-    readTime: "5 min read",
-    slug: "choose-perfect-steel-locker-gym"
+    readTime: "5 λεπτά ανάγνωσης",
+    slug: "epilogi-metalliki-ntoulapa-gymnastirio"
   },
   {
     id: 2,
-    title: "Custom Closet Design: Maximizing Your Storage Space",
-    excerpt: "Discover innovative ways to design custom closets that maximize storage while maintaining style and functionality.",
+    title: "Σχεδιασμός Συρταριέρας Αρχειοθέτησης: Μεγιστοποίηση του Χώρου Αποθήκευσης",
+    excerpt: "Ανακαλύψτε καινοτόμους τρόπους για τον σχεδιασμό συρταριερών που μεγιστοποιούν την αποθήκευση διατηρώντας παράλληλα το στυλ και τη λειτουργικότητα.",
     image: "/images/blog/custom-closet.jpg",
     date: "2024-03-10",
-    readTime: "7 min read",
-    slug: "custom-closet-design-maximizing-storage"
+    readTime: "7 λεπτά ανάγνωσης",
+    slug: "sxediasmos-syrtarieras-arxiothetsis"
   },
   {
     id: 3,
-    title: "The Benefits of Steel Lockers in Educational Institutions",
-    excerpt: "Explore why steel lockers are the preferred choice for schools and universities, from durability to security.",
+    title: "Τα Πλεονεκτήματα των Μεταλλικών Ντουλαπών σε Εκπαιδευτικά Ιδρύματα",
+    excerpt: "Εξερευνήστε γιατί οι μεταλλικές ντουλάπες είναι η προτιμώμενη επιλογή για σχολεία και πανεπιστήμια, από την ανθεκτικότητα έως την ασφάλεια.",
     image: "/images/blog/school-lockers.jpg",
     date: "2024-03-05",
-    readTime: "6 min read",
-    slug: "benefits-steel-lockers-education"
+    readTime: "6 λεπτά ανάγνωσης",
+    slug: "pleonektimata-metallikon-ntoulapon-ekpaideftika"
   }
 ];
 
@@ -38,11 +38,11 @@ export function BlogSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Latest Insights & Tips
+            Τελευταία Άρθρα & Συμβουλές
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Stay informed about the latest trends in storage solutions and get expert advice
-            on choosing the right products for your space.
+            Μείνετε ενημερωμένοι για τις τελευταίες τάσεις στις λύσεις αποθήκευσης και λάβετε 
+            ειδικές συμβουλές για την επιλογή των κατάλληλων προϊόντων για τον χώρο σας.
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export function BlogSection() {
                 <div className="p-6">
                   <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                     <time dateTime={post.date}>
-                      {new Date(post.date).toLocaleDateString('en-US', {
+                      {new Date(post.date).toLocaleDateString('el-GR', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric'
@@ -82,7 +82,7 @@ export function BlogSection() {
                     variant="link"
                     className="text-blue-600 hover:text-blue-700 p-0"
                   >
-                    Read More →
+                    Διαβάστε Περισσότερα →
                   </Button>
                 </div>
               </Link>
@@ -97,7 +97,7 @@ export function BlogSection() {
               variant="outline"
               className="border-blue-600 text-blue-600 hover:bg-blue-50"
             >
-              View All Articles
+              Δείτε Όλα τα Άρθρα
             </Button>
           </Link>
         </div>
