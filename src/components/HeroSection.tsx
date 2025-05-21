@@ -79,24 +79,24 @@ export default function HeroSection() {
           className="space-y-6 max-w-4xl mx-auto"
         >
           <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl text-metal-900 tracking-tight">
-            Premium Steel Lockers & Custom Storage Solutions
+            Μεταλλικές Ντουλάπες & Συρταριέρες Αρχειοθέτησης
             <br className="hidden sm:inline" />
-            <span className="text-blue-600"> for Your Space</span>
+            <span className="text-blue-600"> για Επαγγελματικούς Χώρους</span>
           </h1>
           <p className="text-lg md:text-xl text-metal-600 max-w-3xl mx-auto">
-            High-quality steel lockers and custom closets for homes, gyms, and offices. 
-            Durable, secure, and stylish storage solutions with free quotes and fast delivery.
+            Custom lockers, συρταριέρες πολλαπλών θέσεων & industrial αποθηκευτικές λύσεις, 
+            σχεδιασμένες και κατασκευασμένες στην Ελλάδα.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Link to="#contact">
               <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                Get Your Custom Locker Today →
+                Ζητήστε Προσφορά →
               </Button>
             </Link>
             <Link to="#projects">
               <Button size="lg" variant="outline" className="w-full sm:w-auto border-metal-300 px-8 py-6 text-lg text-slate-50 bg-zinc-950 hover:bg-zinc-800 rounded-xl">
-                View Our Projects
+                Δείτε τα Έργα Μας
               </Button>
             </Link>
           </div>
@@ -106,19 +106,19 @@ export default function HeroSection() {
               <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span className="text-sm font-medium">Free Quotes</span>
+              <span className="text-sm font-medium">Δωρεάν Προσφορές</span>
             </div>
             <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
               <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span className="text-sm font-medium">Fast Delivery</span>
+              <span className="text-sm font-medium">Γρήγορη Παράδοση</span>
             </div>
             <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full">
               <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
-              <span className="text-sm font-medium">10-Year Warranty</span>
+              <span className="text-sm font-medium">10ετής Εγγύηση</span>
             </div>
           </div>
         </motion.div>
