@@ -1,56 +1,42 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Toaster } from "sonner";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import { BlogSection } from "@/components/BlogSection";
+import { LeadCaptureForm } from "@/components/LeadCaptureForm";
+import ProductDetail from "@/pages/ProductDetail";
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import Index from "./pages/Index";
-import Products from "./pages/Products";
-import ProductDetail from "./pages/ProductDetail";
-import NotFound from "./pages/NotFound";
+function Home() {
+  return (
+    <>
+      <HeroSection />
+      <BlogSection />
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <LeadCaptureForm />
+        </div>
+      </section>
+    </>
+  );
+}
 
-const queryClient = new QueryClient();
-
-// Component to handle scrolling to sections when navigating to URLs with params
-const ScrollToSection = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    // Check for scrollTo in URL
-    if (location.search.includes('scrollTo=contact')) {
-      setTimeout(() => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-          contactSection.scrollIntoView({ behavior: 'smooth' });
-          // Clean up the URL
-          navigate('/', { replace: true });
-        }
-      }, 100);
-    }
-  }, [location, navigate]);
-  
-  return null;
-};
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <BrowserRouter>
-        <ScrollToSection />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/product/:productId" element={<ProductDetail />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Toaster />
-        <Sonner />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+      <Toaster position="top-center" />
+    </Router>
+  );
+}
 
 export default App;
