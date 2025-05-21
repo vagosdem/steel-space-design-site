@@ -22,7 +22,7 @@ export default function AboutSection() {
           <div className="lg:w-1/2">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
               Steel Space Design
-            </p>
+            </h2>
             <p className="text-lg mb-6">
               Welcome to Steel Space Design, where innovation meets craftsmanship
               in the world of steel structures. We are a leading provider of
