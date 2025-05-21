@@ -12,7 +12,7 @@ const fadeIn = {
 };
 export default function AboutSection() {
  return (
-    <section id="about" className="bg-metal-800 text-white relative">
+   <section id="about" className="bg-metal-800 text-white relative">
       {/* Transition gradient at the top */}
       <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white to-metal-800 w-full"></div>
 
@@ -56,7 +56,7 @@ export default function AboutSection() {
                 className="w-full h-auto"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
