@@ -49,10 +49,10 @@ export function LeadCaptureForm() {
     <div className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-          Get Your Custom Quote
+          Ζητήστε Προσφορά
         </h2>
         <p className="text-gray-600">
-          Fill out the form below and we'll get back to you within 24 hours
+          Συμπληρώστε την παρακάτω φόρμα και θα επικοινωνήσουμε μαζί σας εντός 24 ωρών
         </p>
       </div>
 
@@ -60,7 +60,7 @@ export function LeadCaptureForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-              Full Name *
+              Ονοματεπώνυμο *
             </label>
             <Input
               id="name"
@@ -70,13 +70,13 @@ export function LeadCaptureForm() {
               value={formData.name}
               onChange={handleChange}
               className="w-full"
-              placeholder="John Doe"
+              placeholder="Γιώργος Παπαδόπουλος"
             />
           </div>
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email Address *
+              Email *
             </label>
             <Input
               id="email"
@@ -86,7 +86,7 @@ export function LeadCaptureForm() {
               value={formData.email}
               onChange={handleChange}
               className="w-full"
-              placeholder="john@example.com"
+              placeholder="giorgos@example.com"
             />
           </div>
         </div>
@@ -94,7 +94,7 @@ export function LeadCaptureForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-              Phone Number
+              Τηλέφωνο
             </label>
             <Input
               id="phone"
@@ -103,13 +103,13 @@ export function LeadCaptureForm() {
               value={formData.phone}
               onChange={handleChange}
               className="w-full"
-              placeholder="+1 (555) 000-0000"
+              placeholder="+30 69XXXXXXXX"
             />
           </div>
 
           <div>
             <label htmlFor="product" className="block text-sm font-medium text-gray-700 mb-1">
-              Product Interest *
+              Ενδιαφέρον *
             </label>
             <select
               id="product"
@@ -119,17 +119,17 @@ export function LeadCaptureForm() {
               onChange={handleChange}
               className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option value="lockers">Steel Lockers</option>
-              <option value="closets">Custom Closets</option>
-              <option value="storage">Storage Solutions</option>
-              <option value="other">Other</option>
+              <option value="lockers">Μεταλλικές Ντουλάπες</option>
+              <option value="closets">Συρταριέρες Αρχειοθέτησης</option>
+              <option value="storage">Αποθηκευτικές Λύσεις</option>
+              <option value="other">Άλλο</option>
             </select>
           </div>
         </div>
 
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-            Project Details *
+            Λεπτομέρειες Έργου *
           </label>
           <Textarea
             id="message"
@@ -138,7 +138,7 @@ export function LeadCaptureForm() {
             value={formData.message}
             onChange={handleChange}
             className="w-full min-h-[120px]"
-            placeholder="Tell us about your project requirements..."
+            placeholder="Περιγράψτε τις απαιτήσεις του έργου σας..."
           />
         </div>
 
@@ -149,18 +149,18 @@ export function LeadCaptureForm() {
             disabled={isSubmitting}
             className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            {isSubmitting ? "Sending..." : "Get Your Quote"}
+            {isSubmitting ? "Αποστολή..." : "Ζητήστε Προσφορά"}
           </Button>
         </div>
 
         <p className="text-sm text-gray-500 text-center">
-          By submitting this form, you agree to our{" "}
+          Με την υποβολή της φόρμας, συμφωνείτε με την{" "}
           <a href="/privacy" className="text-blue-600 hover:underline">
-            Privacy Policy
+            Πολιτική Απορρήτου
           </a>{" "}
-          and{" "}
+          και τους{" "}
           <a href="/terms" className="text-blue-600 hover:underline">
-            Terms of Service
+            Όρους Χρήσης
           </a>
           .
         </p>
