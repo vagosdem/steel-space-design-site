@@ -41,12 +41,11 @@ export default function AboutSection() {
               At Steel Space Design, we believe in pushing the boundaries of what
               is possible with steel. We embrace the latest technologies and
               design principles to deliver innovative solutions that are not only
-              structurally sound but also visually striking. Our collaborative
-              approach ensures that we work closely with our clients,
+              structurally sound but also visually striking. Our collaborative approach ensures that we work closely with our clients,
               understanding their unique requirements and translating them into
               functional and inspiring steel spaces.
-            </div>
-          </p>
+            </p>
+          </div>
           <div className="lg:w-1/2">
             {/* Placeholder for an image or illustration */}
             <div className="bg-metal-700 rounded-lg overflow-hidden">
