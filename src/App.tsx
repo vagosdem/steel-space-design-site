@@ -6,6 +6,8 @@ import HeroSection from "@/components/HeroSection";
 import { BlogSection } from "@/components/BlogSection";
 import { LeadCaptureForm } from "@/components/LeadCaptureForm";
 import ProductDetail from "@/pages/ProductDetail";
+import Products from "@/pages/Products";
+import NotFound from "@/pages/NotFound";
 
 function Home() {
   return (
@@ -29,7 +31,9 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
