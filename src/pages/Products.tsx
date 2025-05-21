@@ -99,7 +99,7 @@ const products = [
     description: "Φωτεινά κίτρινα ντουλάπια με μεταλλική κατασκευή, ιδανικά για παιδικούς σταθμούς, σχολικές εγκαταστάσεις και χαρούμενους χώρους.",
     image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
     category: "lockers",
-    type: "school",
+    type: "creative",
     color: "yellow",
     material: "metal",
     features: ["colorful", "ventilation", "child-friendly"]

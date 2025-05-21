@@ -53,6 +53,7 @@ export default function ProductShowcase({
               <img 
                 src={product.image} 
                 alt={product.title} 
+                loading="lazy"
                 className="w-full h-auto object-contain mx-auto max-h-[500px]" 
               />
             </div>

@@ -4,9 +4,9 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import IndustrySection from "@/components/IndustrySection";
 import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect, Suspense, lazy } from "react";
+
+const ContactSection = lazy(() => import("@/components/ContactSection"));
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import ProductShowcase from "@/components/ProductShowcase";
@@ -18,6 +18,7 @@ const Index = () => {
   const productsRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const Footer = lazy(() => import("@/components/Footer"));
   
   useEffect(() => {
     if (location.hash) {
@@ -149,18 +150,22 @@ const Index = () => {
           />
         </motion.div>
         
-        <motion.div 
-          ref={contactRef}
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          id="contact"
-        >
-          <ContactSection />
-        </motion.div>
+        <Suspense fallback={<div>Loading Contact...</div>}>
+ <motion.div
+ ref={contactRef}
+ variants={sectionVariants}
+ initial="hidden"
+ whileInView="visible"
+ viewport={{ once: true }}
+ id="contact"
+ >
+ <ContactSection />
+ </motion.div>
+ </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={<div>Loading Footer...</div>}>
+ <Footer />
+ </Suspense>
     </div>
   );
 };
