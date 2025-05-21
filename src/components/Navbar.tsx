@@ -74,7 +74,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`sticky top-0 z-40 w-full transition-all duration-200 ${scrolled ? 'bg-metal-900 shadow-md' : 'bg-transparent'}`}>
+  <header className={`sticky top-0 z-40 w-full transition-all duration-200 ${scrolled ? 'bg-metal-900 shadow-md' : 'bg-transparent'}`}>
       <nav className="container-section !py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
