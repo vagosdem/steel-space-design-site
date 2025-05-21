@@ -46,7 +46,7 @@ export default function AboutSection() {
               understanding their unique requirements and translating them into
               functional and inspiring steel spaces.
             </div>
-          </div>
+          </p>
           <div className="lg:w-1/2">
             {/* Placeholder for an image or illustration */}
             <div className="bg-metal-700 rounded-lg overflow-hidden">
