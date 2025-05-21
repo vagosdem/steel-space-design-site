@@ -74,7 +74,7 @@ export default function Navbar() {
   };
 
   return (
- <header className={`sticky top-0 z-40 w-full transition-all duration-200 ${scrolled ? 'bg-metal-900 shadow-md' : 'bg-transparent'}`}>
+    <header className={`sticky top-0 z-40 w-full transition-all duration-200 ${scrolled ? 'bg-metal-900 shadow-md' : 'bg-transparent'}`}>
       <nav className="container-section !py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
@@ -115,8 +115,9 @@ export default function Navbar() {
               className={`rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
               >
               Ζήτα Προσφορά
- </button>
-
+            </button>
+          </div>
+        </div>
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
@@ -142,7 +143,7 @@ export default function Navbar() {
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
-          <div className={`md:hidden mt-4 pb-4 space-y-4 ${scrolled ? 'bg-metal-900' : 'bg-white'}`}>
+          <div className={`md:hidden absolute top-16 left-0 w-full mt-0 pb-4 space-y-4 ${scrolled ? 'bg-metal-900' : 'bg-white'} shadow-md`}>
             <button 
               onClick={navigateToProducts}
               className={`block w-full text-left p-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-700 hover:text-metal-900'} font-medium`}
@@ -172,9 +173,9 @@ export default function Navbar() {
               className={`w-full rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
             >
               Ζήτα Προσφορά
- </button>
+            </button>
+          </div>
         )}
- </div>
     </header>
   );
 }
