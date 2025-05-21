@@ -59,21 +59,21 @@ const Index = () => {
       id: "yellow-lockers",
       title: "Κίτρινα Μεταλλικά Ντουλάπια",
       description: "Φωτεινά κίτρινα ντουλάπια με μαύρο πλαίσιο και μεταλλική κατασκευή, ιδανικά για παιδικούς σταθμούς, σχολικές εγκαταστάσεις και χαρούμενους χώρους.",
-      image: "/lovable-uploads/00772ab6-6083-4b70-8f34-b4542e7c725b.png",
-      type: "locker"
+      image: "/lovable-uploads/IMG_23802.jpg",
+ type: "locker"
     },
     {
       id: "orange-white-locker",
       title: "Ντουλάπια Locker Πολλαπλών Θέσεων",
       description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για επαγγελματικούς χώρους και αποδυτήρια.",
-      image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
+      image: "/lovable-uploads/IMG_99002.jpg",
       type: "locker"
-    },
+ },
     {
       id: "red-school-lockers",
       title: "Κόκκινα Σχολικά Ντουλάπια",
       description: "Ανθεκτικά μεταλλικά ντουλάπια σε κόκκινο χρώμα με μαύρο πλαίσιο, σχεδιασμένα για σχολεία και εκπαιδευτικά ιδρύματα με αριθμημένες θήκες.",
-      image: "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
+      image: "/lovable-uploads/IMG_97682.jpg",
       type: "locker"
     }
   ];

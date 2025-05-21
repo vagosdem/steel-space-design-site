@@ -94,12 +94,12 @@ export default function AboutSection() {
         }} transition={{
           duration: 0.7
         }}>
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-600 rounded-lg opacity-20"></div>
+ <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-600 rounded-lg opacity-20"></div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-600 rounded-lg opacity-20"></div>
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&h=600" alt="Το εργαστήριό μας" className="w-full h-auto" />
-            </div>
-            
+
+
           </motion.div>
         </div>
       </div>

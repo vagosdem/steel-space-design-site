@@ -1,5 +1,5 @@
 import { Archive, Facebook, Instagram, Linkedin } from "lucide-react";
-export default function Footer() {
+export default function Footer(){
   const year = new Date().getFullYear();
   return <footer className="bg-metal-900 text-white">
       <div className="container-section !py-16">
@@ -48,8 +48,7 @@ export default function Footer() {
         <div className="border-t border-metal-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-metal-500 text-sm">
             © {year} Stereon. Με επιφύλαξη παντός δικαιώματος.
-          </div>
-          
+          </div>          
         </div>
       </div>
     </footer>;

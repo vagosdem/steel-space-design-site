@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Archive } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -13,7 +12,7 @@ export default function Navbar() {
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
+      if (window.scrollY > 0) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -111,12 +110,11 @@ export default function Navbar() {
             >
               Επικοινωνία
             </button>
-            <Button 
+            <button 
               onClick={handleQuoteRequest}
               className={`rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
-            >
+              >
               Ζήτα Προσφορά
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -169,12 +167,11 @@ export default function Navbar() {
             >
               Επικοινωνία
             </button>
-            <Button 
+            <button 
               onClick={handleQuoteRequest}
               className={`w-full rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
-            >
+              >
               Ζήτα Προσφορά
-            </Button>
           </div>
         )}
       </nav>

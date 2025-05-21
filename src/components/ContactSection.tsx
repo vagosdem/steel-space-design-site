@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
@@ -13,7 +13,7 @@ export default function ContactSection() {
     email: "",
     phone: "",
     company: "",
-    message: ""
+    message: "",
   });
   const [loading, setLoading] = useState(false);
   const {
@@ -47,7 +47,7 @@ export default function ContactSection() {
         email: "",
         phone: "",
         company: "",
-        message: ""
+        message: "",
       });
     }, 1000);
   };
@@ -55,7 +55,7 @@ export default function ContactSection() {
   const fadeIn = {
     hidden: {
       opacity: 0,
-      y: 20
+      y: 20,
     },
     visible: {
       opacity: 1,
@@ -70,7 +70,7 @@ export default function ContactSection() {
     <section id="contact" className="bg-metal-900 text-white">
       <div className="container-section">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{
+          <motion.div initial="hidden" whileInView="visible" viewport={{ 
           once: true
         }} variants={fadeIn}>
             <div className="mb-6">
@@ -126,15 +126,15 @@ export default function ContactSection() {
             </div>
             
             <div className="space-y-4">
-              
-              
-              
+
+
+
             </div>
           </motion.div>
           
           <motion.div initial="hidden" whileInView="visible" viewport={{
           once: true
-        }} variants={fadeIn} transition={{
+        }} variants={fadeIn} transition={{ 
           delay: 0.2
         }}>
             <form onSubmit={handleSubmit} className="bg-metal-800 rounded-lg p-6 border border-metal-700 shadow-xl">

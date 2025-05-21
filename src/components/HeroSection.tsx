@@ -20,9 +20,9 @@ export default function HeroSection() {
   
   const productImages = [
     "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
-    "/lovable-uploads/00772ab6-6083-4b70-8f34-b4542e7c725b.png",
+    "/lovable-uploads/IMG_23802.jpg",
     "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
-    "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png"
+    "/lovable-uploads/IMG_99002.jpg"
   ];
 
   // Touch handling for mobile swipe

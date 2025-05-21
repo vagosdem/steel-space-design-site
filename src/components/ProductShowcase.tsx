@@ -51,8 +51,9 @@ export default function ProductShowcase({
           >
             <div className="transition-all duration-300 mx-auto my-0 py-0">
               <img 
-                src={product.image} 
+                src={product.image.replace("f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png", "IMG_21202.jpg").replace("00772ab6-6083-4b70-8f34-b4542e7c725b.png", "IMG_054822.jpg").replace("28a84624-2235-4f42-a8df-59c526397527.png", "IMG_23802.jpg").replace("c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png", "IMG_99002.jpg")}
                 alt={product.title} 
+
                 loading="lazy"
                 className="w-full h-auto object-contain mx-auto max-h-[500px]" 
               />
