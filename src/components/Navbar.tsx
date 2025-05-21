@@ -74,7 +74,7 @@ export default function Navbar() {
   };
 
   return (
-  <header className={`sticky top-0 z-40 w-full transition-all duration-200 ${scrolled ? 'bg-metal-900 shadow-md' : 'bg-transparent'}`}>
+ <header className={`sticky top-0 z-40 w-full transition-all duration-200 ${scrolled ? 'bg-metal-900 shadow-md' : 'bg-transparent'}`}>
       <nav className="container-section !py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
@@ -115,7 +115,7 @@ export default function Navbar() {
               className={`rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
               >
               Ζήτα Προσφορά
-          </div>
+ </button>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
@@ -170,11 +170,11 @@ export default function Navbar() {
             <button 
               onClick={handleQuoteRequest}
               className={`w-full rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
-              >
+            >
               Ζήτα Προσφορά
-          </div>
+ </button>
         )}
-      </nav>
+ </div>
     </header>
   );
 }
