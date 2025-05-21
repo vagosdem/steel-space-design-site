@@ -120,7 +120,7 @@ export default function Navbar() {
         </div>
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button
+ <button
               className={`ml-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-500 hover:text-metal-900'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -139,7 +139,7 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
-        </div>
+      </nav>
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
