@@ -81,7 +81,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (existingItemIndex > -1) {
         // Update quantity if item exists
         const updatedItems = [...currentItems];
-        updatedItems[existingItemIndex].quantity += newItem.quantity;
+        updatedItems[existingItemIndex].quantity += newItem.quantity; 
         
         toast({
           title: "Προστέθηκε στο καλάθι",
@@ -93,7 +93,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         // Add new item if it doesn't exist
         toast({
           title: "Προστέθηκε στο καλάθι",
-          description: `${newItem.title} x${newItem.quantity}`,
+          description: `${newItem.title} x${newItem.quantity} (IMG_99002.jpg)`,
         });
         
         return [...currentItems, newItem];

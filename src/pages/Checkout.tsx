@@ -290,14 +290,14 @@ export default function Checkout() {
                   <div key={item.id} className="flex gap-3">
                     <div className="w-16 h-16 bg-gray-100 rounded-md overflow-hidden">
                       <img 
-                        src={item.image} 
+                        src={item.image.replace("c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png", "IMG_97682.jpg")} 
                         alt={item.title} 
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div className="flex-grow">
                       <p className="font-medium">{item.title}</p>
-                      <p className="text-sm text-gray-500">{item.quantity} x {item.price.toFixed(2)}€</p>
+                      <p className="text-sm text-gray-500">{item.quantity} x {item.price?.toFixed(2)}€</p>
                     </div>
                     <div className="text-right">
                       <p className="font-bold">{(item.price * item.quantity).toFixed(2)}€</p>

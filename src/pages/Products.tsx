@@ -22,7 +22,7 @@ const products = [
     description: "Επαγγελματική μεταλλική ντουλάπα με γυάλινες πόρτες, ιδανική για αρχειοθέτηση σε γραφεία και χώρους υγείας.",
     image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
     category: "cabinets",
-    type: "office",
+ type: "office",
     color: "white",
     material: "metal",
     features: ["glass-doors", "adjustable-shelves"]
@@ -44,7 +44,7 @@ const products = [
     description: "Μεταλλικές συρταριέρες σε διάφορα χρώματα για αρχειοθέτηση και αποθήκευση αντικειμένων σε επαγγελματικούς χώρους.",
     image: "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
     category: "drawers",
-    type: "creative",
+ type: "creative",
     color: "multi",
     material: "metal",
     features: ["portable", "colorful", "drawer-dividers"]
@@ -79,7 +79,7 @@ const products = [
     category: "cabinets",
     type: "retail",
     color: "orange",
-    material: "metal",
+    material: "metal", 
     features: ["glass-doors", "display", "adjustable-shelves"]
   },
   {
@@ -97,9 +97,9 @@ const products = [
     id: "yellow-lockers",
     title: "Κίτρινα Μεταλλικά Ντουλάπια",
     description: "Φωτεινά κίτρινα ντουλάπια με μεταλλική κατασκευή, ιδανικά για παιδικούς σταθμούς, σχολικές εγκαταστάσεις και χαρούμενους χώρους.",
-    image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
+    image: "/lovable-uploads/IMG_054822.jpg",
     category: "lockers",
-    type: "school",
+    type: "creative",
     color: "yellow",
     material: "metal",
     features: ["colorful", "ventilation", "child-friendly"]

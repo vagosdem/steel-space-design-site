@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Archive } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -13,7 +12,7 @@ export default function Navbar() {
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
+      if (window.scrollY > 0) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -111,17 +110,17 @@ export default function Navbar() {
             >
               Επικοινωνία
             </button>
-            <Button 
+            <button 
               onClick={handleQuoteRequest}
               className={`rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
-            >
+              >
               Ζήτα Προσφορά
-            </Button>
+            </button>
           </div>
-
+        </div>
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button
+ <button
               className={`ml-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-500 hover:text-metal-900'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -140,11 +139,11 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
-        </div>
+      </nav>
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
-          <div className={`md:hidden mt-4 pb-4 space-y-4 ${scrolled ? 'bg-metal-900' : 'bg-white'}`}>
+          <div className={`md:hidden absolute top-16 left-0 w-full mt-0 pb-4 space-y-4 ${scrolled ? 'bg-metal-900' : 'bg-white'} shadow-md`}>
             <button 
               onClick={navigateToProducts}
               className={`block w-full text-left p-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-700 hover:text-metal-900'} font-medium`}
@@ -169,15 +168,14 @@ export default function Navbar() {
             >
               Επικοινωνία
             </button>
-            <Button 
+            <button 
               onClick={handleQuoteRequest}
               className={`w-full rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
             >
               Ζήτα Προσφορά
-            </Button>
+            </button>
           </div>
         )}
-      </nav>
     </header>
   );
 }

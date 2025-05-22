@@ -14,25 +14,20 @@ import React, { useCallback } from "react";
 
 // Product data with updated images
 const productCategories = [{
-  id: "white-brown-locker",
+ id: "white-brown-locker",
   title: "Ντουλάπια Πορτοκαλί με Λευκό Πλαίσιο",
   description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για επαγγελματικούς χώρους.",
-  image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png"
+ image: "/lovable-uploads/IMG_99002.jpg"
 }, {
   id: "blue-locker",
   title: "Μπλε Μεταλλικά Ντουλάπια",
   description: "Μοντέρνα μεταλλικά ντουλάπια σε μπλε χρώμα με λευκό πλαίσιο για χρήση σε γυμναστήρια και σχολεία.",
-  image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png"
+  image: "/lovable-uploads/IMG_13722.jpg"
 }, {
-  id: "orange-display-cabinet",
+  id: "orange-display-cabinet", // Keep this ID consistent with the product detail page link
   title: "Πορτοκαλί Βιτρίνα",
   description: "Μεταλλική βιτρίνα με γυάλινη πόρτα σε έντονο πορτοκαλί χρώμα, ιδανική για εκθετήρια και αποθήκευση προϊόντων.",
-  image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png"
-}, {
-  id: "turquoise-orange-locker",
-  title: "Ντουλάπι Τυρκουάζ με Πορτοκαλί",
-  description: "Μοντέρνος συνδυασμός χρωμάτων με τυρκουάζ πόρτα και πορτοκαλί πλαίσιο, ιδανικά για δημιουργικούς χώρους εργασίας.",
-  image: "/lovable-uploads/de48c2ac-8f96-4f1d-987f-3fa9c559618f.png"
+  image: "/lovable-uploads/IMG_21202.jpg" // Replaced with compressed image
 }];
 
 en// Memoized ProductCard component

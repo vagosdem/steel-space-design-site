@@ -22,7 +22,7 @@ const projects = [
     clientName: "Fitness Plus",
     testimonial: "Άψογη κατασκευή και παράδοση στην ώρα τους. Εξαιρετική ποιότητα.",
     image: "https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?w=800&h=600&auto=format"
-  },
+  }, 
   {
     id: 2,
     title: "Αρχειοθήκες Δικηγορικού Γραφείου",
@@ -57,8 +57,8 @@ const projects = [
     location: "Λάρισα",
     clientName: "Γενικό Νοσοκομείο Λάρισας",
     testimonial: "Εξαιρετική λύση για τα ιατρικά αρχεία και τον εξοπλισμό μας.",
-    image: "https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?w=800&h=600&auto=format"
-  },
+    image: "/lovable-uploads/IMG_054822.jpg"
+  }, 
   {
     id: 6,
     title: "Custom Lockers για Ξενοδοχείο",
