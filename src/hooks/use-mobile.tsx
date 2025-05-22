@@ -11,9 +11,8 @@ export function useIsMobile() {
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
     }
     mql.addEventListener("change", onChange)
-    setIsMobile(window.innerWidth < MOBILE_BREAKPOINT)
     return () => mql.removeEventListener("change", onChange)
-  }, [])
+  }, []) // The dependency array is empty, meaning this effect runs once after the initial render.
 
   return !!isMobile
 }

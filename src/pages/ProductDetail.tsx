@@ -1,4 +1,3 @@
-typescriptreact
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Ruler, Package, Square } from "lucide-react";
@@ -8,7 +7,7 @@ import Footer from "@/components/Footer";
 import { useEffect } from "react";
 
 // Product data
-const products = [
+const products = [ 
   {
     id: "white-brown-locker",
     title: "Ντουλάπια Πορτοκαλί με Λευκό Πλαίσιο",
