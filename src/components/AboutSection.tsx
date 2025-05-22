@@ -37,7 +37,7 @@ export default function AboutSection() {
             {/* Placeholder for an image or illustration */}
             <div className="bg-metal-700 rounded-lg overflow-hidden">
               <img
-                src="/lovable-uploads/IMG_13722.jpg" // Replace with your image path
+                src="/lovable-uploads/IMG_13722.webp"
                 alt="About Steel Space Design"
                 className="w-full h-auto"
               />

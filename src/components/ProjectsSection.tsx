@@ -57,7 +57,7 @@ const projects = [
     location: "Λάρισα",
     clientName: "Γενικό Νοσοκομείο Λάρισας",
     testimonial: "Εξαιρετική λύση για τα ιατρικά αρχεία και τον εξοπλισμό μας.",
-    image: "/lovable-uploads/IMG_054822.jpg"
+    image: "/lovable-uploads/IMG_054822.webp"
   }, 
   {
     id: 6,
