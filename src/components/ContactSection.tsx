@@ -100,7 +100,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-metal-400">Email</p>
-                  <p className="text-white">info@stereon.gr</p>
+                  <p className="text-white">info@stereom.gr</p>
                 </div>
               </div>
               
