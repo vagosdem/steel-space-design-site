@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -10,6 +9,7 @@ import { useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import ProductShowcase from "@/components/ProductShowcase";
+import SEOHead from "@/components/SEOHead";
 
 const Index = () => {
   const location = useLocation();
@@ -78,55 +78,65 @@ const Index = () => {
     type: "storage"
   }];
 
-  return <div className="flex flex-col min-h-screen bg-white overflow-hidden">
-      <Navbar />
-      <main className="overflow-hidden pt-20">
-        <HeroSection />
-        
-        <motion.section ref={aboutRef} variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
-        once: true
-      }} aria-labelledby="about-heading">
-          <AboutSection />
-        </motion.section>
-        
-        <motion.section variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
-        once: true
-      }} aria-labelledby="products-heading">
-          <ProductShowcase product={products[0]} alignment="right" />
-        </motion.section>
-        
-        <motion.section ref={featuresRef} variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
-        once: true
-      }} aria-labelledby="features-heading">
-          <FeaturesSection />
-        </motion.section>
-        
-        <motion.section variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
-        once: true
-      }} aria-labelledby="products-heading-2">
-          <ProductShowcase product={products[1]} alignment="left" />
-        </motion.section>
-        
-        <motion.section ref={industryRef} variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
-        once: true
-      }} aria-labelledby="industry-heading">
-          <IndustrySection />
-        </motion.section>
-        
-        <motion.section variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
-        once: true
-      }} aria-labelledby="products-heading-3">
-          <ProductShowcase product={products[2]} alignment="right" />
-        </motion.section>
-        
-        <motion.section ref={contactRef} variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
-        once: true
-      }} id="contact" aria-labelledby="contact-heading" className="py-0">
-          <ContactSection />
-        </motion.section>
-      </main>
-      <Footer />
-    </div>;
+  return (
+    <>
+      <SEOHead 
+        title="Stereon - Μεταλλικά Ντουλάπια & Ντουλάπες Ποιότητας | Επαγγελματικές Λύσεις Αποθήκευσης"
+        description="Κατασκευή και πώληση μεταλλικών ντουλαπιών υψηλής ποιότητας. Ντουλάπια locker, επαγγελματικά συστήματα αποθήκευσης, αποδυτήρια για σχολεία, γραφεία, γυμναστήρια. Ποιότητα Made in Greece."
+        canonical="/"
+        image="/lovable-uploads/IMG_054822.webp"
+      />
+      <div className="flex flex-col min-h-screen bg-white overflow-hidden">
+        <Navbar />
+        <main className="overflow-hidden pt-20">
+          <HeroSection />
+          
+          <motion.section ref={aboutRef} variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
+            once: true
+          }} aria-labelledby="about-heading">
+            <AboutSection />
+          </motion.section>
+          
+          <motion.section variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
+            once: true
+          }} aria-labelledby="products-heading">
+            <ProductShowcase product={products[0]} alignment="right" />
+          </motion.section>
+          
+          <motion.section ref={featuresRef} variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
+            once: true
+          }} aria-labelledby="features-heading">
+            <FeaturesSection />
+          </motion.section>
+          
+          <motion.section variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
+            once: true
+          }} aria-labelledby="products-heading-2">
+            <ProductShowcase product={products[1]} alignment="left" />
+          </motion.section>
+          
+          <motion.section ref={industryRef} variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
+            once: true
+          }} aria-labelledby="industry-heading">
+            <IndustrySection />
+          </motion.section>
+          
+          <motion.section variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
+            once: true
+          }} aria-labelledby="products-heading-3">
+            <ProductShowcase product={products[2]} alignment="right" />
+          </motion.section>
+          
+          <motion.section ref={contactRef} variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{
+            once: true
+          }} id="contact" aria-labelledby="contact-heading" className="py-0">
+            <ContactSection />
+          </motion.section>
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
 };
 
 export default Index;
