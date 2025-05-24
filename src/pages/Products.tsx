@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -14,12 +13,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-// Updated product data with new red locker image
+// Updated product data with all new images
 const products = [
   {
-    id: "metal-cabinet-glass",
-    title: "Μεταλλική Ντουλάπα με Τζάμια",
-    description: "Επαγγελματική μεταλλική ντουλάπα με γυάλινες πόρτες, ιδανική για αρχειοθέτηση σε γραφεία και χώρους υγείας.",
+    id: "white-glass-cabinet",
+    title: "Λευκή Μεταλλική Ντουλάπα με Τζάμια",
+    description: "Επαγγελματική λευκή μεταλλική ντουλάπα με γυάλινες πόρτες, ιδανική για αρχειοθέτηση σε γραφεία και χώρους υγείας.",
     image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
     category: "cabinets",
     type: "office",
@@ -28,26 +27,15 @@ const products = [
     features: ["glass-doors", "adjustable-shelves"]
   },
   {
-    id: "orange-white-locker",
-    title: "Ντουλάπια Πορτοκαλί με Λευκό Πλαίσιο",
-    description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για αποδυτήρια και γυμναστήρια.",
-    image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
-    category: "lockers",
-    type: "gym",
+    id: "orange-storage-cabinet",
+    title: "Πορτοκαλί Βιτρίνα Αποθήκευσης",
+    description: "Μεταλλική βιτρίνα με γυάλινη πόρτα σε έντονο πορτοκαλί χρώμα, ιδανική για εκθετήρια και αποθήκευση προϊόντων.",
+    image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png",
+    category: "cabinets",
+    type: "retail",
     color: "orange",
     material: "metal",
-    features: ["multiple-units", "ventilation", "key-lock"]
-  },
-  {
-    id: "metal-drawers-multi",
-    title: "Συρταριέρες Μεταλλικές Πολλαπλών Χρωμάτων",
-    description: "Μεταλλικές συρταριέρες σε διάφορα χρώματα για αρχειοθέτηση και αποθήκευση αντικειμένων σε επαγγελματικούς χώρους.",
-    image: "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
-    category: "drawers",
-    type: "creative",
-    color: "multi",
-    material: "metal",
-    features: ["portable", "colorful", "drawer-dividers"]
+    features: ["glass-doors", "display", "adjustable-shelves"]
   },
   {
     id: "turquoise-orange-locker",
@@ -61,28 +49,6 @@ const products = [
     features: ["colorful", "modern-design", "key-lock"]
   },
   {
-    id: "blue-metallic-locker",
-    title: "Μπλε Μεταλλικά Ντουλάπια",
-    description: "Κομψά μεταλλικά ντουλάπια σε μπλε απόχρωση με ειδικό σχεδιασμό για επαγγελματικούς χώρους και εκπαιδευτικά ιδρύματα.",
-    image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png",
-    category: "lockers",
-    type: "school",
-    color: "blue",
-    material: "metal",
-    features: ["ventilation", "number-plates", "key-lock"]
-  },
-  {
-    id: "orange-display-cabinet", 
-    title: "Πορτοκαλί Βιτρίνα Αποθήκευσης",
-    description: "Μεταλλική βιτρίνα με γυάλινη πόρτα σε έντονο πορτοκαλί χρώμα, ιδανική για εκθετήρια και αποθήκευση προϊόντων.",
-    image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png",
-    category: "cabinets",
-    type: "retail",
-    color: "orange",
-    material: "metal",
-    features: ["glass-doors", "display", "adjustable-shelves"]
-  },
-  {
     id: "red-school-lockers",
     title: "Κόκκινα Σχολικά Ντουλάπια",
     description: "Ανθεκτικά μεταλλικά ντουλάπια σε κόκκινο χρώμα με μαύρο πλαίσιο, σχεδιασμένα για σχολεία και εκπαιδευτικά ιδρύματα.",
@@ -94,6 +60,28 @@ const products = [
     features: ["numbered", "ventilation", "key-lock"]
   },
   {
+    id: "orange-white-locker",
+    title: "Ντουλάπια Πορτοκαλί με Λευκό Πλαίσιο",
+    description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για αποδυτήρια και γυμναστήρια.",
+    image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
+    category: "lockers",
+    type: "gym",
+    color: "orange",
+    material: "metal",
+    features: ["multiple-units", "ventilation", "key-lock"]
+  },
+  {
+    id: "blue-metallic-locker",
+    title: "Μπλε Μεταλλικά Ντουλάπια",
+    description: "Κομψά μεταλλικά ντουλάπια σε μπλε απόχρωση με ειδικό σχεδιασμό για επαγγελματικούς χώρους και εκπαιδευτικά ιδρύματα.",
+    image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png",
+    category: "lockers",
+    type: "school",
+    color: "blue",
+    material: "metal",
+    features: ["ventilation", "number-plates", "key-lock"]
+  },
+  {
     id: "yellow-lockers",
     title: "Κίτρινα Μεταλλικά Ντουλάπια",
     description: "Φωτεινά κίτρινα ντουλάπια με μεταλλική κατασκευή, ιδανικά για παιδικούς σταθμούς, σχολικές εγκαταστάσεις και χαρούμενους χώρους.",
@@ -103,6 +91,17 @@ const products = [
     color: "yellow",
     material: "metal",
     features: ["colorful", "ventilation", "child-friendly"]
+  },
+  {
+    id: "metal-drawers-multi",
+    title: "Συρταριέρες Μεταλλικές Πολλαπλών Χρωμάτων",
+    description: "Μεταλλικές συρταριέρες σε διάφορα χρώματα για αρχειοθέτηση και αποθήκευση αντικειμένων σε επαγγελματικούς χώρους.",
+    image: "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
+    category: "drawers",
+    type: "creative",
+    color: "multi",
+    material: "metal",
+    features: ["portable", "colorful", "drawer-dividers"]
   }
 ];
 
@@ -310,6 +309,9 @@ export default function Products() {
                   <img 
                     src={product.image} 
                     alt={product.title} 
+                    width="400"
+                    height="400"
+                    loading="lazy"
                     className="w-auto h-auto max-w-full max-h-full object-contain transition-transform hover:scale-105 duration-500"
                   />
                 </div>
@@ -387,4 +389,3 @@ export default function Products() {
     </div>
   );
 }
-

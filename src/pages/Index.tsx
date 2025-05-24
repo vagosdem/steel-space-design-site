@@ -52,28 +52,28 @@ const Index = () => {
     }
   };
 
-  // Product showcase data with updated images
+  // Updated product showcase data with new images
   const products = [
     {
-      id: "modern-office-storage",
-      title: "Μοντέρνες Λύσεις Γραφείου",
-      description: "Κομψά μεταλλικά ντουλάπια με καθαρές γραμμές και μοντέρνο design, ιδανικά για σύγχρονους χώρους γραφείου και επαγγελματικούς χώρους.",
-      image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
-      type: "storage"
+      id: "industrial-storage-cabinet",
+      title: "Βιομηχανικό Ντουλάπι Αποθήκευσης",
+      description: "Ανθεκτικό μεταλλικό ντουλάπι με γυάλινες πόρτες, ιδανικό για βιομηχανικούς χώρους και εργαστήρια με υψηλές απαιτήσεις αποθήκευσης.",
+      image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png",
+      type: "cabinet"
     },
     {
-      id: "colorful-educational-lockers",
-      title: "Εκπαιδευτικά Ντουλάπια Πολλαπλών Χρωμάτων",
-      description: "Δημιουργικά και λειτουργικά ντουλάπια σε έντονα χρώματα, σχεδιασμένα ειδικά για σχολεία, πανεπιστήμια και εκπαιδευτικά ιδρύματα.",
-      image: "/lovable-uploads/0f7b939c-3012-47f1-8cc8-13033e7dd152.png",
+      id: "multi-unit-lockers-orange",
+      title: "Πολλαπλά Ντουλάπια Πορτοκαλί",
+      description: "Σύστημα πολλαπλών ντουλαπιών σε έντονο πορτοκαλί χρώμα, σχεδιασμένο για αποδυτήρια, γυμναστήρια και εκπαιδευτικά ιδρύματα.",
+      image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
       type: "locker"
     },
     {
-      id: "professional-storage-solutions",
-      title: "Επαγγελματικές Αποθηκευτικές Λύσεις",
-      description: "Ανθεκτικά και πρακτικά ντουλάπια για επαγγελματική χρήση, με δυνατότητες εξατομίκευσης για κάθε είδους επιχειρηματικό χώρο.",
-      image: "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
-      type: "cabinet"
+      id: "blue-metallic-storage",
+      title: "Μπλε Μεταλλικά Ντουλάπια Αποθήκευσης",
+      description: "Κομψά μεταλλικά ντουλάπια σε μπλε απόχρωση με αριθμημένες θέσεις, ιδανικά για οργανωμένους επαγγελματικούς χώρους.",
+      image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png",
+      type: "storage"
     }
   ];
 

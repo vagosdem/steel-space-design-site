@@ -12,10 +12,10 @@ export default function HeroSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
   
   const productImages = [
-    "/lovable-uploads/0f7b939c-3012-47f1-8cc8-13033e7dd152.png",
-    "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
-    "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png",
-    "/lovable-uploads/3e491c70-934b-4056-b1e1-58c080f32010.png"
+    "/lovable-uploads/de48c2ac-8f96-4f1d-987f-3fa9c559618f.png",
+    "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
+    "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
+    "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png"
   ];
 
   // Touch handling for mobile swipe
@@ -143,12 +143,12 @@ export default function HeroSection() {
               />
             ))}
             
-            {/* Indicators with improved spacing */}
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-10">
+            {/* Smaller indicators with improved spacing */}
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
               {productImages.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-3 h-3 rounded-full transition-colors touch-target ${
+                  className={`w-2 h-2 rounded-full transition-colors touch-target ${
                     currentImage === index ? 'bg-blue-600' : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   onClick={() => setCurrentImage(index)}
