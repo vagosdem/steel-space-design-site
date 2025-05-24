@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,7 +5,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Building, Download, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
-
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,7 +17,6 @@ export default function ContactSection() {
   const {
     toast
   } = useToast();
-  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -30,7 +27,6 @@ export default function ContactSection() {
       [name]: value
     }));
   };
-  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -51,7 +47,6 @@ export default function ContactSection() {
       });
     }, 1000);
   };
-  
   const fadeIn = {
     hidden: {
       opacity: 0,
@@ -65,9 +60,7 @@ export default function ContactSection() {
       }
     }
   };
-  
-  return (
-    <section id="contact" className="bg-metal-900 text-white">
+  return <section id="contact" className="bg-metal-900 text-white">
       <div className="container-section">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{
@@ -100,7 +93,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-metal-400">Email</p>
-                  <p className="text-white">info@stereon.gr</p>
+                  <p className="text-white">info@stereom.gr</p>
                 </div>
               </div>
               
@@ -171,6 +164,5 @@ export default function ContactSection() {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
