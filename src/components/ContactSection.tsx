@@ -60,7 +60,7 @@ export default function ContactSection() {
       }
     }
   };
-  return <section id="contact" className="bg-metal-900 text-white">
+  return <section id="contact" className="bg-metal-900 text-white my-0 mx-0 px-0 py-0">
       <div className="container-section">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{
