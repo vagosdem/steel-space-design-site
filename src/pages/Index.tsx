@@ -55,25 +55,25 @@ const Index = () => {
   // Product showcase data with updated images
   const products = [
     {
-      id: "yellow-lockers",
-      title: "Κίτρινα Μεταλλικά Ντουλάπια",
-      description: "Φωτεινά κίτρινα ντουλάπια με μαύρο πλαίσιο και μεταλλική κατασκευή, ιδανικά για παιδικούς σταθμούς, σχολικές εγκαταστάσεις και χαρούμενους χώρους.",
-      image: "/lovable-uploads/00772ab6-6083-4b70-8f34-b4542e7c725b.png",
+      id: "modern-office-storage",
+      title: "Μοντέρνες Λύσεις Γραφείου",
+      description: "Κομψά μεταλλικά ντουλάπια με καθαρές γραμμές και μοντέρνο design, ιδανικά για σύγχρονους χώρους γραφείου και επαγγελματικούς χώρους.",
+      image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
+      type: "storage"
+    },
+    {
+      id: "colorful-educational-lockers",
+      title: "Εκπαιδευτικά Ντουλάπια Πολλαπλών Χρωμάτων",
+      description: "Δημιουργικά και λειτουργικά ντουλάπια σε έντονα χρώματα, σχεδιασμένα ειδικά για σχολεία, πανεπιστήμια και εκπαιδευτικά ιδρύματα.",
+      image: "/lovable-uploads/0f7b939c-3012-47f1-8cc8-13033e7dd152.png",
       type: "locker"
     },
     {
-      id: "orange-white-locker",
-      title: "Ντουλάπια Locker Πολλαπλών Θέσεων",
-      description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για επαγγελματικούς χώρους και αποδυτήρια.",
-      image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
-      type: "locker"
-    },
-    {
-      id: "red-school-lockers",
-      title: "Κόκκινα Σχολικά Ντουλάπια",
-      description: "Ανθεκτικά μεταλλικά ντουλάπια σε κόκκινο χρώμα με μαύρο πλαίσιο, σχεδιασμένα για σχολεία και εκπαιδευτικά ιδρύματα με αριθμημένες θήκες.",
-      image: "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
-      type: "locker"
+      id: "professional-storage-solutions",
+      title: "Επαγγελματικές Αποθηκευτικές Λύσεις",
+      description: "Ανθεκτικά και πρακτικά ντουλάπια για επαγγελματική χρήση, με δυνατότητες εξατομίκευσης για κάθε είδους επιχειρηματικό χώρο.",
+      image: "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
+      type: "cabinet"
     }
   ];
 

@@ -19,10 +19,10 @@ export default function HeroSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
   
   const productImages = [
-    "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
-    "/lovable-uploads/00772ab6-6083-4b70-8f34-b4542e7c725b.png",
-    "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
-    "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png"
+    "/lovable-uploads/0f7b939c-3012-47f1-8cc8-13033e7dd152.png",
+    "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
+    "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png",
+    "/lovable-uploads/3e491c70-934b-4056-b1e1-58c080f32010.png"
   ];
 
   // Touch handling for mobile swipe
@@ -88,15 +88,10 @@ export default function HeroSection() {
             Custom lockers, συρταριέρες πολλαπλών θέσεων & industrial αποθηκευτικές λύσεις, 
             σχεδιασμένες και κατασκευασμένες στην Ελλάδα.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-5 pt-4">
+          <div className="flex justify-center pt-4">
             <Link to="#contact">
               <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-xl">
                 Ζητήστε Προσφορά
-              </Button>
-            </Link>
-            <Link to="#projects">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-metal-300 px-8 py-6 text-lg text-slate-50 bg-zinc-950 hover:bg-zinc-800 rounded-xl">
-                Δείτε τα Έργα Μας
               </Button>
             </Link>
           </div>
