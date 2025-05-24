@@ -1,17 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState, useEffect, useRef, TouchEvent } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { 
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "@/components/ui/carousel";
 
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -20,9 +12,9 @@ export default function HeroSection() {
   
   const productImages = [
     "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "/lovable-uploads/IMG_23802.jpg",
+    "/lovable-uploads/5c723acb-8f8a-443f-83b6-3a43571ccdb3.png",
     "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "/lovable-uploads/IMG_99002.jpg"
+    "/lovable-uploads/3786273d-64ad-4ed4-945c-1886fa8c5957.png"
   ];
 
   // Touch handling for mobile swipe
@@ -88,17 +80,12 @@ export default function HeroSection() {
             Custom lockers, συρταριέρες πολλαπλών θέσεων & industrial αποθηκευτικές λύσεις, 
             σχεδιασμένες και κατασκευασμένες στην Ελλάδα.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-5 pt-4">
-            <Link to="#contact">
-              <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg">
+          <div className="flex justify-center pt-4">
+            <a href="#contact">
+              <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-lg rounded-xl">
                 Ζητήστε Προσφορά
               </Button>
-            </Link>
-            <Link to="#projects">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-metal-300 px-8 py-6 text-lg text-slate-50 bg-zinc-950 hover:bg-zinc-800 rounded-lg">
-                Δείτε τα Έργα Μας
-              </Button>
-            </Link>
+            </a>
           </div>
         </motion.div>
         
@@ -111,9 +98,27 @@ export default function HeroSection() {
           <div 
             ref={carouselRef}
             className="md:w-1/2 relative h-[300px] sm:h-[400px] w-full"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
+            onTouchStart={(e: TouchEvent<HTMLDivElement>) => {
+              const touchStartX = e.touches[0].clientX;
+              (e.currentTarget as any).touchStartX = touchStartX;
+            }}
+            onTouchMove={(e: TouchEvent<HTMLDivElement>) => {
+              const touchEndX = e.touches[0].clientX;
+              (e.currentTarget as any).touchEndX = touchEndX;
+            }}
+            onTouchEnd={(e: TouchEvent<HTMLDivElement>) => {
+              const touchStartX = (e.currentTarget as any).touchStartX;
+              const touchEndX = (e.currentTarget as any).touchEndX;
+              const difference = touchStartX - touchEndX;
+              
+              if (Math.abs(difference) > 50) {
+                if (difference > 0) {
+                  setCurrentImage((prev) => (prev + 1) % productImages.length);
+                } else {
+                  setCurrentImage((prev) => (prev - 1 + productImages.length) % productImages.length);
+                }
+              }
+            }}
           >
             {/* Navigation arrows */}
             <button 
@@ -169,12 +174,12 @@ export default function HeroSection() {
               Με εξατομικευμένες επιλογές διαστάσεων, χρωμάτων και διαμορφώσεων, σχεδιάζουμε 
               λύσεις που ανταποκρίνονται ακριβώς στις ανάγκες σας.
             </p>
-            <Link to="#contact">
+            <a href="#contact">
               <Button className="flex items-center gap-2 rounded-lg mt-2 bg-blue-600 hover:bg-blue-700">
                 Θέλω και εγώ παρόμοια λύση 
                 <ArrowRight size={16} />
               </Button>
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>

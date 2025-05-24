@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 
@@ -16,6 +16,14 @@ interface ProductCardProps {
 }
 
 const ProductCard = React.memo(function ProductCard({ product, onRequestQuote }: ProductCardProps) {
+  const location = useLocation();
+  
+  // Store current scroll position in state when navigating to product details
+  const handleProductLinkClick = () => {
+    sessionStorage.setItem('scrollPosition', window.pageYOffset.toString());
+    sessionStorage.setItem('returnPath', location.pathname + location.hash);
+  };
+
   return (
     <div className="p-1">
       <Card className="overflow-hidden border-none shadow-none">
@@ -61,7 +69,11 @@ const ProductCard = React.memo(function ProductCard({ product, onRequestQuote }:
               >
                 Ζητήστε Προσφορά
               </Button>
-              <Link to={`/product/${product.id}`} className="w-full sm:w-auto">
+              <Link 
+                to={`/product/${product.id}`} 
+                className="w-full sm:w-auto"
+                onClick={handleProductLinkClick}
+              >
                 <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-lg">
                   Περισσότερες Πληροφορίες
                 </Button>
