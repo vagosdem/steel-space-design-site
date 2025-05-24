@@ -71,7 +71,7 @@ export function Cart() {
                     <div key={item.id} className="flex gap-4">
                       <div className="w-24 h-24 bg-gray-100 rounded-md overflow-hidden flex-shrink-0">
                         <img 
-                          src={item.image.replace("f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png", "IMG_21202.jpg")} 
+                          src={item.image} 
                           alt={item.title} 
                           className="w-full h-full object-cover"
                         />

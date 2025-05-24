@@ -1,4 +1,6 @@
+
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 import { Archive } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -11,7 +13,7 @@ export default function Navbar() {
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 10) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -79,7 +81,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
               <Archive className={`h-6 w-6 ${scrolled ? 'text-blue-400' : 'text-blue-600'}`} />
-              <span className={`text-xl font-bold ${scrolled ? 'text-white' : 'text-metal-900'}`}>Stereom</span>
+              <span className={`text-xl font-bold ${scrolled ? 'text-white' : 'text-metal-900'}`}>Stereon</span>
             </Link>
           </div>
 
@@ -109,17 +111,17 @@ export default function Navbar() {
             >
               Επικοινωνία
             </button>
-            <button 
+            <Button 
               onClick={handleQuoteRequest}
-              className={`rounded-lg px-6 py-3 ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
-              >
+              className={`rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
+            >
               Ζήτα Προσφορά
-            </button>
+            </Button>
           </div>
-        </div>
+
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
- <button
+            <button
               className={`ml-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-500 hover:text-metal-900'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -138,11 +140,11 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
-      </nav>
+        </div>
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
-          <div className={`md:hidden absolute top-16 left-0 w-full mt-0 pb-4 space-y-4 ${scrolled ? 'bg-metal-900' : 'bg-white'} shadow-md`}>
+          <div className={`md:hidden mt-4 pb-4 space-y-4 ${scrolled ? 'bg-metal-900' : 'bg-white'}`}>
             <button 
               onClick={navigateToProducts}
               className={`block w-full text-left p-2 ${scrolled ? 'text-metal-300 hover:text-white' : 'text-metal-700 hover:text-metal-900'} font-medium`}
@@ -167,14 +169,15 @@ export default function Navbar() {
             >
               Επικοινωνία
             </button>
-            <button 
+            <Button 
               onClick={handleQuoteRequest}
-              className={`w-full rounded-lg px-6 py-3 ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
+              className={`w-full rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
             >
               Ζήτα Προσφορά
-            </button>
+            </Button>
           </div>
         )}
+      </nav>
     </header>
   );
 }

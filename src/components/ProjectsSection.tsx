@@ -22,7 +22,7 @@ const projects = [
     clientName: "Fitness Plus",
     testimonial: "Άψογη κατασκευή και παράδοση στην ώρα τους. Εξαιρετική ποιότητα.",
     image: "https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?w=800&h=600&auto=format"
-  }, 
+  },
   {
     id: 2,
     title: "Αρχειοθήκες Δικηγορικού Γραφείου",
@@ -57,8 +57,8 @@ const projects = [
     location: "Λάρισα",
     clientName: "Γενικό Νοσοκομείο Λάρισας",
     testimonial: "Εξαιρετική λύση για τα ιατρικά αρχεία και τον εξοπλισμό μας.",
-    image: "/lovable-uploads/IMG_054822.webp"
-  }, 
+    image: "https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?w=800&h=600&auto=format"
+  },
   {
     id: 6,
     title: "Custom Lockers για Ξενοδοχείο",
@@ -175,6 +175,14 @@ export default function ProjectsSection() {
             </div>
           </Carousel>
         </motion.div>
+        
+        <div className="mt-12 text-center">
+          <Link to="/products">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              Δείτε τα Προϊόντα μας
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   );

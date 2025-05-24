@@ -1,5 +1,5 @@
 
-import { Building2, Dumbbell, Building, School, BadgeHelp } from 'lucide-react';
+import { Building2, Dumbbell, Building, School, BadgeHelp } from "lucide-react";
 
 const industries = [
   {
@@ -36,7 +36,7 @@ export default function IndustrySection() {
           <p className="text-metal-300 text-lg">
             Οι λύσεις μας απευθύνονται σε επαγγελματίες και επιχειρήσεις που χρειάζονται αξιόπιστες και ανθεκτικές κατασκευές.
           </p>
-        </div> 
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((industry, index) => (
@@ -53,6 +53,6 @@ export default function IndustrySection() {
       
       {/* Transition gradient at the bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-metal-800 w-full"></div>
-    </section>  
+    </section>
   );
 }

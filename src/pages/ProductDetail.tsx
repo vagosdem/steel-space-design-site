@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import { useEffect } from "react";
 
 // Product data
-const products = [ 
+const products = [
   {
     id: "white-brown-locker",
     title: "Ντουλάπια Πορτοκαλί με Λευκό Πλαίσιο",
@@ -25,7 +25,7 @@ const products = [
       height: "180 εκ.",
       depth: "40 εκ."
     },
-    image: "/lovable-uploads/IMG_99002.webp",
+    image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
     details: "Τα μεταλλικά ντουλάπια πορτοκαλί με λευκό πλαίσιο είναι ιδανικά για εργασιακούς χώρους, αποδυτήρια γυμναστηρίων και αθλητικές εγκαταστάσεις. Προσφέρουν ασφαλή αποθήκευση προσωπικών αντικειμένων, με μοντέρνα αισθητική που ταιριάζει σε σύγχρονους επαγγελματικούς χώρους."
   },
   {
@@ -44,8 +44,8 @@ const products = [
       height: "160 εκ.",
       depth: "35 εκ."
     },
-    image: "/lovable-uploads/IMG_21202.jpg",
-    details: "Τα κίτρινα μεταλλικά ντουλάπια είναι ειδικά σχεδιασμένα για εκπαιδευτικούς χώρους και παιδικές εγκαταστάσεις. Το φωτεινό χρώμα προάγει τη θετική διάθεση και διευκολίζει τα παιδιά να αναγνωρίζουν τον προσωπικό τους χώρο αποθήκευσης."
+    image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
+    details: "Τα κίτρινα μεταλλικά ντουλάπια είναι ειδικά σχεδιασμένα για εκπαιδευτικούς χώρους και παιδικές εγκαταστάσεις. Το φωτεινό χρώμα προάγει τη θετική διάθεση και διευκολύνει τα παιδιά να αναγνωρίζουν τον προσωπικό τους χώρο αποθήκευσης."
   },
   {
     id: "orange-white-locker",
@@ -102,7 +102,7 @@ const products = [
       depth: "38 εκ."
     },
     image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png",
-    details: "Τα μπλε μεταλλικά ντουλάπια συνδυάζουν τη μοντέρνα αισθητική με τη λειτουργικότητα. Το ηρεμιστικό μπλε χρώμα δημιουργίζει θετική ατμόσφαιρα σε επαγγελματικούς χώρους, ενώ η ανθεκτική κατασκευή τους εξασφαλίζει μεγάλη διάρκεια ζωής."
+    details: "Τα μπλε μεταλλικά ντουλάπια συνδυάζουν τη μοντέρνα αισθητική με τη λειτουργικότητα. Το ηρεμιστικό μπλε χρώμα δημιουργεί θετική ατμόσφαιρα σε επαγγελματικούς χώρους, ενώ η ανθεκτική κατασκευή τους εξασφαλίζει μεγάλη διάρκεια ζωής."
   },
   {
     id: "orange-display-cabinet",
@@ -177,7 +177,7 @@ const products = [
       height: "195 εκ.",
       depth: "45 εκ."
     },
-    image: "/lovable-uploads/IMG_99002.jpg",
+    image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
     details: "Η μεταλλική ντουλάπα με γυάλινες πόρτες συνδυάζει την ασφάλεια και την αντοχή της μεταλλικής κατασκευής με τη λειτουργικότητα της άμεσης προβολής του περιεχομένου. Είναι ιδανική για χώρους γραφείων, ιατρεία, φαρμακεία και άλλους επαγγελματικούς χώρους όπου απαιτείται εύκολη πρόσβαση και οργάνωση των αντικειμένων."
   },
   {
@@ -196,7 +196,7 @@ const products = [
       height: "110 εκ.",
       depth: "50 εκ."
     },
-    image: "/lovable-uploads/IMG_23802.jpg",
+    image: "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
     details: "Οι μεταλλικές συρταριέρες πολλαπλών χρωμάτων προσφέρουν μια ζωηρή και δημιουργική λύση αποθήκευσης για επαγγελματικούς χώρους. Ο μοντέρνος πολύχρωμος σχεδιασμός τους, σε συνδυασμό με τη λειτουργικότητα της μεταλλικής κατασκευής, τις καθιστά ιδανικές για διαφορετικά περιβάλλοντα εργασίας, από δημιουργικά γραφεία μέχρι εκπαιδευτικούς χώρους."
   }
 ];
@@ -224,40 +224,10 @@ export default function ProductDetail() {
   }
   
   // Get similar products, excluding the current product and limiting to 3
+  // Also make sure we don't show the same product twice
   const similarProducts = products
-    .filter(p => p.id !== productId)
-    .slice(0, 3);
-
-  // Handle back button with scroll position restoration
-  const handleBackClick = () => {
-    const returnPath = sessionStorage.getItem('returnPath');
-    const scrollPosition = sessionStorage.getItem('scrollPosition');
-    
-    if (returnPath && scrollPosition) {
-      navigate(returnPath);
-      setTimeout(() => {
-        window.scrollTo(0, parseInt(scrollPosition));
-      }, 100);
-      sessionStorage.removeItem('scrollPosition');
-      sessionStorage.removeItem('returnPath');
-    } else {
-      navigate(-1);
-    }
-  };
-
-  const scrollToContact = () => {
-    navigate('/');
-    setTimeout(() => {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        const offsetTop = contactSection.offsetTop - 80; // Account for navbar
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth'
-        });
-      }
-    }, 100);
-  };
+    .filter(p => p.id !== productId)  // Exclude current product
+    .slice(0, 3);  // Limit to 3 products
 
   return (
     <div className="min-h-screen bg-white">
@@ -267,7 +237,7 @@ export default function ProductDetail() {
         <div className="mb-6">
           <Button 
             variant="outline" 
-            onClick={handleBackClick}
+            onClick={() => navigate(-1)}
             className="flex items-center gap-2"
           >
             <ArrowLeft size={16} />
@@ -340,8 +310,8 @@ export default function ProductDetail() {
             <div className="pt-4">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 rounded-lg w-full mb-3 px-8 py-6"
-                onClick={scrollToContact}
+                className="bg-blue-600 hover:bg-blue-700 rounded-xl w-full mb-3"
+                onClick={() => navigate("/#contact")}
               >
                 Ζητήστε Προσφορά
               </Button>

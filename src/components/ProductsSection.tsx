@@ -9,41 +9,99 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Card } from "@/components/ui/card";
 import React, { useCallback } from "react";
-import ProductCard from "./ProductCard";
 
 // Product data with updated images
 const productCategories = [{
- id: "white-brown-locker",
+  id: "white-brown-locker",
   title: "Ντουλάπια Πορτοκαλί με Λευκό Πλαίσιο",
   description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για επαγγελματικούς χώρους.",
-  image: "/lovable-uploads/IMG_99002.webp"
+  image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png"
 }, {
   id: "blue-locker",
   title: "Μπλε Μεταλλικά Ντουλάπια",
   description: "Μοντέρνα μεταλλικά ντουλάπια σε μπλε χρώμα με λευκό πλαίσιο για χρήση σε γυμναστήρια και σχολεία.",
-  image: "/lovable-uploads/IMG_13722.webp"
+  image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png"
 }, {
-  id: "orange-display-cabinet", // Keep this ID consistent with the product detail page link
+  id: "orange-display-cabinet",
   title: "Πορτοκαλί Βιτρίνα",
   description: "Μεταλλική βιτρίνα με γυάλινη πόρτα σε έντονο πορτοκαλί χρώμα, ιδανική για εκθετήρια και αποθήκευση προϊόντων.",
-  image: "/lovable-uploads/IMG_21202.webp" // Replaced with compressed image
+  image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png"
+}, {
+  id: "turquoise-orange-locker",
+  title: "Ντουλάπι Τυρκουάζ με Πορτοκαλί",
+  description: "Μοντέρνος συνδυασμός χρωμάτων με τυρκουάζ πόρτα και πορτοκαλί πλαίσιο, ιδανικά για δημιουργικούς χώρους εργασίας.",
+  image: "/lovable-uploads/de48c2ac-8f96-4f1d-987f-3fa9c559618f.png"
 }];
+
+en// Memoized ProductCard component
+const ProductCard = React.memo(function ProductCard({ product, onRequestQuote }) {
+  return (
+    <div className="p-1">
+      <Card className="overflow-hidden border-none shadow-none">
+        <div className="flex flex-col md:flex-row items-center gap-8 py-6">
+          <div className="w-full md:w-1/2">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="p-0 bg-white rounded-3xl shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              <img 
+                src={product.image} 
+                alt={product.title}
+                width={400}
+                height={300}
+                loading="lazy"
+                className="w-full h-auto object-contain mx-auto rounded-2xl"
+              />
+            </motion.div>
+          </div>
+          <div className="w-full md:w-1/2 space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="text-2xl font-medium text-metal-900">{product.title}</h3>
+              <p className="text-metal-600 mt-2">{product.description}</p>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <Button 
+                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-xl"
+                onClick={onRequestQuote}
+              >
+                Ζητήστε Προσφορά
+              </Button>
+              <Link to={`/product/${product.id}`} className="w-full sm:w-auto">
+                <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl">
+                  Περισσότερες Πληροφορίες
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </Card>
+    </div>
+  );
+});
 
 export default function ProductsSection() {
   const navigate = useNavigate();
 
   // Handler to navigate to the contact section on the home page
   const handleRequestQuote = useCallback(() => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      const offsetTop = contactSection.offsetTop - 80; // Account for navbar
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
-  }, []);
+    navigate("/#contact");
+  }, [navigate]);
 
   return (
     <section id="products" className="bg-metal-50 py-20">
@@ -76,10 +134,24 @@ export default function ProductsSection() {
             ))}
           </CarouselContent>
           <div className="flex justify-center mt-8 gap-4">
-            <CarouselPrevious className="relative static left-0 translate-y-0 h-9 w-9 rounded-lg" />
-            <CarouselNext className="relative static right-0 translate-y-0 h-9 w-9 rounded-lg" />
+            <CarouselPrevious className="relative static left-0 translate-y-0 h-9 w-9 rounded-xl" />
+            <CarouselNext className="relative static right-0 translate-y-0 h-9 w-9 rounded-xl" />
           </div>
         </Carousel>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 text-center"
+        >
+          <Link to="/products">
+            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-xl">
+              Δείτε Όλα τα Προϊόντα
+            </Button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
