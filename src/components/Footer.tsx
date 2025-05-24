@@ -1,3 +1,4 @@
+
 import { Archive, Facebook, Instagram, Linkedin } from "lucide-react";
 export default function Footer(){
   const year = new Date().getFullYear();
@@ -7,7 +8,7 @@ export default function Footer(){
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Archive className="h-6 w-6 text-blue-400" />
-              <span className="text-xl font-bold">Stereon</span>
+              <span className="text-xl font-bold">Stereom</span>
             </div>
             <p className="text-metal-400 pr-4">
               Σχεδιάζουμε και κατασκευάζουμε ποιοτικές μεταλλικές λύσεις αποθήκευσης για επαγγελματικούς χώρους από το 2005.
@@ -47,7 +48,7 @@ export default function Footer(){
         
         <div className="border-t border-metal-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-metal-500 text-sm">
-            © {year} Stereon. Με επιφύλαξη παντός δικαιώματος.
+            © {year} Stereom. Με επιφύλαξη παντός δικαιώματος.
           </div>          
         </div>
       </div>

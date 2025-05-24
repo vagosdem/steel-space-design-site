@@ -19,9 +19,9 @@ export default function HeroSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
   
   const productImages = [
-    "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
+    "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     "/lovable-uploads/IMG_23802.jpg",
-    "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
+    "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     "/lovable-uploads/IMG_99002.jpg"
   ];
 
@@ -90,12 +90,12 @@ export default function HeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-5 pt-4">
             <Link to="#contact">
-              <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-xl">
+              <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg">
                 Ζητήστε Προσφορά
               </Button>
             </Link>
             <Link to="#projects">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-metal-300 px-8 py-6 text-lg text-slate-50 bg-zinc-950 hover:bg-zinc-800 rounded-xl">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-metal-300 px-8 py-6 text-lg text-slate-50 bg-zinc-950 hover:bg-zinc-800 rounded-lg">
                 Δείτε τα Έργα Μας
               </Button>
             </Link>
@@ -170,7 +170,7 @@ export default function HeroSection() {
               λύσεις που ανταποκρίνονται ακριβώς στις ανάγκες σας.
             </p>
             <Link to="#contact">
-              <Button className="flex items-center gap-2 rounded-xl mt-2 bg-blue-600 hover:bg-blue-700">
+              <Button className="flex items-center gap-2 rounded-lg mt-2 bg-blue-600 hover:bg-blue-700">
                 Θέλω και εγώ παρόμοια λύση 
                 <ArrowRight size={16} />
               </Button>

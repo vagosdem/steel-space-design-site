@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -30,7 +29,7 @@ const productCategories = [{
   image: "/lovable-uploads/IMG_21202.webp" // Replaced with compressed image
 }];
 
-en// Memoized ProductCard component
+// Memoized ProductCard component
 const ProductCard = React.memo(function ProductCard({ product, onRequestQuote }) {
   return (
     <div className="p-1">
@@ -72,13 +71,13 @@ const ProductCard = React.memo(function ProductCard({ product, onRequestQuote })
               className="flex flex-col sm:flex-row gap-4"
             >
               <Button 
-                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-xl"
+                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-lg"
                 onClick={onRequestQuote}
               >
                 Ζητήστε Προσφορά
               </Button>
               <Link to={`/product/${product.id}`} className="w-full sm:w-auto">
-                <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl">
+                <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-lg">
                   Περισσότερες Πληροφορίες
                 </Button>
               </Link>
@@ -129,8 +128,8 @@ export default function ProductsSection() {
             ))}
           </CarouselContent>
           <div className="flex justify-center mt-8 gap-4">
-            <CarouselPrevious className="relative static left-0 translate-y-0 h-9 w-9 rounded-xl" />
-            <CarouselNext className="relative static right-0 translate-y-0 h-9 w-9 rounded-xl" />
+            <CarouselPrevious className="relative static left-0 translate-y-0 h-9 w-9 rounded-lg" />
+            <CarouselNext className="relative static right-0 translate-y-0 h-9 w-9 rounded-lg" />
           </div>
         </Carousel>
         
@@ -142,7 +141,7 @@ export default function ProductsSection() {
           className="mt-12 text-center"
         >
           <Link to="/products">
-            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-xl">
+            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg">
               Δείτε Όλα τα Προϊόντα
             </Button>
           </Link>
