@@ -12,10 +12,10 @@ export default function HeroSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
   
   const productImages = [
-    "/lovable-uploads/IMG_13722.webp",
-    "/lovable-uploads/5c723acb-8f8a-443f-83b6-3a43571ccdb3.png",
-    "/lovable-uploads/IMG_10252.webp",
-    "/lovable-uploads/3786273d-64ad-4ed4-945c-1886fa8c5957.png"
+    "/lovable-uploads/IMG_23802.webp",
+    "/lovable-uploads/IMG_99002.webp",
+    "/lovable-uploads/IMG_97682.webp",
+    "/lovable-uploads/IMG_054822.webp"
   ];
 
   // Touch handling for mobile swipe
@@ -66,7 +66,7 @@ export default function HeroSection() {
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-      const offsetTop = contactSection.offsetTop - 60; // Account for navbar
+      const offsetTop = contactSection.offsetTop - 80; // Adjusted offset for better positioning
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
