@@ -1,5 +1,7 @@
+
 import { Package, Shield, Clock, Award, Users, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
+
 const fadeIn = {
   hidden: {
     opacity: 0,
@@ -10,16 +12,17 @@ const fadeIn = {
     y: 0
   }
 };
+
 export default function AboutSection() {
  return (
    <section id="about" className="bg-metal-800 text-white relative">
       {/* Transition gradient at the top */}
-      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white to-metal-800 w-full"></div>
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-metal-800 w-full"></div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-24">
+      <div className="container mx-auto px-4 py-32">
         <div className="flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0 lg:space-x-12">
-          <div className="lg:w-1/2">
+          <div className="lg:w-2/3">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
  Καλώς ορίσατε στην Steel Space Design
             </h2>
@@ -33,9 +36,9 @@ export default function AboutSection() {
  Στην Steel Space Design, πιστεύουμε στο να ξεπερνάμε τα όρια του εφικτού με τον χάλυβα. Αγκαλιάζουμε τις τελευταίες τεχνολογίες και αρχές σχεδιασμού για να προσφέρουμε καινοτόμες λύσεις που δεν είναι μόνο δομικά άρτιες αλλά και οπτικά εντυπωσιακές. Η συνεργατική μας προσέγγιση διασφαλίζει ότι συνεργαζόμαστε στενά με τους πελάτες μας, κατανοώντας τις μοναδικές τους απαιτήσεις και μεταφράζοντάς τες σε λειτουργικούς και εμπνευσμένους χώρους από χάλυβα.
             </p>
           </div>
-          <div className="lg:w-1/2">
-            {/* Placeholder for an image or illustration */}
-            <div className="bg-metal-700 rounded-lg overflow-hidden">
+          <div className="lg:w-1/3">
+            {/* Smaller image container */}
+            <div className="bg-metal-700 rounded-lg overflow-hidden max-w-sm mx-auto">
               <img
                 src="/lovable-uploads/IMG_13722.webp"
                 alt="About Steel Space Design"
@@ -47,7 +50,7 @@ export default function AboutSection() {
       </div>
 
       {/* Transition gradient at the bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-metal-800 w-full"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-metal-800 w-full"></div>
     </section>
   );
 }
