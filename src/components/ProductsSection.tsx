@@ -9,8 +9,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Card } from "@/components/ui/card";
 import React, { useCallback } from "react";
-import ProductCard from "./ProductCard";
 
 // Product data with updated images
 const productCategories = [{
@@ -29,6 +29,66 @@ const productCategories = [{
   description: "Μεταλλική βιτρίνα με γυάλινη πόρτα σε έντονο πορτοκαλί χρώμα, ιδανική για εκθετήρια και αποθήκευση προϊόντων.",
   image: "/lovable-uploads/IMG_21202.webp" // Replaced with compressed image
 }];
+
+en// Memoized ProductCard component
+const ProductCard = React.memo(function ProductCard({ product, onRequestQuote }) {
+  return (
+    <div className="p-1">
+      <Card className="overflow-hidden border-none shadow-none">
+        <div className="flex flex-col md:flex-row items-center gap-8 py-6">
+          <div className="w-full md:w-1/2">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="p-0 bg-white rounded-3xl shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              <img 
+                src={product.image} 
+                alt={product.title}
+                width={400}
+                height={300}
+                loading="lazy"
+                className="w-full h-auto object-contain mx-auto rounded-2xl"
+              />
+            </motion.div>
+          </div>
+          <div className="w-full md:w-1/2 space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="text-2xl font-medium text-metal-900">{product.title}</h3>
+              <p className="text-metal-600 mt-2">{product.description}</p>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <Button 
+                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-xl"
+                onClick={onRequestQuote}
+              >
+                Ζητήστε Προσφορά
+              </Button>
+              <Link to={`/product/${product.id}`} className="w-full sm:w-auto">
+                <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl">
+                  Περισσότερες Πληροφορίες
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </Card>
+    </div>
+  );
+});
 
 export default function ProductsSection() {
   const navigate = useNavigate();
@@ -69,8 +129,8 @@ export default function ProductsSection() {
             ))}
           </CarouselContent>
           <div className="flex justify-center mt-8 gap-4">
-            <CarouselPrevious className="relative static left-0 translate-y-0 h-9 w-9 rounded-lg" />
-            <CarouselNext className="relative static right-0 translate-y-0 h-9 w-9 rounded-lg" />
+            <CarouselPrevious className="relative static left-0 translate-y-0 h-9 w-9 rounded-xl" />
+            <CarouselNext className="relative static right-0 translate-y-0 h-9 w-9 rounded-xl" />
           </div>
         </Carousel>
         
@@ -82,7 +142,7 @@ export default function ProductsSection() {
           className="mt-12 text-center"
         >
           <Link to="/products">
-            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg">
+            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-xl">
               Δείτε Όλα τα Προϊόντα
             </Button>
           </Link>

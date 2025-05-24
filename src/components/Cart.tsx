@@ -72,14 +72,14 @@ export function Cart() {
                       <div className="w-24 h-24 bg-gray-100 rounded-md overflow-hidden flex-shrink-0">
                         <img 
                           src={item.image.replace("f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png", "IMG_21202.jpg")} 
-                          alt={item.title} 
+ alt={item.title} 
                           className="w-full h-full object-cover"
                         />
                       </div>
                       
                       <div className="flex-grow space-y-1">
                         <h3 className="font-medium">{item.title}</h3>
-                        <div className="text-sm text-gray-500">
+                         <div className=\"text-sm text-gray-500\">
                           <p>Ύψος: {item.height} εκ.</p>
                           <p>Πλάτος: {item.width} εκ.</p>
                           <p>Υλικό: {item.material}</p>

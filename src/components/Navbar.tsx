@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Archive } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -79,7 +80,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
               <Archive className={`h-6 w-6 ${scrolled ? 'text-blue-400' : 'text-blue-600'}`} />
-              <span className={`text-xl font-bold ${scrolled ? 'text-white' : 'text-metal-900'}`}>Stereom</span>
+              <span className={`text-xl font-bold ${scrolled ? 'text-white' : 'text-metal-900'}`}>Stereon</span>
             </Link>
           </div>
 
@@ -111,7 +112,7 @@ export default function Navbar() {
             </button>
             <button 
               onClick={handleQuoteRequest}
-              className={`rounded-lg px-6 py-3 ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
+              className={`rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
               >
               Ζήτα Προσφορά
             </button>
@@ -169,7 +170,7 @@ export default function Navbar() {
             </button>
             <button 
               onClick={handleQuoteRequest}
-              className={`w-full rounded-lg px-6 py-3 ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
+              className={`w-full rounded-xl ${scrolled ? 'bg-blue-600 hover:bg-blue-700' : 'bg-metal-800 hover:bg-metal-900 text-white'}`}
             >
               Ζήτα Προσφορά
             </button>
