@@ -1,3 +1,4 @@
+
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Ruler, Package, Square } from "lucide-react";
@@ -24,7 +25,7 @@ const products = [
       height: "180 εκ.",
       depth: "40 εκ."
     },
-    image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
+    image: "/lovable-uploads/IMG_99002.webp",
     details: "Τα μεταλλικά ντουλάπια πορτοκαλί με λευκό πλαίσιο είναι ιδανικά για εργασιακούς χώρους, αποδυτήρια γυμναστηρίων και αθλητικές εγκαταστάσεις. Προσφέρουν ασφαλή αποθήκευση προσωπικών αντικειμένων, με μοντέρνα αισθητική που ταιριάζει σε σύγχρονους επαγγελματικούς χώρους."
   },
   {
@@ -223,10 +224,40 @@ export default function ProductDetail() {
   }
   
   // Get similar products, excluding the current product and limiting to 3
-  // Also make sure we don't show the same product twice
   const similarProducts = products
-    .filter(p => p.id !== productId)  // Exclude current product
-    .slice(0, 3);  // Limit to 3 products
+    .filter(p => p.id !== productId)
+    .slice(0, 3);
+
+  // Handle back button with scroll position restoration
+  const handleBackClick = () => {
+    const returnPath = sessionStorage.getItem('returnPath');
+    const scrollPosition = sessionStorage.getItem('scrollPosition');
+    
+    if (returnPath && scrollPosition) {
+      navigate(returnPath);
+      setTimeout(() => {
+        window.scrollTo(0, parseInt(scrollPosition));
+      }, 100);
+      sessionStorage.removeItem('scrollPosition');
+      sessionStorage.removeItem('returnPath');
+    } else {
+      navigate(-1);
+    }
+  };
+
+  const scrollToContact = () => {
+    navigate('/');
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        const offsetTop = contactSection.offsetTop - 80; // Account for navbar
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -236,7 +267,7 @@ export default function ProductDetail() {
         <div className="mb-6">
           <Button 
             variant="outline" 
-            onClick={() => navigate(-1)}
+            onClick={handleBackClick}
             className="flex items-center gap-2"
           >
             <ArrowLeft size={16} />
@@ -309,8 +340,8 @@ export default function ProductDetail() {
             <div className="pt-4">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 rounded-xl w-full mb-3"
-                onClick={() => navigate("/#contact")}
+                className="bg-blue-600 hover:bg-blue-700 rounded-lg w-full mb-3 px-8 py-6"
+                onClick={scrollToContact}
               >
                 Ζητήστε Προσφορά
               </Button>

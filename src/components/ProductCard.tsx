@@ -64,7 +64,7 @@ const ProductCard = React.memo(function ProductCard({ product, onRequestQuote }:
               className="flex flex-col sm:flex-row gap-4"
             >
               <Button 
-                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-lg"
+                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-lg px-8 py-6"
                 onClick={onRequestQuote}
               >
                 Ζητήστε Προσφορά
@@ -74,7 +74,7 @@ const ProductCard = React.memo(function ProductCard({ product, onRequestQuote }:
                 className="w-full sm:w-auto"
                 onClick={handleProductLinkClick}
               >
-                <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-lg">
+                <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-lg px-8 py-6">
                   Περισσότερες Πληροφορίες
                 </Button>
               </Link>

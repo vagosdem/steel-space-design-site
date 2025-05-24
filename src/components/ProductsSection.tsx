@@ -35,8 +35,15 @@ export default function ProductsSection() {
 
   // Handler to navigate to the contact section on the home page
   const handleRequestQuote = useCallback(() => {
-    navigate("/#contact");
-  }, [navigate]);
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const offsetTop = contactSection.offsetTop - 80; // Account for navbar
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  }, []);
 
   return (
     <section id="products" className="bg-metal-50 py-20">
@@ -73,20 +80,6 @@ export default function ProductsSection() {
             <CarouselNext className="relative static right-0 translate-y-0 h-9 w-9 rounded-lg" />
           </div>
         </Carousel>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-12 text-center"
-        >
-          <Link to="/products">
-            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg">
-              Δείτε Όλα τα Προϊόντα
-            </Button>
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

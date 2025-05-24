@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -11,9 +12,9 @@ export default function HeroSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
   
   const productImages = [
-    "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "/lovable-uploads/IMG_054822.webp",
     "/lovable-uploads/5c723acb-8f8a-443f-83b6-3a43571ccdb3.png",
-    "https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "/lovable-uploads/IMG_97682.webp",
     "/lovable-uploads/3786273d-64ad-4ed4-945c-1886fa8c5957.png"
   ];
 
@@ -62,6 +63,17 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const offsetTop = contactSection.offsetTop - 80; // Account for navbar
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section className="bg-white text-metal-900 pt-24 pb-16 overflow-hidden">
       <div className="container-section text-center">
@@ -81,11 +93,13 @@ export default function HeroSection() {
             σχεδιασμένες και κατασκευασμένες στην Ελλάδα.
           </p>
           <div className="flex justify-center pt-4">
-            <a href="#contact">
-              <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-10 py-7 text-lg rounded-xl">
-                Ζητήστε Προσφορά
-              </Button>
-            </a>
+            <Button 
+              size="lg" 
+              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-12 py-8 text-lg rounded-lg"
+              onClick={scrollToContact}
+            >
+              Ζητήστε Προσφορά
+            </Button>
           </div>
         </motion.div>
         
@@ -174,12 +188,13 @@ export default function HeroSection() {
               Με εξατομικευμένες επιλογές διαστάσεων, χρωμάτων και διαμορφώσεων, σχεδιάζουμε 
               λύσεις που ανταποκρίνονται ακριβώς στις ανάγκες σας.
             </p>
-            <a href="#contact">
-              <Button className="flex items-center gap-2 rounded-lg mt-2 bg-blue-600 hover:bg-blue-700">
-                Θέλω και εγώ παρόμοια λύση 
-                <ArrowRight size={16} />
-              </Button>
-            </a>
+            <Button 
+              className="flex items-center gap-2 rounded-lg mt-2 bg-blue-600 hover:bg-blue-700 px-8 py-6"
+              onClick={scrollToContact}
+            >
+              Θέλω και εγώ παρόμοια λύση 
+              <ArrowRight size={16} />
+            </Button>
           </div>
         </motion.div>
       </div>
