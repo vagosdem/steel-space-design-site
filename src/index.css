@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap&font-display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -82,11 +82,25 @@
   }
   
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md font-medium transition-colors;
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-md font-medium transition-colors min-h-[44px] min-w-[44px];
   }
 
   .btn-outline {
-    @apply border border-metal-300 hover:border-metal-400 px-5 py-3 rounded-md font-medium transition-colors;
+    @apply border border-metal-300 hover:border-metal-400 px-5 py-3 rounded-md font-medium transition-colors min-h-[44px] min-w-[44px];
+  }
+  
+  /* Improved touch targets */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  
+  /* Better contrast colors */
+  .text-accessible {
+    @apply text-gray-700;
+  }
+  
+  .text-accessible-light {
+    @apply text-gray-600;
   }
   
   /* Add gradient transition classes */
@@ -106,6 +120,15 @@
   
   .text-pretty {
     text-wrap: pretty;
+  }
+  
+  /* Skip navigation link for accessibility */
+  .skip-nav {
+    @apply absolute left-[-9999px] top-auto w-1 h-1 overflow-hidden z-50;
+  }
+  
+  .skip-nav:focus {
+    @apply left-6 top-6 w-auto h-auto overflow-visible bg-blue-600 text-white px-4 py-2 rounded;
   }
 }
 
@@ -128,7 +151,7 @@
 /* Custom focus styles */
 button:focus-visible,
 a:focus-visible {
-  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-metal-900;
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-white;
 }
 
 /* Industrial aesthetic enhancements */
@@ -158,4 +181,3 @@ a:focus-visible {
   height: 100px;
   background-image: linear-gradient(to bottom, transparent, currentColor);
 }
-

@@ -83,82 +83,89 @@ const Index = () => {
       <main className="overflow-hidden">
         <HeroSection />
         
-        <motion.div 
+        <motion.section 
           ref={aboutRef}
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          aria-labelledby="about-heading"
         >
           <AboutSection />
-        </motion.div>
+        </motion.section>
         
-        <motion.div 
+        <motion.section 
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          aria-labelledby="products-heading"
         >
           <ProductShowcase 
             product={products[0]}
             alignment="right"
           />
-        </motion.div>
+        </motion.section>
         
-        <motion.div 
+        <motion.section 
           ref={featuresRef}
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          aria-labelledby="features-heading"
         >
           <FeaturesSection />
-        </motion.div>
+        </motion.section>
         
-        <motion.div 
+        <motion.section 
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          aria-labelledby="products-heading-2"
         >
           <ProductShowcase 
             product={products[1]}
             alignment="left"
           />
-        </motion.div>
+        </motion.section>
         
-        <motion.div 
+        <motion.section 
           ref={industryRef}
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          aria-labelledby="industry-heading"
         >
           <IndustrySection />
-        </motion.div>
+        </motion.section>
         
-        <motion.div 
+        <motion.section 
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
+          aria-labelledby="products-heading-3"
         >
           <ProductShowcase 
             product={products[2]}
             alignment="right"
           />
-        </motion.div>
+        </motion.section>
         
-        <motion.div 
+        <motion.section 
           ref={contactRef}
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           id="contact"
+          aria-labelledby="contact-heading"
         >
           <ContactSection />
-        </motion.div>
+        </motion.section>
       </main>
       <Footer />
     </div>

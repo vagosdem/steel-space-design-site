@@ -53,6 +53,9 @@ export default function ProductShowcase({
               <img 
                 src={product.image} 
                 alt={product.title} 
+                width="500"
+                height="500"
+                loading="lazy"
                 className="w-full h-auto object-contain mx-auto max-h-[500px]" 
               />
             </div>
@@ -76,17 +79,17 @@ export default function ProductShowcase({
             }}
           >
             <div>
-              <h2 className="text-3xl font-medium text-black mb-4">{product.title}</h2>
-              <p className="text-metal-600 text-lg mb-6">{product.description}</p>
+              <h3 className="text-3xl font-medium text-black mb-4">{product.title}</h3>
+              <p className="text-gray-600 text-lg mb-6">{product.description}</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to={`/product/${product.id}`}>
-                  <Button className="bg-blue-600 hover:bg-blue-700 rounded-xl">
+                  <Button className="bg-blue-600 hover:bg-blue-700 rounded-xl touch-target">
                     Περισσότερες Πληροφορίες
                   </Button>
                 </Link>
                 <Button 
                   variant="outline" 
-                  className="border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl" 
+                  className="border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl touch-target" 
                   onClick={handleRequestQuote}
                 >
                   Ζητήστε Προσφορά
@@ -99,4 +102,3 @@ export default function ProductShowcase({
     </section>
   );
 }
-

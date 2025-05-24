@@ -57,8 +57,8 @@ export default {
 					50: '#F5F5F6',
 					100: '#E6E7E8',
 					200: '#C6C8CC',
-					300: '#A6A9AF',
-					400: '#868A92',
+					300: '#8A8D95', // Improved contrast from #A6A9AF
+					400: '#6B6F76', // Improved contrast from #868A92
 					500: '#666B76',
 					600: '#53565E',
 					700: '#3F4147',
@@ -76,6 +76,18 @@ export default {
 					700: '#1D4ED8',
 					800: '#1E40AF',
 					900: '#1E3A8A',
+				},
+				gray: {
+					50: '#F9FAFB',
+					100: '#F3F4F6',
+					200: '#E5E7EB',
+					300: '#D1D5DB',
+					400: '#9CA3AF',
+					500: '#6B7280',
+					600: '#4B5563', // Better contrast for accessible text
+					700: '#374151', // Better contrast for accessible text
+					800: '#1F2937',
+					900: '#111827',
 				}
 			},
 			borderRadius: {
