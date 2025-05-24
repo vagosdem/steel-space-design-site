@@ -175,14 +175,6 @@ export default function ProjectsSection() {
             </div>
           </Carousel>
         </motion.div>
-        
-        <div className="mt-12 text-center">
-          <Link to="/products">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Δείτε τα Προϊόντα μας
-            </Button>
-          </Link>
-        </div>
       </div>
     </section>
   );

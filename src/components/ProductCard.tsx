@@ -20,8 +20,23 @@ const ProductCard = React.memo(function ProductCard({ product, onRequestQuote }:
   
   // Store current scroll position in state when navigating to product details
   const handleProductLinkClick = () => {
-    sessionStorage.setItem('scrollPosition', window.pageYOffset.toString());
-    sessionStorage.setItem('returnPath', location.pathname + location.hash);
+    try {
+      sessionStorage.setItem('scrollPosition', window.pageYOffset.toString());
+      sessionStorage.setItem('returnPath', location.pathname + location.hash);
+    } catch (error) {
+      console.log('Unable to save scroll position:', error);
+    }
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      const offsetTop = contactSection.offsetTop - 60; // Account for navbar
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
@@ -64,8 +79,8 @@ const ProductCard = React.memo(function ProductCard({ product, onRequestQuote }:
               className="flex flex-col sm:flex-row gap-4"
             >
               <Button 
-                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-lg px-8 py-6"
-                onClick={onRequestQuote}
+                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-md px-10 py-8"
+                onClick={scrollToContact}
               >
                 Ζητήστε Προσφορά
               </Button>
@@ -74,7 +89,7 @@ const ProductCard = React.memo(function ProductCard({ product, onRequestQuote }:
                 className="w-full sm:w-auto"
                 onClick={handleProductLinkClick}
               >
-                <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-lg px-8 py-6">
+                <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-md px-10 py-8">
                   Περισσότερες Πληροφορίες
                 </Button>
               </Link>

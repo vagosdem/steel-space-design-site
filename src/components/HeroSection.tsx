@@ -12,9 +12,9 @@ export default function HeroSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
   
   const productImages = [
-    "/lovable-uploads/IMG_054822.webp",
+    "/lovable-uploads/IMG_13722.webp",
     "/lovable-uploads/5c723acb-8f8a-443f-83b6-3a43571ccdb3.png",
-    "/lovable-uploads/IMG_97682.webp",
+    "/lovable-uploads/IMG_10252.webp",
     "/lovable-uploads/3786273d-64ad-4ed4-945c-1886fa8c5957.png"
   ];
 
@@ -66,7 +66,7 @@ export default function HeroSection() {
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-      const offsetTop = contactSection.offsetTop - 80; // Account for navbar
+      const offsetTop = contactSection.offsetTop - 60; // Account for navbar
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
@@ -95,7 +95,7 @@ export default function HeroSection() {
           <div className="flex justify-center pt-4">
             <Button 
               size="lg" 
-              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-12 py-8 text-lg rounded-lg"
+              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-10 py-8 text-lg rounded-md"
               onClick={scrollToContact}
             >
               Ζητήστε Προσφορά
@@ -136,7 +136,7 @@ export default function HeroSection() {
           >
             {/* Navigation arrows */}
             <button 
-              onClick={prevImage} 
+              onClick={() => setCurrentImage((prev) => (prev - 1 + productImages.length) % productImages.length)} 
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/30 hover:bg-white/50 p-2 rounded-full shadow-md transition-all"
               aria-label="Previous image"
             >
@@ -144,7 +144,7 @@ export default function HeroSection() {
             </button>
             
             <button 
-              onClick={nextImage} 
+              onClick={() => setCurrentImage((prev) => (prev + 1) % productImages.length)} 
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/30 hover:bg-white/50 p-2 rounded-full shadow-md transition-all"
               aria-label="Next image"
             >
@@ -189,7 +189,7 @@ export default function HeroSection() {
               λύσεις που ανταποκρίνονται ακριβώς στις ανάγκες σας.
             </p>
             <Button 
-              className="flex items-center gap-2 rounded-lg mt-2 bg-blue-600 hover:bg-blue-700 px-8 py-6"
+              className="flex items-center gap-2 rounded-md mt-2 bg-blue-600 hover:bg-blue-700 px-10 py-8"
               onClick={scrollToContact}
             >
               Θέλω και εγώ παρόμοια λύση 

@@ -33,12 +33,12 @@ export default function FeaturesSection() {
   return (
     <section id="features" className="bg-metal-800 text-white relative py-32">
       {/* Transition gradient at the top */}
-      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-white to-metal-800 w-full"></div>
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-white to-metal-800 w-full"></div>
 
-      <div className="container mx-auto px-4 py-20">
-        <div className="text-center max-w-5xl mx-auto mb-20">
+      <div className="container mx-auto px-4 py-24">
+        <div className="text-center max-w-6xl mx-auto mb-20">
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8">Τι Προσφέρουμε</h2>
-          <p className="text-metal-300 text-xl lg:text-2xl leading-relaxed">
+          <p className="text-metal-300 text-2xl lg:text-3xl leading-relaxed">
             Παρέχουμε ολοκληρωμένες λύσεις αποθήκευσης υψηλής ποιότητας για επαγγελματικούς χώρους.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function FeaturesSection() {
       </div>
 
       {/* Transition gradient at the bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-metal-800 w-full"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white to-metal-800 w-full"></div>
     </section>
   );
 }

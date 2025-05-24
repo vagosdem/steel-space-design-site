@@ -17,10 +17,10 @@ export default function AboutSection() {
  return (
    <section id="about" className="bg-metal-800 text-white relative">
       {/* Transition gradient at the top */}
-      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-white to-metal-800 w-full"></div>
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-white to-metal-800 w-full"></div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-40">
+      <div className="container mx-auto px-4 py-48">
         <div className="flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0 lg:space-x-12">
           <div className="lg:w-2/3">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -38,7 +38,7 @@ export default function AboutSection() {
           </div>
           <div className="lg:w-1/3">
             {/* Smaller image container */}
-            <div className="bg-metal-700 rounded-lg overflow-hidden max-w-xs mx-auto">
+            <div className="bg-metal-700 rounded-lg overflow-hidden max-w-48 mx-auto">
               <img
                 src="/lovable-uploads/IMG_13722.webp"
                 alt="About Stereom"
@@ -50,7 +50,7 @@ export default function AboutSection() {
       </div>
 
       {/* Transition gradient at the bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-metal-800 w-full"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white to-metal-800 w-full"></div>
     </section>
   );
 }
