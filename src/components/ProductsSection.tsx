@@ -9,9 +9,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 
-// Product data with updated images
 const productCategories = [{
   id: "red-blue-lockers",
   title: "Κόκκινα και Μπλε Μεταλλικά Ντουλάπια",
@@ -37,7 +36,6 @@ const productCategories = [{
 export default function ProductsSection() {
   const navigate = useNavigate();
   
-  // Handler to navigate to the contact section on the home page
   const handleRequestQuote = () => {
     navigate("/#contact");
   };
@@ -82,7 +80,11 @@ export default function ProductsSection() {
                           <img 
                             src={product.image} 
                             alt={product.title}
+                            width={400}
+                            height={400}
+                            loading="lazy"
                             className="w-full h-auto object-contain mx-auto rounded-2xl"
+                            style={{ aspectRatio: '1 / 1' }}
                           />
                         </motion.div>
                       </div>

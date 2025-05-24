@@ -80,7 +80,7 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white overflow-hidden">
       <Navbar />
-      <main className="overflow-hidden">
+      <main className="overflow-hidden pt-20">
         <HeroSection />
         
         <motion.section 

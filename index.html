@@ -17,17 +17,25 @@
     <meta name="twitter:site" content="@stereon" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
+    <!-- Cache control headers -->
+    <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+    <meta http-equiv="Expires" content="31536000">
+
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
     
-    <!-- Preload hero image -->
-    <link rel="preload" href="/lovable-uploads/0f7b939c-3012-47f1-8cc8-13033e7dd152.png" as="image">
+    <!-- Preload hero image with explicit dimensions -->
+    <link rel="preload" href="/lovable-uploads/0f7b939c-3012-47f1-8cc8-13033e7dd152.png" as="image" fetchpriority="high">
     
     <!-- Performance optimizations -->
     <meta name="theme-color" content="#2563EB" />
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//cdn.gpteng.co">
+    
+    <!-- Preconnect to improve loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.gpteng.co" crossorigin>
   </head>
 
   <body>

@@ -22,7 +22,6 @@ export default function ProductShowcase({
   const contentOrder = alignment === "left" ? "order-last" : "order-first";
   const navigate = useNavigate();
 
-  // Handler to navigate to the contact section on the home page
   const handleRequestQuote = () => {
     navigate("/?scrollTo=contact");
   };
@@ -53,10 +52,11 @@ export default function ProductShowcase({
               <img 
                 src={product.image} 
                 alt={product.title} 
-                width="500"
-                height="500"
+                width={500}
+                height={500}
                 loading="lazy"
-                className="w-full h-auto object-contain mx-auto max-h-[500px]" 
+                className="w-full h-auto object-contain mx-auto max-h-[500px]"
+                style={{ aspectRatio: '1 / 1' }}
               />
             </div>
           </motion.div>
@@ -79,7 +79,7 @@ export default function ProductShowcase({
             }}
           >
             <div>
-              <h3 className="text-3xl font-medium text-black mb-4">{product.title}</h3>
+              <h2 className="text-3xl font-medium text-black mb-4">{product.title}</h2>
               <p className="text-gray-600 text-lg mb-6">{product.description}</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to={`/product/${product.id}`}>
