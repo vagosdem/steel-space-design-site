@@ -1,0 +1,104 @@
+
+import { Button } from "@/components/ui/button";
+import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+
+interface ProductShowcaseProps {
+  product: {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    type: string;
+  };
+  alignment: "left" | "right";
+}
+
+export default function ProductShowcase({
+  product,
+  alignment
+}: ProductShowcaseProps) {
+  const imageOrder = alignment === "left" ? "order-first" : "order-last";
+  const contentOrder = alignment === "left" ? "order-last" : "order-first";
+  const navigate = useNavigate();
+
+  // Handler to navigate to the contact section on the home page
+  const handleRequestQuote = () => {
+    navigate("/?scrollTo=contact");
+  };
+  
+  return (
+    <section className="bg-white py-20 relative z-10 overflow-hidden">
+      <div className="container px-4 mx-auto">
+        <div className="flex flex-col md:flex-row items-center gap-16">
+          <motion.div 
+            className={`w-full md:w-1/2 ${imageOrder}`} 
+            initial={{
+              opacity: 0,
+              x: alignment === "left" ? -50 : 50
+            }} 
+            whileInView={{
+              opacity: 1,
+              x: 0
+            }} 
+            viewport={{
+              once: true
+            }} 
+            transition={{
+              duration: 0.7,
+              delay: 0.2
+            }}
+          >
+            <div className="transition-all duration-300 mx-auto my-0 py-0">
+              <img 
+                src={product.image.replace("f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png", "IMG_21202.jpg").replace("00772ab6-6083-4b70-8f34-b4542e7c725b.png", "IMG_054822.jpg").replace("28a84624-2235-4f42-a8df-59c526397527.png", "IMG_23802.jpg").replace("c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png", "IMG_99002.jpg")}
+                alt={product.title} 
+
+                loading="lazy"
+                className="w-full h-auto object-contain mx-auto max-h-[500px]" 
+              />
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            className={`w-full md:w-1/2 ${contentOrder} space-y-6`} 
+            initial={{
+              opacity: 0,
+              y: 30
+            }} 
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }} 
+            viewport={{
+              once: true
+            }} 
+            transition={{
+              duration: 0.5
+            }}
+          >
+            <div>
+              <h2 className="text-3xl font-medium text-black mb-4">{product.title}</h2>
+              <p className="text-metal-600 text-lg mb-6">{product.description}</p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to={`/product/${product.id}`}>
+                  <Button className="bg-blue-600 hover:bg-blue-700 rounded-xl">
+                    Περισσότερες Πληροφορίες
+                  </Button>
+                </Link>
+                <Button 
+                  variant="outline" 
+                  className="border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl" 
+                  onClick={handleRequestQuote}
+                >
+                  Ζητήστε Προσφορά
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
