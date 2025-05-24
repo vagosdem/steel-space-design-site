@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -14,15 +13,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-// Updated product data with new red locker image
+// Updated product data with better matching images
 const products = [
   {
     id: "metal-cabinet-glass",
     title: "Μεταλλική Ντουλάπα με Τζάμια",
     description: "Επαγγελματική μεταλλική ντουλάπα με γυάλινες πόρτες, ιδανική για αρχειοθέτηση σε γραφεία και χώρους υγείας.",
-    image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "cabinets",
- type: "office",
+    type: "office",
     color: "white",
     material: "metal",
     features: ["glass-doors", "adjustable-shelves"]
@@ -31,7 +30,7 @@ const products = [
     id: "orange-white-locker",
     title: "Ντουλάπια Πορτοκαλί με Λευκό Πλαίσιο",
     description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για αποδυτήρια και γυμναστήρια.",
-    image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
+    image: "/lovable-uploads/IMG_99002.webp",
     category: "lockers",
     type: "gym",
     color: "orange",
@@ -42,9 +41,9 @@ const products = [
     id: "metal-drawers-multi",
     title: "Συρταριέρες Μεταλλικές Πολλαπλών Χρωμάτων",
     description: "Μεταλλικές συρταριέρες σε διάφορα χρώματα για αρχειοθέτηση και αποθήκευση αντικειμένων σε επαγγελματικούς χώρους.",
-    image: "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
+    image: "/lovable-uploads/IMG_23802.webp",
     category: "drawers",
- type: "creative",
+    type: "creative",
     color: "multi",
     material: "metal",
     features: ["portable", "colorful", "drawer-dividers"]
@@ -53,7 +52,7 @@ const products = [
     id: "turquoise-orange-locker",
     title: "Ντουλάπι Τυρκουάζ με Πορτοκαλί",
     description: "Μοντέρνος συνδυασμός χρωμάτων με τυρκουάζ πόρτα και πορτοκαλί πλαίσιο, ιδανικά για δημιουργικούς χώρους εργασίας.",
-    image: "/lovable-uploads/de48c2ac-8f96-4f1d-987f-3fa9c559618f.png",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     category: "lockers",
     type: "creative",
     color: "turquoise",
@@ -64,7 +63,7 @@ const products = [
     id: "blue-metallic-locker",
     title: "Μπλε Μεταλλικά Ντουλάπια",
     description: "Κομψά μεταλλικά ντουλάπια σε μπλε απόχρωση με ειδικό σχεδιασμό για επαγγελματικούς χώρους και εκπαιδευτικά ιδρύματα.",
-    image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png",
+    image: "/lovable-uploads/IMG_13722.webp",
     category: "lockers",
     type: "school",
     color: "blue",
@@ -75,7 +74,7 @@ const products = [
     id: "orange-display-cabinet", 
     title: "Πορτοκαλί Βιτρίνα Αποθήκευσης",
     description: "Μεταλλική βιτρίνα με γυάλινη πόρτα σε έντονο πορτοκαλί χρώμα, ιδανική για εκθετήρια και αποθήκευση προϊόντων.",
-    image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png",
+    image: "/lovable-uploads/IMG_21202.webp",
     category: "cabinets",
     type: "retail",
     color: "orange",
@@ -86,7 +85,7 @@ const products = [
     id: "red-school-lockers",
     title: "Κόκκινα Σχολικά Ντουλάπια",
     description: "Ανθεκτικά μεταλλικά ντουλάπια σε κόκκινο χρώμα με μαύρο πλαίσιο, σχεδιασμένα για σχολεία και εκπαιδευτικά ιδρύματα.",
-    image: "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
+    image: "/lovable-uploads/IMG_97682.webp",
     category: "lockers",
     type: "school",
     color: "red",
@@ -97,7 +96,7 @@ const products = [
     id: "yellow-lockers",
     title: "Κίτρινα Μεταλλικά Ντουλάπια",
     description: "Φωτεινά κίτρινα ντουλάπια με μεταλλική κατασκευή, ιδανικά για παιδικούς σταθμούς, σχολικές εγκαταστάσεις και χαρούμενους χώρους.",
-    image: "/lovable-uploads/IMG_054822.jpg",
+    image: "/lovable-uploads/IMG_054822.webp",
     category: "lockers",
     type: "creative",
     color: "yellow",
@@ -218,7 +217,7 @@ export default function Products() {
             
             <div className="flex flex-wrap gap-4">
               <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-                <SelectTrigger className="w-[180px] rounded-xl">
+                <SelectTrigger className="w-[180px] rounded-lg">
                   <SelectValue placeholder="Όλες οι Κατηγορίες" />
                 </SelectTrigger>
                 <SelectContent>
@@ -230,7 +229,7 @@ export default function Products() {
               </Select>
               
               <Select value={typeFilter} onValueChange={setTypeFilter}>
-                <SelectTrigger className="w-[180px] rounded-xl">
+                <SelectTrigger className="w-[180px] rounded-lg">
                   <SelectValue placeholder="Όλοι οι Τύποι" />
                 </SelectTrigger>
                 <SelectContent>
@@ -244,7 +243,7 @@ export default function Products() {
               </Select>
               
               <Select value={colorFilter} onValueChange={setColorFilter}>
-                <SelectTrigger className="w-[180px] rounded-xl">
+                <SelectTrigger className="w-[180px] rounded-lg">
                   <SelectValue placeholder="Όλα τα Χρώματα" />
                 </SelectTrigger>
                 <SelectContent>
@@ -260,7 +259,7 @@ export default function Products() {
               </Select>
               
               <Select value={featureFilter} onValueChange={setFeatureFilter}>
-                <SelectTrigger className="w-[220px] rounded-xl">
+                <SelectTrigger className="w-[220px] rounded-lg">
                   <SelectValue placeholder="Όλα τα Χαρακτηριστικά" />
                 </SelectTrigger>
                 <SelectContent>
@@ -278,7 +277,7 @@ export default function Products() {
 
             <div className="ml-auto">
               <Select value={sortOption} onValueChange={setSortOption}>
-                <SelectTrigger className="w-[180px] rounded-xl">
+                <SelectTrigger className="w-[180px] rounded-lg">
                   <SelectValue placeholder="Ταξινόμηση κατά" />
                 </SelectTrigger>
                 <SelectContent>
@@ -319,7 +318,7 @@ export default function Products() {
                   <div className="mt-auto">
                     <Button 
                       onClick={() => handleProductClick(product.id)}
-                      className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl"
+                      className="w-full bg-blue-600 hover:bg-blue-700 rounded-lg"
                     >
                       Περισσότερες Πληροφορίες
                     </Button>
@@ -348,7 +347,7 @@ export default function Products() {
                   setFeatureFilter("all");
                   setSortOption("default");
                 }}
-                className="rounded-xl"
+                className="rounded-lg"
               >
                 Επαναφορά φίλτρων
               </Button>
@@ -369,13 +368,13 @@ export default function Products() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
-                className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 rounded-xl" 
+                className="bg-blue-600 hover:bg-blue-700 flex items-center gap-2 rounded-lg" 
                 onClick={handleRequestQuote}
               >
                 <Mail className="h-4 w-4" />
                 Ζητήστε Προσφορά
               </Button>
-              <Button variant="outline" onClick={() => window.location.href = "tel:+302109999999"} className="border-blue-400 text-white hover:bg-blue-800 flex items-center gap-2 rounded-xl">
+              <Button variant="outline" onClick={() => window.location.href = "tel:+302109999999"} className="border-blue-400 text-white hover:bg-blue-800 flex items-center gap-2 rounded-lg">
                 <Phone className="h-4 w-4" />
                 Καλέστε μας
               </Button>
@@ -387,4 +386,3 @@ export default function Products() {
     </div>
   );
 }
-
