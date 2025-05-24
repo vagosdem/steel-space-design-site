@@ -9,9 +9,7 @@ export default function Footer() {
               <Archive className="h-6 w-6 text-blue-400" />
               <span className="text-xl font-bold">Stereon</span>
             </div>
-            <p className="text-metal-400 pr-4">
-              Σχεδιάζουμε και κατασκευάζουμε ποιοτικές μεταλλικές λύσεις αποθήκευσης για επαγγελματικούς χώρους από το 2005.
-            </p>
+            <p className="text-metal-400 pr-4">Σχεδιάζουμε και κατασκευάζουμε ποιοτικές μεταλλικές λύσεις αποθήκευσης για επαγγελματικούς χώρους από το 1967.</p>
           </div>
           
           <div>
