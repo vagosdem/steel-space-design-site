@@ -13,13 +13,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-// Updated product data with all new images
+// Updated product data with all new WebP images
 const products = [
   {
     id: "white-glass-cabinet",
     title: "Λευκή Μεταλλική Ντουλάπα με Τζάμια",
     description: "Επαγγελματική λευκή μεταλλική ντουλάπα με γυάλινες πόρτες, ιδανική για αρχειοθέτηση σε γραφεία και χώρους υγείας.",
-    image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
+    image: "/lovable-uploads/IMG_054822.webp",
     category: "cabinets",
     type: "office",
     color: "white",
@@ -27,81 +27,81 @@ const products = [
     features: ["glass-doors", "adjustable-shelves"]
   },
   {
-    id: "orange-storage-cabinet",
-    title: "Πορτοκαλί Βιτρίνα Αποθήκευσης",
-    description: "Μεταλλική βιτρίνα με γυάλινη πόρτα σε έντονο πορτοκαλί χρώμα, ιδανική για εκθετήρια και αποθήκευση προϊόντων.",
-    image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png",
+    id: "professional-storage-cabinet",
+    title: "Επαγγελματικό Ντουλάπι Αποθήκευσης",
+    description: "Μεταλλικό ντουλάπι με πολλαπλές θέσεις και εργονομικό σχεδιασμό, ιδανικό για οργανωμένους επαγγελματικούς χώρους.",
+    image: "/lovable-uploads/IMG_10252.webp",
     category: "cabinets",
-    type: "retail",
-    color: "orange",
+    type: "office",
+    color: "gray",
     material: "metal",
-    features: ["glass-doors", "display", "adjustable-shelves"]
+    features: ["multiple-compartments", "ergonomic-design"]
   },
   {
-    id: "turquoise-orange-locker",
-    title: "Ντουλάπι Τυρκουάζ με Πορτοκαλί",
-    description: "Μοντέρνος συνδυασμός χρωμάτων με τυρκουάζ πόρτα και πορτοκαλί πλαίσιο, ιδανικά για δημιουργικούς χώρους εργασίας.",
-    image: "/lovable-uploads/de48c2ac-8f96-4f1d-987f-3fa9c559618f.png",
+    id: "modern-locker-system",
+    title: "Μοντέρνο Σύστημα Ντουλαπιών",
+    description: "Σύγχρονο σύστημα ντουλαπιών με καθαρές γραμμές και ανθεκτική κατασκευή για επαγγελματικούς χώρους.",
+    image: "/lovable-uploads/IMG_13722.webp",
     category: "lockers",
-    type: "creative",
-    color: "turquoise",
+    type: "office",
+    color: "blue",
     material: "metal",
-    features: ["colorful", "modern-design", "key-lock"]
+    features: ["modern-design", "key-lock", "ventilation"]
   },
   {
-    id: "red-school-lockers",
-    title: "Κόκκινα Σχολικά Ντουλάπια",
-    description: "Ανθεκτικά μεταλλικά ντουλάπια σε κόκκινο χρώμα με μαύρο πλαίσιο, σχεδιασμένα για σχολεία και εκπαιδευτικά ιδρύματα.",
-    image: "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
-    category: "lockers",
-    type: "school",
-    color: "red",
-    material: "metal",
-    features: ["numbered", "ventilation", "key-lock"]
-  },
-  {
-    id: "orange-white-locker",
-    title: "Ντουλάπια Πορτοκαλί με Λευκό Πλαίσιο",
-    description: "Κλασικά μεταλλικά ντουλάπια πολλαπλών θέσεων με πορτοκαλί πόρτες και λευκό πλαίσιο για αποδυτήρια και γυμναστήρια.",
-    image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
+    id: "multi-door-locker-system",
+    title: "Σύστημα Πολλαπλών Ντουλαπιών",
+    description: "Ανθεκτικά μεταλλικά ντουλάπια με πολλαπλές πόρτες και θέσεις, σχεδιασμένα για αποδυτήρια και γυμναστήρια.",
+    image: "/lovable-uploads/IMG_13742.webp",
     category: "lockers",
     type: "gym",
-    color: "orange",
+    color: "multi",
     material: "metal",
     features: ["multiple-units", "ventilation", "key-lock"]
   },
   {
-    id: "blue-metallic-locker",
-    title: "Μπλε Μεταλλικά Ντουλάπια",
-    description: "Κομψά μεταλλικά ντουλάπια σε μπλε απόχρωση με ειδικό σχεδιασμό για επαγγελματικούς χώρους και εκπαιδευτικά ιδρύματα.",
-    image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png",
+    id: "colorful-school-lockers",
+    title: "Πολύχρωμα Σχολικά Ντουλάπια",
+    description: "Φωτεινά και χαρούμενα ντουλάπια με διάφορα χρώματα, ιδανικά για σχολικές εγκαταστάσεις και παιδικούς σταθμούς.",
+    image: "/lovable-uploads/IMG_21202.webp",
     category: "lockers",
     type: "school",
-    color: "blue",
-    material: "metal",
-    features: ["ventilation", "number-plates", "key-lock"]
-  },
-  {
-    id: "yellow-lockers",
-    title: "Κίτρινα Μεταλλικά Ντουλάπια",
-    description: "Φωτεινά κίτρινα ντουλάπια με μεταλλική κατασκευή, ιδανικά για παιδικούς σταθμούς, σχολικές εγκαταστάσεις και χαρούμενους χώρους.",
-    image: "/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png",
-    category: "lockers",
-    type: "school",
-    color: "yellow",
-    material: "metal",
-    features: ["colorful", "ventilation", "child-friendly"]
-  },
-  {
-    id: "metal-drawers-multi",
-    title: "Συρταριέρες Μεταλλικές Πολλαπλών Χρωμάτων",
-    description: "Μεταλλικές συρταριέρες σε διάφορα χρώματα για αρχειοθέτηση και αποθήκευση αντικειμένων σε επαγγελματικούς χώρους.",
-    image: "/lovable-uploads/28a84624-2235-4f42-a8df-59c526397527.png",
-    category: "drawers",
-    type: "creative",
     color: "multi",
     material: "metal",
-    features: ["portable", "colorful", "drawer-dividers"]
+    features: ["colorful", "child-friendly", "numbered"]
+  },
+  {
+    id: "industrial-storage-solution",
+    title: "Βιομηχανική Λύση Αποθήκευσης",
+    description: "Ανθεκτικά μεταλλικά ντουλάπια για βιομηχανικούς χώρους, με έμφαση στην αντοχή και τη λειτουργικότητα.",
+    image: "/lovable-uploads/IMG_23802.webp",
+    category: "storage",
+    type: "industrial",
+    color: "gray",
+    material: "metal",
+    features: ["heavy-duty", "industrial-grade", "secure"]
+  },
+  {
+    id: "professional-office-lockers",
+    title: "Επαγγελματικά Ντουλάπια Γραφείου",
+    description: "Κομψά μεταλλικά ντουλάπια σχεδιασμένα ειδικά για σύγχρονους επαγγελματικούς χώρους και γραφεία.",
+    image: "/lovable-uploads/IMG_97682.webp",
+    category: "lockers",
+    type: "office",
+    color: "white",
+    material: "metal",
+    features: ["professional-design", "clean-lines", "secure"]
+  },
+  {
+    id: "compact-storage-units",
+    title: "Συμπαγή Αποθηκευτικά Συστήματα",
+    description: "Μεταλλικά ντουλάπια με συμπαγή σχεδιασμό, ιδανικά για χώρους με περιορισμένο χώρο αλλά υψηλές απαιτήσεις αποθήκευσης.",
+    image: "/lovable-uploads/IMG_99002.webp",
+    category: "storage",
+    type: "compact",
+    color: "blue",
+    material: "metal",
+    features: ["space-saving", "efficient", "modular"]
   }
 ];
 
@@ -131,7 +131,6 @@ export default function Products() {
   const [colorFilter, setColorFilter] = useState("all");
   const [featureFilter, setFeatureFilter] = useState("all");
   
-  // Scroll to top when component mounts
   useEffect(() => {
     if (topRef.current) {
       topRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -224,7 +223,7 @@ export default function Products() {
                   <SelectItem value="all">Όλες οι Κατηγορίες</SelectItem>
                   <SelectItem value="lockers">Ντουλάπες Locker</SelectItem>
                   <SelectItem value="cabinets">Ντουλάπες Αρχειοθέτησης</SelectItem>
-                  <SelectItem value="drawers">Συρταριέρες</SelectItem>
+                  <SelectItem value="storage">Αποθηκευτικά Συστήματα</SelectItem>
                 </SelectContent>
               </Select>
               
@@ -237,8 +236,8 @@ export default function Products() {
                   <SelectItem value="office">Γραφείου</SelectItem>
                   <SelectItem value="gym">Αθλητικών Χώρων</SelectItem>
                   <SelectItem value="school">Σχολείων</SelectItem>
-                  <SelectItem value="creative">Δημιουργικών Χώρων</SelectItem>
-                  <SelectItem value="retail">Καταστημάτων</SelectItem>
+                  <SelectItem value="industrial">Βιομηχανικών Χώρων</SelectItem>
+                  <SelectItem value="compact">Συμπαγή Συστήματα</SelectItem>
                 </SelectContent>
               </Select>
               
@@ -249,11 +248,8 @@ export default function Products() {
                 <SelectContent>
                   <SelectItem value="all">Όλα τα Χρώματα</SelectItem>
                   <SelectItem value="white">Λευκό</SelectItem>
-                  <SelectItem value="orange">Πορτοκαλί</SelectItem>
+                  <SelectItem value="gray">Γκρι</SelectItem>
                   <SelectItem value="blue">Μπλε</SelectItem>
-                  <SelectItem value="red">Κόκκινο</SelectItem>
-                  <SelectItem value="yellow">Κίτρινο</SelectItem>
-                  <SelectItem value="turquoise">Τυρκουάζ</SelectItem>
                   <SelectItem value="multi">Πολύχρωμο</SelectItem>
                 </SelectContent>
               </Select>

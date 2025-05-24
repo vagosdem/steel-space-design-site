@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -9,6 +10,7 @@ import { useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import ProductShowcase from "@/components/ProductShowcase";
+
 const Index = () => {
   const location = useLocation();
   const featuresRef = useRef<HTMLDivElement>(null);
@@ -16,6 +18,7 @@ const Index = () => {
   const productsRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (location.hash) {
       const sectionId = location.hash.substring(1);
@@ -54,26 +57,27 @@ const Index = () => {
     }
   };
 
-  // Updated product showcase data with new images
+  // Updated product showcase data with new WebP images
   const products = [{
-    id: "industrial-storage-cabinet",
-    title: "Βιομηχανικό Ντουλάπι Αποθήκευσης",
-    description: "Ανθεκτικό μεταλλικό ντουλάπι με γυάλινες πόρτες, ιδανικό για βιομηχανικούς χώρους και εργαστήρια με υψηλές απαιτήσεις αποθήκευσης.",
-    image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png",
+    id: "professional-storage-cabinet",
+    title: "Επαγγελματικό Ντουλάπι Αποθήκευσης",
+    description: "Ανθεκτικό μεταλλικό ντουλάπι με πολλαπλές θέσεις, ιδανικό για επαγγελματικούς χώρους και γραφεία με υψηλές απαιτήσεις οργάνωσης.",
+    image: "/lovable-uploads/IMG_10252.webp",
     type: "cabinet"
   }, {
-    id: "multi-unit-lockers-orange",
-    title: "Πολλαπλά Ντουλάπια Πορτοκαλί",
-    description: "Σύστημα πολλαπλών ντουλαπιών σε έντονο πορτοκαλί χρώμα, σχεδιασμένο για αποδυτήρια, γυμναστήρια και εκπαιδευτικά ιδρύματα.",
-    image: "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
+    id: "multi-door-locker-system",
+    title: "Σύστημα Πολλαπλών Ντουλαπιών",
+    description: "Μοντέρνο σύστημα ντουλαπιών με πολλαπλές πόρτες και θέσεις, σχεδιασμένο για αποδυτήρια, γυμναστήρια και εκπαιδευτικά ιδρύματα.",
+    image: "/lovable-uploads/IMG_13742.webp",
     type: "locker"
   }, {
-    id: "blue-metallic-storage",
-    title: "Μπλε Μεταλλικά Ντουλάπια Αποθήκευσης",
-    description: "Κομψά μεταλλικά ντουλάπια σε μπλε απόχρωση με αριθμημένες θέσεις, ιδανικά για οργανωμένους επαγγελματικούς χώρους.",
-    image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png",
+    id: "industrial-storage-solution",
+    title: "Βιομηχανική Λύση Αποθήκευσης",
+    description: "Ανθεκτικά μεταλλικά ντουλάπια για βιομηχανικούς χώρους, με έμφαση στην αντοχή και τη λειτουργικότητα σε απαιτητικά περιβάλλοντα.",
+    image: "/lovable-uploads/IMG_23802.webp",
     type: "storage"
   }];
+
   return <div className="flex flex-col min-h-screen bg-white overflow-hidden">
       <Navbar />
       <main className="overflow-hidden pt-20">
@@ -124,4 +128,5 @@ const Index = () => {
       <Footer />
     </div>;
 };
+
 export default Index;

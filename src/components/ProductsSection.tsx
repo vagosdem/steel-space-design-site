@@ -12,25 +12,25 @@ import {
 import { Card } from "@/components/ui/card";
 
 const productCategories = [{
-  id: "red-blue-lockers",
-  title: "Κόκκινα και Μπλε Μεταλλικά Ντουλάπια",
-  description: "Έντονα χρώματα σε μεταλλικά ντουλάπια για σχολεία, γυμναστήρια και παιδικούς χώρους με ανθεκτική κατασκευή.",
-  image: "/lovable-uploads/7cc3aac9-9af0-4f81-b131-0622591eebc1.png"
+  id: "professional-storage-cabinet",
+  title: "Επαγγελματικά Ντουλάπια Αποθήκευσης",
+  description: "Μεταλλικά ντουλάπια υψηλής ποιότητας για επαγγελματικούς χώρους, γραφεία και χώρους εργασίας με σύγχρονο σχεδιασμό.",
+  image: "/lovable-uploads/IMG_10252.webp"
 }, {
   id: "colorful-school-lockers",
   title: "Πολύχρωμα Σχολικά Ντουλάπια",
   description: "Φωτεινά και χαρούμενα ντουλάπια με διάφορα χρώματα, ιδανικά για σχολικές εγκαταστάσεις και παιδικούς σταθμούς.",
-  image: "/lovable-uploads/c4658bc3-024c-4602-beec-fb6449e32749.png"
+  image: "/lovable-uploads/IMG_21202.webp"
 }, {
-  id: "professional-storage",
-  title: "Επαγγελματικές Λύσεις Αποθήκευσης",
-  description: "Μοντέρνα μεταλλικά ντουλάπια σε κλασικά χρώματα για επαγγελματικούς χώρους, γραφεία και κέντρα εργασίας.",
-  image: "/lovable-uploads/cb3b7ccd-56d5-4cb0-99ce-dfb7b75f6400.png"
+  id: "modern-locker-system",
+  title: "Μοντέρνα Συστήματα Ντουλαπιών",
+  description: "Σύγχρονα μεταλλικά ντουλάπια με καθαρές γραμμές για επαγγελματικούς χώρους και σύγχρονα γραφεία.",
+  image: "/lovable-uploads/IMG_13722.webp"
 }, {
-  id: "industrial-lockers",
-  title: "Βιομηχανικά Ντουλάπια",
-  description: "Ανθεκτικά μεταλλικά ντουλάπια για βιομηχανικούς χώρους, εργοστάσια και αποδυτήρια εργαζομένων.",
-  image: "/lovable-uploads/d6bb8bc5-c886-4cd5-8dda-0b5c84a7e94e.png"
+  id: "industrial-storage-solution",
+  title: "Βιομηχανικές Λύσεις Αποθήκευσης",
+  description: "Ανθεκτικά μεταλλικά ντουλάπια για βιομηχανικούς χώρους, εργοστάσια και απαιτητικά περιβάλλοντα εργασίας.",
+  image: "/lovable-uploads/IMG_23802.webp"
 }];
 
 export default function ProductsSection() {
