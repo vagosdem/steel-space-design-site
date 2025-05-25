@@ -1,4 +1,3 @@
-
 export interface Product {
   id: string;
   title: string;
@@ -9,6 +8,12 @@ export interface Product {
   color: string;
   material: string;
   features: string[];
+  dimensions?: {
+    width: string;
+    height: string;
+    depth: string;
+  };
+  details?: string;
 }
 
 export const products: Product[] = [
@@ -21,7 +26,13 @@ export const products: Product[] = [
     type: "industrial",
     color: "red",
     material: "metal",
-    features: ["double-doors", "heavy-duty", "industrial-grade"]
+    features: ["double-doors", "heavy-duty", "industrial-grade"],
+    dimensions: {
+      width: "100 εκ.",
+      height: "200 εκ.",
+      depth: "50 εκ."
+    },
+    details: "Η κόκκινη-μαύρη μεταλλική ντουλάπα διπλής πόρτας είναι σχεδιασμένη ειδικά για βιομηχανικούς χώρους και εργαστήρια. Το χαρακτηριστικό κόκκινο και μαύρο χρώμα προσδίδει έντονη βιομηχανική αισθητική, ενώ η στιβαρή κατασκευή εγγυάται μακροχρόνια αντοχή σε απαιτητικά περιβάλλοντα εργασίας."
   },
   {
     id: "white-glass-cabinet",
@@ -76,7 +87,13 @@ export const products: Product[] = [
     type: "industrial",
     color: "gray",
     material: "metal",
-    features: ["heavy-duty", "industrial-grade", "secure"]
+    features: ["heavy-duty", "industrial-grade", "secure"],
+    dimensions: {
+      width: "90 εκ.",
+      height: "200 εκ.",
+      depth: "50 εκ."
+    },
+    details: "Η βιομηχανική λύση αποθήκευσης είναι σχεδιασμένη για τις απαιτητικές συνθήκες των βιομηχανικών χώρων. Με την κατασκευή βαρέως τύπου και τα υλικά βιομηχανικής ποιότητας, προσφέρει μέγιστη αντοχή και αξιοπιστία σε δύσκολα περιβάλλοντα εργασίας."
   },
   {
     id: "professional-office-lockers",
@@ -267,8 +284,8 @@ export const products: Product[] = [
   },
   {
     id: "purple-pink-elegant-lockers",
-    title: "Μωβ-Ροζ Κομψά Ντουλάπια",
-    description: "Κομψός συνδυασμός μωβ και ροζ αποχρώσεων που προσφέρει μοντέρνη και θηλυκή αισθητική για ειδικούς χώρους.",
+    title: "Μωβ-Ροζ Κοмψά Ντουλάπια",
+    description: "Κοмψός συνδυασμός μωβ και ροζ αποχρώσεων που προσφέρει μοντέρνη και θηλυκή αισθητική για ειδικούς χώρους.",
     image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
     category: "lockers",
     type: "modern",
@@ -290,7 +307,7 @@ export const products: Product[] = [
   {
     id: "pastel-soft-tone-lockers",
     title: "Παστέλ Απαλόχρωμα Ντουλάπια",
-    description: "Απαλά παστέλ χρώματα που δημιουργούν ήρεμη και χαλαρωτική ατμόσφαιρα, ιδανικά για χώρους ευεξίας και παιδικές εγκαταστάσεις.",
+    description: "Απαλά παστέλ χρώματα που δημιουργούν ηρεμη και χαλαρωτική ατμόσφαιρα, ιδανικά για χώρους ευεξίας και παιδικές εγκαταστάσεις.",
     image: "/lovable-uploads/de48c2ac-8f96-4f1d-987f-3fa9c559618f.png",
     category: "lockers",
     type: "school",
