@@ -11,8 +11,11 @@ export default function HeroSection() {
   const isMobile = useIsMobile();
   const carouselRef = useRef<HTMLDivElement>(null);
   
-  // Extended product images array with 7 total images (no duplicates)
+  // Extended product images array with new products added to the beginning
   const productImages = [
+    "/lovable-uploads/ea0663a1-83d9-4b6e-bd66-c2a1b01af9da.png",
+    "/lovable-uploads/d45ac80e-568d-4711-afdf-441b647c88bd.png", 
+    "/lovable-uploads/82f9ab23-6721-4a6e-90e5-13cf0745af0c.png",
     "/lovable-uploads/IMG_054822.webp",
     "/lovable-uploads/IMG_13722.webp", 
     "/lovable-uploads/IMG_21202.webp",
