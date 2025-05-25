@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -7,6 +8,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [autoAdvancePaused, setAutoAdvancePaused] = useState(false);
+  const pauseTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
   const carouselRef = useRef<HTMLDivElement>(null);
   
@@ -27,6 +30,7 @@ export default function HeroSection() {
 
   const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
     touchStartX.current = e.touches[0].clientX;
+    pauseAutoAdvance();
   };
 
   const handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
@@ -48,23 +52,50 @@ export default function HeroSection() {
     }
   };
 
+  // Function to pause auto-advance for 8 seconds
+  const pauseAutoAdvance = () => {
+    setAutoAdvancePaused(true);
+    
+    // Clear any existing timer
+    if (pauseTimerRef.current) {
+      clearTimeout(pauseTimerRef.current);
+    }
+    
+    // Set new timer to resume auto-advance after 8 seconds
+    pauseTimerRef.current = setTimeout(() => {
+      setAutoAdvancePaused(false);
+    }, 8000);
+  };
+
   // Navigate to previous image - fixed to cycle through all images
   const prevImage = () => {
     setCurrentImage((prev) => (prev - 1 + productImages.length) % productImages.length);
+    pauseAutoAdvance();
   };
 
   // Navigate to next image - fixed to cycle through all images  
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % productImages.length);
+    pauseAutoAdvance();
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % productImages.length);
-    }, 5000); // Change image every 5 seconds
+    // Only auto-advance if not paused
+    if (!autoAdvancePaused) {
+      const interval = setInterval(() => {
+        setCurrentImage((prev) => (prev + 1) % productImages.length);
+      }, 5000); // Change image every 5 seconds
+      
+      return () => clearInterval(interval);
+    }
     
-    return () => clearInterval(interval);
-  }, []);
+    // Clean up pause timer when component unmounts
+    return () => {
+      if (pauseTimerRef.current) {
+        clearTimeout(pauseTimerRef.current);
+      }
+    };
+  }, [autoAdvancePaused]);
 
   return (
     <section className="bg-white text-metal-900 pt-24 pb-16 overflow-hidden">
@@ -146,15 +177,18 @@ export default function HeroSection() {
               />
             ))}
             
-            {/* Smaller indicators positioned lower and away from images */}
-            <div className="absolute bottom-1 left-0 right-0 flex justify-center gap-1.5 z-10">
+            {/* Even smaller indicators positioned lower away from images */}
+            <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-1 z-10">
               {productImages.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-1 h-1 rounded-full transition-colors touch-target ${
+                  className={`w-0.5 h-0.5 rounded-full transition-colors touch-target ${
                     currentImage === index ? 'bg-blue-600' : 'bg-gray-300 hover:bg-gray-400'
                   }`}
-                  onClick={() => setCurrentImage(index)}
+                  onClick={() => {
+                    setCurrentImage(index);
+                    pauseAutoAdvance();
+                  }}
                   aria-label={`Μετάβαση στη διαφάνεια ${index + 1}`}
                 />
               ))}
