@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -9,6 +8,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
   const [autoAdvancePaused, setAutoAdvancePaused] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const pauseTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -52,11 +52,17 @@ export default function HeroSection() {
     }
   };
 
-  // Function to pause auto-advance for 8 seconds
+  // Function to clear intervals and pause auto-advance
   const pauseAutoAdvance = () => {
     setAutoAdvancePaused(true);
     
-    // Clear any existing timer
+    // Clear the auto-advance interval immediately
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+    
+    // Clear any existing pause timer
     if (pauseTimerRef.current) {
       clearTimeout(pauseTimerRef.current);
     }
@@ -80,22 +86,30 @@ export default function HeroSection() {
   };
 
   useEffect(() => {
-    // Only auto-advance if not paused
+    // Clear any existing interval first
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+
+    // Only start auto-advance if not paused
     if (!autoAdvancePaused) {
-      const interval = setInterval(() => {
+      intervalRef.current = setInterval(() => {
         setCurrentImage((prev) => (prev + 1) % productImages.length);
       }, 5000); // Change image every 5 seconds
-      
-      return () => clearInterval(interval);
     }
     
-    // Clean up pause timer when component unmounts
+    // Clean up on unmount or dependency change
     return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
       if (pauseTimerRef.current) {
         clearTimeout(pauseTimerRef.current);
       }
     };
-  }, [autoAdvancePaused]);
+  }, [autoAdvancePaused, productImages.length]);
 
   return (
     <section className="bg-white text-metal-900 pt-24 pb-16 overflow-hidden">
@@ -177,13 +191,15 @@ export default function HeroSection() {
               />
             ))}
             
-            {/* Even smaller indicators positioned lower away from images */}
-            <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-1 z-10">
+            {/* Much smaller indicators positioned at the bottom with more spacing */}
+            <div className="absolute -bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
               {productImages.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-0.5 h-0.5 rounded-full transition-colors touch-target ${
-                    currentImage === index ? 'bg-blue-600' : 'bg-gray-300 hover:bg-gray-400'
+                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-200 ${
+                    currentImage === index 
+                      ? 'bg-blue-600 scale-125' 
+                      : 'bg-gray-400 hover:bg-gray-500 hover:scale-110'
                   }`}
                   onClick={() => {
                     setCurrentImage(index);
