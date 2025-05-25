@@ -14,7 +14,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import SEOHead from "@/components/SEOHead";
 
-// Updated product data with all new WebP images
+// Updated product data with corrected description for the red/black cabinet
 const products = [
   {
     id: "white-glass-cabinet",
@@ -28,15 +28,15 @@ const products = [
     features: ["glass-doors", "adjustable-shelves"]
   },
   {
-    id: "professional-storage-cabinet",
-    title: "Επαγγελματικό Ντουλάπι Αποθήκευσης",
-    description: "Μεταλλικό ντουλάπι με πολλαπλές θέσεις και εργονομικό σχεδιασμό, ιδανικό για οργανωμένους επαγγελματικούς χώρους.",
+    id: "red-black-storage-cabinet",
+    title: "Κόκκινη-Μαύρη Μεταλλική Ντουλάπα Διπλής Πόρτας",
+    description: "Στιβαρή μεταλλική ντουλάπα με δύο πόρτες σε κόκκινο και μαύρο χρώμα, ιδανική για βιομηχανικούς χώρους και εργαστήρια που χρειάζονται ανθεκτικές λύσεις αποθήκευσης.",
     image: "/lovable-uploads/IMG_10252.webp",
     category: "cabinets",
-    type: "office",
-    color: "gray",
+    type: "industrial",
+    color: "red",
     material: "metal",
-    features: ["multiple-compartments", "ergonomic-design"]
+    features: ["double-doors", "heavy-duty", "industrial-grade"]
   },
   {
     id: "modern-locker-system",

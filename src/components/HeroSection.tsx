@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -11,11 +10,15 @@ export default function HeroSection() {
   const isMobile = useIsMobile();
   const carouselRef = useRef<HTMLDivElement>(null);
   
+  // Extended product images array with 7 total images (no duplicates)
   const productImages = [
     "/lovable-uploads/IMG_054822.webp",
-    "/lovable-uploads/IMG_13722.webp",
+    "/lovable-uploads/IMG_13722.webp", 
     "/lovable-uploads/IMG_21202.webp",
-    "/lovable-uploads/IMG_97682.webp"
+    "/lovable-uploads/IMG_97682.webp",
+    "/lovable-uploads/IMG_10252.webp",
+    "/lovable-uploads/IMG_13742.webp",
+    "/lovable-uploads/IMG_23802.webp"
   ];
 
   // Touch handling for mobile swipe
@@ -45,12 +48,12 @@ export default function HeroSection() {
     }
   };
 
-  // Navigate to previous image
+  // Navigate to previous image - fixed to cycle through all images
   const prevImage = () => {
     setCurrentImage((prev) => (prev - 1 + productImages.length) % productImages.length);
   };
 
-  // Navigate to next image
+  // Navigate to next image - fixed to cycle through all images  
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % productImages.length);
   };
@@ -143,12 +146,12 @@ export default function HeroSection() {
               />
             ))}
             
-            {/* Smaller indicators with improved spacing */}
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
+            {/* Smaller indicators positioned lower and away from images */}
+            <div className="absolute bottom-1 left-0 right-0 flex justify-center gap-1.5 z-10">
               {productImages.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-1.5 h-1.5 rounded-full transition-colors touch-target ${
+                  className={`w-1 h-1 rounded-full transition-colors touch-target ${
                     currentImage === index ? 'bg-blue-600' : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   onClick={() => setCurrentImage(index)}
