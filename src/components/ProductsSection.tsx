@@ -31,6 +31,26 @@ const productCategories = [{
   title: "Βιομηχανικές Λύσεις Αποθήκευσης",
   description: "Ανθεκτικά μεταλλικά ντουλάπια για βιομηχανικούς χώρους, εργοστάσια και απαιτητικά περιβάλλοντα εργασίας.",
   image: "/lovable-uploads/IMG_23802.webp"
+}, {
+  id: "white-glass-cabinet",
+  title: "Λευκή Μεταλλική Ντουλάπα με Τζάμια",
+  description: "Επαγγελματική λευκή μεταλλική ντουλάπα με γυάλινες πόρτες, ιδανική για αρχειοθέτηση σε γραφεία και χώρους υγείας.",
+  image: "/lovable-uploads/IMG_054822.webp"
+}, {
+  id: "multi-door-locker-system",
+  title: "Σύστημα Πολλαπλών Ντουλαπιών",
+  description: "Ανθεκτικά μεταλλικά ντουλάπια με πολλαπλές πόρτες και θέσεις, σχεδιασμένα για αποδυτήρια και γυμναστήρια.",
+  image: "/lovable-uploads/IMG_13742.webp"
+}, {
+  id: "professional-office-lockers",
+  title: "Επαγγελματικά Ντουλάπια Γραφείου",
+  description: "Κομψά μεταλλικά ντουλάπια σχεδιασμένα ειδικά για σύγχρονους επαγγελματικούς χώρους και γραφεία.",
+  image: "/lovable-uploads/IMG_97682.webp"
+}, {
+  id: "compact-storage-units",
+  title: "Συμπαγή Αποθηκευτικά Συστήματα",
+  description: "Μεταλλικά ντουλάπια με συμπαγή σχεδιασμό, ιδανικά για χώρους με περιορισμένο χώρο αλλά υψηλές απαιτήσεις αποθήκευσης.",
+  image: "/lovable-uploads/IMG_99002.webp"
 }];
 
 export default function ProductsSection() {
@@ -125,8 +145,8 @@ export default function ProductsSection() {
             ))}
           </CarouselContent>
           <div className="flex justify-center mt-8 gap-4">
-            <CarouselPrevious className="relative static left-0 translate-y-0 h-9 w-9 rounded-xl" />
-            <CarouselNext className="relative static right-0 translate-y-0 h-9 w-9 rounded-xl" />
+            <CarouselPrevious className="relative static left-0 translate-y-0 h-7 w-7 rounded-xl" />
+            <CarouselNext className="relative static right-0 translate-y-0 h-7 w-7 rounded-xl" />
           </div>
         </Carousel>
         

@@ -123,16 +123,6 @@ export default function Navbar() {
               Υπηρεσίες
             </button>
             <button 
-              onClick={() => navigateToSection("projects")} 
-              className={`font-medium transition-colors ${
-                scrolled 
-                  ? 'text-gray-100 hover:text-white' 
-                  : 'text-gray-800 hover:text-gray-900'
-              }`}
-            >
-              Έργα
-            </button>
-            <button 
               onClick={() => navigateToSection("contact")} 
               className={`font-medium transition-colors ${
                 scrolled 
@@ -199,16 +189,6 @@ export default function Navbar() {
               } font-medium`}
             >
               Υπηρεσίες
-            </button>
-            <button 
-              onClick={() => navigateToSection("projects")} 
-              className={`block w-full text-left p-2 ${
-                scrolled 
-                  ? 'text-gray-100 hover:text-white' 
-                  : 'text-gray-800 hover:text-gray-900'
-              } font-medium`}
-            >
-              Έργα
             </button>
             <button 
               onClick={() => navigateToSection("contact")} 
