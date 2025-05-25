@@ -10,6 +10,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { lazy, Suspense } from "react";
+
+// Lazy load heavy components for mobile
+const LazyMotionDiv = lazy(() => Promise.resolve({ 
+  default: motion.div 
+}));
 
 const productCategories = [{
   id: "professional-storage-cabinet",
@@ -55,15 +62,18 @@ const productCategories = [{
 
 export default function ProductsSection() {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   
   const handleRequestQuote = () => {
     navigate("/#contact");
   };
+
+  const MotionComponent = isMobile ? motion.div : LazyMotionDiv;
   
   return (
     <section id="products" className="bg-metal-50 py-20">
       <div className="container-section">
-        <motion.div 
+        <MotionComponent 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -74,7 +84,7 @@ export default function ProductsSection() {
           <p className="text-metal-600 text-lg">
             Ανακαλύψτε τη σειρά μεταλλικών λύσεων αποθήκευσης υψηλής ποιότητας, σχεδιασμένων για επαγγελματικούς χώρους και επιχειρήσεις.
           </p>
-        </motion.div>
+        </MotionComponent>
 
         <Carousel
           opts={{
@@ -88,9 +98,9 @@ export default function ProductsSection() {
               <CarouselItem key={index} className="md:basis-full">
                 <div className="p-1">
                   <Card className="overflow-hidden border-none shadow-none">
-                    <div className="flex flex-col md:flex-row items-center gap-8 py-6">
+                    <div className="flex flex-col md:flex-row items-center gap-8 py-6 min-h-[500px]">
                       <div className="w-full md:w-1/2">
-                        <motion.div
+                        <MotionComponent
                           initial={{ opacity: 0, scale: 0.95 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
@@ -106,37 +116,41 @@ export default function ProductsSection() {
                             className="w-full h-auto object-contain mx-auto rounded-2xl"
                             style={{ aspectRatio: '1 / 1' }}
                           />
-                        </motion.div>
+                        </MotionComponent>
                       </div>
-                      <div className="w-full md:w-1/2 space-y-6">
-                        <motion.div
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5 }}
-                        >
-                          <h3 className="text-2xl font-medium text-metal-900">{product.title}</h3>
-                          <p className="text-metal-600 mt-2">{product.description}</p>
-                        </motion.div>
-                        <motion.div 
-                          initial={{ opacity: 0, y: 20 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: 0.2 }}
-                          className="flex flex-col sm:flex-row gap-4"
-                        >
-                          <Button 
-                            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-xl"
-                            onClick={handleRequestQuote}
+                      <div className="w-full md:w-1/2 space-y-6 flex flex-col justify-between min-h-[400px]">
+                        <div className="flex-grow">
+                          <MotionComponent
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
                           >
-                            Ζητήστε Προσφορά
-                          </Button>
-                          <Link to={`/product/${product.id}`} className="w-full sm:w-auto">
-                            <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl">
-                              Περισσότερες Πληροφορίες
+                            <h3 className="text-2xl font-medium text-metal-900">{product.title}</h3>
+                            <p className="text-metal-600 mt-2">{product.description}</p>
+                          </MotionComponent>
+                        </div>
+                        <div className="mt-auto">
+                          <MotionComponent 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="flex flex-col sm:flex-row gap-4"
+                          >
+                            <Button 
+                              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-xl"
+                              onClick={handleRequestQuote}
+                            >
+                              Ζητήστε Προσφορά
                             </Button>
-                          </Link>
-                        </motion.div>
+                            <Link to={`/product/${product.id}`} className="w-full sm:w-auto">
+                              <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl">
+                                Περισσότερες Πληροφορίες
+                              </Button>
+                            </Link>
+                          </MotionComponent>
+                        </div>
                       </div>
                     </div>
                   </Card>
@@ -150,7 +164,7 @@ export default function ProductsSection() {
           </div>
         </Carousel>
         
-        <motion.div 
+        <MotionComponent 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -162,7 +176,7 @@ export default function ProductsSection() {
               Δείτε Όλα τα Προϊόντα
             </Button>
           </Link>
-        </motion.div>
+        </MotionComponent>
       </div>
     </section>
   );

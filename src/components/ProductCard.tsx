@@ -1,6 +1,7 @@
 
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface Product {
   id: string;
@@ -20,39 +21,42 @@ interface ProductCardProps {
 }
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
+  hidden: { y: 20, opacity: 0 },
+  show: { y: 0, opacity: 1 }
 };
 
 export default function ProductCard({ product, onProductClick }: ProductCardProps) {
   return (
     <motion.div 
-      variants={item}
-      className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 flex flex-col h-full"
+      variants={item} 
+      className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col h-full"
     >
-      <div 
-        className="aspect-square p-1 flex items-center justify-center bg-white overflow-hidden cursor-pointer"
-        onClick={() => onProductClick(product.id)}
-      >
+      <div className="flex items-center justify-center h-64 p-2 bg-gray-50">
         <img 
           src={product.image} 
-          alt={product.title} 
-          width="400"
-          height="400"
+          alt={product.title}
           loading="lazy"
-          className="w-auto h-auto max-w-full max-h-full object-contain transition-transform hover:scale-105 duration-500"
+          className="max-w-full max-h-full object-contain"
         />
       </div>
-      <div className="p-4 flex flex-col">
-        <h3 className="text-xl font-semibold mb-2 text-black">{product.title}</h3>
-        <p className="text-metal-600 mb-4">{product.description}</p>
-        <div className="mt-auto">
-          <Button 
-            onClick={() => onProductClick(product.id)}
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="text-lg font-semibold text-black mb-3">{product.title}</h3>
+        <p className="text-gray-600 text-sm mb-6 flex-grow">{product.description}</p>
+        <div className="mt-auto space-y-3">
+          <Button
             className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl"
+            onClick={() => onProductClick(product.id)}
           >
-            Περισσότερες Πληροφορίες
+            Ζητήστε Προσφορά
           </Button>
+          <Link to={`/product/${product.id}`} className="block">
+            <Button 
+              variant="outline" 
+              className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl"
+            >
+              Περισσότερες Πληροφορίες
+            </Button>
+          </Link>
         </div>
       </div>
     </motion.div>

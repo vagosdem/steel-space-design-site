@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -122,7 +123,7 @@ export default function HeroSection() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.7 }} 
+          transition={{ duration: 0.4 }} 
           className="space-y-6 max-w-4xl mx-auto"
         >
           <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl text-metal-900 tracking-tight">
@@ -146,7 +147,7 @@ export default function HeroSection() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.7, delay: 0.3 }} 
+          transition={{ duration: 0.5, delay: 0.2 }} 
           className="mt-16 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8"
         >
           <div 
@@ -158,21 +159,31 @@ export default function HeroSection() {
             role="region"
             aria-label="Carousel προϊόντων"
           >
-            {/* Navigation arrows with improved touch targets */}
+            {/* Navigation arrows with improved mobile handling */}
             <button 
               onClick={prevImage} 
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-md transition-all touch-target"
+              className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-md transition-all ${
+                isMobile 
+                  ? 'w-12 h-12 active:scale-95 active:bg-gray-100' 
+                  : 'w-10 h-10 hover:scale-105'
+              }`}
               aria-label="Προηγούμενη εικόνα"
+              style={{ touchAction: 'manipulation' }}
             >
-              <ArrowLeft size={24} />
+              <ArrowLeft size={isMobile ? 20 : 16} className="mx-auto" />
             </button>
             
             <button 
               onClick={nextImage} 
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-md transition-all touch-target"
+              className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-md transition-all ${
+                isMobile 
+                  ? 'w-12 h-12 active:scale-95 active:bg-gray-100' 
+                  : 'w-10 h-10 hover:scale-105'
+              }`}
               aria-label="Επόμενη εικόνα"
+              style={{ touchAction: 'manipulation' }}
             >
-              <ArrowRight size={24} />
+              <ArrowRight size={isMobile ? 20 : 16} className="mx-auto" />
             </button>
             
             {/* Images with explicit dimensions and lazy loading */}

@@ -10,9 +10,12 @@ import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import ProductShowcase from "@/components/ProductShowcase";
 import SEOHead from "@/components/SEOHead";
+import { useMobileOptimization } from "@/hooks/use-mobile-optimization";
 
 const Index = () => {
   const location = useLocation();
+  const { isMobile } = useMobileOptimization();
+  
   const featuresRef = useRef<HTMLDivElement>(null);
   const industryRef = useRef<HTMLDivElement>(null);
   const productsRef = useRef<HTMLDivElement>(null);
@@ -44,7 +47,7 @@ const Index = () => {
     }
   }, [location.hash]);
 
-  // Animation variants for sections
+  // Animation variants for sections - reduced on mobile
   const sectionVariants = {
     hidden: {
       opacity: 0
@@ -52,7 +55,7 @@ const Index = () => {
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.6
+        duration: isMobile ? 0.3 : 0.6
       }
     }
   };
