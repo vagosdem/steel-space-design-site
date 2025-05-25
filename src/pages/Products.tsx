@@ -14,29 +14,29 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import SEOHead from "@/components/SEOHead";
 
-// Updated product data with corrected description for the red/black cabinet
+// Updated product data with corrected first product
 const products = [
-  {
-    id: "white-glass-cabinet",
-    title: "Λευκή Μεταλλική Ντουλάπα με Τζάμια",
-    description: "Επαγγελματική λευκή μεταλλική ντουλάπα με γυάλινες πόρτες, ιδανική για αρχειοθέτηση σε γραφεία και χώρους υγείας.",
-    image: "/lovable-uploads/IMG_054822.webp",
-    category: "cabinets",
-    type: "office",
-    color: "white",
-    material: "metal",
-    features: ["glass-doors", "adjustable-shelves"]
-  },
   {
     id: "red-black-storage-cabinet",
     title: "Κόκκινη-Μαύρη Μεταλλική Ντουλάπα Διπλής Πόρτας",
     description: "Στιβαρή μεταλλική ντουλάπα με δύο πόρτες σε κόκκινο και μαύρο χρώμα, ιδανική για βιομηχανικούς χώρους και εργαστήρια που χρειάζονται ανθεκτικές λύσεις αποθήκευσης.",
-    image: "/lovable-uploads/IMG_10252.webp",
+    image: "/lovable-uploads/IMG_054822.webp",
     category: "cabinets",
     type: "industrial",
     color: "red",
     material: "metal",
     features: ["double-doors", "heavy-duty", "industrial-grade"]
+  },
+  {
+    id: "white-glass-cabinet",
+    title: "Λευκή Μεταλλική Ντουλάπα με Τζάμια",
+    description: "Επαγγελματική λευκή μεταλλική ντουλάπα με γυάλινες πόρτες, ιδανική για αρχειοθέτηση σε γραφεία και χώρους υγείας.",
+    image: "/lovable-uploads/IMG_10252.webp",
+    category: "cabinets",
+    type: "office",
+    color: "white",
+    material: "metal",
+    features: ["glass-doors", "adjustable-shelves"]
   },
   {
     id: "modern-locker-system",
