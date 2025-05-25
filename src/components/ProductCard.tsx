@@ -31,24 +31,21 @@ export default function ProductCard({ product, onProductClick }: ProductCardProp
       variants={item} 
       className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col h-full"
     >
-      <div className="flex items-center justify-center h-64 p-2 bg-gray-50">
+      <div 
+        className="flex items-center justify-center h-64 p-2 bg-gray-50 cursor-pointer"
+        onClick={() => onProductClick(product.id)}
+      >
         <img 
           src={product.image} 
           alt={product.title}
           loading="lazy"
-          className="max-w-full max-h-full object-contain"
+          className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
         />
       </div>
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-lg font-semibold text-black mb-3">{product.title}</h3>
         <p className="text-gray-600 text-sm mb-6 flex-grow">{product.description}</p>
-        <div className="mt-auto space-y-3">
-          <Button
-            className="w-full bg-blue-600 hover:bg-blue-700 rounded-xl"
-            onClick={() => onProductClick(product.id)}
-          >
-            Ζητήστε Προσφορά
-          </Button>
+        <div className="mt-auto">
           <Link to={`/product/${product.id}`} className="block">
             <Button 
               variant="outline" 

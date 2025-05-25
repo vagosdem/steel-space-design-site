@@ -3,14 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useState, useEffect, useRef, TouchEvent } from "react";
+import { useState, useRef, TouchEvent } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [autoAdvancePaused, setAutoAdvancePaused] = useState(false);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const pauseTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isMobile = useIsMobile();
   const carouselRef = useRef<HTMLDivElement>(null);
   
@@ -31,7 +28,6 @@ export default function HeroSection() {
 
   const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
     touchStartX.current = e.touches[0].clientX;
-    pauseAutoAdvance();
   };
 
   const handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
@@ -53,64 +49,15 @@ export default function HeroSection() {
     }
   };
 
-  // Function to clear intervals and pause auto-advance
-  const pauseAutoAdvance = () => {
-    setAutoAdvancePaused(true);
-    
-    // Clear the auto-advance interval immediately
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-    
-    // Clear any existing pause timer
-    if (pauseTimerRef.current) {
-      clearTimeout(pauseTimerRef.current);
-    }
-    
-    // Set new timer to resume auto-advance after 8 seconds
-    pauseTimerRef.current = setTimeout(() => {
-      setAutoAdvancePaused(false);
-    }, 8000);
-  };
-
-  // Navigate to previous image - fixed to cycle through all images
+  // Navigate to previous image
   const prevImage = () => {
     setCurrentImage((prev) => (prev - 1 + productImages.length) % productImages.length);
-    pauseAutoAdvance();
   };
 
-  // Navigate to next image - fixed to cycle through all images  
+  // Navigate to next image
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % productImages.length);
-    pauseAutoAdvance();
   };
-
-  useEffect(() => {
-    // Clear any existing interval first
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-
-    // Only start auto-advance if not paused
-    if (!autoAdvancePaused) {
-      intervalRef.current = setInterval(() => {
-        setCurrentImage((prev) => (prev + 1) % productImages.length);
-      }, 5000); // Change image every 5 seconds
-    }
-    
-    // Clean up on unmount or dependency change
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-      }
-      if (pauseTimerRef.current) {
-        clearTimeout(pauseTimerRef.current);
-      }
-    };
-  }, [autoAdvancePaused, productImages.length]);
 
   return (
     <section className="bg-white text-metal-900 pt-24 pb-16 overflow-hidden">
@@ -162,7 +109,7 @@ export default function HeroSection() {
             {/* Navigation arrows with improved mobile handling */}
             <button 
               onClick={prevImage} 
-              className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-md transition-all ${
+              className={`absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-md transition-all ${
                 isMobile 
                   ? 'w-12 h-12 active:scale-95 active:bg-gray-100' 
                   : 'w-10 h-10 hover:scale-105'
@@ -175,7 +122,7 @@ export default function HeroSection() {
             
             <button 
               onClick={nextImage} 
-              className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-md transition-all ${
+              className={`absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-md transition-all ${
                 isMobile 
                   ? 'w-12 h-12 active:scale-95 active:bg-gray-100' 
                   : 'w-10 h-10 hover:scale-105'
@@ -212,10 +159,7 @@ export default function HeroSection() {
                       ? 'bg-blue-600 scale-125' 
                       : 'bg-gray-400 hover:bg-gray-500 hover:scale-110'
                   }`}
-                  onClick={() => {
-                    setCurrentImage(index);
-                    pauseAutoAdvance();
-                  }}
+                  onClick={() => setCurrentImage(index)}
                   aria-label={`Μετάβαση στη διαφάνεια ${index + 1}`}
                 />
               ))}
