@@ -13,6 +13,9 @@ export default function HeroSection() {
   
   // Extended product images array with new products added to the beginning
   const productImages = [
+    "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
+    "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png", 
+    "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
     "/lovable-uploads/ea0663a1-83d9-4b6e-bd66-c2a1b01af9da.png",
     "/lovable-uploads/d45ac80e-568d-4711-afdf-441b647c88bd.png", 
     "/lovable-uploads/82f9ab23-6721-4a6e-90e5-13cf0745af0c.png",
@@ -76,12 +79,18 @@ export default function HeroSection() {
           transition={{ duration: 0.4 }} 
           className="space-y-6 max-w-4xl mx-auto"
         >
-          <h1 className="font-medium text-4xl md:text-5xl lg:text-6xl text-metal-900 tracking-tight">
-            Μεταλλικές Ντουλάπες & Συρταριέρες Αρχειοθέτησης
-            <br className="hidden sm:inline" />
-            <span className="text-blue-600"> για Επαγγελματικούς Χώρους</span>
+          <h1 className={`font-medium tracking-tight ${
+            isMobile 
+              ? 'text-2xl sm:text-3xl' 
+              : 'text-4xl md:text-5xl lg:text-6xl'
+          } text-metal-900`}>
+            <span className="block">Μεταλλικές Ντουλάπες &</span>
+            <span className="block">Συρταριέρες Αρχειοθέτησης</span>
+            <span className="text-blue-600 block"> για Επαγγελματικούς Χώρους</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className={`text-gray-600 max-w-3xl mx-auto ${
+            isMobile ? 'text-base' : 'text-lg md:text-xl'
+          }`}>
             Custom lockers, συρταριέρες πολλαπλών θέσεων & industrial αποθηκευτικές λύσεις, 
             σχεδιασμένες και κατασκευασμένες στην Ελλάδα.
           </p>
@@ -102,7 +111,9 @@ export default function HeroSection() {
         >
           <div 
             ref={carouselRef}
-            className="md:w-1/2 relative h-[300px] sm:h-[400px] w-full"
+            className={`md:w-1/2 relative w-full ${
+              isMobile ? 'h-[250px]' : 'h-[300px] sm:h-[400px]'
+            }`}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -142,13 +153,17 @@ export default function HeroSection() {
                 key={index}
                 src={image} 
                 alt={`Προϊόν showcase ${index + 1}`} 
-                width={isMobile ? "300" : "600"}
-                height={isMobile ? "300" : "400"}
+                width={isMobile ? "250" : "600"}
+                height={isMobile ? "250" : "400"}
                 loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "low"}
                 className={`w-full h-auto object-contain mx-auto rounded-2xl p-0 absolute top-0 left-0 ${
                   currentImage === index ? "opacity-100" : "opacity-0"
                 } transition-opacity duration-1000`}
-                style={{ maxHeight: isMobile ? "300px" : "400px" }}
+                style={{ 
+                  maxHeight: isMobile ? "250px" : "400px",
+                  willChange: currentImage === index ? 'auto' : 'unset'
+                }}
               />
             ))}
             
@@ -170,18 +185,22 @@ export default function HeroSection() {
           </div>
           
           <div className="md:w-1/2 text-left space-y-4">
-            <h2 className="text-2xl font-semibold text-metal-900">Ποιοτικές Λύσεις Αποθήκευσης</h2>
-            <p className="text-gray-600">
+            <h2 className={`font-semibold text-metal-900 ${
+              isMobile ? 'text-xl' : 'text-2xl'
+            }`}>Ποιοτικές Λύσεις Αποθήκευσης</h2>
+            <p className={`text-gray-600 ${isMobile ? 'text-sm' : 'text-base'}`}>
               Τα μεταλλικά ντουλάπια και οι συρταριέρες μας προσφέρουν ανθεκτικές και αισθητικά 
               καλαίσθητες λύσεις για την οργάνωση και αποθήκευση εγγράφων, υλικών και προσωπικών 
               αντικειμένων στους επαγγελματικούς σας χώρους.
             </p>
-            <p className="text-gray-600">
+            <p className={`text-gray-600 ${isMobile ? 'text-sm' : 'text-base'}`}>
               Με εξατομικευμένες επιλογές διαστάσεων, χρωμάτων και διαμορφώσεων, σχεδιάζουμε 
               λύσεις που ανταποκρίνονται ακριβώς στις ανάγκες σας.
             </p>
             <Link to="#contact">
-              <Button className="flex items-center gap-2 rounded-xl mt-2 bg-blue-600 hover:bg-blue-700 touch-target">
+              <Button className={`flex items-center gap-2 rounded-xl mt-2 bg-blue-600 hover:bg-blue-700 touch-target ${
+                isMobile ? 'text-sm px-4 py-2' : 'px-6 py-3'
+              }`}>
                 Θέλω και εγώ παρόμοια λύση 
                 <ArrowRight size={16} />
               </Button>
