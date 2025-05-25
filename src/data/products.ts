@@ -25,14 +25,14 @@ export const products: Product[] = [
   },
   {
     id: "white-glass-cabinet",
-    title: "Λευκή Μεταλλική Ντουλάπα με Τζάμια",
-    description: "Επαγγελματική λευκή μεταλλική ντουλάπα με γυάλινες πόρτες, ιδανική για αρχειοθέτηση σε γραφεία και χώρους υγείας.",
+    title: "Μοντέρνα lockers",
+    description: "Σύγχρονα μεταλλικά ντουλάπια με μοντέρνο σχεδιασμό, ιδανικά για επαγγελματικούς χώρους, γραφεία και σύγχρονες εγκαταστάσεις.",
     image: "/lovable-uploads/IMG_10252.webp",
-    category: "cabinets",
-    type: "office",
+    category: "lockers",
+    type: "modern",
     color: "white",
     material: "metal",
-    features: ["glass-doors", "adjustable-shelves"]
+    features: ["modern-design", "professional", "sleek"]
   },
   {
     id: "modern-locker-system",
