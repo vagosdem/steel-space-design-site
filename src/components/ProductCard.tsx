@@ -39,7 +39,7 @@ export default function ProductCard({ product, onProductClick }: ProductCardProp
           src={product.image} 
           alt={product.title}
           loading="lazy"
-          className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
+          className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300 product-image"
         />
       </div>
       <div className="p-6 flex flex-col flex-grow">

@@ -18,7 +18,7 @@ export default function ProductImage({ image, title }: ProductImageProps) {
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-auto object-contain max-h-[500px]"
+          className="w-full h-auto object-contain max-h-[500px] product-image"
           loading="lazy"
         />
       </div>

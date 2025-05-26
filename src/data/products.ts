@@ -1,3 +1,4 @@
+
 export interface Product {
   id: string;
   title: string;
@@ -217,28 +218,6 @@ export const products: Product[] = [
     features: ["double-doors", "professional", "clean-design", "spacious"]
   },
   {
-    id: "yellow-green-lockers-multicolor",
-    title: "Κίτρινα-Πράσινα Πολύχρωμα Ντουλάπια",
-    description: "Φρέσκα πολύχρωμα ντουλάπια με κίτρινες και πράσινες αποχρώσεις, ιδανικά για σχολικούς χώρους και παιδικές εγκαταστάσεις.",
-    image: "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
-    category: "lockers",
-    type: "school",
-    color: "multi",
-    material: "metal",
-    features: ["colorful", "child-friendly", "bright-colors", "numbered"]
-  },
-  {
-    id: "red-blue-mixed-lockers",
-    title: "Κόκκινα-Μπλε Μικτά Ντουλάπια",
-    description: "Δυναμικός συνδυασμός κόκκινων και μπλε ντουλαπιών που προσφέρει έντονη χρωματική παρουσία για σύγχρονους χώρους.",
-    image: "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png",
-    category: "lockers",
-    type: "modern",
-    color: "multi",
-    material: "metal",
-    features: ["color-contrast", "modern-design", "ventilation", "key-lock"]
-  },
-  {
     id: "orange-white-contrast-lockers",
     title: "Πορτοκαλί-Λευκά Ντουλάπια Αντίθεσης",
     description: "Εντυπωσιακά ντουλάπια με πορτοκαλί και λευκές αποχρώσεις που δημιουργούν δυναμική αντίθεση για μοντέρνους χώρους.",
@@ -248,61 +227,6 @@ export const products: Product[] = [
     color: "orange",
     material: "metal",
     features: ["color-contrast", "modern-design", "professional", "bright"]
-  },
-  {
-    id: "blue-orange-vibrant-lockers",
-    title: "Μπλε-Πορτοκαλί Ζωντανά Ντουλάπια",
-    description: "Ζωντανός συνδυασμός μπλε και πορτοκαλί χρωμάτων που προσδίδει ενέργεια και μοντέρνα αισθητική στον χώρο.",
-    image: "/lovable-uploads/7cc3aac9-9af0-4f81-b131-0622591eebc1.png",
-    category: "lockers",
-    type: "modern",
-    color: "blue",
-    material: "metal",
-    features: ["vibrant-colors", "modern-design", "energy-boosting", "professional"]
-  },
-  {
-    id: "green-yellow-nature-lockers",
-    title: "Πράσινα-Κίτρινα Φυσικά Ντουλάπια",
-    description: "Φυσικός συνδυασμός πράσινων και κίτρινων τόνων που δημιουργεί φρέσκια και ήρεμη ατμόσφαιρα στον χώρο.",
-    image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png",
-    category: "lockers",
-    type: "school",
-    color: "green",
-    material: "metal",
-    features: ["natural-colors", "calming", "eco-friendly-look", "child-friendly"]
-  },
-  {
-    id: "rainbow-multicolor-lockers",
-    title: "Ουράνιο Τόξο Πολύχρωμα Ντουλάπια",
-    description: "Φαντασμαγορικά ντουλάπια με όλα τα χρώματα του ουράνιου τόξου, ιδανικά για παιδικούς χώρους και δημιουργικά περιβάλλοντα.",
-    image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png",
-    category: "lockers",
-    type: "school",
-    color: "multi",
-    material: "metal",
-    features: ["rainbow-colors", "creative", "child-friendly", "inspiring"]
-  },
-  {
-    id: "purple-pink-elegant-lockers",
-    title: "Μωβ-Ροζ Κοмψά Ντουλάπια",
-    description: "Κοмψός συνδυασμός μωβ και ροζ αποχρώσεων που προσφέρει μοντέρνη και θηλυκή αισθητική για ειδικούς χώρους.",
-    image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
-    category: "lockers",
-    type: "modern",
-    color: "purple",
-    material: "metal",
-    features: ["elegant", "feminine-aesthetic", "modern-design", "sophisticated"]
-  },
-  {
-    id: "warm-tone-mixed-lockers",
-    title: "Ζεστόχρωμα Μικτά Ντουλάπια",
-    description: "Ζεστός συνδυασμός χρωμάτων που δημιουργεί φιλική και προσκλητική ατμόσφαιρα για επαγγελματικούς και σχολικούς χώρους.",
-    image: "/lovable-uploads/cb3b7ccd-56d5-4cb0-99ce-dfb7b75f6400.png",
-    category: "lockers",
-    type: "office",
-    color: "multi",
-    material: "metal",
-    features: ["warm-colors", "welcoming", "professional", "comfortable"]
   },
   {
     id: "pastel-soft-tone-lockers",
