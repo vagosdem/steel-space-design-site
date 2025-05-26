@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -86,7 +85,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-metal-400">Τηλέφωνο</p>
-                  <p className="text-white">(30) 210 1234567</p>
+                  <p className="text-white">2103459704</p>
                 </div>
               </div>
               
