@@ -1,4 +1,7 @@
+
 import { Archive, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   const year = new Date().getFullYear();
   return <footer className="bg-metal-900 text-white">
@@ -35,8 +38,16 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4 text-metal-200">Νομικά</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-metal-400 hover:text-white transition-colors">Όροι Χρήσης</a></li>
-              <li><a href="#" className="text-metal-400 hover:text-white transition-colors">Πολιτική Απορρήτου</a></li>
+              <li>
+                <Link to="/legal" className="text-metal-400 hover:text-white transition-colors">
+                  Όροι Χρήσης
+                </Link>
+              </li>
+              <li>
+                <Link to="/legal" className="text-metal-400 hover:text-white transition-colors">
+                  Πολιτική Απορρήτου
+                </Link>
+              </li>
               <li><a href="#" className="text-metal-400 hover:text-white transition-colors">Cookies</a></li>
               <li><a href="#" className="text-metal-400 hover:text-white transition-colors">Εγγύηση Προϊόντων</a></li>
             </ul>
