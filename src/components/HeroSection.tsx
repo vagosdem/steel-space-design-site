@@ -129,11 +129,18 @@ export default function HeroSection() {
             </button>
             
             {productImages.map((image, index) => {
+              // Apply proper sizing for each image
+              let imageClass = "w-full h-full object-contain mx-auto rounded-2xl absolute top-0 left-0";
+              
               // Make IMG_10252.webp and IMG_13742.webp bigger
-              const isBiggerImage = image.includes('IMG_10252') || image.includes('IMG_13742');
-              const imageClass = isBiggerImage 
-                ? "w-full h-full object-contain mx-auto rounded-2xl absolute top-0 left-0 scale-110" 
-                : "w-full h-full object-contain mx-auto rounded-2xl absolute top-0 left-0";
+              if (image.includes('IMG_10252') || image.includes('IMG_13742')) {
+                imageClass += " scale-110";
+              }
+              
+              // Fix the first image (IMG_054822.webp) to prevent stretching
+              if (image.includes('IMG_054822')) {
+                imageClass = "w-auto h-full max-w-full max-h-full object-contain mx-auto rounded-2xl absolute top-0 left-1/2 transform -translate-x-1/2";
+              }
               
               return (
                 <img 

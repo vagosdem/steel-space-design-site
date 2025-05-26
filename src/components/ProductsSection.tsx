@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -104,10 +103,14 @@ export default function ProductsSection() {
                           <img 
                             src={product.image} 
                             alt={product.title}
-                            width={250}
-                            height={250}
+                            width={320}
+                            height={320}
                             loading="lazy"
-                            className="product-image"
+                            className="w-full h-auto object-contain max-h-[320px] max-w-[320px]"
+                            style={{ 
+                              objectFit: 'contain',
+                              aspectRatio: '1/1'
+                            }}
                           />
                         </MotionComponent>
                       </div>
