@@ -10,7 +10,7 @@ export default function HeroSection() {
   const isMobile = useIsMobile();
   const carouselRef = useRef<HTMLDivElement>(null);
   
-  // Updated product images array with duplicates removed
+  // Updated product images array with critical images first for better LCP
   const productImages = [
     "/lovable-uploads/ea0663a1-83d9-4b6e-bd66-c2a1b01af9da.png",
     "/lovable-uploads/d45ac80e-568d-4711-afdf-441b647c88bd.png", 
@@ -142,7 +142,7 @@ export default function HeroSection() {
               <ArrowRight size={isMobile ? 20 : 16} className="mx-auto" />
             </button>
             
-            {/* Images with explicit dimensions and lazy loading */}
+            {/* Optimized images with better loading priorities */}
             {productImages.map((image, index) => (
               <img 
                 key={index}
@@ -150,8 +150,9 @@ export default function HeroSection() {
                 alt={`Προϊόν showcase ${index + 1}`} 
                 width={isMobile ? "250" : "600"}
                 height={isMobile ? "250" : "400"}
-                loading={index === 0 ? "eager" : "lazy"}
-                fetchPriority={index === 0 ? "high" : "low"}
+                loading={index < 3 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : index < 3 ? "high" : "low"}
+                decoding={index < 3 ? "sync" : "async"}
                 className={`w-full h-auto object-contain mx-auto rounded-2xl p-0 absolute top-0 left-0 ${
                   currentImage === index ? "opacity-100" : "opacity-0"
                 } transition-opacity duration-1000`}
