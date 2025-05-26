@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -26,11 +27,6 @@ const productCategories = [{
   title: "Πολύχρωμα Σχολικά Ντουλάπια",
   description: "Φωτεινά και χαρούμενα ντουλάπια με διάφορα χρώματα, ιδανικά για σχολικές εγκαταστάσεις και παιδικούς σταθμούς.",
   image: "/lovable-uploads/IMG_21202.webp"
-}, {
-  id: "modern-locker-system",
-  title: "Μοντέρνα Συστήματα Ντουλαπιών",
-  description: "Σύγχρονα μεταλλικά ντουλάπια με καθαρές γραμμές για επαγγελματικούς χώρους και σύγχρονα γραφεία.",
-  image: "/lovable-uploads/IMG_13722.webp"
 }, {
   id: "industrial-storage-solution",
   title: "Βιομηχανικές Λύσεις Αποθήκευσης",
