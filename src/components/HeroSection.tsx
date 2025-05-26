@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -11,15 +10,13 @@ export default function HeroSection() {
   const isMobile = useIsMobile();
   const carouselRef = useRef<HTMLDivElement>(null);
   
-  // Extended product images array with new products added to the beginning
+  // Updated product images array with specified images removed
   const productImages = [
-    "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
     "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png", 
     "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
     "/lovable-uploads/ea0663a1-83d9-4b6e-bd66-c2a1b01af9da.png",
     "/lovable-uploads/d45ac80e-568d-4711-afdf-441b647c88bd.png", 
     "/lovable-uploads/82f9ab23-6721-4a6e-90e5-13cf0745af0c.png",
-    "/lovable-uploads/IMG_054822.webp",
     "/lovable-uploads/IMG_13722.webp", 
     "/lovable-uploads/IMG_21202.webp",
     "/lovable-uploads/IMG_97682.webp",
