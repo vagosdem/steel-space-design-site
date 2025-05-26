@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useState, useRef, TouchEvent, useEffect } from "react";
+import { useState, useRef, TouchEvent } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function HeroSection() {
@@ -11,26 +11,22 @@ export default function HeroSection() {
   const isMobile = useIsMobile();
   const carouselRef = useRef<HTMLDivElement>(null);
   
-  // Optimized product images array - removed first two duplicates, keeping only WebP images
+  // Extended product images array with new products added to the beginning
   const productImages = [
+    "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
+    "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png", 
+    "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
+    "/lovable-uploads/ea0663a1-83d9-4b6e-bd66-c2a1b01af9da.png",
+    "/lovable-uploads/d45ac80e-568d-4711-afdf-441b647c88bd.png", 
+    "/lovable-uploads/82f9ab23-6721-4a6e-90e5-13cf0745af0c.png",
     "/lovable-uploads/IMG_054822.webp",
     "/lovable-uploads/IMG_13722.webp", 
     "/lovable-uploads/IMG_21202.webp",
     "/lovable-uploads/IMG_97682.webp",
     "/lovable-uploads/IMG_10252.webp",
     "/lovable-uploads/IMG_13742.webp",
-    "/lovable-uploads/IMG_23802.webp",
-    "/lovable-uploads/IMG_99002.webp"
+    "/lovable-uploads/IMG_23802.webp"
   ];
-
-  // Auto-advance slideshow
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % productImages.length);
-    }, 4000);
-    
-    return () => clearInterval(interval);
-  }, [productImages.length]);
 
   // Touch handling for mobile swipe
   const touchStartX = useRef<number>(0);
@@ -47,25 +43,31 @@ export default function HeroSection() {
   const handleTouchEnd = () => {
     const difference = touchStartX.current - touchEndX.current;
     
+    // If swipe distance is significant enough (more than 50px)
     if (Math.abs(difference) > 50) {
       if (difference > 0) {
+        // Swiped left - go to next
         setCurrentImage((prev) => (prev + 1) % productImages.length);
       } else {
+        // Swiped right - go to previous
         setCurrentImage((prev) => (prev - 1 + productImages.length) % productImages.length);
       }
     }
   };
 
+  // Navigate to previous image
   const prevImage = () => {
     setCurrentImage((prev) => (prev - 1 + productImages.length) % productImages.length);
   };
 
+  // Navigate to next image
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % productImages.length);
   };
 
   return (
-    <section className="bg-white text-metal-900 pt-20 pb-12 overflow-hidden">
+    <section className="bg-white text-metal-900 pt-24 pb-16 overflow-hidden">
+      {/* Skip navigation link for accessibility */}
       <a href="#main-content" className="skip-nav">
         Μετάβαση στο κύριο περιεχόμενο
       </a>
@@ -74,21 +76,27 @@ export default function HeroSection() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.3 }} 
-          className="space-y-4 max-w-4xl mx-auto"
+          transition={{ duration: 0.4 }} 
+          className="space-y-6 max-w-4xl mx-auto"
         >
-          <h1 className="font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-metal-900 tracking-tight leading-tight">
+          <h1 className={`font-medium tracking-tight ${
+            isMobile 
+              ? 'text-2xl sm:text-3xl' 
+              : 'text-4xl md:text-5xl lg:text-6xl'
+          } text-metal-900`}>
             <span className="block">Μεταλλικές Ντουλάπες &</span>
             <span className="block">Συρταριέρες Αρχειοθέτησης</span>
-            <span className="text-blue-600 block">για Επαγγελματικούς Χώρους</span>
+            <span className="text-blue-600 block"> για Επαγγελματικούς Χώρους</span>
           </h1>
-          <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
+          <p className={`text-gray-600 max-w-3xl mx-auto ${
+            isMobile ? 'text-base' : 'text-lg md:text-xl'
+          }`}>
             Custom lockers, συρταριέρες πολλαπλών θέσεων & industrial αποθηκευτικές λύσεις, 
             σχεδιασμένες και κατασκευασμένες στην Ελλάδα.
           </p>
-          <div className="flex justify-center pt-2">
+          <div className="flex justify-center pt-4">
             <Link to="#contact">
-              <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 text-base rounded-xl touch-target">
+              <Button size="lg" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-xl touch-target">
                 Ζητήστε Προσφορά
               </Button>
             </Link>
@@ -98,77 +106,76 @@ export default function HeroSection() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.4, delay: 0.1 }} 
-          className="mt-12 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-6"
+          transition={{ duration: 0.5, delay: 0.2 }} 
+          className="mt-16 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8"
         >
           <div 
             ref={carouselRef}
-            className="md:w-1/2 relative w-full h-[300px] sm:h-[400px] md:h-[450px]"
+            className={`md:w-1/2 relative w-full ${
+              isMobile ? 'h-[250px]' : 'h-[300px] sm:h-[400px]'
+            }`}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
             role="region"
             aria-label="Carousel προϊόντων"
           >
+            {/* Navigation arrows with improved mobile handling */}
             <button 
               onClick={prevImage} 
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-md transition-all w-10 h-10 sm:w-12 sm:h-12 active:scale-95"
+              className={`absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-md transition-all ${
+                isMobile 
+                  ? 'w-12 h-12 active:scale-95 active:bg-gray-100' 
+                  : 'w-10 h-10 hover:scale-105'
+              }`}
               aria-label="Προηγούμενη εικόνα"
               style={{ touchAction: 'manipulation' }}
             >
-              <ArrowLeft size={16} className="mx-auto" />
+              <ArrowLeft size={isMobile ? 20 : 16} className="mx-auto" />
             </button>
             
             <button 
               onClick={nextImage} 
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-md transition-all w-10 h-10 sm:w-12 sm:h-12 active:scale-95"
+              className={`absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-md transition-all ${
+                isMobile 
+                  ? 'w-12 h-12 active:scale-95 active:bg-gray-100' 
+                  : 'w-10 h-10 hover:scale-105'
+              }`}
               aria-label="Επόμενη εικόνα"
               style={{ touchAction: 'manipulation' }}
             >
-              <ArrowRight size={16} className="mx-auto" />
+              <ArrowRight size={isMobile ? 20 : 16} className="mx-auto" />
             </button>
             
-            {productImages.map((image, index) => {
-              // Apply proper sizing for each image
-              let imageClass = "w-full h-full object-contain mx-auto rounded-2xl absolute top-0 left-0";
-              
-              // Make IMG_10252.webp and IMG_13742.webp bigger
-              if (image.includes('IMG_10252') || image.includes('IMG_13742')) {
-                imageClass += " scale-110";
-              }
-              
-              // Fix the first image (IMG_054822.webp) to prevent stretching
-              if (image.includes('IMG_054822')) {
-                imageClass = "w-auto h-full max-w-full max-h-full object-contain mx-auto rounded-2xl absolute top-0 left-1/2 transform -translate-x-1/2";
-              }
-              
-              return (
-                <img 
-                  key={index}
-                  src={image} 
-                  alt={`Προϊόν showcase ${index + 1}`} 
-                  width="500"
-                  height="400"
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchPriority={index === 0 ? "high" : "low"}
-                  className={`${imageClass} ${
-                    currentImage === index ? "opacity-100" : "opacity-0"
-                  } transition-opacity duration-500`}
-                  style={{ 
-                    willChange: currentImage === index ? 'auto' : 'unset'
-                  }}
-                />
-              );
-            })}
+            {/* Images with explicit dimensions and lazy loading */}
+            {productImages.map((image, index) => (
+              <img 
+                key={index}
+                src={image} 
+                alt={`Προϊόν showcase ${index + 1}`} 
+                width={isMobile ? "250" : "600"}
+                height={isMobile ? "250" : "400"}
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "low"}
+                className={`w-full h-auto object-contain mx-auto rounded-2xl p-0 absolute top-0 left-0 ${
+                  currentImage === index ? "opacity-100" : "opacity-0"
+                } transition-opacity duration-1000`}
+                style={{ 
+                  maxHeight: isMobile ? "250px" : "400px",
+                  willChange: currentImage === index ? 'auto' : 'unset'
+                }}
+              />
+            ))}
             
-            <div className="absolute -bottom-4 left-0 right-0 flex justify-center gap-1.5 z-10">
+            {/* Much smaller indicators positioned at the bottom with more spacing */}
+            <div className="absolute -bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
               {productImages.map((_, index) => (
                 <button
                   key={index}
-                  className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
+                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-200 ${
                     currentImage === index 
                       ? 'bg-blue-600 scale-125' 
-                      : 'bg-gray-400 hover:bg-gray-500'
+                      : 'bg-gray-400 hover:bg-gray-500 hover:scale-110'
                   }`}
                   onClick={() => setCurrentImage(index)}
                   aria-label={`Μετάβαση στη διαφάνεια ${index + 1}`}
@@ -177,21 +184,23 @@ export default function HeroSection() {
             </div>
           </div>
           
-          <div className="md:w-1/2 text-left space-y-3">
-            <h2 className="font-semibold text-metal-900 text-lg sm:text-xl md:text-2xl">
-              Ποιοτικές Λύσεις Αποθήκευσης
-            </h2>
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+          <div className="md:w-1/2 text-left space-y-4">
+            <h2 className={`font-semibold text-metal-900 ${
+              isMobile ? 'text-xl' : 'text-2xl'
+            }`}>Ποιοτικές Λύσεις Αποθήκευσης</h2>
+            <p className={`text-gray-600 ${isMobile ? 'text-sm' : 'text-base'}`}>
               Τα μεταλλικά ντουλάπια και οι συρταριέρες μας προσφέρουν ανθεκτικές και αισθητικά 
               καλαίσθητες λύσεις για την οργάνωση και αποθήκευση εγγράφων, υλικών και προσωπικών 
               αντικειμένων στους επαγγελματικούς σας χώρους.
             </p>
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            <p className={`text-gray-600 ${isMobile ? 'text-sm' : 'text-base'}`}>
               Με εξατομικευμένες επιλογές διαστάσεων, χρωμάτων και διαμορφώσεων, σχεδιάζουμε 
               λύσεις που ανταποκρίνονται ακριβώς στις ανάγκες σας.
             </p>
             <Link to="#contact">
-              <Button className="flex items-center gap-2 rounded-xl mt-3 bg-blue-600 hover:bg-blue-700 touch-target text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3">
+              <Button className={`flex items-center gap-2 rounded-xl mt-2 bg-blue-600 hover:bg-blue-700 touch-target ${
+                isMobile ? 'text-sm px-4 py-2' : 'px-6 py-3'
+              }`}>
                 Θέλω και εγώ παρόμοια λύση 
                 <ArrowRight size={16} />
               </Button>

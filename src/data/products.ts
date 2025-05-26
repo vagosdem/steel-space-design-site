@@ -1,4 +1,3 @@
-
 export interface Product {
   id: string;
   title: string;
@@ -36,6 +35,17 @@ export const products: Product[] = [
     details: "Η κόκκινη-μαύρη μεταλλική ντουλάπα διπλής πόρτας είναι σχεδιασμένη ειδικά για βιομηχανικούς χώρους και εργαστήρια. Το χαρακτηριστικό κόκκινο και μαύρο χρώμα προσδίδει έντονη βιομηχανική αισθητική, ενώ η στιβαρή κατασκευή εγγυάται μακροχρόνια αντοχή σε απαιτητικά περιβάλλοντα εργασίας."
   },
   {
+    id: "white-glass-cabinet",
+    title: "Μοντέρνα lockers",
+    description: "Σύγχρονα μεταλλικά ντουλάπια με μοντέρνο σχεδιασμό, ιδανικά για επαγγελματικούς χώρους, γραφεία και σύγχρονες εγκαταστάσεις.",
+    image: "/lovable-uploads/IMG_10252.webp",
+    category: "lockers",
+    type: "modern",
+    color: "white",
+    material: "metal",
+    features: ["modern-design", "professional", "sleek"]
+  },
+  {
     id: "modern-locker-system",
     title: "Μοντέρνο Σύστημα Ντουλαπιών",
     description: "Σύγχρονο σύστημα ντουλαπιών με καθαρές γραμμές και ανθεκτική κατασκευή για επαγγελματικούς χώρους.",
@@ -44,13 +54,7 @@ export const products: Product[] = [
     type: "office",
     color: "blue",
     material: "metal",
-    features: ["modern-design", "key-lock", "ventilation"],
-    dimensions: {
-      width: "80 εκ.",
-      height: "180 εκ.",
-      depth: "45 εκ."
-    },
-    details: "Μοντέρνο σύστημα ντουλαπιών με καθαρές γραμμές και μινιμαλιστικό σχεδιασμό. Κατασκευασμένο από ανθεκτικό μέταλλο με ειδική βαφή αντιδιαβρωτικής προστασίας, προσφέρει μακροχρόνια αντοχή και αισθητικά αποτελέσματα."
+    features: ["modern-design", "key-lock", "ventilation"]
   },
   {
     id: "multi-door-locker-system",
@@ -61,13 +65,7 @@ export const products: Product[] = [
     type: "gym",
     color: "multi",
     material: "metal",
-    features: ["multiple-units", "ventilation", "key-lock"],
-    dimensions: {
-      width: "120 εκ.",
-      height: "180 εκ.",
-      depth: "50 εκ."
-    },
-    details: "Σύστημα πολλαπλών ντουλαπιών ιδανικό για αποδυτήρια και γυμναστήρια. Κάθε ντουλάπι διαθέτει εξαερισμό για καλύτερη κυκλοφορία αέρα και ασφαλές κλείδωμα για προστασία των προσωπικών αντικειμένων."
+    features: ["multiple-units", "ventilation", "key-lock"]
   },
   {
     id: "colorful-school-lockers",
@@ -78,13 +76,7 @@ export const products: Product[] = [
     type: "school",
     color: "multi",
     material: "metal",
-    features: ["colorful", "child-friendly", "numbered"],
-    dimensions: {
-      width: "90 εκ.",
-      height: "160 εκ.",
-      depth: "40 εκ."
-    },
-    details: "Πολύχρωμα σχολικά ντουλάπια σχεδιασμένα ειδικά για παιδικούς χώρους. Τα φωτεινά χρώματα δημιουργούν χαρούμενη ατμόσφαιρα, ενώ η ανθεκτική κατασκευή αντέχει στην καθημερινή χρήση από παιδιά."
+    features: ["colorful", "child-friendly", "numbered"]
   },
   {
     id: "industrial-storage-solution",
@@ -112,13 +104,7 @@ export const products: Product[] = [
     type: "office",
     color: "white",
     material: "metal",
-    features: ["professional-design", "clean-lines", "secure"],
-    dimensions: {
-      width: "75 εκ.",
-      height: "185 εκ.",
-      depth: "40 εκ."
-    },
-    details: "Επαγγελματικά ντουλάπια γραφείου με κομψό σχεδιασμό και καθαρές γραμμές. Ιδανικά για σύγχρονα γραφεία που χρειάζονται λύσεις αποθήκευσης που συνδυάζουν λειτουργικότητα με αισθητική."
+    features: ["professional-design", "clean-lines", "secure"]
   },
   {
     id: "compact-storage-units",
@@ -129,13 +115,7 @@ export const products: Product[] = [
     type: "compact",
     color: "blue",
     material: "metal",
-    features: ["space-saving", "efficient", "modular"],
-    dimensions: {
-      width: "60 εκ.",
-      height: "180 εκ.",
-      depth: "35 εκ."
-    },
-    details: "Συμπαγή αποθηκευτικά συστήματα σχεδιασμένα για μέγιστη αξιοποίηση του χώρου. Η μοντουλάρια δομή επιτρέπει ευέλικτες διαμορφώσεις ανάλογα με τις ανάγκες του χώρου."
+    features: ["space-saving", "efficient", "modular"]
   },
   {
     id: "six-door-locker-white",
@@ -146,13 +126,7 @@ export const products: Product[] = [
     type: "gym",
     color: "white",
     material: "metal",
-    features: ["six-compartments", "ventilation", "key-lock", "durable"],
-    dimensions: {
-      width: "90 εκ.",
-      height: "180 εκ.",
-      depth: "45 εκ."
-    },
-    details: "Κλασικά λευκά ντουλάπια 6 θέσεων με κλειδαριά ασφαλείας και σύστημα εξαερισμού. Η λευκή επιφάνεια παρέχει καθαρή και υγιεινή εμφάνιση, ιδανική για αποδυτήρια και γυμναστήρια."
+    features: ["six-compartments", "ventilation", "key-lock", "durable"]
   },
   {
     id: "glass-door-lockers-12",
@@ -163,13 +137,7 @@ export const products: Product[] = [
     type: "office",
     color: "white",
     material: "metal",
-    features: ["glass-doors", "twelve-compartments", "professional", "visibility"],
-    dimensions: {
-      width: "120 εκ.",
-      height: "200 εκ.",
-      depth: "40 εκ."
-    },
-    details: "Μοντέρνα ντουλάπια με γυάλινες πόρτες που επιτρέπουν την οπτική επαφή με το περιεχόμενο. Ιδανικά για επαγγελματικούς χώρους όπου χρειάζεται άμεση αναγνώριση των αποθηκευμένων αντικειμένων."
+    features: ["glass-doors", "twelve-compartments", "professional", "visibility"]
   },
   {
     id: "dark-gray-storage-cabinet",
@@ -180,13 +148,7 @@ export const products: Product[] = [
     type: "industrial",
     color: "gray",
     material: "metal",
-    features: ["double-doors", "heavy-duty", "industrial-grade", "ventilation"],
-    dimensions: {
-      width: "100 εκ.",
-      height: "200 εκ.",
-      depth: "50 εκ."
-    },
-    details: "Σκούρα γκρι ντουλάπα αποθήκευσης με ανθεκτική κατασκευή και διπλές πόρτες. Η σκούρα απόχρωση παρέχει professional εμφάνιση ενώ κρύβει καλύτερα τη σκόνη και τη φθορά."
+    features: ["double-doors", "heavy-duty", "industrial-grade", "ventilation"]
   },
   {
     id: "blue-multi-locker-20",
@@ -197,13 +159,7 @@ export const products: Product[] = [
     type: "school",
     color: "blue",
     material: "metal",
-    features: ["twenty-compartments", "key-lock", "ventilation", "organized-layout"],
-    dimensions: {
-      width: "200 εκ.",
-      height: "180 εκ.",
-      depth: "45 εκ."
-    },
-    details: "Εντυπωσιακό σύστημα 20 ντουλαπιών σε μπλε χρώμα με οργανωμένη διάταξη. Ιδανικό για μεγάλους χώρους που χρειάζονται πολλές θέσεις αποθήκευσης με συνεπή αισθητική."
+    features: ["twenty-compartments", "key-lock", "ventilation", "organized-layout"]
   },
   {
     id: "red-three-door-lockers",
@@ -214,13 +170,7 @@ export const products: Product[] = [
     type: "school",
     color: "red",
     material: "metal",
-    features: ["three-compartments", "colorful", "ventilation", "key-lock"],
-    dimensions: {
-      width: "90 εκ.",
-      height: "180 εκ.",
-      depth: "45 εκ."
-    },
-    details: "Κόκκινα ντουλάπια 3 θέσεων με έντονο χρώμα που διευκολύνει την αναγνώριση και οργάνωση. Ιδανικά για χώρους που χρειάζονται χρωματική κωδικοποίηση."
+    features: ["three-compartments", "colorful", "ventilation", "key-lock"]
   },
   {
     id: "blue-six-door-lockers",
@@ -231,13 +181,7 @@ export const products: Product[] = [
     type: "school",
     color: "blue",
     material: "metal",
-    features: ["six-compartments", "ventilation", "key-lock", "durable"],
-    dimensions: {
-      width: "90 εκ.",
-      height: "180 εκ.",
-      depth: "45 εκ."
-    },
-    details: "Μπλε ντουλάπια 6 θέσεων με κλασικό σχεδιασμό και ανθεκτική κατασκευή. Το μπλε χρώμα προσδίδει professional και ήρεμη αισθητική στον χώρο."
+    features: ["six-compartments", "ventilation", "key-lock", "durable"]
   },
   {
     id: "red-frame-gray-doors-12",
@@ -248,13 +192,7 @@ export const products: Product[] = [
     type: "modern",
     color: "red",
     material: "metal",
-    features: ["twelve-compartments", "color-contrast", "modern-design", "key-lock"],
-    dimensions: {
-      width: "120 εκ.",
-      height: "200 εκ.",
-      depth: "40 εκ."
-    },
-    details: "Μοντέρνα ντουλάπια με αντίθεση χρωμάτων - κόκκινο πλαίσιο και γκρι πόρτες. Ο συνδυασμός δημιουργεί δυναμική εμφάνιση που ξεχωρίζει στον χώρο."
+    features: ["twelve-compartments", "color-contrast", "modern-design", "key-lock"]
   },
   {
     id: "brown-frame-three-door",
@@ -265,13 +203,7 @@ export const products: Product[] = [
     type: "office",
     color: "brown",
     material: "metal",
-    features: ["three-large-compartments", "professional", "key-lock", "spacious"],
-    dimensions: {
-      width: "90 εκ.",
-      height: "200 εκ.",
-      depth: "50 εκ."
-    },
-    details: "Ντουλάπια με καφέ πλαίσιο και 3 μεγάλες θέσεις που προσφέρουν περισσότερο χώρο αποθήκευσης ανά θέση. Ιδανικά για αποθήκευση μεγαλύτερων αντικειμένων."
+    features: ["three-large-compartments", "professional", "key-lock", "spacious"]
   },
   {
     id: "white-double-door-cabinet",
@@ -282,13 +214,29 @@ export const products: Product[] = [
     type: "office",
     color: "white",
     material: "metal",
-    features: ["double-doors", "professional", "clean-design", "spacious"],
-    dimensions: {
-      width: "100 εκ.",
-      height: "200 εκ.",
-      depth: "45 εκ."
-    },
-    details: "Λευκή ντουλάπα διπλής πόρτας με καθαρό και μοντέρνο σχεδιασμό. Η λευκή επιφάνεια παρέχει ουδέτερη εμφάνιση που ταιριάζει σε κάθε χώρο."
+    features: ["double-doors", "professional", "clean-design", "spacious"]
+  },
+  {
+    id: "yellow-green-lockers-multicolor",
+    title: "Κίτρινα-Πράσινα Πολύχρωμα Ντουλάπια",
+    description: "Φρέσκα πολύχρωμα ντουλάπια με κίτρινες και πράσινες αποχρώσεις, ιδανικά για σχολικούς χώρους και παιδικές εγκαταστάσεις.",
+    image: "/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png",
+    category: "lockers",
+    type: "school",
+    color: "multi",
+    material: "metal",
+    features: ["colorful", "child-friendly", "bright-colors", "numbered"]
+  },
+  {
+    id: "red-blue-mixed-lockers",
+    title: "Κόκκινα-Μπλε Μικτά Ντουλάπια",
+    description: "Δυναμικός συνδυασμός κόκκινων και μπλε ντουλαπιών που προσφέρει έντονη χρωματική παρουσία για σύγχρονους χώρους.",
+    image: "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png",
+    category: "lockers",
+    type: "modern",
+    color: "multi",
+    material: "metal",
+    features: ["color-contrast", "modern-design", "ventilation", "key-lock"]
   },
   {
     id: "orange-white-contrast-lockers",
@@ -299,29 +247,72 @@ export const products: Product[] = [
     type: "modern",
     color: "orange",
     material: "metal",
-    features: ["color-contrast", "modern-design", "professional", "bright"],
-    dimensions: {
-      width: "120 εκ.",
-      height: "180 εκ.",
-      depth: "40 εκ."
-    },
-    details: "Ντουλάπια με έντονη αντίθεση πορτοκαλί και λευκού που δημιουργούν ζωντανή και μοντέρνα εμφάνιση. Ιδανικά για χώρους που θέλουν να ξεχωρίσουν."
+    features: ["color-contrast", "modern-design", "professional", "bright"]
+  },
+  {
+    id: "blue-orange-vibrant-lockers",
+    title: "Μπλε-Πορτοκαλί Ζωντανά Ντουλάπια",
+    description: "Ζωντανός συνδυασμός μπλε και πορτοκαλί χρωμάτων που προσδίδει ενέργεια και μοντέρνα αισθητική στον χώρο.",
+    image: "/lovable-uploads/7cc3aac9-9af0-4f81-b131-0622591eebc1.png",
+    category: "lockers",
+    type: "modern",
+    color: "blue",
+    material: "metal",
+    features: ["vibrant-colors", "modern-design", "energy-boosting", "professional"]
+  },
+  {
+    id: "green-yellow-nature-lockers",
+    title: "Πράσινα-Κίτρινα Φυσικά Ντουλάπια",
+    description: "Φυσικός συνδυασμός πράσινων και κίτρινων τόνων που δημιουργεί φρέσκια και ήρεμη ατμόσφαιρα στον χώρο.",
+    image: "/lovable-uploads/82e9823c-05e0-4a3d-bb0e-1a8079b79bf8.png",
+    category: "lockers",
+    type: "school",
+    color: "green",
+    material: "metal",
+    features: ["natural-colors", "calming", "eco-friendly-look", "child-friendly"]
+  },
+  {
+    id: "rainbow-multicolor-lockers",
+    title: "Ουράνιο Τόξο Πολύχρωμα Ντουλάπια",
+    description: "Φαντασμαγορικά ντουλάπια με όλα τα χρώματα του ουράνιου τόξου, ιδανικά για παιδικούς χώρους και δημιουργικά περιβάλλοντα.",
+    image: "/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png",
+    category: "lockers",
+    type: "school",
+    color: "multi",
+    material: "metal",
+    features: ["rainbow-colors", "creative", "child-friendly", "inspiring"]
+  },
+  {
+    id: "purple-pink-elegant-lockers",
+    title: "Μωβ-Ροζ Κοмψά Ντουλάπια",
+    description: "Κοмψός συνδυασμός μωβ και ροζ αποχρώσεων που προσφέρει μοντέρνη και θηλυκή αισθητική για ειδικούς χώρους.",
+    image: "/lovable-uploads/c1ccbc5f-2ae1-4c2b-98b3-88300b22ae67.png",
+    category: "lockers",
+    type: "modern",
+    color: "purple",
+    material: "metal",
+    features: ["elegant", "feminine-aesthetic", "modern-design", "sophisticated"]
+  },
+  {
+    id: "warm-tone-mixed-lockers",
+    title: "Ζεστόχρωμα Μικτά Ντουλάπια",
+    description: "Ζεστός συνδυασμός χρωμάτων που δημιουργεί φιλική και προσκλητική ατμόσφαιρα για επαγγελματικούς και σχολικούς χώρους.",
+    image: "/lovable-uploads/cb3b7ccd-56d5-4cb0-99ce-dfb7b75f6400.png",
+    category: "lockers",
+    type: "office",
+    color: "multi",
+    material: "metal",
+    features: ["warm-colors", "welcoming", "professional", "comfortable"]
   },
   {
     id: "pastel-soft-tone-lockers",
     title: "Παστέλ Απαλόχρωμα Ντουλάπια",
-    description: "Απαλά παστέλ χρώματα που δημιουργούν ήρεμη και χαλαρωτική ατμόσφαιρα, ιδανικά για χώρους ευεξίας και παιδικές εγκαταστάσεις.",
+    description: "Απαλά παστέλ χρώματα που δημιουργούν ηρεμη και χαλαρωτική ατμόσφαιρα, ιδανικά για χώρους ευεξίας και παιδικές εγκαταστάσεις.",
     image: "/lovable-uploads/de48c2ac-8f96-4f1d-987f-3fa9c559618f.png",
     category: "lockers",
     type: "school",
     color: "pastel",
     material: "metal",
-    features: ["soft-colors", "calming", "wellness", "child-friendly"],
-    dimensions: {
-      width: "90 εκ.",
-      height: "160 εκ.",
-      depth: "40 εκ."
-    },
-    details: "Παστέλ ντουλάπια με απαλά χρώματα που δημιουργούν ήρεμη και φιλική ατμόσφαιρα. Ιδανικά για παιδικούς χώρους και περιβάλλοντα που προωθούν την ευεξία."
+    features: ["soft-colors", "calming", "wellness", "child-friendly"]
   }
 ];

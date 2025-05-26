@@ -31,7 +31,7 @@ export default function ProductShowcase({
       <div className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <motion.div 
-            className={`w-full md:w-1/2 ${imageOrder} flex justify-center`} 
+            className={`w-full md:w-1/2 ${imageOrder}`} 
             initial={{
               opacity: 0,
               x: alignment === "left" ? -50 : 50
@@ -48,15 +48,15 @@ export default function ProductShowcase({
               delay: 0.2
             }}
           >
-            <div className="transition-all duration-300 flex justify-center items-center">
+            <div className="transition-all duration-300 mx-auto my-0 py-0">
               <img 
                 src={product.image} 
                 alt={product.title} 
-                width={350}
-                height={350}
+                width={500}
+                height={500}
                 loading="lazy"
-                className="product-showcase-image"
-                style={{ objectFit: 'contain', aspectRatio: '1/1' }}
+                className="w-full h-auto object-contain mx-auto max-h-[500px]"
+                style={{ aspectRatio: '1 / 1' }}
               />
             </div>
           </motion.div>

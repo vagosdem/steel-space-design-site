@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -12,6 +13,7 @@ import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { lazy, Suspense } from "react";
 
+// Lazy load heavy components for mobile
 const LazyMotionDiv = lazy(() => Promise.resolve({ 
   default: motion.div 
 }));
@@ -26,6 +28,11 @@ const productCategories = [{
   title: "Πολύχρωμα Σχολικά Ντουλάπια",
   description: "Φωτεινά και χαρούμενα ντουλάπια με διάφορα χρώματα, ιδανικά για σχολικές εγκαταστάσεις και παιδικούς σταθμούς.",
   image: "/lovable-uploads/IMG_21202.webp"
+}, {
+  id: "modern-locker-system",
+  title: "Μοντέρνα Συστήματα Ντουλαπιών",
+  description: "Σύγχρονα μεταλλικά ντουλάπια με καθαρές γραμμές για επαγγελματικούς χώρους και σύγχρονα γραφεία.",
+  image: "/lovable-uploads/IMG_13722.webp"
 }, {
   id: "industrial-storage-solution",
   title: "Βιομηχανικές Λύσεις Αποθήκευσης",
@@ -64,17 +71,17 @@ export default function ProductsSection() {
   const MotionComponent = isMobile ? motion.div : LazyMotionDiv;
   
   return (
-    <section id="products" className="bg-metal-50 py-16">
+    <section id="products" className="bg-metal-50 py-20">
       <div className="container-section">
         <MotionComponent 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="text-center max-w-3xl mx-auto mb-10"
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-12"
         >
-          <h2 className="text-metal-900 mb-3 text-2xl sm:text-3xl md:text-4xl">Τα Προϊόντα Μας</h2>
-          <p className="text-metal-600 text-base sm:text-lg leading-relaxed">
+          <h2 className="text-metal-900 mb-4">Τα Προϊόντα Μας</h2>
+          <p className="text-metal-600 text-lg">
             Ανακαλύψτε τη σειρά μεταλλικών λύσεων αποθήκευσης υψηλής ποιότητας, σχεδιασμένων για επαγγελματικούς χώρους και επιχειρήσεις.
           </p>
         </MotionComponent>
@@ -91,39 +98,36 @@ export default function ProductsSection() {
               <CarouselItem key={index} className="md:basis-full">
                 <div className="p-1">
                   <Card className="overflow-hidden border-none shadow-none">
-                    <div className="flex flex-col md:flex-row items-center gap-6 py-4 min-h-[400px] sm:min-h-[450px]">
-                      <div className="w-full md:w-1/2 flex justify-center">
+                    <div className="flex flex-col md:flex-row items-center gap-8 py-6 min-h-[500px]">
+                      <div className="w-full md:w-1/2">
                         <MotionComponent
                           initial={{ opacity: 0, scale: 0.95 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: 0.1 }}
-                          className="p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex justify-center items-center"
+                          transition={{ duration: 0.7, delay: 0.2 }}
+                          className="p-0 bg-white rounded-3xl shadow-sm hover:shadow-md transition-all duration-300"
                         >
                           <img 
                             src={product.image} 
                             alt={product.title}
-                            width={320}
-                            height={320}
+                            width={400}
+                            height={400}
                             loading="lazy"
-                            className="w-full h-auto object-contain max-h-[320px] max-w-[320px]"
-                            style={{ 
-                              objectFit: 'contain',
-                              aspectRatio: '1/1'
-                            }}
+                            className="w-full h-auto object-contain mx-auto rounded-2xl"
+                            style={{ aspectRatio: '1 / 1' }}
                           />
                         </MotionComponent>
                       </div>
-                      <div className="w-full md:w-1/2 space-y-4 flex flex-col justify-between min-h-[300px]">
+                      <div className="w-full md:w-1/2 space-y-6 flex flex-col justify-between min-h-[400px]">
                         <div className="flex-grow">
                           <MotionComponent
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4 }}
+                            transition={{ duration: 0.5 }}
                           >
-                            <h3 className="text-xl sm:text-2xl font-medium text-metal-900 mb-2">{product.title}</h3>
-                            <p className="text-metal-600 text-sm sm:text-base leading-relaxed">{product.description}</p>
+                            <h3 className="text-2xl font-medium text-metal-900">{product.title}</h3>
+                            <p className="text-metal-600 mt-2">{product.description}</p>
                           </MotionComponent>
                         </div>
                         <div className="mt-auto">
@@ -131,17 +135,17 @@ export default function ProductsSection() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: 0.1 }}
-                            className="flex flex-col sm:flex-row gap-3"
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="flex flex-col sm:flex-row gap-4"
                           >
                             <Button 
-                              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-xl text-sm sm:text-base px-4 py-2"
+                              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 rounded-xl"
                               onClick={handleRequestQuote}
                             >
                               Ζητήστε Προσφορά
                             </Button>
                             <Link to={`/product/${product.id}`} className="w-full sm:w-auto">
-                              <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl text-sm sm:text-base px-4 py-2">
+                              <Button variant="outline" className="w-full border-blue-300 text-blue-600 hover:bg-blue-50 rounded-xl">
                                 Περισσότερες Πληροφορίες
                               </Button>
                             </Link>
@@ -154,9 +158,9 @@ export default function ProductsSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-center mt-6 gap-3">
-            <CarouselPrevious className="relative static left-0 translate-y-0 h-6 w-6 sm:h-7 sm:w-7 rounded-xl" />
-            <CarouselNext className="relative static right-0 translate-y-0 h-6 w-6 sm:h-7 sm:w-7 rounded-xl" />
+          <div className="flex justify-center mt-8 gap-4">
+            <CarouselPrevious className="relative static left-0 translate-y-0 h-7 w-7 rounded-xl" />
+            <CarouselNext className="relative static right-0 translate-y-0 h-7 w-7 rounded-xl" />
           </div>
         </Carousel>
         
@@ -164,11 +168,11 @@ export default function ProductsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          className="mt-10 text-center"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 text-center"
         >
           <Link to="/products">
-            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-xl text-sm sm:text-base px-6 py-3">
+            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-xl">
               Δείτε Όλα τα Προϊόντα
             </Button>
           </Link>
