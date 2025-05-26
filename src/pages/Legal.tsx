@@ -41,10 +41,10 @@ export default function Legal() {
               </p>
             </header>
 
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-lg max-w-none space-y-6">
               {/* Section 1 */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-metal-800 mb-4">1. Εισαγωγή</h2>
+              <section className="mb-8">
+                <h2 className="text-2xl font-bold text-metal-800 mb-3">1. Εισαγωγή</h2>
                 <p className="text-metal-700 leading-relaxed">
                   Καλώς ήρθατε στην ιστοσελίδα της εταιρίας <strong>Αντώνης Δεμερύτης & ΣΙΑ Ε.Ε.</strong>. 
                   Η προστασία των προσωπικών σας δεδομένων και η συμμόρφωση με τους ισχύοντες νόμους είναι 
@@ -54,12 +54,12 @@ export default function Legal() {
               </section>
 
               {/* Section 2 */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-metal-800 mb-4">2. Συλλογή και Χρήση Προσωπικών Δεδομένων</h2>
-                <p className="text-metal-700 leading-relaxed mb-4">
+              <section id="privacy-policy" className="mb-8">
+                <h2 className="text-2xl font-bold text-metal-800 mb-3">2. Πολιτική Απορρήτου - Συλλογή και Χρήση Προσωπικών Δεδομένων</h2>
+                <p className="text-metal-700 leading-relaxed mb-3">
                   Συλλέγουμε τα ακόλουθα προσωπικά δεδομένα μέσω της φόρμας επικοινωνίας:
                 </p>
-                <ul className="list-disc list-inside text-metal-700 space-y-2 mb-4">
+                <ul className="list-disc list-inside text-metal-700 space-y-1 mb-3">
                   <li>Όνομα</li>
                   <li>Ηλεκτρονική διεύθυνση (email)</li>
                   <li>Τηλέφωνο επικοινωνίας</li>
@@ -72,8 +72,8 @@ export default function Legal() {
               </section>
 
               {/* Section 3 */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-metal-800 mb-4">3. Cookies</h2>
+              <section id="cookies" className="mb-8">
+                <h2 className="text-2xl font-bold text-metal-800 mb-3">3. Cookies</h2>
                 <p className="text-metal-700 leading-relaxed">
                   Η ιστοσελίδα μας δεν χρησιμοποιεί cookies τρίτων μερών προς το παρόν. Ενδέχεται στο μέλλον 
                   να χρησιμοποιηθούν για τη βελτίωση της εμπειρίας χρήστη, οπότε και θα ενημερωθείτε αναλόγως.
@@ -81,8 +81,8 @@ export default function Legal() {
               </section>
 
               {/* Section 4 */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-metal-800 mb-4">4. Δικαιώματα Χρηστών</h2>
+              <section className="mb-8">
+                <h2 className="text-2xl font-bold text-metal-800 mb-3">4. Δικαιώματα Χρηστών</h2>
                 <p className="text-metal-700 leading-relaxed">
                   Σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR), έχετε το δικαίωμα πρόσβασης, 
                   διόρθωσης ή διαγραφής των προσωπικών σας δεδομένων. Για οποιοδήποτε σχετικό αίτημα, 
@@ -91,12 +91,12 @@ export default function Legal() {
               </section>
 
               {/* Section 5 */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-metal-800 mb-4">5. Όροι Χρήσης</h2>
-                <p className="text-metal-700 leading-relaxed mb-4">
+              <section id="terms-of-use" className="mb-8">
+                <h2 className="text-2xl font-bold text-metal-800 mb-3">5. Όροι Χρήσης</h2>
+                <p className="text-metal-700 leading-relaxed mb-3">
                   Η χρήση της ιστοσελίδας μας προϋποθέτει την αποδοχή των παρακάτω όρων:
                 </p>
-                <ul className="list-disc list-inside text-metal-700 space-y-3">
+                <ul className="list-disc list-inside text-metal-700 space-y-2">
                   <li>
                     Το περιεχόμενο της ιστοσελίδας (κείμενα, εικόνες, λογότυπα) αποτελεί πνευματική ιδιοκτησία 
                     της εταιρίας μας και προστατεύεται από την ισχύουσα νομοθεσία.
@@ -116,15 +116,15 @@ export default function Legal() {
               </section>
 
               {/* Section 6 */}
-              <section className="mb-12">
-                <h2 className="text-2xl font-bold text-metal-800 mb-4">6. Επικοινωνία</h2>
-                <p className="text-metal-700 leading-relaxed mb-4">
+              <section className="mb-8">
+                <h2 className="text-2xl font-bold text-metal-800 mb-3">6. Επικοινωνία</h2>
+                <p className="text-metal-700 leading-relaxed mb-3">
                   Για οποιαδήποτε απορία ή αίτημα σχετικά με την Πολιτική Απορρήτου ή τους Όρους Χρήσης, 
                   μπορείτε να επικοινωνήσετε μαζί μας:
                 </p>
                 <div className="bg-metal-50 p-6 rounded-lg">
                   <p className="text-metal-700 mb-2">
-                    <strong>Email:</strong> info@stereon.gr
+                    <strong>Email:</strong> stereom@otenet.gr
                   </p>
                   <p className="text-metal-700">
                     <strong>Διεύθυνση:</strong> Καπσοράχη 15, Αιγάλεω, 12241
@@ -133,7 +133,7 @@ export default function Legal() {
               </section>
 
               {/* Footer note */}
-              <div className="border-t border-metal-200 pt-8">
+              <div className="border-t border-metal-200 pt-6">
                 <p className="text-metal-600 text-center font-medium">
                   Η χρήση της ιστοσελίδας συνεπάγεται την αποδοχή της παρούσας Πολιτικής Απορρήτου και των Όρων Χρήσης.
                 </p>

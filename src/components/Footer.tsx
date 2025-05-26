@@ -29,7 +29,6 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4 text-metal-200">Εταιρεία</h4>
             <ul className="space-y-2">
               <li><a href="#about" className="text-metal-400 hover:text-white transition-colors">Σχετικά με εμάς</a></li>
-              <li><a href="#projects" className="text-metal-400 hover:text-white transition-colors">Έργα</a></li>
               <li><a href="#features" className="text-metal-400 hover:text-white transition-colors">Υπηρεσίες</a></li>
               <li><a href="#contact" className="text-metal-400 hover:text-white transition-colors">Επικοινωνία</a></li>
             </ul>
@@ -39,17 +38,20 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4 text-metal-200">Νομικά</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/legal" className="text-metal-400 hover:text-white transition-colors">
+                <Link to="/legal#terms-of-use" className="text-metal-400 hover:text-white transition-colors">
                   Όροι Χρήσης
                 </Link>
               </li>
               <li>
-                <Link to="/legal" className="text-metal-400 hover:text-white transition-colors">
+                <Link to="/legal#privacy-policy" className="text-metal-400 hover:text-white transition-colors">
                   Πολιτική Απορρήτου
                 </Link>
               </li>
-              <li><a href="#" className="text-metal-400 hover:text-white transition-colors">Cookies</a></li>
-              <li><a href="#" className="text-metal-400 hover:text-white transition-colors">Εγγύηση Προϊόντων</a></li>
+              <li>
+                <Link to="/legal#cookies" className="text-metal-400 hover:text-white transition-colors">
+                  Cookies
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
