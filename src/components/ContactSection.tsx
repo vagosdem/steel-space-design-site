@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -5,6 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Building, Download, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -93,7 +96,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-metal-400">Email</p>
-                  <p className="text-white">info@stereom.gr</p>
+                  <p className="text-white">stereom@otenet.gr</p>
                 </div>
               </div>
               
@@ -103,7 +106,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-metal-400">Διεύθυνση</p>
-                  <p className="text-white">Βιομηχανικό Πάρκο, Αιγάλεω 12244</p>
+                  <p className="text-white">Καπσοράχη 15, Αιγάλεω, 12241</p>
                 </div>
               </div>
               
@@ -157,7 +160,11 @@ export default function ContactSection() {
                   <span className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                 </Button>
                 <p className="text-xs text-center text-metal-400">
-                  Συμπληρώνοντας τη φόρμα αποδέχεστε την <a href="#" className="text-blue-400 hover:underline">Πολιτική Απορρήτου</a> μας
+                  Συμπληρώνοντας τη φόρμα αποδέχεστε την{" "}
+                  <Link to="/legal#privacy-policy" className="text-blue-400 hover:underline">
+                    Πολιτική Απορρήτου
+                  </Link>
+                  {" "}μας
                 </p>
               </div>
             </form>
