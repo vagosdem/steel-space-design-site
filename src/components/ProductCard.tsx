@@ -32,14 +32,20 @@ export default function ProductCard({ product, onProductClick }: ProductCardProp
       className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col h-full"
     >
       <div 
-        className="flex items-center justify-center h-64 p-2 bg-gray-50 cursor-pointer"
+        className="flex items-center justify-center h-64 p-4 bg-gray-50 cursor-pointer"
         onClick={() => onProductClick(product.id)}
       >
         <img 
           src={product.image} 
           alt={product.title}
           loading="lazy"
-          className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300 product-image"
+          className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
+          style={{ 
+            objectFit: 'contain',
+            aspectRatio: '1/1',
+            maxHeight: '220px',
+            maxWidth: '220px'
+          }}
         />
       </div>
       <div className="p-6 flex flex-col flex-grow">

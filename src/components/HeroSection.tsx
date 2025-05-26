@@ -1,8 +1,9 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useState, useRef, TouchEvent } from "react";
+import { useState, useRef, TouchEvent, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function HeroSection() {
@@ -21,6 +22,15 @@ export default function HeroSection() {
     "/lovable-uploads/IMG_23802.webp",
     "/lovable-uploads/IMG_99002.webp"
   ];
+
+  // Auto-advance slideshow
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % productImages.length);
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [productImages.length]);
 
   // Touch handling for mobile swipe
   const touchStartX = useRef<number>(0);
@@ -93,7 +103,7 @@ export default function HeroSection() {
         >
           <div 
             ref={carouselRef}
-            className="md:w-1/2 relative w-full h-[200px] sm:h-[250px] md:h-[350px]"
+            className="md:w-1/2 relative w-full h-[300px] sm:h-[400px] md:h-[450px]"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -118,23 +128,31 @@ export default function HeroSection() {
               <ArrowRight size={16} className="mx-auto" />
             </button>
             
-            {productImages.map((image, index) => (
-              <img 
-                key={index}
-                src={image} 
-                alt={`Προϊόν showcase ${index + 1}`} 
-                width="400"
-                height="300"
-                loading={index === 0 ? "eager" : "lazy"}
-                fetchPriority={index === 0 ? "high" : "low"}
-                className={`w-full h-full object-contain mx-auto rounded-2xl absolute top-0 left-0 ${
-                  currentImage === index ? "opacity-100" : "opacity-0"
-                } transition-opacity duration-500`}
-                style={{ 
-                  willChange: currentImage === index ? 'auto' : 'unset'
-                }}
-              />
-            ))}
+            {productImages.map((image, index) => {
+              // Make IMG_10252.webp and IMG_13742.webp bigger
+              const isBiggerImage = image.includes('IMG_10252') || image.includes('IMG_13742');
+              const imageClass = isBiggerImage 
+                ? "w-full h-full object-contain mx-auto rounded-2xl absolute top-0 left-0 scale-110" 
+                : "w-full h-full object-contain mx-auto rounded-2xl absolute top-0 left-0";
+              
+              return (
+                <img 
+                  key={index}
+                  src={image} 
+                  alt={`Προϊόν showcase ${index + 1}`} 
+                  width="500"
+                  height="400"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "low"}
+                  className={`${imageClass} ${
+                    currentImage === index ? "opacity-100" : "opacity-0"
+                  } transition-opacity duration-500`}
+                  style={{ 
+                    willChange: currentImage === index ? 'auto' : 'unset'
+                  }}
+                />
+              );
+            })}
             
             <div className="absolute -bottom-4 left-0 right-0 flex justify-center gap-1.5 z-10">
               {productImages.map((_, index) => (

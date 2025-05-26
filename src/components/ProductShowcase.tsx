@@ -52,10 +52,11 @@ export default function ProductShowcase({
               <img 
                 src={product.image} 
                 alt={product.title} 
-                width={400}
-                height={400}
+                width={350}
+                height={350}
                 loading="lazy"
                 className="product-showcase-image"
+                style={{ objectFit: 'contain', aspectRatio: '1/1' }}
               />
             </div>
           </motion.div>
