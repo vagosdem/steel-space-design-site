@@ -3,7 +3,7 @@
 <html lang="el">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Stereon - Μεταλλικά Ντουλάπια & Ντουλάπες Ποιότητας | Επαγγελματικές Λύσεις Αποθήκευσης</title>
     <meta name="description" content="Μεταλλικά ντουλάπια και ντουλάπες υψηλής ποιότητας για επαγγελματικούς, βιομηχανικούς και εκπαιδευτικούς χώρους. Ντουλάπια locker, συστήματα αποθήκευσης, αποδυτήρια. Κατασκευή στην Ελλάδα." />
     <meta name="keywords" content="μεταλλικά ντουλάπια, ντουλάπες locker, επαγγελματικά ντουλάπια, αποδυτήρια, συστήματα αποθήκευσης, μεταλλικές ντουλάπες, ντουλάπια γραφείου, σχολικά ντουλάπια, βιομηχανικά ντουλάπια, Ελλάδα" />
@@ -55,17 +55,6 @@
     }
     </script>
 
-    <!-- Cache control headers -->
-    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
-    <meta http-equiv="Expires" content="31536000">
-
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
-    
-    <!-- Preload hero image with explicit dimensions -->
-    <link rel="preload" href="/lovable-uploads/IMG_054822.webp" as="image" fetchpriority="high" width="400" height="400">
-    
     <!-- Performance optimizations -->
     <meta name="theme-color" content="#2563EB" />
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -75,6 +64,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://cdn.gpteng.co" crossorigin>
 
+    <!-- Critical CSS inlined for faster rendering -->
+    <style>
+      /* Critical path CSS */
+      body { font-family: system-ui, -apple-system, sans-serif; margin: 0; }
+      .container-section { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+      img { max-width: 100%; height: auto; }
+    </style>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    
+    <!-- Preload hero image with proper sizing -->
+    <link rel="preload" href="/lovable-uploads/IMG_054822.webp" as="image" fetchpriority="high" media="(min-width: 768px)" width="400" height="300">
+    <link rel="preload" href="/lovable-uploads/IMG_054822.webp" as="image" fetchpriority="high" media="(max-width: 767px)" width="300" height="200">
+
     <!-- Additional SEO meta tags -->
     <meta name="geo.region" content="GR" />
     <meta name="geo.placename" content="Greece" />
@@ -83,8 +88,8 @@
 
   <body>
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <!-- Defer non-critical scripts -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" defer></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
