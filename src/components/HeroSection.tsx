@@ -10,9 +10,8 @@ export default function HeroSection() {
   const isMobile = useIsMobile();
   const carouselRef = useRef<HTMLDivElement>(null);
   
-  // Updated product images array with specified images removed
+  // Updated product images array with red-black cabinet image removed
   const productImages = [
-    "/lovable-uploads/3d7fe985-2f29-443b-8ab2-3d6f769ff6df.png", 
     "/lovable-uploads/64d9716d-261a-44b6-b469-c4dff49cea91.png",
     "/lovable-uploads/ea0663a1-83d9-4b6e-bd66-c2a1b01af9da.png",
     "/lovable-uploads/d45ac80e-568d-4711-afdf-441b647c88bd.png", 

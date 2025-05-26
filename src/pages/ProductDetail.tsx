@@ -6,7 +6,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductImage from "@/components/ProductImage";
 import ProductInfo from "@/components/ProductInfo";
-import ProductFeatures from "@/components/ProductFeatures";
 import SimilarProducts from "@/components/SimilarProducts";
 import { useEffect } from "react";
 import { products } from "@/data/products";
@@ -54,7 +53,6 @@ export default function ProductDetail() {
           
           <div className="space-y-6">
             <ProductInfo product={product} />
-            <ProductFeatures features={product.features} />
           </div>
         </div>
         
