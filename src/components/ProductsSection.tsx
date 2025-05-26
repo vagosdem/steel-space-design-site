@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -98,22 +97,21 @@ export default function ProductsSection() {
                 <div className="p-1">
                   <Card className="overflow-hidden border-none shadow-none">
                     <div className="flex flex-col md:flex-row items-center gap-6 py-4 min-h-[400px] sm:min-h-[450px]">
-                      <div className="w-full md:w-1/2">
+                      <div className="w-full md:w-1/2 flex justify-center">
                         <MotionComponent
                           initial={{ opacity: 0, scale: 0.95 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: true }}
                           transition={{ duration: 0.5, delay: 0.1 }}
-                          className="p-0 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
+                          className="p-4 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex justify-center items-center"
                         >
                           <img 
                             src={product.image} 
                             alt={product.title}
-                            width={300}
-                            height={300}
+                            width={250}
+                            height={250}
                             loading="lazy"
-                            className="w-full h-auto object-contain mx-auto rounded-2xl"
-                            style={{ aspectRatio: '1 / 1', maxHeight: '300px' }}
+                            className="product-image"
                           />
                         </MotionComponent>
                       </div>

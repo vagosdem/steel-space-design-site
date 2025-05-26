@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -31,7 +30,7 @@ export default function ProductShowcase({
       <div className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <motion.div 
-            className={`w-full md:w-1/2 ${imageOrder}`} 
+            className={`w-full md:w-1/2 ${imageOrder} flex justify-center`} 
             initial={{
               opacity: 0,
               x: alignment === "left" ? -50 : 50
@@ -48,15 +47,14 @@ export default function ProductShowcase({
               delay: 0.2
             }}
           >
-            <div className="transition-all duration-300 mx-auto my-0 py-0">
+            <div className="transition-all duration-300 flex justify-center items-center">
               <img 
                 src={product.image} 
                 alt={product.title} 
-                width={500}
-                height={500}
+                width={400}
+                height={400}
                 loading="lazy"
-                className="w-full h-auto object-contain mx-auto max-h-[500px]"
-                style={{ aspectRatio: '1 / 1' }}
+                className="product-showcase-image"
               />
             </div>
           </motion.div>
