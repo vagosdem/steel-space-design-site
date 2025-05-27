@@ -1,54 +1,53 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Building, Download, Calendar } from "lucide-react";
+import { Phone, Mail, MapPin, Building } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    message: ""
-  });
   const [loading, setLoading] = useState(false);
-  const {
-    toast
-  } = useToast();
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const {
-      name,
-      value
-    } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-  const handleSubmit = (e: React.FormEvent) => {
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xgvkgand", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Το αίτημα προσφοράς στάλθηκε!",
+          description: "Η ομάδα μας θα επικοινωνήσει μαζί σας εντός 24 ωρών."
+        });
+        form.reset();
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
       toast({
-        title: "Το αίτημα προσφοράς στάλθηκε!",
-        description: "Η ομάδα μας θα επικοινωνήσει μαζί σας εντός 24 ωρών."
+        title: "Σφάλμα αποστολής",
+        description: "Παρακαλώ δοκιμάστε ξανά ή επικοινωνήστε τηλεφωνικά.",
+        variant: "destructive"
       });
+    } finally {
       setLoading(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: ""
-      });
-    }, 1000);
+    }
   };
+
   const fadeIn = {
     hidden: {
       opacity: 0,
@@ -62,6 +61,7 @@ export default function ContactSection() {
       }
     }
   };
+
   return <section id="contact" className="bg-metal-900 text-white my-0 mx-0 px-0 py-0">
       <div className="container-section">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -119,12 +119,6 @@ export default function ContactSection() {
                 </div>
               </div>
             </div>
-            
-            <div className="space-y-4">
-              
-              
-              
-            </div>
           </motion.div>
           
           <motion.div initial="hidden" whileInView="visible" viewport={{
@@ -136,23 +130,53 @@ export default function ContactSection() {
               <div className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-metal-300 mb-1">Ονοματεπώνυμο</label>
-                  <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Το ονοματεπώνυμό σας" className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400" required />
+                  <Input 
+                    id="name" 
+                    name="name" 
+                    placeholder="Το ονοματεπώνυμό σας" 
+                    className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400" 
+                    required 
+                  />
                 </div>
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-metal-300 mb-1">Επιχείρηση</label>
-                  <Input id="company" name="company" value={formData.company} onChange={handleChange} placeholder="Η επωνυμία της επιχείρησής σας" className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400" />
+                  <Input 
+                    id="company" 
+                    name="company" 
+                    placeholder="Η επωνυμία της επιχείρησής σας" 
+                    className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400" 
+                  />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-metal-300 mb-1">Email</label>
-                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="το.email.σας@example.com" className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400" required />
+                  <Input 
+                    id="email" 
+                    name="email" 
+                    type="email" 
+                    placeholder="το.email.σας@example.com" 
+                    className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400" 
+                    required 
+                  />
                 </div>
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-metal-300 mb-1">Τηλέφωνο</label>
-                  <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="(30) 210 1234567" className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400" />
+                  <Input 
+                    id="phone" 
+                    name="phone" 
+                    placeholder="(30) 210 1234567" 
+                    className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400" 
+                  />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-metal-300 mb-1">Περιγραφή Αναγκών</label>
-                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Περιγράψτε τις ανάγκες σας για να σας στείλουμε εξατομικευμένη προσφορά" rows={4} className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400" required />
+                  <Textarea 
+                    id="message" 
+                    name="message" 
+                    placeholder="Περιγράψτε τις ανάγκες σας για να σας στείλουμε εξατομικευμένη προσφορά" 
+                    rows={4} 
+                    className="bg-metal-700 border-metal-600 text-white placeholder:text-metal-400" 
+                    required 
+                  />
                 </div>
                 <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white relative overflow-hidden group" disabled={loading}>
                   <span className="relative z-10">{loading ? "Αποστολή..." : "Ζητήστε Προσφορά"}</span>
