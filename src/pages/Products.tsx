@@ -88,8 +88,8 @@ export default function Products() {
   return (
     <>
       <SEOHead 
-        title="Όλα τα Προϊόντα - Μεταλλικά Ντουλάπια & Ντουλάπες | Stereon"
-        description="Ανακαλύψτε την πλήρη γκάμα μεταλλικών ντουλαπιών μας: επαγγελματικά, σχολικά, βιομηχανικά ντουλάπια locker, συστήματα αποθήκευσης με γυάλινες πόρτες. Φίλτρα ανά κατηγορία, χρώμα, τύπο."
+        title="Μεταλλικές Ντουλάπες & Ντουλάπια - Όλα τα Προϊόντα | Stereon"
+        description="Ανακαλύψτε την πλήρη γκάμα μεταλλικών ντουλαπιών μας: επαγγελματικά ντουλάπια γραφείου, σχολικά ντουλάπια locker, βιομηχανικά συστήματα αποθήκευσης, ντουλάπια με γυάλινες πόρτες. Φίλτρα ανά κατηγορία, χρώμα, τύπο για εύκολη αναζήτηση."
         canonical="/products"
         image="/lovable-uploads/IMG_054822.webp"
       />
@@ -97,14 +97,17 @@ export default function Products() {
         <Navbar />
         <main className="flex-grow">
           <div ref={topRef} className="container-section">
-            <motion.h1 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl font-bold mb-8"
             >
-              Όλα τα Προϊόντα
-            </motion.h1>
+              <h1 className="text-3xl font-bold mb-4">Μεταλλικές Ντουλάπες & Συστήματα Αποθήκευσης</h1>
+              <p className="text-lg text-metal-600 mb-8">
+                Εξερευνήστε την ολοκληρωμένη γκάμα μεταλλικών ντουλαπιών και συστημάτων αποθήκευσης. 
+                Από επαγγελματικά ντουλάπια γραφείου έως βιομηχανικές λύσεις αποθήκευσης - βρείτε την ιδανική λύση για τις ανάγκες σας.
+              </p>
+            </motion.div>
             
             <ProductFilters
               categoryFilter={categoryFilter}

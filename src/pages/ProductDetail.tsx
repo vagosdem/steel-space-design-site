@@ -7,6 +7,9 @@ import Footer from "@/components/Footer";
 import ProductImage from "@/components/ProductImage";
 import ProductInfo from "@/components/ProductInfo";
 import SimilarProducts from "@/components/SimilarProducts";
+import SEOHead from "@/components/SEOHead";
+import ProductBreadcrumbs from "@/components/ProductBreadcrumbs";
+import ProductSchema from "@/components/ProductSchema";
 import { useEffect } from "react";
 import { products } from "@/data/products";
 
@@ -31,35 +34,52 @@ export default function ProductDetail() {
     );
   }
 
+  // Generate SEO-optimized title and description
+  const seoTitle = `${product.title} | Μεταλλικές Ντουλάπες Stereon - Ποιότητα & Αξιοπιστία`;
+  const seoDescription = `${product.description} Ανακαλύψτε τις μεταλλικές ντουλάπες υψηλής ποιότητας της Stereon. Ιδανικές για ${product.type === 'office' ? 'γραφεία' : product.type === 'school' ? 'σχολεία' : product.type === 'industrial' ? 'βιομηχανικούς χώρους' : 'επαγγελματικούς χώρους'}. Ζητήστε προσφορά σήμερα!`;
+
   // Get similar products, excluding the current product and randomizing the selection
   const availableProducts = products.filter(p => p.id !== productId);
   const shuffledProducts = [...availableProducts].sort(() => Math.random() - 0.5);
   const similarProducts = shuffledProducts.slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
+    <>
+      <SEOHead 
+        title={seoTitle}
+        description={seoDescription}
+        canonical={`/product/${productId}`}
+        image={product.image}
+        type="product"
+      />
+      <ProductSchema product={product} />
       
-      <div className="container-section">
-        <div className="mb-6">
-          <Button variant="outline" onClick={() => navigate(-1)} className="flex items-center gap-2">
-            <ArrowLeft size={16} />
-            Πίσω
-          </Button>
-        </div>
+      <div className="min-h-screen bg-white">
+        <Navbar />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
-          <ProductImage image={product.image} title={product.title} />
+        <div className="container-section">
+          <ProductBreadcrumbs productTitle={product.title} />
           
-          <div className="space-y-6">
-            <ProductInfo product={product} />
+          <div className="mb-6">
+            <Button variant="outline" onClick={() => navigate(-1)} className="flex items-center gap-2">
+              <ArrowLeft size={16} />
+              Πίσω
+            </Button>
           </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+            <ProductImage image={product.image} title={product.title} />
+            
+            <div className="space-y-6">
+              <ProductInfo product={product} />
+            </div>
+          </div>
+          
+          <SimilarProducts products={similarProducts} />
         </div>
         
-        <SimilarProducts products={similarProducts} />
+        <Footer />
       </div>
-      
-      <Footer />
-    </div>
+    </>
   );
 }
