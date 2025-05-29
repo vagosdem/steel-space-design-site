@@ -1,5 +1,4 @@
 
-
 export interface Product {
   id: string;
   title: string;
@@ -185,6 +184,158 @@ export const products: Product[] = [
       "Ανθεκτικά υλικά",
       "Εύκολη εγκατάσταση"
     ]
+  },
+  {
+    id: "heavy-duty-cabinets",
+    title: "Βαρέως Τύπου Ντουλάπια",
+    description: "Εξαιρετικά ανθεκτικά μεταλλικά ντουλάπια για βιομηχανική χρήση και περιβάλλοντα με ακραίες συνθήκες.",
+    image: "/lovable-uploads/IMG_054822.webp",
+    category: "cabinets",
+    type: "industrial",
+    color: "dark-gray",
+    material: "steel",
+    features: [
+      "Βαρέως τύπου κατασκευή",
+      "Ανθεκτικότητα στη διάβρωση",
+      "Υψηλές φορτίσεις",
+      "Ειδικά χημικά φινιρίσματα",
+      "Εξαιρετική σφράγιση"
+    ]
+  },
+  {
+    id: "modular-office-systems",
+    title: "Μοντέρνα Συστήματα Γραφείου",
+    description: "Σύγχρονα μεταλλικά ντουλάπια με μοντέρνο design για κομψούς χώρους εργασίας και reception areas.",
+    image: "/lovable-uploads/IMG_97682.webp",
+    category: "lockers",
+    type: "modern",
+    color: "silver",
+    material: "aluminum",
+    features: [
+      "Κομψός σχεδιασμός",
+      "Μοντέρνα γραμμή",
+      "Ποιοτικά φινιρίσματα",
+      "Εργονομική χρήση",
+      "Ευέλικτη τοποθέτηση"
+    ]
+  },
+  {
+    id: "security-lockers",
+    title: "Ντουλάπια Υψηλής Ασφάλειας",
+    description: "Μεταλλικά ντουλάπια με προηγμένα συστήματα ασφαλείας για την προστασία εμπιστευτικών εγγράφων και πολύτιμων αντικειμένων.",
+    image: "/lovable-uploads/IMG_13722.webp",
+    category: "security",
+    type: "high-security",
+    color: "black",
+    material: "reinforced-steel",
+    features: [
+      "Ενισχυμένη κλειδαριά",
+      "Πιστοποιημένη ασφάλεια",
+      "Αντιδιαρρηκτικός σχεδιασμός",
+      "Ηλεκτρονικό κλείδωμα",
+      "Συναγερμός παραβίασης"
+    ]
+  },
+  {
+    id: "weatherproof-outdoor",
+    title: "Εξωτερικά Ανθεκτικά Ντουλάπια",
+    description: "Ειδικά σχεδιασμένα μεταλλικά ντουλάπια για εξωτερικούς χώρους με προστασία από καιρικές συνθήκες.",
+    image: "/lovable-uploads/IMG_23802.webp",
+    category: "outdoor",
+    type: "weatherproof",
+    color: "green",
+    material: "galvanized-steel",
+    features: [
+      "Ανθεκτικότητα σε καιρό",
+      "Γαλβανισμένος χάλυβας",
+      "Στεγανοποίηση",
+      "UV προστασία",
+      "Αντιοξειδωτική επίστρωση"
+    ]
+  },
+  {
+    id: "medical-storage",
+    title: "Ιατρικά Ντουλάπια Αποθήκευσης",
+    description: "Εξειδικευμένα μεταλλικά ντουλάπια για ιατρικούς χώρους με αντιβακτηριδιακή επίστρωση και ειδικές προδιαγραφές υγιεινής.",
+    image: "/lovable-uploads/IMG_10252.webp",
+    category: "medical",
+    type: "healthcare",
+    color: "white",
+    material: "stainless-steel",
+    features: [
+      "Αντιβακτηριδιακή επίστρωση",
+      "Ανοξείδωτος χάλυβας",
+      "Εύκολος καθαρισμός",
+      "Υγειονομικές προδιαγραφές",
+      "Ερμητικό κλείσιμο"
+    ]
+  },
+  {
+    id: "gym-changing-lockers",
+    title: "Ντουλάπια Αποδυτηρίων Γυμναστηρίων",
+    description: "Ανθεκτικά και λειτουργικά ντουλάπια για αποδυτήρια γυμναστηρίων και αθλητικών κέντρων με βελτιωμένο αερισμό.",
+    image: "/lovable-uploads/IMG_21202.webp",
+    category: "sports",
+    type: "changing-room",
+    color: "red",
+    material: "powder-coated-steel",
+    features: [
+      "Βελτιωμένος αερισμός",
+      "Ανθεκτικότητα σε υγρασία",
+      "Αντιολισθητική βάση",
+      "Ενισχυμένοι μεντεσέδες",
+      "Αντιμικροβιακή επίστρωση"
+    ]
+  },
+  {
+    id: "archive-filing-systems",
+    title: "Συστήματα Αρχειοθέτησης",
+    description: "Επαγγελματικά συστήματα αρχειοθέτησης με ρυθμιζόμενα ράφια και ειδικές διαμορφώσεις για οργανωμένη αποθήκευση εγγράφων.",
+    image: "/lovable-uploads/IMG_13742.webp",
+    category: "filing",
+    type: "archive",
+    color: "beige",
+    material: "steel",
+    features: [
+      "Ρυθμιζόμενα ράφια",
+      "Ειδικές διαμορφώσεις",
+      "Οργανωμένη αποθήκευση",
+      "Ετικέτες αναγνώρισης",
+      "Εύκολη πρόσβαση"
+    ]
+  },
+  {
+    id: "chemical-resistant",
+    title: "Χημικώς Ανθεκτικά Ντουλάπια",
+    description: "Ειδικά επεξεργασμένα μεταλλικά ντουλάπια για αποθήκευση χημικών ουσιών και εργαστηριακών υλικών με ειδικές προδιαγραφές ασφαλείας.",
+    image: "/lovable-uploads/IMG_99002.webp",
+    category: "laboratory",
+    type: "chemical-storage",
+    color: "yellow",
+    material: "coated-steel",
+    features: [
+      "Χημική αντοχή",
+      "Ειδικές προδιαγραφές ασφαλείας",
+      "Αντιδιαβρωτική επίστρωση",
+      "Ελεγχόμενος αερισμός",
+      "Σύστημα συναγερμού"
+    ]
+  },
+  {
+    id: "mobile-storage-carts",
+    title: "Κινητές Μονάδες Αποθήκευσης",
+    description: "Μεταλλικές κινητές μονάδες αποθήκευσης με ρόδες για ευέλικτη χρήση σε διάφορους χώρους και εύκολη μεταφορά.",
+    image: "/lovable-uploads/IMG_054822.webp",
+    category: "mobile",
+    type: "cart",
+    color: "blue",
+    material: "lightweight-steel",
+    features: [
+      "Κινητότητα με ρόδες",
+      "Ελαφριά κατασκευή",
+      "Ευέλικτη χρήση",
+      "Φρένο ασφαλείας",
+      "Πολλαπλά διαμερίσματα"
+    ]
   }
 ];
-
