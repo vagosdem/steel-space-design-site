@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -79,9 +80,9 @@ export default function HeroSection() {
               ? 'text-2xl sm:text-3xl' 
               : 'text-4xl md:text-5xl lg:text-6xl'
           } text-metal-900`}>
-            <span className="block">Μεταλλικές Ντουλάπες &</span>
-            <span className="block">Συρταριέρες Αρχειοθέτησης</span>
-            <span className="text-blue-600 block"> για Επαγγελματικούς Χώρους</span>
+            <span className="block">Προσαρμοσμένες Μεταλλικές</span>
+            <span className="block">Λύσεις Αποθήκευσης</span>
+            <span className="text-blue-600 block">και Οργάνωσης</span>
           </h1>
           <p className={`text-gray-600 max-w-3xl mx-auto ${
             isMobile ? 'text-base' : 'text-lg md:text-xl'

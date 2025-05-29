@@ -11,8 +11,8 @@ interface SEOHeadProps {
 }
 
 export default function SEOHead({
-  title = "Stereon - Μεταλλικά Ντουλάπια & Ντουλάπες Ποιότητας",
-  description = "Μεταλλικά ντουλάπια και ντουλάπες υψηλής ποιότητας για επαγγελματικούς, βιομηχανικούς και εκπαιδευτικούς χώρους. Ντουλάπια locker, συστήματα αποθήκευσης, αποδυτήρια.",
+  title = "Μεταλλικές Ντουλάπες & Lockers | Custom Κατασκευές | Stereom.gr",
+  description = "Η Stereom.gr ειδικεύεται σε ανθεκτικές, custom μεταλλικές ντουλάπες, lockers και συρταριέρες. Ιδανικές για μεγάλες παραγγελίες σε βιομηχανίες, σχολεία, γραφεία. Ζητήστε προσφορά!",
   canonical,
   image = "/lovable-uploads/IMG_054822.webp",
   type = 'website',

@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -84,8 +85,8 @@ const Index = () => {
   return (
     <>
       <SEOHead 
-        title="Stereon - Μεταλλικά Ντουλάπια & Ντουλάπες Ποιότητας | Επαγγελματικές Λύσεις Αποθήκευσης"
-        description="Κατασκευή και πώληση μεταλλικών ντουλαπιών υψηλής ποιότητας. Ντουλάπια locker, επαγγελματικά συστήματα αποθήκευσης, αποδυτήρια για σχολεία, γραφεία, γυμναστήρια. Ποιότητα Made in Greece."
+        title="Μεταλλικές Ντουλάπες & Lockers | Custom Κατασκευές | Stereom.gr"
+        description="Η Stereom.gr ειδικεύεται σε ανθεκτικές, custom μεταλλικές ντουλάπες, lockers και συρταριέρες. Ιδανικές για μεγάλες παραγγελίες σε βιομηχανίες, σχολεία, γραφεία. Ζητήστε προσφορά!"
         canonical="/"
         image="/lovable-uploads/IMG_054822.webp"
       />
