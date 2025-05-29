@@ -1,8 +1,14 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Archive } from "lucide-react";
+import { Archive, ChevronDown } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -69,8 +75,9 @@ export default function Navbar() {
     }
   }, [location.hash]);
 
-  const navigateToProducts = () => {
-    navigate('/products');
+  const navigateToProducts = (category?: string) => {
+    const path = category ? `/products?category=${category}` : '/products';
+    navigate(path);
     if (mobileMenuOpen) {
       setMobileMenuOpen(false);
     }
@@ -102,16 +109,48 @@ export default function Navbar() {
 
           {/* Desktop navigation - improved contrast */}
           <div className="hidden md:flex items-center gap-8">
-            <button 
-              onClick={navigateToProducts} 
-              className={`font-medium transition-colors ${
-                scrolled 
-                  ? 'text-gray-100 hover:text-white' 
-                  : 'text-gray-800 hover:text-gray-900'
-              }`}
-            >
-              Προϊόντα
-            </button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className={`flex items-center gap-1 font-medium transition-colors ${
+                  scrolled 
+                    ? 'text-gray-100 hover:text-white' 
+                    : 'text-gray-800 hover:text-gray-900'
+                }`}>
+                  Προϊόντα
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent 
+                className="z-50 bg-white border border-gray-200 shadow-lg"
+                align="center"
+              >
+                <DropdownMenuItem 
+                  onClick={() => navigateToProducts()}
+                  className="cursor-pointer"
+                >
+                  Όλα τα Προϊόντα
+                </DropdownMenuItem>
+                <DropdownMenuItem 
+                  onClick={() => navigateToProducts('ντουλάπα')}
+                  className="cursor-pointer"
+                >
+                  Ντουλάπα
+                </DropdownMenuItem>
+                <DropdownMenuItem 
+                  onClick={() => navigateToProducts('locker')}
+                  className="cursor-pointer"
+                >
+                  Locker/Ντουλάπια
+                </DropdownMenuItem>
+                <DropdownMenuItem 
+                  onClick={() => navigateToProducts('αρχειοθήκη')}
+                  className="cursor-pointer"
+                >
+                  Αρχειοθήκη
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
             <button 
               onClick={() => navigateToSection("features")} 
               className={`font-medium transition-colors ${
@@ -170,16 +209,48 @@ export default function Navbar() {
           <div className={`md:hidden mt-4 pb-4 space-y-4 ${
             scrolled ? 'bg-metal-900/95' : 'bg-white/95'
           } backdrop-blur-sm rounded-lg`}>
-            <button 
-              onClick={navigateToProducts} 
-              className={`block w-full text-left p-2 ${
-                scrolled 
-                  ? 'text-gray-100 hover:text-white' 
-                  : 'text-gray-800 hover:text-gray-900'
-              } font-medium`}
-            >
-              Προϊόντα
-            </button>
+            <div className="space-y-2">
+              <button 
+                onClick={() => navigateToProducts()} 
+                className={`block w-full text-left p-2 ${
+                  scrolled 
+                    ? 'text-gray-100 hover:text-white' 
+                    : 'text-gray-800 hover:text-gray-900'
+                } font-medium`}
+              >
+                Όλα τα Προϊόντα
+              </button>
+              <button 
+                onClick={() => navigateToProducts('ντουλάπα')} 
+                className={`block w-full text-left p-2 pl-6 ${
+                  scrolled 
+                    ? 'text-gray-100 hover:text-white' 
+                    : 'text-gray-800 hover:text-gray-900'
+                } text-sm`}
+              >
+                Ντουλάπα
+              </button>
+              <button 
+                onClick={() => navigateToProducts('locker')} 
+                className={`block w-full text-left p-2 pl-6 ${
+                  scrolled 
+                    ? 'text-gray-100 hover:text-white' 
+                    : 'text-gray-800 hover:text-gray-900'
+                } text-sm`}
+              >
+                Locker/Ντουλάπια
+              </button>
+              <button 
+                onClick={() => navigateToProducts('αρχειοθήκη')} 
+                className={`block w-full text-left p-2 pl-6 ${
+                  scrolled 
+                    ? 'text-gray-100 hover:text-white' 
+                    : 'text-gray-800 hover:text-gray-900'
+                } text-sm`}
+              >
+                Αρχειοθήκη
+              </button>
+            </div>
             <button 
               onClick={() => navigateToSection("features")} 
               className={`block w-full text-left p-2 ${

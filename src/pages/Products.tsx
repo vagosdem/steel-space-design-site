@@ -1,6 +1,6 @@
 
 import { useState, useEffect, useRef } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -13,6 +13,7 @@ import { products, type Product } from "@/data/products";
 export default function Products() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [searchParams] = useSearchParams();
   const topRef = useRef<HTMLDivElement>(null);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
   const [sortOption, setSortOption] = useState("default");
@@ -20,6 +21,16 @@ export default function Products() {
   const [typeFilter, setTypeFilter] = useState("all");
   const [colorFilter, setColorFilter] = useState("all");
   const [featureFilter, setFeatureFilter] = useState("all");
+  
+  // Handle URL parameters on component mount
+  useEffect(() => {
+    const urlCategory = searchParams.get('category');
+    if (urlCategory && ['ντουλάπα', 'locker', 'αρχειοθήκη'].includes(urlCategory)) {
+      setCategoryFilter(urlCategory);
+    } else {
+      setCategoryFilter("all");
+    }
+  }, [searchParams]);
   
   useEffect(() => {
     if (topRef.current) {
@@ -83,13 +94,42 @@ export default function Products() {
     setColorFilter("all");
     setFeatureFilter("all");
     setSortOption("default");
+    // Update URL to remove category parameter
+    navigate('/products', { replace: true });
+  };
+
+  // Get page title based on category filter
+  const getPageTitle = () => {
+    switch(categoryFilter) {
+      case "ντουλάπα":
+        return "Μεταλλικές Ντουλάπες - Στιβαρές Λύσεις Αποθήκευσης | Stereon";
+      case "locker":
+        return "Μεταλλικά Lockers - Ατομικές Θυρίδες Ασφαλείας | Stereon";
+      case "αρχειοθήκη":
+        return "Μεταλλικές Αρχειοθήκες - Βιομηχανικές Λύσεις | Stereon";
+      default:
+        return "Μεταλλικές Ντουλάπες & Ντουλάπια - Όλα τα Προϊόντα | Stereon";
+    }
+  };
+
+  const getPageDescription = () => {
+    switch(categoryFilter) {
+      case "ντουλάπα":
+        return "Ανακαλύψτε την εκλεκτή γκάμα μεταλλικών ντουλαπών μας: επαγγελματικές λύσεις αποθήκευσης, σχολικά ντουλάπια, συμπαγή συστήματα. Προσαρμόσιμα χρώματα και διαστάσεις.";
+      case "locker":
+        return "Εξερευνήστε τα μεταλλικά lockers μας: ατομικές θυρίδες ασφαλείας για γραφεία, γυμναστήρια, σχολεία. Πολλαπλές θέσεις, γυάλινες πόρτες, προηγμένα συστήματα κλειδώματος.";
+      case "αρχειοθήκη":
+        return "Βιομηχανικές λύσεις αποθήκευσης βαρέως τύπου για απαιτητικά περιβάλλοντα. Μέγιστη ασφάλεια και αντοχή για επικίνδυνα ή πολύτιμα υλικά.";
+      default:
+        return "Ανακαλύψτε την πλήρη γκάμα μεταλλικών ντουλαπιών μας: επαγγελματικά ντουλάπια γραφείου, σχολικά ντουλάπια locker, βιομηχανικά συστήματα αποθήκευσης, ντουλάπια με γυάλινες πόρτες. Φίλτρα ανά κατηγορία, χρώμα, τύπο για εύκολη αναζήτηση.";
+    }
   };
 
   return (
     <>
       <SEOHead 
-        title="Μεταλλικές Ντουλάπες & Ντουλάπια - Όλα τα Προϊόντα | Stereon"
-        description="Ανακαλύψτε την πλήρη γκάμα μεταλλικών ντουλαπιών μας: επαγγελματικά ντουλάπια γραφείου, σχολικά ντουλάπια locker, βιομηχανικά συστήματα αποθήκευσης, ντουλάπια με γυάλινες πόρτες. Φίλτρα ανά κατηγορία, χρώμα, τύπο για εύκολη αναζήτηση."
+        title={getPageTitle()}
+        description={getPageDescription()}
         canonical="/products"
         image="/lovable-uploads/IMG_054822.webp"
       />
@@ -102,10 +142,17 @@ export default function Products() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-3xl font-bold mb-4">Μεταλλικές Ντουλάπες & Συστήματα Αποθήκευσης</h1>
+              <h1 className="text-3xl font-bold mb-4">
+                {categoryFilter === "ντουλάπα" && "Μεταλλικές Ντουλάπες"}
+                {categoryFilter === "locker" && "Μεταλλικά Lockers & Ντουλάπια"}
+                {categoryFilter === "αρχειοθήκη" && "Μεταλλικές Αρχειοθήκες"}
+                {categoryFilter === "all" && "Μεταλλικές Ντουλάπες & Συστήματα Αποθήκευσης"}
+              </h1>
               <p className="text-lg text-metal-600 mb-8">
-                Εξερευνήστε την ολοκληρωμένη γκάμα μεταλλικών ντουλαπιών και συστημάτων αποθήκευσης. 
-                Από επαγγελματικά ντουλάπια γραφείου έως βιομηχανικές λύσεις αποθήκευσης - βρείτε την ιδανική λύση για τις ανάγκες σας.
+                {categoryFilter === "ντουλάπα" && "Εξερευνήστε την επιλεγμένη γκάμα μεταλλικών ντουλαπών μας. Από επαγγελματικές λύσεις γραφείου έως σχολικά ντουλάπια - βρείτε την ιδανική λύση αποθήκευσης για τις ανάγκες σας."}
+                {categoryFilter === "locker" && "Ανακαλύψτε τα προηγμένα συστήματα lockers μας. Ατομικές θυρίδες ασφαλείας για γραφεία, γυμναστήρια, σχολεία και επαγγελματικούς χώρους με μέγιστη ασφάλεια και λειτουργικότητα."}
+                {categoryFilter === "αρχειοθήκη" && "Βιομηχανικές λύσεις αποθήκευσης βαρέως τύπου για τα πιο απαιτητικά περιβάλλοντα. Μέγιστη προστασία για εξοπλισμό, εργαλεία και πολύτιμα υλικά."}
+                {categoryFilter === "all" && "Εξερευνήστε την ολοκληρωμένη γκάμα μεταλλικών ντουλαπιών και συστημάτων αποθήκευσης. Από επαγγελματικά ντουλάπια γραφείου έως βιομηχανικές λύσεις αποθήκευσης - βρείτε την ιδανική λύση για τις ανάγκες σας."}
               </p>
             </motion.div>
             

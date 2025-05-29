@@ -53,9 +53,9 @@ export default function ProductFilters({
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">Όλες οι Κατηγορίες</SelectItem>
-            <SelectItem value="lockers">Ντουλάπες Locker</SelectItem>
-            <SelectItem value="cabinets">Ντουλάπες Αρχειοθέτησης</SelectItem>
-            <SelectItem value="storage">Αποθηκευτικά Συστήματα</SelectItem>
+            <SelectItem value="ντουλάπα">Ντουλάπα</SelectItem>
+            <SelectItem value="locker">Locker/Ντουλάπια</SelectItem>
+            <SelectItem value="αρχειοθήκη">Αρχειοθήκη</SelectItem>
           </SelectContent>
         </Select>
         
@@ -70,6 +70,8 @@ export default function ProductFilters({
             <SelectItem value="school">Σχολείων</SelectItem>
             <SelectItem value="industrial">Βιομηχανικών Χώρων</SelectItem>
             <SelectItem value="compact">Συμπαγή Συστήματα</SelectItem>
+            <SelectItem value="universal">Πολυχρηστικά</SelectItem>
+            <SelectItem value="modern">Μοντέρνα</SelectItem>
           </SelectContent>
         </Select>
         
@@ -82,7 +84,12 @@ export default function ProductFilters({
             <SelectItem value="white">Λευκό</SelectItem>
             <SelectItem value="gray">Γκρι</SelectItem>
             <SelectItem value="blue">Μπλε</SelectItem>
+            <SelectItem value="red">Κόκκινο</SelectItem>
+            <SelectItem value="brown">Καφέ</SelectItem>
+            <SelectItem value="orange">Πορτοκαλί</SelectItem>
             <SelectItem value="multi">Πολύχρωμο</SelectItem>
+            <SelectItem value="pastel">Παστέλ</SelectItem>
+            <SelectItem value="customizable">Προσαρμόσιμο</SelectItem>
           </SelectContent>
         </Select>
         
