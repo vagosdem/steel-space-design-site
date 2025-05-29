@@ -1,4 +1,3 @@
-
 import { SlidersHorizontal } from "lucide-react";
 import { 
   Select, 
@@ -53,9 +52,9 @@ export default function ProductFilters({
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">Όλες οι Κατηγορίες</SelectItem>
-            <SelectItem value="ντουλάπα">Ντουλάπα</SelectItem>
-            <SelectItem value="locker">Locker/Ντουλάπια</SelectItem>
-            <SelectItem value="αρχειοθήκη">Αρχειοθήκη</SelectItem>
+            <SelectItem value="ντουλάπα">Ντουλάπες</SelectItem>
+            <SelectItem value="locker">Lockers</SelectItem>
+            <SelectItem value="αρχειοθήκη">Συρταριέρες Αρχειοθέτησης</SelectItem>
           </SelectContent>
         </Select>
         

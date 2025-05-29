@@ -52,7 +52,7 @@ export default function MobileNavigation({
               : 'text-gray-800 hover:text-gray-900'
           } text-sm`}
         >
-          Ντουλάπα
+          Ντουλάπες
         </button>
         <button 
           onClick={() => navigateToProducts('locker')} 
@@ -62,7 +62,7 @@ export default function MobileNavigation({
               : 'text-gray-800 hover:text-gray-900'
           } text-sm`}
         >
-          Locker/Ντουλάπια
+          Lockers
         </button>
         <button 
           onClick={() => navigateToProducts('αρχειοθήκη')} 
@@ -72,7 +72,7 @@ export default function MobileNavigation({
               : 'text-gray-800 hover:text-gray-900'
           } text-sm`}
         >
-          Αρχειοθήκη
+          Συρταριέρες Αρχειοθέτησης
         </button>
       </div>
       <button 

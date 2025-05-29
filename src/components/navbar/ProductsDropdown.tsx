@@ -51,19 +51,19 @@ export default function ProductsDropdown({ scrolled, mobileMenuOpen, setMobileMe
           onClick={() => navigateToProducts('ντουλάπα')}
           className="cursor-pointer text-gray-900 hover:bg-gray-100 focus:bg-gray-100"
         >
-          Ντουλάπα
+          Ντουλάπες
         </DropdownMenuItem>
         <DropdownMenuItem 
           onClick={() => navigateToProducts('locker')}
           className="cursor-pointer text-gray-900 hover:bg-gray-100 focus:bg-gray-100"
         >
-          Locker/Ντουλάπια
+          Lockers
         </DropdownMenuItem>
         <DropdownMenuItem 
           onClick={() => navigateToProducts('αρχειοθήκη')}
           className="cursor-pointer text-gray-900 hover:bg-gray-100 focus:bg-gray-100"
         >
-          Αρχειοθήκη
+          Συρταριέρες Αρχειοθέτησης
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
