@@ -107,44 +107,44 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop navigation - improved contrast */}
+          {/* Desktop navigation - improved contrast and dropdown styling */}
           <div className="hidden md:flex items-center gap-8">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className={`flex items-center gap-1 font-medium transition-colors ${
                   scrolled 
-                    ? 'text-gray-100 hover:text-white' 
-                    : 'text-gray-800 hover:text-gray-900'
-                }`}>
+                    ? 'text-white hover:text-gray-200' 
+                    : 'text-black hover:text-gray-700'
+                } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-md px-2 py-1`}>
                   Προϊόντα
                   <ChevronDown className="h-4 w-4" />
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent 
-                className="z-50 bg-white border border-gray-200 shadow-lg"
+                className="z-50 bg-white border border-gray-200 shadow-lg min-w-[200px]"
                 align="center"
               >
                 <DropdownMenuItem 
                   onClick={() => navigateToProducts()}
-                  className="cursor-pointer"
+                  className="cursor-pointer text-gray-900 hover:bg-gray-100 focus:bg-gray-100"
                 >
                   Όλα τα Προϊόντα
                 </DropdownMenuItem>
                 <DropdownMenuItem 
                   onClick={() => navigateToProducts('ντουλάπα')}
-                  className="cursor-pointer"
+                  className="cursor-pointer text-gray-900 hover:bg-gray-100 focus:bg-gray-100"
                 >
                   Ντουλάπα
                 </DropdownMenuItem>
                 <DropdownMenuItem 
                   onClick={() => navigateToProducts('locker')}
-                  className="cursor-pointer"
+                  className="cursor-pointer text-gray-900 hover:bg-gray-100 focus:bg-gray-100"
                 >
                   Locker/Ντουλάπια
                 </DropdownMenuItem>
                 <DropdownMenuItem 
                   onClick={() => navigateToProducts('αρχειοθήκη')}
-                  className="cursor-pointer"
+                  className="cursor-pointer text-gray-900 hover:bg-gray-100 focus:bg-gray-100"
                 >
                   Αρχειοθήκη
                 </DropdownMenuItem>
@@ -155,8 +155,8 @@ export default function Navbar() {
               onClick={() => navigateToSection("features")} 
               className={`font-medium transition-colors ${
                 scrolled 
-                  ? 'text-gray-100 hover:text-white' 
-                  : 'text-gray-800 hover:text-gray-900'
+                  ? 'text-white hover:text-gray-200' 
+                  : 'text-black hover:text-gray-700'
               }`}
             >
               Υπηρεσίες
@@ -165,8 +165,8 @@ export default function Navbar() {
               onClick={() => navigateToSection("contact")} 
               className={`font-medium transition-colors ${
                 scrolled 
-                  ? 'text-gray-100 hover:text-white' 
-                  : 'text-gray-800 hover:text-gray-900'
+                  ? 'text-white hover:text-gray-200' 
+                  : 'text-black hover:text-gray-700'
               }`}
             >
               Επικοινωνία
