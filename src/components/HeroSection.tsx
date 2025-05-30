@@ -11,53 +11,17 @@ export default function HeroSection() {
   const isMobile = useIsMobile();
   const carouselRef = useRef<HTMLDivElement>(null);
   
-  // Enhanced product images array with metadata for each slide
-  const productSlides = [
-    {
-      image: "/lovable-uploads/ea0663a1-83d9-4b6e-bd66-c2a1b01af9da.png",
-      caption: "Μεταλλικοί Lockers Βαρέως Τύπου για Βιομηχανική Χρήση",
-      link: "/products?category=locker"
-    },
-    {
-      image: "/lovable-uploads/d45ac80e-568d-4711-afdf-441b647c88bd.png",
-      caption: "Πολύχρωμες Μεταλλικές Συρταριέρες Αρχειοθέτησης Γραφείου",
-      link: "/products?category=cabinet"
-    },
-    {
-      image: "/lovable-uploads/82f9ab23-6721-4a6e-90e5-13cf0745af0c.png",
-      caption: "Custom Μεταλλικά Ντουλάπια με Εξατομικευμένες Διαστάσεις",
-      link: "/products?category=storage"
-    },
-    {
-      image: "/lovable-uploads/IMG_13722.webp",
-      caption: "Συστήματα Αποθήκευσης για Εκπαιδευτικά Ιδρύματα",
-      link: "/products?category=locker"
-    },
-    {
-      image: "/lovable-uploads/IMG_21202.webp",
-      caption: "Ανθεκτικές Λύσεις για Αποδυτήρια και Γυμναστήρια",
-      link: "/products?category=locker"
-    },
-    {
-      image: "/lovable-uploads/IMG_97682.webp",
-      caption: "Επαγγελματικά Ντουλάπια για Χώρους Εργασίας",
-      link: "/products?category=cabinet"
-    },
-    {
-      image: "/lovable-uploads/IMG_10252.webp",
-      caption: "Βιομηχανικές Συρταριέρες Μεγάλης Χωρητικότητας",
-      link: "/products?category=storage"
-    },
-    {
-      image: "/lovable-uploads/IMG_13742.webp",
-      caption: "Μοντέρνα Συστήματα Lockers για Δημόσιους Χώρους",
-      link: "/products?category=locker"
-    },
-    {
-      image: "/lovable-uploads/IMG_23802.webp",
-      caption: "Ενισχυμένα Μεταλλικά Ντουλάπια για Βαριά Χρήση",
-      link: "/products?category=storage"
-    }
+  // Updated product images array with critical images first for better LCP
+  const productImages = [
+    "/lovable-uploads/ea0663a1-83d9-4b6e-bd66-c2a1b01af9da.png",
+    "/lovable-uploads/d45ac80e-568d-4711-afdf-441b647c88bd.png", 
+    "/lovable-uploads/82f9ab23-6721-4a6e-90e5-13cf0745af0c.png",
+    "/lovable-uploads/IMG_13722.webp", 
+    "/lovable-uploads/IMG_21202.webp",
+    "/lovable-uploads/IMG_97682.webp",
+    "/lovable-uploads/IMG_10252.webp",
+    "/lovable-uploads/IMG_13742.webp",
+    "/lovable-uploads/IMG_23802.webp"
   ];
 
   // Touch handling for mobile swipe
@@ -79,22 +43,22 @@ export default function HeroSection() {
     if (Math.abs(difference) > 50) {
       if (difference > 0) {
         // Swiped left - go to next
-        setCurrentImage((prev) => (prev + 1) % productSlides.length);
+        setCurrentImage((prev) => (prev + 1) % productImages.length);
       } else {
         // Swiped right - go to previous
-        setCurrentImage((prev) => (prev - 1 + productSlides.length) % productSlides.length);
+        setCurrentImage((prev) => (prev - 1 + productImages.length) % productImages.length);
       }
     }
   };
 
   // Navigate to previous image
   const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + productSlides.length) % productSlides.length);
+    setCurrentImage((prev) => (prev - 1 + productImages.length) % productImages.length);
   };
 
   // Navigate to next image
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % productSlides.length);
+    setCurrentImage((prev) => (prev + 1) % productImages.length);
   };
 
   return (
@@ -144,7 +108,7 @@ export default function HeroSection() {
           <div 
             ref={carouselRef}
             className={`md:w-1/2 relative w-full ${
-              isMobile ? 'h-[300px]' : 'h-[350px] sm:h-[450px]'
+              isMobile ? 'h-[250px]' : 'h-[300px] sm:h-[400px]'
             }`}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -179,46 +143,30 @@ export default function HeroSection() {
               <ArrowRight size={isMobile ? 20 : 16} className="mx-auto" />
             </button>
             
-            {/* Clickable images with dynamic captions */}
-            {productSlides.map((slide, index) => (
-              <Link 
+            {/* Optimized images with better loading priorities */}
+            {productImages.map((image, index) => (
+              <img 
                 key={index}
-                to={slide.link}
-                className={`absolute top-0 left-0 w-full h-full ${
+                src={image} 
+                alt={`Προϊόν showcase ${index + 1}`} 
+                width={isMobile ? "250" : "600"}
+                height={isMobile ? "250" : "400"}
+                loading={index < 3 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : index < 3 ? "high" : "low"}
+                decoding={index < 3 ? "sync" : "async"}
+                className={`w-full h-auto object-contain mx-auto rounded-2xl p-0 absolute top-0 left-0 ${
                   currentImage === index ? "opacity-100" : "opacity-0"
-                } transition-opacity duration-1000 cursor-pointer group`}
+                } transition-opacity duration-1000`}
                 style={{ 
+                  maxHeight: isMobile ? "250px" : "400px",
                   willChange: currentImage === index ? 'auto' : 'unset'
                 }}
-              >
-                <img 
-                  src={slide.image} 
-                  alt={slide.caption} 
-                  width={isMobile ? "300" : "600"}
-                  height={isMobile ? "300" : "450"}
-                  loading={index < 3 ? "eager" : "lazy"}
-                  fetchPriority={index === 0 ? "high" : index < 3 ? "high" : "low"}
-                  decoding={index < 3 ? "sync" : "async"}
-                  className="w-full h-auto object-contain mx-auto rounded-2xl p-0 group-hover:scale-105 transition-transform duration-300"
-                  style={{ 
-                    maxHeight: isMobile ? "250px" : "400px"
-                  }}
-                />
-                
-                {/* Dynamic caption overlay */}
-                <div className="absolute bottom-4 left-4 right-4 bg-black/75 text-white p-3 rounded-lg backdrop-blur-sm">
-                  <p className={`font-medium text-center ${
-                    isMobile ? 'text-sm' : 'text-base'
-                  }`}>
-                    {slide.caption}
-                  </p>
-                </div>
-              </Link>
+              />
             ))}
             
-            {/* Indicators positioned at the bottom */}
-            <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-2 z-10">
-              {productSlides.map((_, index) => (
+            {/* Much smaller indicators positioned at the bottom with more spacing */}
+            <div className="absolute -bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
+              {productImages.map((_, index) => (
                 <button
                   key={index}
                   className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-200 ${
@@ -243,13 +191,8 @@ export default function HeroSection() {
               αντικειμένων στους επαγγελματικούς σας χώρους.
             </p>
             <p className={`text-gray-600 ${isMobile ? 'text-sm' : 'text-base'}`}>
-              Ιδανικές για βιομηχανίες, γραφεία, σχολεία, γυμναστήρια και νοσοκομεία. 
-              Κατασκευασμένες από ενισχυμένο χάλυβα, εγγυώνται μακροχρόνια αντοχή και ασφάλεια.
-            </p>
-            <p className={`text-gray-600 ${isMobile ? 'text-sm' : 'text-base'}`}>
               Με εξατομικευμένες επιλογές διαστάσεων, χρωμάτων και διαμορφώσεων, σχεδιάζουμε 
-              λύσεις που ανταποκρίνονται ακριβώς στις ανάγκες σας. Υποστηρίζουμε μεγάλα έργα 
-              και προσφέρουμε λύσεις σε χονδρική βάση.
+              λύσεις που ανταποκρίνονται ακριβώς στις ανάγκες σας.
             </p>
             <Link to="#contact">
               <Button className={`flex items-center gap-2 rounded-xl mt-2 bg-blue-600 hover:bg-blue-700 touch-target ${
