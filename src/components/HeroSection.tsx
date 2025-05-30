@@ -11,17 +11,62 @@ export default function HeroSection() {
   const isMobile = useIsMobile();
   const carouselRef = useRef<HTMLDivElement>(null);
   
-  // Updated product images array with critical images first for better LCP
-  const productImages = [
-    "/lovable-uploads/ea0663a1-83d9-4b6e-bd66-c2a1b01af9da.png",
-    "/lovable-uploads/d45ac80e-568d-4711-afdf-441b647c88bd.png", 
-    "/lovable-uploads/82f9ab23-6721-4a6e-90e5-13cf0745af0c.png",
-    "/lovable-uploads/IMG_13722.webp", 
-    "/lovable-uploads/IMG_21202.webp",
-    "/lovable-uploads/IMG_97682.webp",
-    "/lovable-uploads/IMG_10252.webp",
-    "/lovable-uploads/IMG_13742.webp",
-    "/lovable-uploads/IMG_23802.webp"
+  // Updated product images array with corresponding captions and links
+  const productSlides = [
+    {
+      image: "/lovable-uploads/ea0663a1-83d9-4b6e-bd66-c2a1b01af9da.png",
+      title: "Μεταλλικοί Lockers Βαρέως Τύπου για Βιομηχανική Χρήση",
+      description: "Ανθεκτικοί lockers για απαιτητικά βιομηχανικά περιβάλλοντα",
+      link: "/products?category=lockers"
+    },
+    {
+      image: "/lovable-uploads/d45ac80e-568d-4711-afdf-441b647c88bd.png",
+      title: "Πολύχρωμες Μεταλλικές Συρταριέρες Αρχειοθέτησης Γραφείου",
+      description: "Οργανωμένη αποθήκευση εγγράφων με στυλ και λειτουργικότητα",
+      link: "/products?category=filing-cabinets"
+    },
+    {
+      image: "/lovable-uploads/82f9ab23-6721-4a6e-90e5-13cf0745af0c.png",
+      title: "Custom Μεταλλικά Ντουλάπια με Εξατομικευμένες Διαστάσεις",
+      description: "Προσαρμοσμένες λύσεις για κάθε χώρο και ανάγκη",
+      link: "/products?category=cabinets"
+    },
+    {
+      image: "/lovable-uploads/IMG_13722.webp",
+      title: "Επαγγελματικές Λύσεις Αποθήκευσης για Γραφεία",
+      description: "Μοντέρνα σχεδίαση για σύγχρονα επαγγελματικά περιβάλλοντα",
+      link: "/products?category=cabinets"
+    },
+    {
+      image: "/lovable-uploads/IMG_21202.webp",
+      title: "Βιομηχανικά Ντουλάπια Υψηλής Αντοχής",
+      description: "Κατασκευασμένα για μακροχρόνια χρήση σε δύσκολες συνθήκες",
+      link: "/products?category=lockers"
+    },
+    {
+      image: "/lovable-uploads/IMG_97682.webp",
+      title: "Συστήματα Οργάνωσης για Εκπαιδευτικά Ιδρύματα",
+      description: "Ασφαλείς και λειτουργικές λύσεις για σχολεία και πανεπιστήμια",
+      link: "/products?category=lockers"
+    },
+    {
+      image: "/lovable-uploads/IMG_10252.webp",
+      title: "Μεταλλικές Συρταριέρες Πολλαπλών Θέσεων",
+      description: "Μέγιστη χωρητικότητα και οργάνωση σε συμπαγή σχεδίαση",
+      link: "/products?category=filing-cabinets"
+    },
+    {
+      image: "/lovable-uploads/IMG_13742.webp",
+      title: "Lockers Αποδυτηρίων και Γυμναστηρίων",
+      description: "Ανθεκτικές λύσεις για χώρους υψηλής χρήσης",
+      link: "/products?category=lockers"
+    },
+    {
+      image: "/lovable-uploads/IMG_23802.webp",
+      title: "Βιομηχανικά Συστήματα Αποθήκευσης",
+      description: "Ειδικά σχεδιασμένα για βαριά βιομηχανική χρήση",
+      link: "/products?category=cabinets"
+    }
   ];
 
   // Touch handling for mobile swipe
@@ -39,31 +84,27 @@ export default function HeroSection() {
   const handleTouchEnd = () => {
     const difference = touchStartX.current - touchEndX.current;
     
-    // If swipe distance is significant enough (more than 50px)
     if (Math.abs(difference) > 50) {
       if (difference > 0) {
-        // Swiped left - go to next
-        setCurrentImage((prev) => (prev + 1) % productImages.length);
+        setCurrentImage((prev) => (prev + 1) % productSlides.length);
       } else {
-        // Swiped right - go to previous
-        setCurrentImage((prev) => (prev - 1 + productImages.length) % productImages.length);
+        setCurrentImage((prev) => (prev - 1 + productSlides.length) % productSlides.length);
       }
     }
   };
 
-  // Navigate to previous image
   const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + productImages.length) % productImages.length);
+    setCurrentImage((prev) => (prev - 1 + productSlides.length) % productSlides.length);
   };
 
-  // Navigate to next image
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % productImages.length);
+    setCurrentImage((prev) => (prev + 1) % productSlides.length);
   };
+
+  const currentSlide = productSlides[currentImage];
 
   return (
     <section className="bg-white text-metal-900 pt-24 pb-16 overflow-hidden">
-      {/* Skip navigation link for accessibility */}
       <a href="#main-content" className="skip-nav">
         Μετάβαση στο κύριο περιεχόμενο
       </a>
@@ -108,7 +149,7 @@ export default function HeroSection() {
           <div 
             ref={carouselRef}
             className={`md:w-1/2 relative w-full ${
-              isMobile ? 'h-[250px]' : 'h-[300px] sm:h-[400px]'
+              isMobile ? 'h-[300px]' : 'h-[350px] sm:h-[450px]'
             }`}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -116,7 +157,6 @@ export default function HeroSection() {
             role="region"
             aria-label="Carousel προϊόντων"
           >
-            {/* Navigation arrows with improved mobile handling */}
             <button 
               onClick={prevImage} 
               className={`absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white p-3 rounded-full shadow-md transition-all ${
@@ -143,30 +183,45 @@ export default function HeroSection() {
               <ArrowRight size={isMobile ? 20 : 16} className="mx-auto" />
             </button>
             
-            {/* Optimized images with better loading priorities */}
-            {productImages.map((image, index) => (
-              <img 
-                key={index}
-                src={image} 
-                alt={`Προϊόν showcase ${index + 1}`} 
-                width={isMobile ? "250" : "600"}
-                height={isMobile ? "250" : "400"}
-                loading={index < 3 ? "eager" : "lazy"}
-                fetchPriority={index === 0 ? "high" : index < 3 ? "high" : "low"}
-                decoding={index < 3 ? "sync" : "async"}
-                className={`w-full h-auto object-contain mx-auto rounded-2xl p-0 absolute top-0 left-0 ${
-                  currentImage === index ? "opacity-100" : "opacity-0"
-                } transition-opacity duration-1000`}
-                style={{ 
-                  maxHeight: isMobile ? "250px" : "400px",
-                  willChange: currentImage === index ? 'auto' : 'unset'
-                }}
-              />
+            {/* Clickable images with dynamic captions */}
+            {productSlides.map((slide, index) => (
+              <div key={index} className={`absolute top-0 left-0 w-full h-full ${
+                currentImage === index ? "opacity-100" : "opacity-0"
+              } transition-opacity duration-1000`}>
+                <Link to={slide.link} className="block w-full h-full group">
+                  <div className="relative w-full h-full">
+                    <img 
+                      src={slide.image} 
+                      alt={slide.title} 
+                      width={isMobile ? "300" : "650"}
+                      height={isMobile ? "300" : "450"}
+                      loading={index < 3 ? "eager" : "lazy"}
+                      fetchPriority={index === 0 ? "high" : index < 3 ? "high" : "low"}
+                      decoding={index < 3 ? "sync" : "async"}
+                      className="w-full h-full object-contain rounded-2xl group-hover:scale-105 transition-transform duration-300"
+                    />
+                    
+                    {/* Dynamic caption overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-b-2xl p-4">
+                      <h3 className={`text-white font-semibold ${
+                        isMobile ? 'text-sm' : 'text-lg'
+                      } mb-1`}>
+                        {slide.title}
+                      </h3>
+                      <p className={`text-white/90 ${
+                        isMobile ? 'text-xs' : 'text-sm'
+                      }`}>
+                        {slide.description}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
             ))}
             
-            {/* Much smaller indicators positioned at the bottom with more spacing */}
-            <div className="absolute -bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
-              {productImages.map((_, index) => (
+            {/* Indicators */}
+            <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-2 z-10">
+              {productSlides.map((_, index) => (
                 <button
                   key={index}
                   className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-200 ${
@@ -184,21 +239,30 @@ export default function HeroSection() {
           <div className="md:w-1/2 text-left space-y-4">
             <h2 className={`font-semibold text-metal-900 ${
               isMobile ? 'text-xl' : 'text-2xl'
-            }`}>Ποιοτικές Λύσεις Αποθήκευσης</h2>
-            <p className={`text-gray-600 ${isMobile ? 'text-sm' : 'text-base'}`}>
-              Τα μεταλλικά ντουλάπια και οι συρταριέρες μας προσφέρουν ανθεκτικές και αισθητικά 
-              καλαίσθητες λύσεις για την οργάνωση και αποθήκευση εγγράφων, υλικών και προσωπικών 
-              αντικειμένων στους επαγγελματικούς σας χώρους.
-            </p>
-            <p className={`text-gray-600 ${isMobile ? 'text-sm' : 'text-base'}`}>
-              Με εξατομικευμένες επιλογές διαστάσεων, χρωμάτων και διαμορφώσεων, σχεδιάζουμε 
-              λύσεις που ανταποκρίνονται ακριβώς στις ανάγκες σας.
-            </p>
-            <Link to="#contact">
+            }`}>
+              {currentSlide.title}
+            </h2>
+            <div className={`text-gray-600 space-y-3 ${isMobile ? 'text-sm' : 'text-base'}`}>
+              <p>
+                Τα μεταλλικά ντουλάπια, lockers και συρταριέρες μας προσφέρουν ανθεκτικές και αισθητικά 
+                καλαίσθητες λύσεις για την οργάνωση και αποθήκευση εγγράφων, υλικών και προσωπικών 
+                αντικειμένων στους επαγγελματικούς σας χώρους.
+              </p>
+              <p>
+                <strong>Ιδανικές για βιομηχανίες, γραφεία, σχολεία, γυμναστήρια και νοσοκομεία.</strong> 
+                Κατασκευασμένες από ενισχυμένο χάλυβα, εγγυώνται μακροχρόνια αντοχή και ασφάλεια.
+              </p>
+              <p>
+                Με εξατομικευμένες επιλογές διαστάσεων, χρωμάτων και διαμορφώσεων, σχεδιάζουμε 
+                λύσεις που ανταποκρίνονται ακριβώς στις ανάγκες σας. 
+                <strong> Υποστηρίζουμε μεγάλα έργα και προσφέρουμε λύσεις σε χονδρική βάση.</strong>
+              </p>
+            </div>
+            <Link to={currentSlide.link}>
               <Button className={`flex items-center gap-2 rounded-xl mt-2 bg-blue-600 hover:bg-blue-700 touch-target ${
                 isMobile ? 'text-sm px-4 py-2' : 'px-6 py-3'
               }`}>
-                Θέλω και εγώ παρόμοια λύση 
+                Δείτε περισσότερα για αυτό το προϊόν
                 <ArrowRight size={16} />
               </Button>
             </Link>
