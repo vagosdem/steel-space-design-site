@@ -128,7 +128,7 @@ export default function HeroSection() {
           <p className={`text-gray-600 max-w-3xl mx-auto ${
             isMobile ? 'text-base' : 'text-lg md:text-xl'
           }`}>
-            Custom lockers, συρταριέρες αρχειοθέτησης (αρχειοθήκες), ντουλάπες πολλαπλών θέσεων & industrial αποθηκευτικές λύσεις, 
+            Custom lockers, συρταριέρες πολλαπλών θέσεων & industrial αποθηκευτικές λύσεις, 
             σχεδιασμένες και κατασκευασμένες στην Ελλάδα.
           </p>
           <div className="flex justify-center pt-4">

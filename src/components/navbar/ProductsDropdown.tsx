@@ -17,13 +17,9 @@ interface ProductsDropdownProps {
 export default function ProductsDropdown({ scrolled, mobileMenuOpen, setMobileMenuOpen }: ProductsDropdownProps) {
   const navigate = useNavigate();
 
-  const navigateToProducts = (category?: string, page?: string) => {
-    if (page) {
-      navigate(page);
-    } else {
-      const path = category ? `/products?category=${category}` : '/products';
-      navigate(path);
-    }
+  const navigateToProducts = (category?: string) => {
+    const path = category ? `/products?category=${category}` : '/products';
+    navigate(path);
     if (mobileMenuOpen) {
       setMobileMenuOpen(false);
     }
@@ -64,10 +60,10 @@ export default function ProductsDropdown({ scrolled, mobileMenuOpen, setMobileMe
           Lockers
         </DropdownMenuItem>
         <DropdownMenuItem 
-          onClick={() => navigateToProducts(undefined, '/filing-cabinets')}
+          onClick={() => navigateToProducts('αρχειοθήκη')}
           className="cursor-pointer text-gray-900 hover:bg-gray-100 focus:bg-gray-100"
         >
-          Αρχειοθήκες
+          Συρταριέρες Αρχειοθέτησης
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
