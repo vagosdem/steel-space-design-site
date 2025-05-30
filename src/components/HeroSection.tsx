@@ -183,12 +183,12 @@ export default function HeroSection() {
               <ArrowRight size={isMobile ? 20 : 16} className="mx-auto" />
             </button>
             
-            {/* Clickable images without overlay text */}
+            {/* Non-clickable images */}
             {productSlides.map((slide, index) => (
               <div key={index} className={`absolute top-0 left-0 w-full h-full ${
                 currentImage === index ? "opacity-100" : "opacity-0"
               } transition-opacity duration-1000`}>
-                <Link to={slide.link} className="block w-full h-full group">
+                <div className="w-full h-full">
                   <div className="relative w-full h-full">
                     <img 
                       src={slide.image} 
@@ -198,10 +198,10 @@ export default function HeroSection() {
                       loading={index < 3 ? "eager" : "lazy"}
                       fetchPriority={index === 0 ? "high" : index < 3 ? "high" : "low"}
                       decoding={index < 3 ? "sync" : "async"}
-                      className="w-full h-full object-contain rounded-2xl group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain rounded-2xl"
                     />
                   </div>
-                </Link>
+                </div>
               </div>
             ))}
             
