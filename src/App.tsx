@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
+import FilingCabinets from "./pages/FilingCabinets";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Legal from "./pages/Legal";
@@ -48,6 +49,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:productId" element={<ProductDetail />} />
+            <Route path="/filing-cabinets" element={<FilingCabinets />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:postId" element={<BlogPost />} />
             <Route path="/legal" element={<Legal />} />
