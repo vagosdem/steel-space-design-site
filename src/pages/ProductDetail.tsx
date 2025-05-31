@@ -35,8 +35,14 @@ export default function ProductDetail() {
   }
 
   // Generate SEO-optimized title and description
-  const seoTitle = `${product.title} | Μεταλλικές Ντουλάπες Stereon - Ποιότητα & Αξιοπιστία`;
-  const seoDescription = `${product.description} Ανακαλύψτε τις μεταλλικές ντουλάπες υψηλής ποιότητας της Stereon. Ιδανικές για ${product.type === 'office' ? 'γραφεία' : product.type === 'school' ? 'σχολεία' : product.type === 'industrial' ? 'βιομηχανικούς χώρους' : 'επαγγελματικούς χώρους'}. Ζητήστε προσφορά σήμερα!`;
+  let seoTitle = `${product.title} | Μεταλλικές Ντουλάπες Stereon - Ποιότητα & Αξιοπιστία`;
+  let seoDescription = `${product.description} Ανακαλύψτε τις μεταλλικές ντουλάπες υψηλής ποιότητας της Stereon. Ιδανικές για ${product.type === 'office' ? 'γραφεία' : product.type === 'school' ? 'σχολεία' : product.type === 'industrial' ? 'βιομηχανικούς χώρους' : 'επαγγελματικούς χώρους'}. Ζητήστε προσφορά σήμερα!`;
+  
+  // Special SEO optimization for the industrial storage solution product
+  if (productId === 'industrial-storage') {
+    seoTitle = "Μεταλλικές Συρταριέρες Αρχειοθέτησης & Αρχειοθήκες | Stereom.gr";
+    seoDescription = "Βρείτε ανθεκτικές μεταλλικές συρταριέρες αρχειοθέτησης και αρχειοθήκες για γραφεία & επαγγελματικούς χώρους. Custom διαστάσεις, χρώματα, υψηλή ασφάλεια για τα αρχεία σας.";
+  }
 
   // Get similar products, excluding the current product and randomizing the selection
   const availableProducts = products.filter(p => p.id !== productId);
