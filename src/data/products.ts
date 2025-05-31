@@ -1,4 +1,28 @@
-import { Product } from "@/types";
+
+export interface Product {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  price: number;
+  category: string;
+  type: string;
+  material: string;
+  color: string;
+  features: string[];
+  dimensions: {
+    width: string;
+    height: string;
+    depth: string;
+  };
+  applications: string[];
+  specifications: {
+    steelGauge: string;
+    lockingMechanism: string;
+    shelfCapacity?: string;
+    drawerCapacity?: string;
+  };
+}
 
 export const products: Product[] = [
   {
