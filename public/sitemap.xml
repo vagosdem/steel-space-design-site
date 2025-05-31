@@ -1,30 +1,31 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://yoursite.com/</loc>
+    <loc>https://stereon.lovable.app/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/IMG_054822.webp</image:loc>
+      <image:loc>https://stereon.lovable.app/lovable-uploads/IMG_054822.webp</image:loc>
       <image:title>Μεταλλικές Ντουλάπες Stereon</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/products</loc>
+    <loc>https://stereon.lovable.app/products</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://yoursite.com/blog</loc>
+    <loc>https://stereon.lovable.app/blog</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yoursite.com/legal</loc>
+    <loc>https://stereon.lovable.app/legal</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -32,221 +33,157 @@
   
   <!-- Product Pages -->
   <url>
-    <loc>https://yoursite.com/product/red-black-storage-cabinet</loc>
+    <loc>https://stereon.lovable.app/product/red-black-storage-cabinet</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/IMG_054822.webp</image:loc>
+      <image:loc>https://stereon.lovable.app/lovable-uploads/IMG_054822.webp</image:loc>
       <image:title>Κόκκινη-Μαύρη Μεταλλική Ντουλάπα Διπλής Πόρτας</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/modern-locker-system</loc>
+    <loc>https://stereon.lovable.app/product/modern-locker-system</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/IMG_13722.webp</image:loc>
+      <image:loc>https://stereon.lovable.app/lovable-uploads/IMG_13722.webp</image:loc>
       <image:title>Μοντέρνο Σύστημα Ντουλαπιών</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/multi-door-locker-system</loc>
+    <loc>https://stereon.lovable.app/product/multi-door-locker-system</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/IMG_13742.webp</image:loc>
+      <image:loc>https://stereon.lovable.app/lovable-uploads/IMG_13742.webp</image:loc>
       <image:title>Σύστημα Πολλαπλών Ντουλαπιών</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/colorful-school-lockers</loc>
+    <loc>https://stereon.lovable.app/product/colorful-school-lockers</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/IMG_21202.webp</image:loc>
+      <image:loc>https://stereon.lovable.app/lovable-uploads/IMG_21202.webp</image:loc>
       <image:title>Πολύχρωμα Σχολικά Ντουλάπια</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/professional-office-lockers</loc>
+    <loc>https://stereon.lovable.app/product/industrial-storage-solution</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/IMG_97682.webp</image:loc>
+      <image:loc>https://stereon.lovable.app/lovable-uploads/IMG_23802.webp</image:loc>
+      <image:title>Βιομηχανική Λύση Αποθήκευσης</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stereon.lovable.app/product/professional-office-lockers</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stereon.lovable.app/lovable-uploads/IMG_97682.webp</image:loc>
       <image:title>Επαγγελματικά Ντουλάπια Γραφείου</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/compact-storage-units</loc>
+    <loc>https://stereon.lovable.app/product/compact-storage-units</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/IMG_99002.webp</image:loc>
+      <image:loc>https://stereon.lovable.app/lovable-uploads/IMG_99002.webp</image:loc>
       <image:title>Συμπαγή Αποθηκευτικά Συστήματα</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/six-door-locker-white</loc>
+    <loc>https://stereon.lovable.app/product/six-door-locker-white</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/IMG_10252.webp</image:loc>
-      <image:title>Λευκά Ντουλάπια 6 Θέσεων</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/glass-door-lockers-12</loc>
+    <loc>https://stereon.lovable.app/product/glass-door-lockers-12</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/c142e30d-546a-43fe-bbe9-9367ce9e5bb1.png</image:loc>
-      <image:title>Ντουλάπια με Γυάλινες Πόρτες 12 Θέσεων</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/dark-gray-storage-cabinet</loc>
+    <loc>https://stereon.lovable.app/product/dark-gray-storage-cabinet</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/c78108ea-2c51-44a9-8492-463ccd9b671b.png</image:loc>
-      <image:title>Σκούρα Γκρι Ντουλάπα Αποθήκευσης</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/blue-multi-locker-20</loc>
+    <loc>https://stereon.lovable.app/product/blue-multi-locker-20</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/cb3b7ccd-56d5-4cb0-99ce-dfb7b75f6400.png</image:loc>
-      <image:title>Μπλε Ντουλάπια Πολλαπλών Θέσεων 20 Θέσεων</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/red-three-door-lockers</loc>
+    <loc>https://stereon.lovable.app/product/red-three-door-lockers</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/cc2e1a33-a881-42a9-beea-2fed8205e9d7.png</image:loc>
-      <image:title>Κόκκινα Ντουλάπια 3 Θέσεων</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/blue-six-door-lockers</loc>
+    <loc>https://stereon.lovable.app/product/blue-six-door-lockers</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/de48c2ac-8f96-4f1d-987f-3fa9c559618f.png</image:loc>
-      <image:title>Μπλε Ντουλάπια 6 Θέσεων</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/red-frame-gray-doors-12</loc>
+    <loc>https://stereon.lovable.app/product/red-frame-gray-doors-12</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/f308ce90-e4fe-4c0d-b442-8d3bed0566f3.png</image:loc>
-      <image:title>Ντουλάπια με Κόκκινο Πλαίσιο και Γκρι Πόρτες 12 Θέσεων</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/brown-frame-three-door</loc>
+    <loc>https://stereon.lovable.app/product/brown-frame-three-door</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/3bb3c4b3-5ff5-4519-9c92-967be1786ba4.png</image:loc>
-      <image:title>Ντουλάπια με Καφέ Πλαίσιο 3 Θέσεων</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/white-double-door-cabinet</loc>
+    <loc>https://stereon.lovable.app/product/white-double-door-cabinet</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/d45ac80e-568d-4711-afdf-441b647c88bd.png</image:loc>
-      <image:title>Λευκή Ντουλάπα Διπλής Πόρτας</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/orange-white-contrast-lockers</loc>
+    <loc>https://stereon.lovable.app/product/orange-white-contrast-lockers</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/ea0663a1-83d9-4b6e-bd66-c2a1b01af9da.png</image:loc>
-      <image:title>Πορτοκαλί-Λευκά Ντουλάπια Αντίθεσης</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://yoursite.com/product/pastel-soft-tone-lockers</loc>
+    <loc>https://stereon.lovable.app/product/pastel-soft-tone-lockers</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/82f9ab23-6721-4a6e-90e5-13cf0745af0c.png</image:loc>
-      <image:title>Παστέλ Απαλόχρωμα Ντουλάπια</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://yoursite.com/product/industrial-storage-solution</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/IMG_23802.webp</image:loc>
-      <image:title>Μεταλλικές Συρταριέρες Αρχειοθέτησης & Αρχειοθήκες</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://yoursite.com/product/three-drawer-filing-cabinet-white</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/9e51c877-fafe-48d8-b480-07f27cb158ae.png</image:loc>
-      <image:title>Λευκή Μεταλλική Αρχειοθήκη 3 Συρταριών</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://yoursite.com/product/gray-filing-cabinet-dual-lock</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://yoursite.com/lovable-uploads/356f25f1-d163-4f4e-af57-499217fe1d0f.png</image:loc>
-      <image:title>Γκρι Μεταλλική Αρχειοθήκη με Διπλό Σύστημα Ασφάλειας</image:title>
-    </image:image>
   </url>
   
   <!-- Blog Pages -->
   <url>
-    <loc>https://yoursite.com/blog/odigos-epilogis-metallikis-ntoulapis</loc>
+    <loc>https://stereon.lovable.app/blog/odigos-epilogis-metallikis-ntoulapis</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://yoursite.com/blog/metallikes-vs-ksillines-ntoulapes</loc>
+    <loc>https://stereon.lovable.app/blog/metallikes-vs-ksillines-ntoulapes</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://yoursite.com/blog/symvoules-organosis-metallikes-ntoulapes</loc>
+    <loc>https://stereon.lovable.app/blog/symvoules-organosis-metallikes-ntoulapes</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
