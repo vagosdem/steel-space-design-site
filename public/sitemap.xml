@@ -168,6 +168,26 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://yoursite.com/product/three-drawer-filing-cabinet-white</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yoursite.com/lovable-uploads/9e51c877-fafe-48d8-b480-07f27cb158ae.png</image:loc>
+      <image:title>Λευκή Μεταλλική Αρχειοθήκη 3 Συρταριών</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://yoursite.com/product/gray-filing-cabinet-dual-lock</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yoursite.com/lovable-uploads/356f25f1-d163-4f4e-af57-499217fe1d0f.png</image:loc>
+      <image:title>Γκρι Μεταλλική Αρχειοθήκη με Διπλό Σύστημα Ασφάλειας</image:title>
+    </image:image>
+  </url>
   
   <!-- Blog Pages -->
   <url>
