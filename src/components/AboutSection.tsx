@@ -47,7 +47,7 @@ export default function AboutSection() {
                   <Shield className="h-6 w-6 text-blue-400" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white">Εγγύηση 10 Ετών</h4>
+                  <h4 className="text-lg font-semibold text-white">Εγγύηση 5 Ετών</h4>
                   <p className="text-metal-300">Όλα τα προϊόντα μας συνοδεύονται από πλήρη εγγύηση για την ηρεμία σας.</p>
                 </div>
               </div>
