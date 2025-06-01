@@ -12,7 +12,7 @@ interface SEOHeadProps {
 
 export default function SEOHead({
   title = "Μεταλλικές Ντουλάπες & Lockers | Custom Κατασκευές | Stereom.gr",
-  description = "Η Stereom.gr ειδικεύεται σε ανθεκτικές, custom μεταλλικές ντουλάπες, lockers και συρταριέρες. Ιδανικές για μεγάλες παραγγελίες σε βιομηχανίες, σχολεία, γραφεία. Ζητήστε προσφορά!",
+  description = "Κατασκευάζουμε custom μεταλλικά ντουλάπια, lockers, αρχειοθήκες και συρταριέρες υψηλής ποιότητας. Ιδανικά για γραφεία, σχολεία, γυμναστήρια και βιομηχανικούς χώρους. Παραγωγή στην Ελλάδα με 5ετή εγγύηση.",
   canonical,
   image = "/lovable-uploads/IMG_054822.webp",
   type = 'website',
