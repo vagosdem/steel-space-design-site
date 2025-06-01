@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -78,7 +79,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://stereon.lovable.app/lovable-uploads/IMG_23802.webp</image:loc>
-      <image:title>Μεταλλικές Συρταριέρες Αρχειοθέτησης & Αρχειοθήκες</image:title>
+      <image:title>Βιομηχανική Λύση Αποθήκευσης</image:title>
     </image:image>
   </url>
   <url>
@@ -101,30 +102,6 @@
       <image:title>Συμπαγή Αποθηκευτικά Συστήματα</image:title>
     </image:image>
   </url>
-  
-  <!-- New filing cabinet products -->
-  <url>
-    <loc>https://stereon.lovable.app/product/secure-filing-cabinet-gray</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://stereon.lovable.app/lovable-uploads/2677eaf3-bc89-4082-9571-b7b2220c83ca.png</image:loc>
-      <image:title>Ασφαλής Μεταλλική Αρχειοθήκη με Κλειδαριά</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://stereon.lovable.app/product/triple-drawer-filing-cabinet-white</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://stereon.lovable.app/lovable-uploads/d2489e64-a708-4d6e-b5c3-c222a32fc71b.png</image:loc>
-      <image:title>Τριπλή Μεταλλική Αρχειοθήκη Λευκή</image:title>
-    </image:image>
-  </url>
-  
-  <!-- Existing product pages continue -->
   <url>
     <loc>https://stereon.lovable.app/product/six-door-locker-white</loc>
     <lastmod>2025-01-27</lastmod>
