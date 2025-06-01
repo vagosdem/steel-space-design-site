@@ -79,7 +79,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://stereon.lovable.app/lovable-uploads/IMG_23802.webp</image:loc>
-      <image:title>Βιομηχανική Λύση Αποθήκευσης</image:title>
+      <image:title>Μεταλλικές Συρταριέρες Αρχειοθέτησης & Αρχειοθήκες</image:title>
     </image:image>
   </url>
   <url>
@@ -167,6 +167,26 @@
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stereon.lovable.app/product/secure-gray-filing-cabinet</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stereon.lovable.app/lovable-uploads/084a688a-d669-4431-9004-bf34d61b6bf7.png</image:loc>
+      <image:title>Γκρι Μεταλλική Αρχειοθήκη με Κλειδαριά Ασφαλείας</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stereon.lovable.app/product/white-three-drawer-filing-cabinet</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stereon.lovable.app/lovable-uploads/9f0e798d-5876-4415-8dfd-ffa267cf127d.png</image:loc>
+      <image:title>Λευκή Μεταλλική Αρχειοθήκη 3 Συρταριών</image:title>
+    </image:image>
   </url>
   
   <!-- Blog Pages -->
