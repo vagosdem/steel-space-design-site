@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import ProductsDropdown from "./ProductsDropdown";
 
 interface DesktopNavigationProps {
@@ -17,6 +18,8 @@ export default function DesktopNavigation({
   mobileMenuOpen,
   setMobileMenuOpen
 }: DesktopNavigationProps) {
+  const navigate = useNavigate();
+
   return (
     <div className="hidden md:flex items-center gap-8">
       <ProductsDropdown 
@@ -35,6 +38,18 @@ export default function DesktopNavigation({
       >
         Υπηρεσίες
       </button>
+      
+      <button 
+        onClick={() => navigate("/blog")} 
+        className={`font-medium transition-colors ${
+          scrolled 
+            ? 'text-white hover:text-gray-200' 
+            : 'text-black hover:text-gray-700'
+        }`}
+      >
+        Blog
+      </button>
+      
       <button 
         onClick={() => navigateToSection("contact")} 
         className={`font-medium transition-colors ${
