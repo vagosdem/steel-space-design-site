@@ -35,6 +35,18 @@ export default function DesktopNavigation({
       >
         Υπηρεσίες
       </button>
+      
+      <a 
+        href="/blog" 
+        className={`font-medium transition-colors ${
+          scrolled 
+            ? 'text-white hover:text-gray-200' 
+            : 'text-black hover:text-gray-700'
+        }`}
+      >
+        Blog
+      </a>
+      
       <button 
         onClick={() => navigateToSection("contact")} 
         className={`font-medium transition-colors ${
