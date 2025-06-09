@@ -27,13 +27,6 @@ export default function MobileNavigation({
     }
   };
 
-  const navigateToBlog = () => {
-    navigate('/blog');
-    if (mobileMenuOpen) {
-      setMobileMenuOpen(false);
-    }
-  };
-
   if (!mobileMenuOpen) return null;
 
   return (
@@ -91,16 +84,6 @@ export default function MobileNavigation({
         } font-medium`}
       >
         Υπηρεσίες
-      </button>
-      <button 
-        onClick={navigateToBlog} 
-        className={`block w-full text-left p-2 ${
-          scrolled 
-            ? 'text-gray-100 hover:text-white' 
-            : 'text-gray-800 hover:text-gray-900'
-        } font-medium`}
-      >
-        Blog
       </button>
       <button 
         onClick={() => navigateToSection("contact")} 
