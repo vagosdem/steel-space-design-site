@@ -104,6 +104,40 @@ export default function Blog() {
         type="website"
       />
       
+      {/* Schema Markup for Blog */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "Stereon Blog - Μεταλλικές Ντουλάπες & Lockers",
+          "description": "Οδηγοί και συμβουλές για μεταλλικές ντουλάπες, lockers και συστήματα αποθήκευσης",
+          "url": "https://stereon.lovable.app/blog",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Stereon",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://stereon.lovable.app/lovable-uploads/IMG_054822.webp"
+            }
+          },
+          "blogPost": blogPosts.map(post => ({
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "image": `https://stereon.lovable.app${post.image}`,
+            "author": {
+              "@type": "Organization",
+              "name": post.author
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Stereon"
+            },
+            "datePublished": post.date,
+            "url": `https://stereon.lovable.app/blog/${post.id}`
+          }))
+        })}
+      </script>
+      
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow pt-24">
@@ -153,7 +187,7 @@ export default function Blog() {
                       <div className="aspect-video overflow-hidden rounded-xl mb-4">
                         <img 
                           src={post.image} 
-                          alt={post.title}
+                          alt={`${post.title} - Μεταλλικές ντουλάπες και lockers Stereon`}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                       </div>
@@ -202,7 +236,34 @@ export default function Blog() {
                                   ))}
                                 </ul>
                               ) : (
-                                <p className="text-metal-600 leading-relaxed">{paragraph}</p>
+                                <p className="text-metal-600 leading-relaxed">
+                                  {paragraph.includes("μεταλλικές ντουλάπες εργοστασίων") ? (
+                                    <>
+                                      Σε χώρους παραγωγής, η οργάνωση είναι κρίσιμη. Οι{" "}
+                                      <Link to="/products?category=ντουλάπα" className="text-blue-600 hover:text-blue-700 underline">
+                                        μεταλλικές ντουλάπες εργοστασίων
+                                      </Link>{" "}
+                                      επιτρέπουν τη διατήρηση καθαρών και ασφαλών χώρων εργασίας, μειώνοντας τον χρόνο αναζήτησης εργαλείων και εξαρτημάτων.
+                                    </>
+                                  ) : paragraph.includes("lockers αποδυτηρίων") ? (
+                                    <>
+                                      Οι{" "}
+                                      <Link to="/products?category=locker" className="text-blue-600 hover:text-blue-700 underline">
+                                        lockers αποδυτηρίων
+                                      </Link>{" "}
+                                      είναι βασικός εξοπλισμός σε εργοστάσια παραγωγής, logistics hubs, δημόσιους φορείς, ακόμη και start-ups που επενδύουν στην ευημερία του προσωπικού τους.
+                                    </>
+                                  ) : paragraph.includes("χονδρική προμήθεια") ? (
+                                    <>
+                                      Προσφέρουμε{" "}
+                                      <Link to="/products" className="text-blue-600 hover:text-blue-700 underline">
+                                        lockers σε διάφορες διαστάσεις και χρώματα
+                                      </Link>, με επιλογές ασφαλείας και εξαερισμού. Όλα τα προϊόντα είναι κατάλληλα για χονδρική προμήθεια και projects μεγάλης κλίμακας.
+                                    </>
+                                  ) : (
+                                    paragraph
+                                  )}
+                                </p>
                               )}
                             </div>
                           ))}
