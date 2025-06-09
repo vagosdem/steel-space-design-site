@@ -13,6 +13,10 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
+import MetallicCabinets from "./pages/MetallicCabinets";
+import MetallicFilingCabinets from "./pages/MetallicFilingCabinets";
+import MetallicLockers from "./pages/MetallicLockers";
+import MetallicDrawers from "./pages/MetallicDrawers";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +52,10 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/products" element={<Products />} />
             <Route path="/product/:productId" element={<ProductDetail />} />
+            <Route path="/metallic-cabinets" element={<MetallicCabinets />} />
+            <Route path="/metallic-filing-cabinets" element={<MetallicFilingCabinets />} />
+            <Route path="/metallic-lockers" element={<MetallicLockers />} />
+            <Route path="/metallic-drawers" element={<MetallicDrawers />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:postId" element={<BlogPost />} />
             <Route path="/legal" element={<Legal />} />

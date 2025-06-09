@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -18,6 +17,49 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <!-- Category Pages -->
+  <url>
+    <loc>https://stereom.gr/metallic-cabinets</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stereom.gr/lovable-uploads/IMG_054822.webp</image:loc>
+      <image:title>Μεταλλικές Ντουλάπες Χονδρική Ελλάδα</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stereom.gr/metallic-filing-cabinets</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stereom.gr/lovable-uploads/IMG_23802.webp</image:loc>
+      <image:title>Μεταλλικές Αρχειοθήκες B2B Ελλάδα</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stereom.gr/metallic-lockers</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stereom.gr/lovable-uploads/IMG_13742.webp</image:loc>
+      <image:title>Μεταλλικά Lockers Χονδρική Ελλάδα</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://stereom.gr/metallic-drawers</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://stereom.gr/lovable-uploads/IMG_23802.webp</image:loc>
+      <image:title>Μεταλλικές Συρταριέρες Γραφείου Χονδρική</image:title>
+    </image:image>
+  </url>
+  
   <url>
     <loc>https://stereom.gr/blog</loc>
     <lastmod>2025-01-27</lastmod>
