@@ -224,49 +224,47 @@ export default function Blog() {
                           <h3 className="text-xl font-semibold mb-3 text-black">
                             {section.title}
                           </h3>
-                          {section.content.map((paragraph, paragraphIndex) => (
-                            <div key={paragraphIndex} className="mb-3">
-                              {section.title.includes("Γιατί να επιλέξετε") || section.title.includes("Χαρακτηριστικά") ? (
-                                <ul className="space-y-2">
-                                  {section.content.map((item, itemIndex) => (
-                                    <li key={itemIndex} className="flex items-start gap-2">
-                                      <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
-                                      <span className="text-metal-600">{item}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              ) : (
-                                <p className="text-metal-600 leading-relaxed">
-                                  {paragraph.includes("μεταλλικές ντουλάπες εργοστασίων") ? (
-                                    <>
-                                      Σε χώρους παραγωγής, η οργάνωση είναι κρίσιμη. Οι{" "}
-                                      <Link to="/products?category=ντουλάπα" className="text-blue-600 hover:text-blue-700 underline">
-                                        μεταλλικές ντουλάπες εργοστασίων
-                                      </Link>{" "}
-                                      επιτρέπουν τη διατήρηση καθαρών και ασφαλών χώρων εργασίας, μειώνοντας τον χρόνο αναζήτησης εργαλείων και εξαρτημάτων.
-                                    </>
-                                  ) : paragraph.includes("lockers αποδυτηρίων") ? (
-                                    <>
-                                      Οι{" "}
-                                      <Link to="/products?category=locker" className="text-blue-600 hover:text-blue-700 underline">
-                                        lockers αποδυτηρίων
-                                      </Link>{" "}
-                                      είναι βασικός εξοπλισμός σε εργοστάσια παραγωγής, logistics hubs, δημόσιους φορείς, ακόμη και start-ups που επενδύουν στην ευημερία του προσωπικού τους.
-                                    </>
-                                  ) : paragraph.includes("χονδρική προμήθεια") ? (
-                                    <>
-                                      Προσφέρουμε{" "}
-                                      <Link to="/products" className="text-blue-600 hover:text-blue-700 underline">
-                                        lockers σε διάφορες διαστάσεις και χρώματα
-                                      </Link>, με επιλογές ασφαλείας και εξαερισμού. Όλα τα προϊόντα είναι κατάλληλα για χονδρική προμήθεια και projects μεγάλης κλίμακας.
-                                    </>
-                                  ) : (
-                                    paragraph
-                                  )}
-                                </p>
-                              )}
-                            </div>
-                          ))}
+                          {section.title.includes("Γιατί να επιλέξετε") || section.title.includes("Χαρακτηριστικά") ? (
+                            <ul className="space-y-2">
+                              {section.content.map((item, itemIndex) => (
+                                <li key={itemIndex} className="flex items-start gap-2">
+                                  <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                                  <span className="text-metal-600">{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            section.content.map((paragraph, paragraphIndex) => (
+                              <p key={paragraphIndex} className="text-metal-600 leading-relaxed mb-3">
+                                {paragraph.includes("μεταλλικές ντουλάπες εργοστασίων") ? (
+                                  <>
+                                    Σε χώρους παραγωγής, η οργάνωση είναι κρίσιμη. Οι{" "}
+                                    <Link to="/products?category=ντουλάπα" className="text-blue-600 hover:text-blue-700 underline">
+                                      μεταλλικές ντουλάπες εργοστασίων
+                                    </Link>{" "}
+                                    επιτρέπουν τη διατήρηση καθαρών και ασφαλών χώρων εργασίας, μειώνοντας τον χρόνο αναζήτησης εργαλείων και εξαρτημάτων.
+                                  </>
+                                ) : paragraph.includes("lockers αποδυτηρίων") ? (
+                                  <>
+                                    Οι{" "}
+                                    <Link to="/products?category=locker" className="text-blue-600 hover:text-blue-700 underline">
+                                      lockers αποδυτηρίων
+                                    </Link>{" "}
+                                    είναι βασικός εξοπλισμός σε εργοστάσια παραγωγής, logistics hubs, δημόσιους φορείς, ακόμη και start-ups που επενδύουν στην ευημερία του προσωπικού τους.
+                                  </>
+                                ) : paragraph.includes("χονδρική προμήθεια") ? (
+                                  <>
+                                    Προσφέρουμε{" "}
+                                    <Link to="/products" className="text-blue-600 hover:text-blue-700 underline">
+                                      lockers σε διάφορες διαστάσεις και χρώματα
+                                    </Link>, με επιλογές ασφαλείας και εξαερισμού. Όλα τα προϊόντα είναι κατάλληλα για χονδρική προμήθεια και projects μεγάλης κλίμακας.
+                                  </>
+                                ) : (
+                                  paragraph
+                                )}
+                              </p>
+                            ))
+                          )}
                         </div>
                       ))}
                       
