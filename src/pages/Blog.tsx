@@ -54,6 +54,7 @@ export default function Blog() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
   return <>
       <SEOHead title="Blog - Οδηγοί & Συμβουλές για Μεταλλικές Ντουλάπες & Lockers | Stereon" description="Ανακαλύψτε χρήσιμους οδηγούς για μεταλλικές ντουλάπες εργοστασίων, lockers αποδυτηρίων και συρταριέρες. Επαγγελματικές λύσεις αποθήκευσης για εταιρείες στην Ελλάδα." canonical="/blog" image="/lovable-uploads/IMG_054822.webp" type="website" />
       
@@ -90,6 +91,33 @@ export default function Blog() {
         }))
       })}
       </script>
+
+      {/* Individual BlogPosting Schema for each post */}
+      {blogPosts.map(post => (
+        <script key={post.id} type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "image": `https://stereon.lovable.app${post.image}`,
+            "author": {
+              "@type": "Organization",
+              "name": post.author
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Stereon",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://stereon.lovable.app/lovable-uploads/IMG_054822.webp"
+              }
+            },
+            "datePublished": post.date,
+            "url": `https://stereon.lovable.app/blog/${post.id}`,
+            "description": post.excerpt
+          })}
+        </script>
+      ))}
       
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -146,7 +174,7 @@ export default function Blog() {
             }} className="bg-white rounded-2xl shadow-sm overflow-hidden">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
                     <div className="lg:col-span-1">
-                      <div className="aspect-video overflow-hidden rounded-xl mb-4">
+                      <div className="aspect-[4/3] overflow-hidden rounded-xl mb-4">
                         <img src={post.image} alt={`${post.title} - Μεταλλικές ντουλάπες και lockers Stereon`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                       </div>
                       
@@ -214,7 +242,7 @@ export default function Blog() {
                           </Link>
                         </Button>
                         
-                        <Button variant="outline" asChild className="border-metal-300 text-metal-600 hover:bg-metal-50 rounded-xl">
+                        <Button variant="outline" asChild className="border-metal-300 text-white hover:bg-metal-50 rounded-xl">
                           <Link to="/products">
                             Δείτε τα Προϊόντα μας
                             <ArrowRight className="ml-2 h-4 w-4" />
