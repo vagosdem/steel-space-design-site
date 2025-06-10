@@ -243,10 +243,10 @@ export default function Blog() {
                       </div>
                     </div>
 
-                    {/* Introduction with first image on the left */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-                      <div className="lg:col-span-1">
-                        <div className="overflow-hidden rounded-xl" style={{ aspectRatio: post.aspectRatio }}>
+                    {/* Introduction with first image */}
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-8">
+                      <div className="lg:col-span-2">
+                        <div className="overflow-hidden rounded-xl h-64">
                           <img 
                             src={post.image} 
                             alt={`${post.title} - Μεταλλικές ντουλάπες και lockers Stereom`} 
@@ -254,7 +254,7 @@ export default function Blog() {
                           />
                         </div>
                       </div>
-                      <div className="lg:col-span-2">
+                      <div className="lg:col-span-3">
                         <p className="text-metal-600 leading-relaxed" style={{ lineHeight: '1.6' }}>
                           {post.content.intro}
                         </p>
@@ -264,7 +264,7 @@ export default function Blog() {
                     {/* Content sections with alternating images */}
                     {post.content.sections.map((section, sectionIndex) => {
                       const isEven = sectionIndex % 2 === 0;
-                      const imageIndex = Math.min(sectionIndex, (post.additionalImages || []).length - 1);
+                      const imageIndex = sectionIndex % (post.additionalImages || []).length;
                       const hasAdditionalImage = post.additionalImages && post.additionalImages[imageIndex];
 
                       return (
@@ -274,9 +274,9 @@ export default function Blog() {
                           </h3>
                           
                           {hasAdditionalImage ? (
-                            <div className={`grid grid-cols-1 lg:grid-cols-3 gap-8 ${isEven ? '' : 'lg:grid-flow-col-dense'}`}>
-                              <div className={`lg:col-span-1 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                                <div className="overflow-hidden rounded-xl aspect-square lg:aspect-auto lg:h-80">
+                            <div className={`grid grid-cols-1 lg:grid-cols-5 gap-6 ${isEven ? '' : 'lg:grid-flow-col-dense'}`}>
+                              <div className={`lg:col-span-2 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                                <div className="overflow-hidden rounded-xl h-64">
                                   <img 
                                     src={post.additionalImages[imageIndex]} 
                                     alt={`${post.title} - Επιπλέον εικόνα ${imageIndex + 1}`}
@@ -284,7 +284,7 @@ export default function Blog() {
                                   />
                                 </div>
                               </div>
-                              <div className={`lg:col-span-2 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                              <div className={`lg:col-span-3 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
                                 {section.content.map((paragraph, paragraphIndex) => 
                                   <p key={paragraphIndex} className="text-metal-600 leading-relaxed mb-3" style={{ lineHeight: '1.6' }}>
                                     {paragraph.includes("μεταλλικές ντουλάπες") && !paragraph.includes("Stereom") ? 
