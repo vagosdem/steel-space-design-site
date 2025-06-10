@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -22,7 +21,8 @@ const blogPosts = [{
   additionalImages: [
     "/lovable-uploads/5501f81b-4623-4d7e-bc60-6e1b2cc5bd76.png",
     "/lovable-uploads/11c4568f-af5f-4cf4-b8ba-3fcdf68281c7.png",
-    "/lovable-uploads/1b51895c-fa44-45d3-ab17-4267e51f6674.png"
+    "/lovable-uploads/1b51895c-fa44-45d3-ab17-4267e51f6674.png",
+    "/lovable-uploads/9aec70f5-fdd7-475c-87f1-cea7aff84db4.png"
   ],
   content: {
     intro: "Στους σύγχρονους βιομηχανικούς χώρους, τα εργοστάσια και τις αποθήκες, η αποτελεσματική οργάνωση και η ασφαλής αποθήκευση δεν είναι απλά μια επιλογή, αλλά μια επιτακτική ανάγκη. Η σωστή επιλογή των επίπλων αποθήκευσης μπορεί να επηρεάσει άμεσα την παραγωγικότητα, την ασφάλεια του προσωπικού και την προστασία του εξοπλισμού και των υλικών. Σε αυτό το πλαίσιο, οι μεταλλικές ντουλάπες αναδεικνύονται ως η κορυφαία λύση. Αποτελούν βασικό εξοπλισμό για κάθε επαγγελματικό χώρο που απαιτεί αποθήκευση εργαλείων, εξοπλισμού ή προσωπικών αντικειμένων. Ειδικά σε εργοστάσια και αποθηκευτικούς χώρους, η ανθεκτικότητα, η εργονομία και η ασφάλεια είναι κρίσιμες παράμετροι.",
@@ -42,7 +42,7 @@ const blogPosts = [{
   }
 }, {
   id: "lockers-apodytiria",
-  title: "Lockers Αποδυτηρίων για Επαγγελματικούς Χώρους: Ο Οδηγός σας για Ασφάλεια, Υγιεινή & Οργάνωση",
+  title: "Lockers Αποδυτήριων για Επαγγελματικούς Χώρους: Ο Οδηγός σας για Ασφάλεια, Υγιεινή & Οργάνωση",
   excerpt: "Στον σύγχρονο επαγγελματικό κόσμο, η ανάγκη για ασφαλή και οργανωμένο προσωπικό χώρο είναι πιο επιτακτική από ποτέ.",
   date: "2024-01-10",
   author: "Stereom Team",
@@ -81,7 +81,7 @@ export default function Blog() {
   return <>
       <SEOHead 
         title="Οδηγός Επιλογής Μεταλλικής Ντουλάπας για Βιομηχανικούς Χώρους | Stereom Blog" 
-        description="Μεταλλικές ντουλάπες εργοστασίων & αποθηκών – Ανθεκτικές, ασφαλείς, με δυνατότητα προσαρμογής. Χονδρική διάθεση σε επαγγελματίες." 
+        description="Μεταλλικές ντουλάπες εργοστασίων & αποθήκες – Ανθεκτικές, ασφαλείς, με δυνατότητα προσαρμογής. Χονδρική διάθεση σε επαγγελματίες." 
         canonical="/blog" 
         image="/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png" 
         type="website" 
@@ -246,11 +246,11 @@ export default function Blog() {
                     {/* Introduction with first image */}
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-8">
                       <div className="lg:col-span-2">
-                        <div className="overflow-hidden rounded-xl h-64">
+                        <div className="overflow-hidden rounded-xl h-64 bg-gray-50 flex items-center justify-center">
                           <img 
                             src={post.image} 
                             alt={`${post.title} - Μεταλλικές ντουλάπες και lockers Stereom`} 
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+                            className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300" 
                           />
                         </div>
                       </div>
@@ -276,11 +276,11 @@ export default function Blog() {
                           {hasAdditionalImage ? (
                             <div className={`grid grid-cols-1 lg:grid-cols-5 gap-6 ${isEven ? '' : 'lg:grid-flow-col-dense'}`}>
                               <div className={`lg:col-span-2 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                                <div className="overflow-hidden rounded-xl h-64">
+                                <div className="overflow-hidden rounded-xl h-64 bg-gray-50 flex items-center justify-center">
                                   <img 
                                     src={post.additionalImages[imageIndex]} 
                                     alt={`${post.title} - Επιπλέον εικόνα ${imageIndex + 1}`}
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+                                    className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300" 
                                   />
                                 </div>
                               </div>
