@@ -14,11 +14,16 @@ const blogPosts = [{
   title: "Οδηγός Επιλογής Μεταλλικής Ντουλάπας για Βιομηχανικούς Χώρους: Τι να Προσέξετε για Αντοχή & Οργάνωση",
   excerpt: "Στους σύγχρονους βιομηχανικούς χώρους, τα εργοστάσια και τις αποθήκες, η αποτελεσματική οργάνωση και η ασφαλής αποθήκευση δεν είναι απλά μια επιλογή, αλλά μια επιτακτική ανάγκη.",
   date: "2024-01-15",
-  author: "Stereon Team",
-  image: "/lovable-uploads/IMG_054822.webp",
+  author: "Stereom Team",
+  image: "/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png",
   category: "Βιομηχανικά",
   tagline: "Για βιομηχανικές εγκαταστάσεις, αποθήκες & εργοστάσια",
-  aspectRatio: "800/1050",
+  aspectRatio: "400/600",
+  additionalImages: [
+    "/lovable-uploads/5501f81b-4623-4d7e-bc60-6e1b2cc5bd76.png",
+    "/lovable-uploads/11c4568f-af5f-4cf4-b8ba-3fcdf68281c7.png",
+    "/lovable-uploads/1b51895c-fa44-45d3-ab17-4267e51f6674.png"
+  ],
   content: {
     intro: "Στους σύγχρονους βιομηχανικούς χώρους, τα εργοστάσια και τις αποθήκες, η αποτελεσματική οργάνωση και η ασφαλής αποθήκευση δεν είναι απλά μια επιλογή, αλλά μια επιτακτική ανάγκη. Η σωστή επιλογή των επίπλων αποθήκευσης μπορεί να επηρεάσει άμεσα την παραγωγικότητα, την ασφάλεια του προσωπικού και την προστασία του εξοπλισμού και των υλικών. Σε αυτό το πλαίσιο, οι μεταλλικές ντουλάπες αναδεικνύονται ως η κορυφαία λύση. Αποτελούν βασικό εξοπλισμό για κάθε επαγγελματικό χώρο που απαιτεί αποθήκευση εργαλείων, εξοπλισμού ή προσωπικών αντικειμένων. Ειδικά σε εργοστάσια και αποθηκευτικούς χώρους, η ανθεκτικότητα, η εργονομία και η ασφάλεια είναι κρίσιμες παράμετροι.",
     sections: [{
@@ -29,10 +34,10 @@ const blogPosts = [{
       content: ["Όταν επιλέγετε μεταλλικές ντουλάπες για το εργοστάσιο ή την αποθήκη σας, δώστε ιδιαίτερη προσοχή στα ακόλουθα χαρακτηριστικά:", "Υλικό Κατασκευής και Πάχος Μετάλλου: Αναζητήστε ντουλάπες κατασκευασμένες από ενισχυμένο χάλυβα βαρέως τύπου.", "Επίστρωση & Βαφή: Η ηλεκτροστατική βαφή προσφέρει ανώτερη προστασία έναντι της διάβρωσης.", "Σύστημα Κλειδώματος: Ενσωματωμένες κλειδαριές ασφαλείας με κεντρικό σύστημα κλειδώματος.", "Ράφια και Φορτίο: Ελέγξτε την αντοχή των ραφιών σε βάρος και τη δυνατότητα ρύθμισης.", "Σύστημα Εξαερισμού: Για την αποθήκευση συγκεκριμένων υλικών ή σε χώρους με υγρασία."]
     }, {
       title: "Προσαρμογή στις Ανάγκες σας",
-      content: ["Ενώ οι τυποποιημένες μεταλλικές ντουλάπες προσφέρουν λύσεις, η πραγματική αξία για ένα βιομηχανικό χώρο έγκειται στη δυνατότητα προσαρμογής. Η Stereon ειδικεύεται σε προσαρμοσμένες μεταλλικές ντουλάπες, σχεδιασμένες για να ανταποκρίνονται ακριβώς στις ανάγκες σας.", "Custom Διαστάσεις: Κάθε βιομηχανικός χώρος είναι μοναδικός. Η δυνατότητα σχεδιασμού ντουλαπών σε προσαρμοσμένες διαστάσεις επιτρέπει την απόλυτη αξιοποίηση του διαθέσιμου χώρου.", "Απεριόριστες Χρωματικές Επιλογές: Πέρα από την αισθητική, το χρώμα μπορεί να παίξει λειτουργικό ρόλο για χρωματική κωδικοποίηση.", "Εσωτερική Διαμόρφωση: Ειδικά συρτάρια, διαχωριστικά, γάντζοι, ράβδοι κρέμασης ή άλλες εσωτερικές προσθήκες.", "Πρόσθετα Χαρακτηριστικά: Ρόδες για εύκολη μετακίνηση, ειδικές βάσεις, ή ενσωματωμένος φωτισμός."]
+      content: ["Ενώ οι τυποποιημένες μεταλλικές ντουλάπες προσφέρουν λύσεις, η πραγματική αξία για ένα βιομηχανικό χώρο έγκειται στη δυνατότητα προσαρμογής. Η Stereom ειδικεύεται σε προσαρμοσμένες μεταλλικές ντουλάπες, σχεδιασμένες για να ανταποκρίνονται ακριβώς στις ανάγκες σας.", "Custom Διαστάσεις: Κάθε βιομηχανικός χώρος είναι μοναδικός. Η δυνατότητα σχεδιασμού ντουλαπών σε προσαρμοσμένες διαστάσεις επιτρέπει την απόλυτη αξιοποίηση του διαθέσιμου χώρου.", "Απεριόριστες Χρωματικές Επιλογές: Πέρα από την αισθητική, το χρώμα μπορεί να παίξει λειτουργικό ρόλο για χρωματική κωδικοποίηση.", "Εσωτερική Διαμόρφωση: Ειδικά συρτάρια, διαχωριστικά, γάντζοι, ράβδοι κρέμασης ή άλλες εσωτερικές προσθήκες.", "Πρόσθετα Χαρακτηριστικά: Ρόδες για εύκολη μετακίνηση, ειδικές βάσεις, ή ενσωματωμένος φωτισμός."]
     }, {
       title: "Συμπέρασμα",
-      content: ["Η επιλογή της σωστής μεταλλικής ντουλάπας για το εργοστάσιο ή την αποθήκη σας είναι μια επένδυση που αποδίδει σε οργάνωση, ασφάλεια και παραγωγικότητα. Οι μεταλλικές ντουλάπες είναι ιδανικές για χρήση σε αποθήκευση, αποθήκες, χώρους παραγωγής, προσφέροντας ανθεκτικότητα και μακροζωία που δεν μπορεί να συγκριθεί.", "Ψάχνετε για χονδρική λύση ή προσαρμοσμένες μεταλλικές ντουλάπες; Η Stereon είναι ο έμπειρος συνεργάτης που χρειάζεστε. Με χρόνια εξειδίκευσης στις ποιοτικές μεταλλικές κατασκευές από το 1967, σχεδιάζουμε και κατασκευάζουμε μεταλλικές ντουλάπες και συστήματα αποθήκευσης που ανταποκρίνονται ακριβώς στις δικές σας, μοναδικές απαιτήσεις."]
+      content: ["Η επιλογή της σωστής μεταλλικής ντουλάπας για το εργοστάσιο ή την αποθήκη σας είναι μια επένδυση που αποδίδει σε οργάνωση, ασφάλεια και παραγωγικότητα. Οι μεταλλικές ντουλάπες είναι ιδανικές για χρήση σε αποθήκευση, αποθήκες, χώρους παραγωγής, προσφέροντας ανθεκτικότητα και μακροζωία που δεν μπορεί να συγκριθεί.", "Ψάχνετε για χονδρική λύση ή προσαρμοσμένες μεταλλικές ντουλάπες; Η Stereom είναι ο έμπειρος συνεργάτης που χρειάζεστε. Με χρόνια εξειδίκευσης στις ποιοτικές μεταλλικές κατασκευές από το 1967, σχεδιάζουμε και κατασκευάζουμε μεταλλικές ντουλάπες και συστήματα αποθήκευσης που ανταποκρίνονται ακριβώς στις δικές σας, μοναδικές απαιτήσεις."]
     }]
   }
 }, {
@@ -40,7 +45,7 @@ const blogPosts = [{
   title: "Lockers Αποδυτηρίων για Επαγγελματικούς Χώρους: Ο Οδηγός σας για Ασφάλεια, Υγιεινή & Οργάνωση",
   excerpt: "Στον σύγχρονο επαγγελματικό κόσμο, η ανάγκη για ασφαλή και οργανωμένο προσωπικό χώρο είναι πιο επιτακτική από ποτέ.",
   date: "2024-01-10",
-  author: "Stereon Team",
+  author: "Stereom Team",
   image: "/lovable-uploads/IMG_13742.webp",
   category: "Αποδυτήρια",
   tagline: "Για αποδυτήρια, γυμναστήρια & εταιρικούς χώρους",
@@ -62,8 +67,8 @@ const blogPosts = [{
       title: "Πού Χρησιμοποιούνται οι Lockers Αποδυτηρίων;",
       content: ["Οι lockers αποδυτηρίων είναι βασικός εξοπλισμός σε ένα ευρύ φάσμα επαγγελματικών και δημόσιων χώρων:", "Εργοστάσια Παραγωγής & Logistics Hubs: Για την ασφαλή φύλαξη προσωπικών αντικειμένων, στολών εργασίας και εξοπλισμού.", "Αθλητικές Εγκαταστάσεις & Γυμναστήρια: Απαραίτητα για τα μέλη και τους επισκέπτες για την αποθήκευση ρούχων, τσαντών και αθλητικού εξοπλισμού.", "Σχολεία & Εκπαιδευτικά Ιδρύματα: Παρέχουν στους μαθητές και τους φοιτητές ασφαλή χώρο για βιβλία, σακίδια και προσωπικά αντικείμενα.", "Δημόσιους Φορείς & Start-ups: Ακόμη και start-ups που επενδύουν στην ευημερία του προσωπικού τους."]
     }, {
-      title: "Stereon: Η Εγγύηση Ποιότητας & Προσαρμογής στα Lockers",
-      content: ["Στην Stereon, κατανοούμε ότι κάθε επαγγελματικός χώρος έχει μοναδικές ανάγκες. Γι' αυτό, προσφέρουμε λύσεις σε lockers που συνδυάζουν κορυφαία ποιότητα, ασφάλεια και απόλυτη προσαρμογή:", "Προσαρμοσμένες Διαστάσεις & Χρώματα: Προσφέρουμε lockers σε διάφορες διαστάσεις και χρώματα, με δυνατότητα πλήρους προσαρμογής.", "Επιλογές Ασφαλείας & Εξαερισμού: Παρέχουμε πληθώρα επιλογών σε μηχανισμούς κλειδώματος και συστήματα εξαερισμού.", "Ανθεκτικότητα & 10ετής Εγγύηση: Όλα τα προϊόντα μας είναι κατάλληλα για χονδρική προμήθεια και projects μεγάλης κλίμακας.", "Ειδίκευση σε Χονδρική Προμήθεια & Projects: Η Stereon είναι ο ιδανικός συνεργάτης για χονδρική προμήθεια και projects μεγάλης κλίμακας."]
+      title: "Stereom: Η Εγγύηση Ποιότητας & Προσαρμογής στα Lockers",
+      content: ["Στην Stereom, κατανοούμε ότι κάθε επαγγελματικός χώρος έχει μοναδικές ανάγκες. Γι' αυτό, προσφέρουμε λύσεις σε lockers που συνδυάζουν κορυφαία ποιότητα, ασφάλεια και απόλυτη προσαρμογή:", "Προσαρμοσμένες Διαστάσεις & Χρώματα: Προσφέρουμε lockers σε διάφορες διαστάσεις και χρώματα, με δυνατότητα πλήρους προσαρμογής.", "Επιλογές Ασφαλείας & Εξαερισμού: Παρέχουμε πληθώρα επιλογών σε μηχανισμούς κλειδώματος και συστήματα εξαερισμού.", "Ανθεκτικότητα & 10ετής Εγγύηση: Όλα τα προϊόντα μας είναι κατάλληλα για χονδρική προμήθεια και projects μεγάλης κλίμακας.", "Ειδίκευση σε Χονδρική Προμήθεια & Projects: Η Stereom είναι ο ιδανικός συνεργάτης για χονδρική προμήθεια και projects μεγάλης κλίμακας."]
     }]
   }
 }];
@@ -75,10 +80,10 @@ export default function Blog() {
   
   return <>
       <SEOHead 
-        title="Οδηγός Επιλογής Μεταλλικής Ντουλάπας για Βιομηχανικούς Χώρους | Stereon Blog" 
+        title="Οδηγός Επιλογής Μεταλλικής Ντουλάπας για Βιομηχανικούς Χώρους | Stereom Blog" 
         description="Μεταλλικές ντουλάπες εργοστασίων & αποθηκών – Ανθεκτικές, ασφαλείς, με δυνατότητα προσαρμογής. Χονδρική διάθεση σε επαγγελματίες." 
         canonical="/blog" 
-        image="/lovable-uploads/IMG_054822.webp" 
+        image="/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png" 
         type="website" 
       />
       
@@ -87,31 +92,31 @@ export default function Blog() {
         {JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": "Stereon Blog - Μεταλλικές Ντουλάπες & Lockers",
+        "name": "Stereom Blog - Μεταλλικές Ντουλάπες & Lockers",
         "description": "Οδηγοί και συμβουλές για μεταλλικές ντουλάπες, lockers και συστήματα αποθήκευσης",
-        "url": "https://stereon.lovable.app/blog",
+        "url": "https://stereom.lovable.app/blog",
         "publisher": {
           "@type": "Organization",
-          "name": "Stereon",
+          "name": "Stereom",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://stereon.lovable.app/lovable-uploads/IMG_054822.webp"
+            "url": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png"
           }
         },
         "blogPost": blogPosts.map(post => ({
           "@type": "BlogPosting",
           "headline": post.title,
-          "image": `https://stereon.lovable.app${post.image}`,
+          "image": `https://stereom.lovable.app${post.image}`,
           "author": {
             "@type": "Organization",
             "name": post.author
           },
           "publisher": {
             "@type": "Organization",
-            "name": "Stereon"
+            "name": "Stereom"
           },
           "datePublished": post.date,
-          "url": `https://stereon.lovable.app/blog/${post.id}`
+          "url": `https://stereom.lovable.app/blog/${post.id}`
         }))
       })}
       </script>
@@ -122,17 +127,17 @@ export default function Blog() {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": "Μεταλλικές Ντουλάπες για Εργοστάσια και Αποθήκες",
-          "image": "https://stereon.lovable.app/lovable-uploads/IMG_054822.webp",
+          "image": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png",
           "author": {
             "@type": "Organization",
-            "name": "Stereon Team"
+            "name": "Stereom Team"
           },
           "publisher": {
             "@type": "Organization",
-            "name": "Stereon",
+            "name": "Stereom",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://stereon.lovable.app/lovable-uploads/IMG_054822.webp"
+              "url": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png"
             }
           },
           "datePublished": "2024-01-15"
@@ -145,17 +150,17 @@ export default function Blog() {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": "Lockers Αποδυτηρίων για Επαγγελματικούς Χώρους",
-          "image": "https://stereon.lovable.app/lovable-uploads/IMG_13742.webp",
+          "image": "https://stereom.lovable.app/lovable-uploads/IMG_13742.webp",
           "author": {
             "@type": "Organization",
-            "name": "Stereon Team"
+            "name": "Stereom Team"
           },
           "publisher": {
             "@type": "Organization",
-            "name": "Stereon",
+            "name": "Stereom",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://stereon.lovable.app/lovable-uploads/IMG_13742.webp"
+              "url": "https://stereom.lovable.app/lovable-uploads/IMG_13742.webp"
             }
           },
           "datePublished": "2024-01-10"
@@ -215,134 +220,203 @@ export default function Blog() {
               duration: 0.5,
               delay: index * 0.2
             }} className="bg-white rounded-2xl shadow-sm overflow-hidden">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
-                    <div className="lg:col-span-1">
-                      {/* Hero Tagline */}
-                      <div className="flex items-center gap-2 mb-4 text-sm text-metal-400">
-                        <Wrench size={16} />
-                        <span>{post.tagline}</span>
-                      </div>
-                      
-                      <div className="overflow-hidden rounded-xl mb-4" style={{ aspectRatio: post.aspectRatio }}>
-                        <img 
-                          src={post.image} 
-                          alt={`${post.title} - Μεταλλικές ντουλάπες και lockers Stereon`} 
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
-                        />
-                      </div>
+                  <div className="p-8">
+                    {/* Hero Tagline */}
+                    <div className="flex items-center gap-2 mb-6 text-sm text-metal-400">
+                      <Wrench size={16} />
+                      <span>{post.tagline}</span>
+                    </div>
 
-                      {/* Additional images for lockers post */}
-                      {post.additionalImages && (
-                        <div className="grid grid-cols-2 gap-2 mb-4">
-                          {post.additionalImages.map((imgSrc, imgIndex) => (
-                            <div key={imgIndex} className="overflow-hidden rounded-lg aspect-square">
-                              <img 
-                                src={imgSrc} 
-                                alt={`${post.title} - Επιπλέον εικόνα ${imgIndex + 1}`}
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
-                              />
-                            </div>
-                          ))}
+                    <h2 className="text-2xl font-bold mb-6 text-black">
+                      {post.title}
+                    </h2>
+
+                    {/* Author & Date Info */}
+                    <div className="flex items-center gap-4 text-sm text-metal-600 mb-8">
+                      <div className="flex items-center gap-1">
+                        <Calendar size={14} />
+                        {new Date(post.date).toLocaleDateString('el-GR')}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <User size={14} />
+                        {post.author}
+                      </div>
+                    </div>
+
+                    {/* Introduction with first image on the left */}
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                      <div className="lg:col-span-1">
+                        <div className="overflow-hidden rounded-xl" style={{ aspectRatio: post.aspectRatio }}>
+                          <img 
+                            src={post.image} 
+                            alt={`${post.title} - Μεταλλικές ντουλάπες και lockers Stereom`} 
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+                          />
                         </div>
-                      )}
-                      
-                      <div className="flex items-center gap-4 text-sm text-metal-600 mb-4">
-                        <div className="flex items-center gap-1">
-                          <Calendar size={14} />
-                          {new Date(post.date).toLocaleDateString('el-GR')}
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <User size={14} />
-                          {post.author}
-                        </div>
+                      </div>
+                      <div className="lg:col-span-2">
+                        <p className="text-metal-600 leading-relaxed" style={{ lineHeight: '1.6' }}>
+                          {post.content.intro}
+                        </p>
                       </div>
                     </div>
                     
-                    <div className="lg:col-span-2">
-                      <h2 className="text-2xl font-bold mb-4 text-black">
-                        {post.title}
-                      </h2>
-                      
-                      <p className="text-metal-600 mb-6 leading-relaxed" style={{ lineHeight: '1.6' }}>
-                        {post.content.intro}
-                      </p>
-                      
-                      {post.content.sections.map((section, sectionIndex) => <div key={sectionIndex} className="mb-6">
-                          <h3 className="text-xl font-semibold mb-3 text-black">
+                    {/* Content sections with alternating images */}
+                    {post.content.sections.map((section, sectionIndex) => {
+                      const isEven = sectionIndex % 2 === 0;
+                      const imageIndex = Math.min(sectionIndex, (post.additionalImages || []).length - 1);
+                      const hasAdditionalImage = post.additionalImages && post.additionalImages[imageIndex];
+
+                      return (
+                        <div key={sectionIndex} className="mb-8">
+                          <h3 className="text-xl font-semibold mb-4 text-black">
                             {section.title}
                           </h3>
-                          {section.content.map((paragraph, paragraphIndex) => 
-                            <p key={paragraphIndex} className="text-metal-600 leading-relaxed mb-3" style={{ lineHeight: '1.6' }}>
-                              {paragraph.includes("μεταλλικές ντουλάπες") && !paragraph.includes("Stereon") ? 
-                                <>
-                                  {paragraph.split("μεταλλικές ντουλάπες")[0]}
-                                  <Link to="/metallic-cabinets" className="text-blue-600 hover:text-blue-700 underline">
-                                    μεταλλικές ντουλάπες
-                                  </Link>
-                                  {paragraph.split("μεταλλικές ντουλάπες")[1]}
-                                </> 
-                                : paragraph.includes("lockers") && !paragraph.includes("Προσφέρουμε") ? 
-                                <>
-                                  {paragraph.split("lockers")[0]}
-                                  <Link to="/metallic-lockers" className="text-blue-600 hover:text-blue-700 underline">
-                                    lockers
-                                  </Link>
-                                  {paragraph.split("lockers")[1]}
-                                </> 
-                                : paragraph.includes("συστήματα αποθήκευσης") ? 
-                                <>
-                                  {paragraph.split("συστήματα αποθήκευσης")[0]}
-                                  <Link to="/products" className="text-blue-600 hover:text-blue-700 underline">
-                                    συστήματα αποθήκευσης
-                                  </Link>
-                                  {paragraph.split("συστήματα αποθήκευσης")[1]}
-                                </> 
-                                : paragraph.includes("Συρταριέρες") ? 
-                                <>
-                                  {paragraph.split("Συρταριέρες")[0]}
-                                  <Link to="/metallic-drawers" className="text-blue-600 hover:text-blue-700 underline">
-                                    Συρταριέρες
-                                  </Link>
-                                  {paragraph.split("Συρταριέρες")[1]}
-                                </> 
-                                : paragraph.includes("μελέτες περίπτωσης") ? 
-                                <>
-                                  {paragraph.split("μελέτες περίπτωσης")[0]}
-                                  <Link to="/?scrollTo=projects" className="text-blue-600 hover:text-blue-700 underline">
-                                    μελέτες περίπτωσης
-                                  </Link>
-                                  {paragraph.split("μελέτες περίπτωσης")[1]}
-                                </> 
-                                : paragraph.includes("χονδρική προμήθεια") ? 
-                                <>
-                                  {paragraph.split("χονδρική προμήθεια")[0]}
-                                  <Link to="/?scrollTo=contact" className="text-blue-600 hover:text-blue-700 underline">
-                                    χονδρική προμήθεια
-                                  </Link>
-                                  {paragraph.split("χονδρική προμήθεια")[1]}
-                                </> 
-                                : paragraph
-                              }
-                            </p>
+                          
+                          {hasAdditionalImage ? (
+                            <div className={`grid grid-cols-1 lg:grid-cols-3 gap-8 ${isEven ? '' : 'lg:grid-flow-col-dense'}`}>
+                              <div className={`lg:col-span-1 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                                <div className="overflow-hidden rounded-xl aspect-square lg:aspect-auto lg:h-80">
+                                  <img 
+                                    src={post.additionalImages[imageIndex]} 
+                                    alt={`${post.title} - Επιπλέον εικόνα ${imageIndex + 1}`}
+                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+                                  />
+                                </div>
+                              </div>
+                              <div className={`lg:col-span-2 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+                                {section.content.map((paragraph, paragraphIndex) => 
+                                  <p key={paragraphIndex} className="text-metal-600 leading-relaxed mb-3" style={{ lineHeight: '1.6' }}>
+                                    {paragraph.includes("μεταλλικές ντουλάπες") && !paragraph.includes("Stereom") ? 
+                                      <>
+                                        {paragraph.split("μεταλλικές ντουλάπες")[0]}
+                                        <Link to="/metallic-cabinets" className="text-blue-600 hover:text-blue-700 underline">
+                                          μεταλλικές ντουλάπες
+                                        </Link>
+                                        {paragraph.split("μεταλλικές ντουλάπες")[1]}
+                                      </> 
+                                      : paragraph.includes("lockers") && !paragraph.includes("Προσφέρουμε") ? 
+                                      <>
+                                        {paragraph.split("lockers")[0]}
+                                        <Link to="/metallic-lockers" className="text-blue-600 hover:text-blue-700 underline">
+                                          lockers
+                                        </Link>
+                                        {paragraph.split("lockers")[1]}
+                                      </> 
+                                      : paragraph.includes("συστήματα αποθήκευσης") ? 
+                                      <>
+                                        {paragraph.split("συστήματα αποθήκευσης")[0]}
+                                        <Link to="/products" className="text-blue-600 hover:text-blue-700 underline">
+                                          συστήματα αποθήκευσης
+                                        </Link>
+                                        {paragraph.split("συστήματα αποθήκευσης")[1]}
+                                      </> 
+                                      : paragraph.includes("Συρταριέρες") ? 
+                                      <>
+                                        {paragraph.split("Συρταριέρες")[0]}
+                                        <Link to="/metallic-drawers" className="text-blue-600 hover:text-blue-700 underline">
+                                          Συρταριέρες
+                                        </Link>
+                                        {paragraph.split("Συρταριέρες")[1]}
+                                      </> 
+                                      : paragraph.includes("μελέτες περίπτωσης") ? 
+                                      <>
+                                        {paragraph.split("μελέτες περίπτωσης")[0]}
+                                        <Link to="/?scrollTo=projects" className="text-blue-600 hover:text-blue-700 underline">
+                                          μελέτες περίπτωσης
+                                        </Link>
+                                        {paragraph.split("μελέτες περίπτωσης")[1]}
+                                      </> 
+                                      : paragraph.includes("χονδρική προμήθεια") ? 
+                                      <>
+                                        {paragraph.split("χονδρική προμήθεια")[0]}
+                                        <Link to="/?scrollTo=contact" className="text-blue-600 hover:text-blue-700 underline">
+                                          χονδρική προμήθεια
+                                        </Link>
+                                        {paragraph.split("χονδρική προμήθεια")[1]}
+                                      </> 
+                                      : paragraph
+                                    }
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                          ) : (
+                            <div>
+                              {section.content.map((paragraph, paragraphIndex) => 
+                                <p key={paragraphIndex} className="text-metal-600 leading-relaxed mb-3" style={{ lineHeight: '1.6' }}>
+                                  {paragraph.includes("μεταλλικές ντουλάπες") && !paragraph.includes("Stereom") ? 
+                                    <>
+                                      {paragraph.split("μεταλλικές ντουλάπες")[0]}
+                                      <Link to="/metallic-cabinets" className="text-blue-600 hover:text-blue-700 underline">
+                                        μεταλλικές ντουλάπες
+                                      </Link>
+                                      {paragraph.split("μεταλλικές ντουλάπες")[1]}
+                                    </> 
+                                    : paragraph.includes("lockers") && !paragraph.includes("Προσφέρουμε") ? 
+                                    <>
+                                      {paragraph.split("lockers")[0]}
+                                      <Link to="/metallic-lockers" className="text-blue-600 hover:text-blue-700 underline">
+                                        lockers
+                                      </Link>
+                                      {paragraph.split("lockers")[1]}
+                                    </> 
+                                    : paragraph.includes("συστήματα αποθήκευσης") ? 
+                                    <>
+                                      {paragraph.split("συστήματα αποθήκευσης")[0]}
+                                      <Link to="/products" className="text-blue-600 hover:text-blue-700 underline">
+                                        συστήματα αποθήκευσης
+                                      </Link>
+                                      {paragraph.split("συστήματα αποθήκευσης")[1]}
+                                    </> 
+                                    : paragraph.includes("Συρταριέρες") ? 
+                                    <>
+                                      {paragraph.split("Συρταριέρες")[0]}
+                                      <Link to="/metallic-drawers" className="text-blue-600 hover:text-blue-700 underline">
+                                        Συρταριέρες
+                                      </Link>
+                                      {paragraph.split("Συρταριέρες")[1]}
+                                    </> 
+                                    : paragraph.includes("μελέτες περίπτωσης") ? 
+                                    <>
+                                      {paragraph.split("μελέτες περίπτωσης")[0]}
+                                      <Link to="/?scrollTo=projects" className="text-blue-600 hover:text-blue-700 underline">
+                                        μελέτες περίπτωσης
+                                      </Link>
+                                      {paragraph.split("μελέτες περίπτωσης")[1]}
+                                    </> 
+                                    : paragraph.includes("χονδρική προμήθεια") ? 
+                                    <>
+                                      {paragraph.split("χονδρική προμήθεια")[0]}
+                                      <Link to="/?scrollTo=contact" className="text-blue-600 hover:text-blue-700 underline">
+                                        χονδρική προμήθεια
+                                      </Link>
+                                      {paragraph.split("χονδρική προμήθεια")[1]}
+                                    </> 
+                                    : paragraph
+                                  }
+                                </p>
+                              )}
+                            </div>
                           )}
                         </div>
-                      )}
+                      );
+                    })}
+                    
+                    <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                      <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl">
+                        <Link to="/?scrollTo=contact">
+                          Ζητήστε Προσφορά Τώρα
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
                       
-                      <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                        <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl">
-                          <Link to="/?scrollTo=contact">
-                            Ζητήστε Προσφορά Τώρα
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </Link>
-                        </Button>
-                        
-                        <Button variant="outline" asChild className="border-metal-300 text-white hover:bg-metal-50 rounded-xl">
-                          <Link to="/products">
-                            Δείτε τα Προϊόντα μας
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </Link>
-                        </Button>
-                      </div>
+                      <Button variant="outline" asChild className="border-metal-300 text-metal-600 hover:bg-metal-50 hover:text-white rounded-xl">
+                        <Link to="/products">
+                          Δείτε τα Προϊόντα μας
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
                     </div>
                   </div>
                 </motion.article>
