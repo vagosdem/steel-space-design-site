@@ -152,7 +152,7 @@ export default function MetallicDrawers() {
 
             {/* Product Gallery */}
             <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-8 text-center">Δείγματα Μεταλλικών Συρταριέρων</h2>
+              
               <div className="grid md:grid-cols-3 gap-6">
                 {drawerProducts.slice(0, 6).map(product => <div key={product.id} className="border rounded-lg overflow-hidden">
                     <img src={product.image} alt={`Μεταλλική συρταριέρα ${product.title}`} className="w-full h-48 object-cover" loading="lazy" />
