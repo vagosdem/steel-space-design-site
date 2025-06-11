@@ -49,22 +49,22 @@ export default function MetallicCabinets() {
               <div className="text-center p-6 border rounded-lg">
                 <Shield className="w-12 h-12 mx-auto mb-4 text-blue-600" />
                 <h3 className="font-semibold mb-2">Μέγιστη Αντοχή</h3>
-                <p className="text-sm text-gray-600">Χάλυβας υψηλής ποιότητας με αντισκωριακή επεξεργασία</p>
+                <p className="text-sm text-gray-200">Χάλυβας υψηλής ποιότητας με αντισκωριακή επεξεργασία</p>
               </div>
               <div className="text-center p-6 border rounded-lg">
                 <Wrench className="w-12 h-12 mx-auto mb-4 text-blue-600" />
                 <h3 className="font-semibold mb-2">Προσαρμόσιμες Διαστάσεις</h3>
-                <p className="text-sm text-gray-600">Custom κατασκευές σύμφωνα με τις ανάγκες σας</p>
+                <p className="text-sm text-gray-200">Custom κατασκευές σύμφωνα με τις ανάγκες σας</p>
               </div>
               <div className="text-center p-6 border rounded-lg">
                 <Clock className="w-12 h-12 mx-auto mb-4 text-blue-600" />
                 <h3 className="font-semibold mb-2">Γρήγορη Παράδοση</h3>
-                <p className="text-sm text-gray-600">Παραγωγή και παράδοση σε 15-20 εργάσιμες ημέρες</p>
+                <p className="text-sm text-gray-200">Παραγωγή και παράδοση σε 15-20 εργάσιμες ημέρες</p>
               </div>
               <div className="text-center p-6 border rounded-lg">
                 <Download className="w-12 h-12 mx-auto mb-4 text-blue-600" />
                 <h3 className="font-semibold mb-2">Τεχνικά Φυλλάδια</h3>
-                <p className="text-sm text-gray-600">Αναλυτικές προδιαγραφές και τεχνικά χαρακτηριστικά</p>
+                <p className="text-sm text-gray-200">Αναλυτικές προδιαγραφές και τεχνικά χαρακτηριστικά</p>
               </div>
             </div>
 
@@ -113,7 +113,7 @@ export default function MetallicCabinets() {
                     <img src={product.image} alt={`Μεταλλική ντουλάπα ${product.title}`} className="w-full h-48 object-contain bg-gray-50" loading="lazy" />
                     <div className="p-4">
                       <h3 className="font-semibold mb-2">{product.title}</h3>
-                      <p className="text-sm text-gray-600 mb-3">{product.description}</p>
+                      <p className="text-sm mb-3 text-gray-200">{product.description}</p>
                       <Button size="sm" className="w-full" onClick={() => navigate(`/product/${product.id}`)}>
                         Δείτε Λεπτομέρειες
                       </Button>
@@ -128,26 +128,26 @@ export default function MetallicCabinets() {
               <div className="grid md:grid-cols-4 gap-6">
                 <div className="text-center p-4">
                   <h3 className="font-semibold mb-2">Γραφεία & Επιχειρήσεις</h3>
-                  <p className="text-sm text-gray-600">Οργάνωση αρχείων και προσωπικών αντικειμένων</p>
+                  <p className="text-sm text-gray-200">Οργάνωση αρχείων και προσωπικών αντικειμένων</p>
                 </div>
                 <div className="text-center p-4">
                   <h3 className="font-semibold mb-2">Εκπαιδευτικά Ιδρύματα</h3>
-                  <p className="text-sm text-gray-600">Σχολεία, πανεπιστήμια, φροντιστήρια</p>
+                  <p className="text-sm text-gray-200">Σχολεία, πανεπιστήμια, φροντιστήρια</p>
                 </div>
                 <div className="text-center p-4">
                   <h3 className="font-semibold mb-2">Βιομηχανία & Εργοστάσια</h3>
-                  <p className="text-sm text-gray-600">Αποθήκευση εργαλείων και εξοπλισμού</p>
+                  <p className="text-sm text-gray-200">Αποθήκευση εργαλείων και εξοπλισμού</p>
                 </div>
                 <div className="text-center p-4">
                   <h3 className="font-semibold mb-2">Χώροι Υγείας</h3>
-                  <p className="text-sm text-gray-600">Νοσοκομεία, κλινικές, ιατρεία</p>
+                  <p className="text-sm text-gray-200">Νοσοκομεία, κλινικές, ιατρεία</p>
                 </div>
               </div>
             </section>
 
             {/* CTA Section */}
             <section className="text-center bg-blue-50 p-8 rounded-lg">
-              <h2 className="text-3xl font-bold mb-4">Ζητήστε Προσφορά για Μεταλλικές Ντουλάπες</h2>
+              <h2 className="text-3xl font-bold mb-4 text-zinc-950">Ζητήστε Προσφορά για Μεταλλικές Ντουλάπες</h2>
               <p className="text-lg text-gray-600 mb-6">
                 Επικοινωνήστε μαζί μας για προσαρμοσμένη προσφορά σύμφωνα με τις ανάγκες σας
               </p>
