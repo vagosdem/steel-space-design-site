@@ -73,7 +73,7 @@ export default function MetallicCabinets() {
               <h2 className="text-3xl font-bold mb-8 text-center">Τύποι Μεταλλικών Ντουλαπών</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4">Ντουλάπες Γραφείου</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-zinc-700">Ντουλάπες Γραφείου</h3>
                   <ul className="space-y-2 text-gray-600">
                     <li>• Διπλές και τριπλές πόρτες</li>
                     <li>• Ρυθμιζόμενα ράφια</li>
@@ -82,7 +82,7 @@ export default function MetallicCabinets() {
                   </ul>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4">Βιομηχανικές Ντουλάπες</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-zinc-700">Βιομηχανικές Ντουλάπες</h3>
                   <ul className="space-y-2 text-gray-600">
                     <li>• Ενισχυμένη κατασκευή</li>
                     <li>• Αντοχή σε βαρέα φορτία</li>
@@ -91,7 +91,7 @@ export default function MetallicCabinets() {
                   </ul>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4">Ντουλάπες Αποθήκευσης</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-zinc-700">Ντουλάπες Αποθήκευσης</h3>
                   <ul className="space-y-2 text-gray-600">
                     <li>• Μεγάλος εσωτερικός χώρος</li>
                     <li>• Πολλαπλά διαμερίσματα</li>
