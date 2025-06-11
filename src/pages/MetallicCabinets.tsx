@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -8,45 +7,37 @@ import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Download, Shield, Wrench, Clock } from "lucide-react";
 import { products } from "@/data/products";
-
 export default function MetallicCabinets() {
   const navigate = useNavigate();
   const topRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (topRef.current) {
-      topRef.current.scrollIntoView({ behavior: 'smooth' });
+      topRef.current.scrollIntoView({
+        behavior: 'smooth'
+      });
       window.scrollTo(0, 0);
     }
   }, []);
-
-  const cabinetProducts = products.filter(product => 
-    product.category === "ντουλάπα" || product.type === "cabinet"
-  );
-
+  const cabinetProducts = products.filter(product => product.category === "ντουλάπα" || product.type === "cabinet");
   const handleRequestQuote = () => {
     navigate("/?scrollTo=contact");
   };
-
-  return (
-    <>
-      <SEOHead 
-        title="Μεταλλικές Ντουλάπες Χονδρική Ελλάδα | Επαγγελματικές Λύσεις Αποθήκευσης | Stereom.gr"
-        description="Κατασκευάζουμε μεταλλικές ντουλάπες χονδρική για επαγγελματικούς χώρους στην Ελλάδα. Ανθεκτικές κατασκευές, προσαρμόσιμες διαστάσεις, 5ετή εγγύηση. Ζητήστε προσφορά τώρα."
-        canonical="/metallic-cabinets"
-        image="/lovable-uploads/IMG_054822.webp"
-      />
+  return <>
+      <SEOHead title="Μεταλλικές Ντουλάπες Χονδρική Ελλάδα | Επαγγελματικές Λύσεις Αποθήκευσης | Stereom.gr" description="Κατασκευάζουμε μεταλλικές ντουλάπες χονδρική για επαγγελματικούς χώρους στην Ελλάδα. Ανθεκτικές κατασκευές, προσαρμόσιμες διαστάσεις, 5ετή εγγύηση. Ζητήστε προσφορά τώρα." canonical="/metallic-cabinets" image="/lovable-uploads/IMG_054822.webp" />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
           <div ref={topRef} className="container-section">
             {/* Hero Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-12"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.5
+          }} className="text-center mb-12">
               <h1 className="text-4xl font-bold mb-4">Μεταλλικές Ντουλάπες Χονδρική Ελλάδα</h1>
               <p className="text-xl text-metal-600 max-w-3xl mx-auto">
                 Ανακαλύψτε την επαγγελματική γκάμα μεταλλικών ντουλαπών μας. Κατασκευάζουμε ανθεκτικές λύσεις αποθήκευσης για γραφεία, εργοστάσια και επαγγελματικούς χώρους με 5ετή εγγύηση.
@@ -112,75 +103,22 @@ export default function MetallicCabinets() {
             </section>
 
             {/* Technical Specifications */}
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-8 text-center">Τεχνικά Χαρακτηριστικά Μεταλλικών Ντουλαπών</h2>
-              <div className="bg-white border rounded-lg p-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">Υλικά Κατασκευής</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• Χάλυβας πάχους 0.8-1.2mm</li>
-                      <li>• Ηλεκτροστατική βαφή</li>
-                      <li>• Αντισκωριακή προστασία</li>
-                      <li>• Οικολογικά υλικά</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">Διαστάσεις & Χωρητικότητες</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• Ύψος: 180-200cm</li>
-                      <li>• Πλάτος: 40-120cm</li>
-                      <li>• Βάθος: 35-60cm</li>
-                      <li>• Φορτίο ραφιού: έως 50kg</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">Συστήματα Ασφαλείας</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• Κλειδαριές 3 σημείων</li>
-                      <li>• Μηχανισμός αντιστραγγαλισμού</li>
-                      <li>• Κεντρικό σύστημα κλειδώματος</li>
-                      <li>• RFID συμβατότητα</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">Επιλογές Προσαρμογής</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• 15+ χρώματα RAL</li>
-                      <li>• Προσθήκη συρταριών</li>
-                      <li>• Ρυθμιζόμενα ράφια</li>
-                      <li>• Ετικέτες ονομάτων</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </section>
+            
 
             {/* Product Gallery */}
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-8 text-center">Δείγματα Μεταλλικών Ντουλαπών</h2>
               <div className="grid md:grid-cols-3 gap-6">
-                {cabinetProducts.slice(0, 6).map((product) => (
-                  <div key={product.id} className="border rounded-lg overflow-hidden">
-                    <img 
-                      src={product.image} 
-                      alt={`Μεταλλική ντουλάπα ${product.title}`}
-                      className="w-full h-48 object-cover"
-                      loading="lazy"
-                    />
+                {cabinetProducts.slice(0, 6).map(product => <div key={product.id} className="border rounded-lg overflow-hidden">
+                    <img src={product.image} alt={`Μεταλλική ντουλάπα ${product.title}`} className="w-full h-48 object-cover" loading="lazy" />
                     <div className="p-4">
                       <h3 className="font-semibold mb-2">{product.title}</h3>
                       <p className="text-sm text-gray-600 mb-3">{product.description}</p>
-                      <Button 
-                        size="sm" 
-                        className="w-full"
-                        onClick={() => navigate(`/product/${product.id}`)}
-                      >
+                      <Button size="sm" className="w-full" onClick={() => navigate(`/product/${product.id}`)}>
                         Δείτε Λεπτομέρειες
                       </Button>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </section>
 
@@ -214,18 +152,10 @@ export default function MetallicCabinets() {
                 Επικοινωνήστε μαζί μας για προσαρμοσμένη προσφορά σύμφωνα με τις ανάγκες σας
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700"
-                  onClick={handleRequestQuote}
-                >
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={handleRequestQuote}>
                   Ζήτηση Προσφοράς
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  onClick={() => navigate('/products?category=ντουλάπα')}
-                >
+                <Button size="lg" variant="outline" onClick={() => navigate('/products?category=ντουλάπα')}>
                   Δείτε Όλα τα Προϊόντα
                 </Button>
               </div>
@@ -234,6 +164,5 @@ export default function MetallicCabinets() {
         </main>
         <Footer />
       </div>
-    </>
-  );
+    </>;
 }
