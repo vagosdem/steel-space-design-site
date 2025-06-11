@@ -114,19 +114,19 @@ export default function MetallicDrawers() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="text-center p-4 border rounded-lg">
                   <h3 className="font-semibold mb-2">Λογιστικά Γραφεία</h3>
-                  <p className="text-sm text-gray-600">Οργάνωση φορολογικών στοιχείων και πελατολογίων</p>
+                  <p className="text-sm text-zinc-200">Οργάνωση φορολογικών στοιχείων και πελατολογίων</p>
                 </div>
                 <div className="text-center p-4 border rounded-lg">
                   <h3 className="font-semibold mb-2">Νομικά Γραφεία</h3>
-                  <p className="text-sm text-gray-600">Αρχειοθέτηση συμβολαίων και νομικών εγγράφων</p>
+                  <p className="text-sm text-zinc-200">Αρχειοθέτηση συμβολαίων και νομικών εγγράφων</p>
                 </div>
                 <div className="text-center p-4 border rounded-lg">
                   <h3 className="font-semibold mb-2">Ιατρικά Κέντρα</h3>
-                  <p className="text-sm text-gray-600">Ιατρικά αρχεία και στοιχεία ασθενών</p>
+                  <p className="text-sm text-zinc-200">Ιατρικά αρχεία και στοιχεία ασθενών</p>
                 </div>
                 <div className="text-center p-4 border rounded-lg">
                   <h3 className="font-semibold mb-2">Εταιρικά Γραφεία</h3>
-                  <p className="text-sm text-gray-600">Αρχεία HR, οικονομικά και διοικητικά</p>
+                  <p className="text-sm text-zinc-200">Αρχεία HR, οικονομικά και διοικητικά</p>
                 </div>
               </div>
             </section>
