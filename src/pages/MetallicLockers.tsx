@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -8,45 +7,37 @@ import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Users, Dumbbell, GraduationCap, Building } from "lucide-react";
 import { products } from "@/data/products";
-
 export default function MetallicLockers() {
   const navigate = useNavigate();
   const topRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (topRef.current) {
-      topRef.current.scrollIntoView({ behavior: 'smooth' });
+      topRef.current.scrollIntoView({
+        behavior: 'smooth'
+      });
       window.scrollTo(0, 0);
     }
   }, []);
-
-  const lockerProducts = products.filter(product => 
-    product.category === "locker" || product.type === "locker"
-  );
-
+  const lockerProducts = products.filter(product => product.category === "locker" || product.type === "locker");
   const handleRequestQuote = () => {
     navigate("/?scrollTo=contact");
   };
-
-  return (
-    <>
-      <SEOHead 
-        title="Μεταλλικά Lockers Χονδρική Ελλάδα | Ντουλάπια Αποδυτηρίων | Stereom.gr"
-        description="Μεταλλικά lockers χονδρική για γυμναστήρια, σχολεία, εργασιακούς χώρους. Πολλαπλές θέσεις, γυάλινες πόρτες, προηγμένα κλειδώματα. Παραγωγή στην Ελλάδα."
-        canonical="/metallic-lockers"
-        image="/lovable-uploads/IMG_13742.webp"
-      />
+  return <>
+      <SEOHead title="Μεταλλικά Lockers Χονδρική Ελλάδα | Ντουλάπια Αποδυτηρίων | Stereom.gr" description="Μεταλλικά lockers χονδρική για γυμναστήρια, σχολεία, εργασιακούς χώρους. Πολλαπλές θέσεις, γυάλινες πόρτες, προηγμένα κλειδώματα. Παραγωγή στην Ελλάδα." canonical="/metallic-lockers" image="/lovable-uploads/IMG_13742.webp" />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
           <div ref={topRef} className="container-section">
             {/* Hero Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-12"
-            >
+            <motion.div initial={{
+            opacity: 0,
+            y: 20
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.5
+          }} className="text-center mb-12">
               <h1 className="text-4xl font-bold mb-4">Μεταλλικά Lockers Χονδρική Ελλάδα</h1>
               <p className="text-xl text-metal-600 max-w-3xl mx-auto">
                 Ανακαλύψτε την προηγμένη γκάμα μεταλλικών lockers για γυμναστήρια, σχολεία και εργασιακούς χώρους. Ασφαλείς ατομικές θυρίδες με σύγχρονα συστήματα κλειδώματος.
@@ -82,79 +73,37 @@ export default function MetallicLockers() {
               <h2 className="text-3xl font-bold mb-8 text-center">Τύποι Μεταλλικών Lockers</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4">Single Tier Lockers</h3>
+                  
                   <ul className="space-y-2 text-gray-600">
                     <li>• 1 θέση ανά κολώνα</li>
                     <li>• Μέγιστος χώρος αποθήκευσης</li>
                     <li>• Ιδανικά για αθλητικό εξοπλισμό</li>
-                    <li>• Διαστάσεις: 30x30x180cm</li>
+                    
                   </ul>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4">Double Tier Lockers</h3>
+                  
                   <ul className="space-y-2 text-gray-600">
                     <li>• 2 θέσεις ανά κολώνα</li>
                     <li>• Βέλτιστη χρήση χώρου</li>
                     <li>• Χρήση σε σχολεία και γραφεία</li>
-                    <li>• Διαστάσεις: 30x30x90cm</li>
+                    
                   </ul>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4">Multi-Tier Lockers</h3>
+                  
                   <ul className="space-y-2 text-gray-600">
                     <li>• 3-6 θέσεις ανά κολώνα</li>
                     <li>• Μέγιστη εκμετάλλευση χώρου</li>
                     <li>• Ιδανικά για προσωπικά είδη</li>
-                    <li>• Διαστάσεις: 30x30x30-60cm</li>
+                    
                   </ul>
                 </div>
               </div>
             </section>
 
             {/* Dimensions and Configurations */}
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold mb-8 text-center">Διαστάσεις και Διαμορφώσεις Lockers</h2>
-              <div className="bg-white border rounded-lg p-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">Στάνταρ Διαστάσεις</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• Πλάτος: 30, 35, 40cm</li>
-                      <li>• Βάθος: 30, 35, 45cm</li>
-                      <li>• Ύψος: 30-180cm</li>
-                      <li>• Custom διαστάσεις διαθέσιμες</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">Συνήθεις Διαμορφώσεις</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• 1 tier: 12" x 12" x 72"</li>
-                      <li>• 2 tier: 12" x 12" x 36"</li>
-                      <li>• 3 tier: 12" x 12" x 24"</li>
-                      <li>• 6 tier: 12" x 12" x 12"</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">Επιλογές Πορτών</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• Συμπαγείς μεταλλικές</li>
-                      <li>• Με αεραγωγούς</li>
-                      <li>• Γυάλινες (tempered)</li>
-                      <li>• Wire mesh</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">Συστήματα Κλειδώματος</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• Παραδοσιακά κλειδιά</li>
-                      <li>• Συνδυασμός (combo)</li>
-                      <li>• RFID cards</li>
-                      <li>• Ψηφιακά PIN</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </section>
+            
 
             {/* Industries Served */}
             <section className="mb-12">
@@ -201,18 +150,18 @@ export default function MetallicLockers() {
 
             {/* Special Features */}
             <section className="mb-12 bg-blue-50 p-8 rounded-lg">
-              <h2 className="text-3xl font-bold mb-6 text-center">Ειδικά Χαρακτηριστικά Lockers</h2>
+              <h2 className="text-3xl font-bold mb-6 text-center text-zinc-950">Ειδικά Χαρακτηριστικά Lockers</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Αεραγωγοί & Εξαερισμός</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-zinc-700">Αεραγωγοί & Εξαερισμός</h3>
                   <p className="text-gray-600">Διάτρητες πόρτες και αεραγωγοί για καλύτερη κυκλοφορία αέρα και πρόληψη οσμών</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Αντιβακτηριακή Επίστρωση</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-zinc-700">Αντιβακτηριακή Επίστρωση</h3>
                   <p className="text-gray-600">Ειδική βαφή με αντιβακτηριακές ιδιότητες για υγιεινό περιβάλλον</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Κρεμάστρες & Ράφια</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-zinc-800">Κρεμάστρες & Ράφια</h3>
                   <p className="text-gray-600">Εσωτερικά αξεσουάρ για βέλτιστη οργάνωση προσωπικών αντικειμένων</p>
                 </div>
               </div>
@@ -222,27 +171,16 @@ export default function MetallicLockers() {
             <section className="mb-12">
               <h2 className="text-3xl font-bold mb-8 text-center">Δείγματα Μεταλλικών Lockers</h2>
               <div className="grid md:grid-cols-3 gap-6">
-                {lockerProducts.slice(0, 6).map((product) => (
-                  <div key={product.id} className="border rounded-lg overflow-hidden">
-                    <img 
-                      src={product.image} 
-                      alt={`Μεταλλικό locker ${product.title}`}
-                      className="w-full h-48 object-cover"
-                      loading="lazy"
-                    />
+                {lockerProducts.slice(0, 6).map(product => <div key={product.id} className="border rounded-lg overflow-hidden">
+                    <img src={product.image} alt={`Μεταλλικό locker ${product.title}`} className="w-full h-48 object-cover" loading="lazy" />
                     <div className="p-4">
                       <h3 className="font-semibold mb-2">{product.title}</h3>
                       <p className="text-sm text-gray-600 mb-3">{product.description}</p>
-                      <Button 
-                        size="sm" 
-                        className="w-full"
-                        onClick={() => navigate(`/product/${product.id}`)}
-                      >
+                      <Button size="sm" className="w-full" onClick={() => navigate(`/product/${product.id}`)}>
                         Δείτε Λεπτομέρειες
                       </Button>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </section>
 
@@ -253,18 +191,10 @@ export default function MetallicLockers() {
                 Εξασφαλίστε ασφαλείς και λειτουργικές λύσεις αποθήκευσης για τους χώρους σας
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700"
-                  onClick={handleRequestQuote}
-                >
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={handleRequestQuote}>
                   Ζήτηση Προσφοράς
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  onClick={() => navigate('/products?category=locker')}
-                >
+                <Button size="lg" variant="outline" onClick={() => navigate('/products?category=locker')}>
                   Δείτε Όλα τα Προϊόντα
                 </Button>
               </div>
@@ -273,6 +203,5 @@ export default function MetallicLockers() {
         </main>
         <Footer />
       </div>
-    </>
-  );
+    </>;
 }
