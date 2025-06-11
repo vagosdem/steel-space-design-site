@@ -172,7 +172,7 @@ export default function MetallicLockers() {
                     <img src={product.image} alt={`Μεταλλικό locker ${product.title}`} className="w-full h-48 object-contain bg-gray-50" loading="lazy" />
                     <div className="p-4">
                       <h3 className="font-semibold mb-2">{product.title}</h3>
-                      <p className="text-sm text-gray-600 mb-3">{product.description}</p>
+                      <p className="text-sm mb-3 text-gray-200">{product.description}</p>
                       <Button size="sm" className="w-full" onClick={() => navigate(`/product/${product.id}`)}>
                         Δείτε Λεπτομέρειες
                       </Button>
@@ -183,7 +183,7 @@ export default function MetallicLockers() {
 
             {/* CTA Section */}
             <section className="text-center bg-blue-50 p-8 rounded-lg">
-              <h2 className="text-3xl font-bold mb-4">Ζητήστε Προσφορά για Μεταλλικά Lockers</h2>
+              <h2 className="text-3xl font-bold mb-4 text-zinc-950">Ζητήστε Προσφορά για Μεταλλικά Lockers</h2>
               <p className="text-lg text-gray-600 mb-6">
                 Εξασφαλίστε ασφαλείς και λειτουργικές λύσεις αποθήκευσης για τους χώρους σας
               </p>
