@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -149,4 +150,171 @@ export default function Blog() {
               "url": "https://stereom.lovable.app/lovable-uploads/IMG_13742.webp"
             }
           },
-         
+          "datePublished": "2024-01-10"
+        })}
+      </script>
+
+      <Navbar />
+      
+      <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <motion.h1 
+                className="text-4xl md:text-5xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                Stereom Blog
+              </motion.h1>
+              <motion.p 
+                className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                Οδηγοί και συμβουλές για μεταλλικές ντουλάπες, lockers και συστήματα αποθήκευσης
+              </motion.p>
+              
+              <Breadcrumb className="justify-center">
+                <BreadcrumbList className="text-blue-100">
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/" className="text-blue-100 hover:text-white">Αρχική</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator className="text-blue-200" />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage className="text-white font-medium">Blog</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
+          </div>
+        </section>
+
+        {/* Blog Posts */}
+        <section className="py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-12">
+              {blogPosts.map((post, index) => (
+                <motion.article 
+                  key={post.id}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  <div className="grid lg:grid-cols-2 gap-8 p-8">
+                    {/* Content */}
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-4 text-sm text-gray-500">
+                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                          {post.category}
+                        </span>
+                        <div className="flex items-center gap-1">
+                          <Calendar className="w-4 h-4" />
+                          <span>{new Date(post.date).toLocaleDateString('el-GR')}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <User className="w-4 h-4" />
+                          <span>{post.author}</span>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                          {post.title}
+                        </h2>
+                        <p className="text-blue-600 font-medium mb-4">
+                          {post.tagline}
+                        </p>
+                        <p className="text-gray-600 leading-relaxed">
+                          {post.excerpt}
+                        </p>
+                      </div>
+
+                      <div className="pt-4">
+                        <Link to={`/blog/${post.id}`}>
+                          <Button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg inline-flex items-center gap-2 transition-all duration-300 hover:transform hover:scale-105">
+                            Διαβάστε περισσότερα
+                            <ArrowRight className="w-4 h-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Image */}
+                    <div className="lg:order-first">
+                      <div className="relative h-64 lg:h-full min-h-[300px] rounded-xl overflow-hidden bg-gray-100">
+                        <img 
+                          src={post.image} 
+                          alt={post.title}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Additional Images Section */}
+                  {post.additionalImages && post.additionalImages.length > 0 && (
+                    <div className="px-8 pb-8">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {post.additionalImages.map((image, imageIndex) => (
+                          <div key={imageIndex} className="relative h-48 rounded-lg overflow-hidden bg-gray-100">
+                            <img 
+                              src={image} 
+                              alt={`${post.title} - Εικόνα ${imageIndex + 1}`}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                              loading="lazy"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="bg-gray-900 text-white py-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Wrench className="w-16 h-16 mx-auto mb-6 text-blue-400" />
+              <h2 className="text-3xl font-bold mb-6">
+                Χρειάζεστε Προσαρμοσμένες Λύσεις;
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Η Stereom δημιουργεί custom μεταλλικές ντουλάπες και lockers σύμφωνα με τις ακριβείς προδιαγραφές σας. 
+                Επικοινωνήστε μαζί μας για μια δωρεάν συμβουλή.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/products">
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-lg transition-all duration-300 hover:transform hover:scale-105">
+                    Δείτε τα Προϊόντα μας
+                  </Button>
+                </Link>
+                <Link to="/#contact">
+                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 font-medium px-8 py-3 rounded-lg transition-all duration-300">
+                    Επικοινωνία
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  );
+}
