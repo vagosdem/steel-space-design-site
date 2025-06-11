@@ -73,30 +73,27 @@ export default function MetallicLockers() {
               <h2 className="text-3xl font-bold mb-8 text-center">Τύποι Μεταλλικών Lockers</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  
+                  <h3 className="text-xl font-semibold mb-4 text-zinc-700">Μονή Θέση Lockers</h3>
                   <ul className="space-y-2 text-gray-600">
                     <li>• 1 θέση ανά κολώνα</li>
                     <li>• Μέγιστος χώρος αποθήκευσης</li>
                     <li>• Ιδανικά για αθλητικό εξοπλισμό</li>
-                    
                   </ul>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  
+                  <h3 className="text-xl font-semibold mb-4 text-zinc-700">Διπλή Θέση Lockers</h3>
                   <ul className="space-y-2 text-gray-600">
                     <li>• 2 θέσεις ανά κολώνα</li>
                     <li>• Βέλτιστη χρήση χώρου</li>
                     <li>• Χρήση σε σχολεία και γραφεία</li>
-                    
                   </ul>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  
+                  <h3 className="text-xl font-semibold mb-4 text-zinc-700">Πολλαπλών Θέσεων Lockers</h3>
                   <ul className="space-y-2 text-gray-600">
                     <li>• 3-6 θέσεις ανά κολώνα</li>
                     <li>• Μέγιστη εκμετάλλευση χώρου</li>
                     <li>• Ιδανικά για προσωπικά είδη</li>
-                    
                   </ul>
                 </div>
               </div>
@@ -172,7 +169,7 @@ export default function MetallicLockers() {
               <h2 className="text-3xl font-bold mb-8 text-center">Δείγματα Μεταλλικών Lockers</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {lockerProducts.slice(0, 6).map(product => <div key={product.id} className="border rounded-lg overflow-hidden">
-                    <img src={product.image} alt={`Μεταλλικό locker ${product.title}`} className="w-full h-48 object-cover" loading="lazy" />
+                    <img src={product.image} alt={`Μεταλλικό locker ${product.title}`} className="w-full h-48 object-contain bg-gray-50" loading="lazy" />
                     <div className="p-4">
                       <h3 className="font-semibold mb-2">{product.title}</h3>
                       <p className="text-sm text-gray-600 mb-3">{product.description}</p>

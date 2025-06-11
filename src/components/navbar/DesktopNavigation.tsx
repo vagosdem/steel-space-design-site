@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import ProductsDropdown from "./ProductsDropdown";
+import CategoriesDropdown from "./CategoriesDropdown";
 
 interface DesktopNavigationProps {
   scrolled: boolean;
@@ -20,6 +21,12 @@ export default function DesktopNavigation({
   return (
     <div className="hidden md:flex items-center gap-8">
       <ProductsDropdown 
+        scrolled={scrolled} 
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+      />
+      
+      <CategoriesDropdown 
         scrolled={scrolled} 
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}

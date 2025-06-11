@@ -27,6 +27,13 @@ export default function MobileNavigation({
     }
   };
 
+  const navigateToCategory = (path: string) => {
+    navigate(path);
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  };
+
   const navigateToBlog = () => {
     navigate('/blog');
     if (mobileMenuOpen) {
@@ -82,6 +89,59 @@ export default function MobileNavigation({
           Συρταριέρες Αρχειοθέτησης
         </button>
       </div>
+      
+      <div className="space-y-2">
+        <button 
+          className={`block w-full text-left p-2 ${
+            scrolled 
+              ? 'text-gray-100 hover:text-white' 
+              : 'text-gray-800 hover:text-gray-900'
+          } font-medium`}
+        >
+          Κατηγορίες
+        </button>
+        <button 
+          onClick={() => navigateToCategory('/metallic-cabinets')} 
+          className={`block w-full text-left p-2 pl-6 ${
+            scrolled 
+              ? 'text-gray-100 hover:text-white' 
+              : 'text-gray-800 hover:text-gray-900'
+          } text-sm`}
+        >
+          Μεταλλικές Ντουλάπες
+        </button>
+        <button 
+          onClick={() => navigateToCategory('/metallic-lockers')} 
+          className={`block w-full text-left p-2 pl-6 ${
+            scrolled 
+              ? 'text-gray-100 hover:text-white' 
+              : 'text-gray-800 hover:text-gray-900'
+          } text-sm`}
+        >
+          Μεταλλικά Lockers
+        </button>
+        <button 
+          onClick={() => navigateToCategory('/metallic-filing-cabinets')} 
+          className={`block w-full text-left p-2 pl-6 ${
+            scrolled 
+              ? 'text-gray-100 hover:text-white' 
+              : 'text-gray-800 hover:text-gray-900'
+          } text-sm`}
+        >
+          Συρταριέρες Αρχειοθέτησης
+        </button>
+        <button 
+          onClick={() => navigateToCategory('/metallic-drawers')} 
+          className={`block w-full text-left p-2 pl-6 ${
+            scrolled 
+              ? 'text-gray-100 hover:text-white' 
+              : 'text-gray-800 hover:text-gray-900'
+          } text-sm`}
+        >
+          Μεταλλικά Συρτάρια
+        </button>
+      </div>
+
       <button 
         onClick={() => navigateToSection("features")} 
         className={`block w-full text-left p-2 ${

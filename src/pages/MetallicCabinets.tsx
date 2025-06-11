@@ -110,7 +110,7 @@ export default function MetallicCabinets() {
               <h2 className="text-3xl font-bold mb-8 text-center">Δείγματα Μεταλλικών Ντουλαπών</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 {cabinetProducts.slice(0, 6).map(product => <div key={product.id} className="border rounded-lg overflow-hidden">
-                    <img src={product.image} alt={`Μεταλλική ντουλάπα ${product.title}`} className="w-full h-48 object-cover" loading="lazy" />
+                    <img src={product.image} alt={`Μεταλλική ντουλάπα ${product.title}`} className="w-full h-48 object-contain bg-gray-50" loading="lazy" />
                     <div className="p-4">
                       <h3 className="font-semibold mb-2">{product.title}</h3>
                       <p className="text-sm text-gray-600 mb-3">{product.description}</p>
