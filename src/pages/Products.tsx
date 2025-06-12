@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -10,12 +9,16 @@ import ProductGrid from "@/components/ProductGrid";
 import ContactCTA from "@/components/ContactCTA";
 import { products, type Product } from "@/data/products";
 
+const PRODUCTS_PER_PAGE = 9;
+
 export default function Products() {
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const topRef = useRef<HTMLDivElement>(null);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
+  const [displayedProducts, setDisplayedProducts] = useState<Product[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
   const [sortOption, setSortOption] = useState("default");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [typeFilter, setTypeFilter] = useState("all");
@@ -78,7 +81,15 @@ export default function Products() {
     }
     
     setFilteredProducts(result);
+    setCurrentPage(1); // Reset to first page when filters change
   }, [sortOption, categoryFilter, typeFilter, colorFilter, featureFilter]);
+
+  // Update displayed products based on current page
+  useEffect(() => {
+    const startIndex = 0;
+    const endIndex = currentPage * PRODUCTS_PER_PAGE;
+    setDisplayedProducts(filteredProducts.slice(startIndex, endIndex));
+  }, [filteredProducts, currentPage]);
 
   const handleProductClick = (productId: string) => {
     navigate(`/product/${productId}`);
@@ -94,9 +105,16 @@ export default function Products() {
     setColorFilter("all");
     setFeatureFilter("all");
     setSortOption("default");
+    setCurrentPage(1);
     // Update URL to remove category parameter
     navigate('/products', { replace: true });
   };
+
+  const handleLoadMore = () => {
+    setCurrentPage(prev => prev + 1);
+  };
+
+  const hasMoreProducts = displayedProducts.length < filteredProducts.length;
 
   // Get page title based on category filter
   const getPageTitle = () => {
@@ -170,9 +188,11 @@ export default function Products() {
             />
             
             <ProductGrid
-              products={filteredProducts}
+              products={displayedProducts}
               onProductClick={handleProductClick}
               onResetFilters={handleResetFilters}
+              hasMoreProducts={hasMoreProducts}
+              onLoadMore={handleLoadMore}
             />
             
             <ContactCTA onRequestQuote={handleRequestQuote} />

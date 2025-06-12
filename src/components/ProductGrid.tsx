@@ -19,6 +19,8 @@ interface ProductGridProps {
   products: Product[];
   onProductClick: (productId: string) => void;
   onResetFilters: () => void;
+  hasMoreProducts?: boolean;
+  onLoadMore?: () => void;
 }
 
 const container = {
@@ -31,7 +33,13 @@ const container = {
   }
 };
 
-export default function ProductGrid({ products, onProductClick, onResetFilters }: ProductGridProps) {
+export default function ProductGrid({ 
+  products, 
+  onProductClick, 
+  onResetFilters, 
+  hasMoreProducts = false, 
+  onLoadMore 
+}: ProductGridProps) {
   if (products.length === 0) {
     return (
       <motion.div 
@@ -54,19 +62,34 @@ export default function ProductGrid({ products, onProductClick, onResetFilters }
   }
 
   return (
-    <motion.div 
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-    >
-      {products.map((product) => (
-        <ProductCard 
-          key={product.id} 
-          product={product} 
-          onProductClick={onProductClick}
-        />
-      ))}
-    </motion.div>
+    <div className="space-y-8">
+      <motion.div 
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        {products.map((product) => (
+          <ProductCard 
+            key={product.id} 
+            product={product} 
+            onProductClick={onProductClick}
+          />
+        ))}
+      </motion.div>
+      
+      {hasMoreProducts && onLoadMore && (
+        <div className="flex justify-center py-8">
+          <Button
+            onClick={onLoadMore}
+            variant="outline"
+            size="lg"
+            className="border-blue-600 text-blue-600 hover:bg-blue-50 rounded-xl px-8"
+          >
+            Περισσότερα
+          </Button>
+        </div>
+      )}
+    </div>
   );
 }
