@@ -1,68 +1,17 @@
+
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
-import { Calendar, ArrowRight, User, Wrench } from "lucide-react";
+import { ArrowRight, Wrench } from "lucide-react";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
-
-const blogPosts = [{
-  id: "metallikes-ntoulapes-ergostasia",
-  title: "Οδηγός Επιλογής Μεταλλικής Ντουλάπας για Βιομηχανικούς Χώρους: Τι να Προσέξετε για Αντοχή & Οργάνωση",
-  excerpt: "Στους σύγχρονους βιομηχανικούς χώρους, τα εργοστάσια και τις αποθήκες, η αποτελεσματική οργάνωση και η ασφαλής αποθήκευση δεν είναι απλά μια επιλογή, αλλά μια επιτακτική ανάγκη.",
-  date: "2024-01-15",
-  author: "Stereom Team",
-  image: "/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png",
-  category: "Βιομηχανικά",
-  tagline: "Για βιομηχανικές εγκαταστάσεις, αποθήκες & εργοστάσια",
-  aspectRatio: "400/600",
-  additionalImages: ["/lovable-uploads/5501f81b-4623-4d7e-bc60-6e1b2cc5bd76.png", "/lovable-uploads/11c4568f-af5f-4cf4-b8ba-3fcdf68281c7.png", "/lovable-uploads/1b51895c-fa44-45d3-ab17-4267e51f6674.png", "/lovable-uploads/9aec70f5-fdd7-475c-87f1-cea7aff84db4.png"],
-  content: {
-    intro: "Στους σύγχρονους βιομηχανικούς χώρους, τα εργοστάσια και τις αποθήκες, η αποτελεσματική οργάνωση και η ασφαλής αποθήκευση δεν είναι απλά μια επιλογή, αλλά μια επιτακτική ανάγκη. Η σωστή επιλογή των επίπλων αποθήκευσης μπορεί να επηρεάσει άμεσα την παραγωγικότητα, την ασφάλεια του προσωπικού και την προστασία του εξοπλισμού και των υλικών. Σε αυτό το πλαίσιο, οι μεταλλικές ντουλάπες αναδεικνύονται ως η κορυφαία λύση για κάθε επαγγελματικό χώρο που απαιτεί αποθήκευση εργαλείων, εξοπλισμού ή προσωπικών αντικειμένων.\n\nΕιδικά σε εργοστάσια και αποθηκευτικούς χώρους, η ανθεκτικότητα, η εργονομία και η ασφάλεια είναι κρίσιμες παράμετροι που καθορίζουν την επιτυχία κάθε επιχείρησης. Σε έναν κόσμο όπου η ταχύτητα και η αποδοτικότητα καθορίζουν την επιτυχία, η επιλογή του κατάλληλου συστήματος αποθήκευσης γίνεται στρατηγικής σημασίας απόφαση. Οι σύγχρονοι επαγγελματικοί χώροι αντιμετωπίζουν διαρκώς αυξανόμενες απαιτήσεις σε θέματα ασφάλειας, παραγωγικότητας και οικονομικής αποδοτικότητας.\n\nΗ σωστή οργάνωση δεν αφορά μόνο την αισθητική, αλλά αποτελεί ζωτικό παράγοντα για τη βέλτιστη λειτουργία κάθε επιχείρησης. Οι μεταλλικές ντουλάπες προσφέρουν την απαραίτητη αντοχή και ευελιξία που χρειάζονται οι σύγχρονες βιομηχανίες για να διατηρήσουν την ανταγωνιστικότητά τους. Από την προστασία ευαίσθητων εργαλείων έως την οργάνωση μεγάλων αποθεμάτων, οι σωστές λύσεις αποθήκευσης μπορούν να μεταμορφώσουν την καθημερινή λειτουργία ενός εργοστασίου ή αποθήκης.",
-    sections: [{
-      title: "Γιατί η Μεταλλική Ντουλάπα είναι Απαραίτητη σε Βιομηχανικό Χώρο;",
-      content: ["Η επιλογή μεταλλικών ντουλαπών για βιομηχανική χρήση προσφέρει πληθώρα πλεονεκτημάτων που δεν μπορούν να προσφέρουν άλλες λύσεις αποθήκευσης:", "Αντοχή σε σκληρές συνθήκες: Σε αντίθεση με ντουλάπες από άλλα υλικά, οι μεταλλικές ντουλάπες κατασκευάζονται από ενισχυμένο χάλυβα, σχεδιασμένες για καθημερινή χρήση σε απαιτητικά περιβάλλοντα.", "Ασφάλεια και Προστασία: Παρέχουν απαραίτητη προστασία για πολύτιμο εξοπλισμό, ευαίσθητα υλικά, επικίνδυνες ουσίες, αλλά και προσωπικά αντικείμενα του προσωπικού.", "Βέλτιστη Οργάνωση: Μια καλά οργανωμένη ντουλάπα βελτιώνει τη ροή εργασίας, μειώνει το χρόνο αναζήτησης εργαλείων και εξαρτημάτων, και αυξάνει την παραγωγικότητα.", "Υγιεινή και Καθαριότητα: Οι λείες μεταλλικές επιφάνειες καθαρίζονται εύκολα, αποτρέποντας τη συσσώρευση σκόνης, βρωμιάς και μικροβίων.", "Εξοικονόμηση Χώρου: Διατίθενται σε διάφορες διαστάσεις και διατάξεις, επιτρέποντας την καλύτερη αξιοποίηση του κάθετου χώρου."]
-    }, {
-      title: "Βασικά Χαρακτηριστικά που Πρέπει να Αναζητήσετε",
-      content: ["Όταν επιλέγετε μεταλλικές ντουλάπες για το εργοστάσιο ή την αποθήκη σας, δώστε ιδιαίτερη προσοχή στα ακόλουθα χαρακτηριστικά:", "Υλικό Κατασκευής και Πάχος Μετάλλου: Αναζητήστε ντουλάπες κατασκευασμένες από ενισχυμένο χάλυβα βαρέως τύπου.", "Επίστρωση & Βαφή: Η ηλεκτροστατική βαφή προσφέρει ανώτερη προστασία έναντι της διάβρωσης.", "Σύστημα Κλειδώματος: Ενσωματωμένες κλειδαριές ασφαλείας με κεντρικό σύστημα κλειδώματος.", "Ράφια και Φορτίο: Ελέγξτε την αντοχή των ραφιών σε βάρος και τη δυνατότητα ρύθμισης.", "Σύστημα Εξαερισμού: Για την αποθήκευση συγκεκριμένων υλικών ή σε χώρους με υγρασία."]
-    }, {
-      title: "Προσαρμογή στις Ανάγκες σας",
-      content: ["Ενώ οι τυποποιημένες μεταλλικές ντουλάπες προσφέρουν λύσεις, η πραγματική αξία για ένα βιομηχανικό χώρο έγκειται στη δυνατότητα προσαρμογής. Η Stereom ειδικεύεται σε προσαρμοσμένες μεταλλικές ντουλάπες, σχεδιασμένες για να ανταποκρίνονται ακριβώς στις ανάγκες σας.", "Custom Διαστάσεις: Κάθε βιομηχανικός χώρος είναι μοναδικός. Η δυνατότητα σχεδιασμού ντουλαπών σε προσαρμοσμένες διαστάσεις επιτρέπει την απόλυτη αξιοποίηση του διαθέσιμου χώρου.", "Απεριόριστες Χρωματικές Επιλογές: Πέρα από την αισθητική, το χρώμα μπορεί να παίξει λειτουργικό ρόλο για χρωματική κωδικοποίηση.", "Εσωτερική Διαμόρφωση: Ειδικά συρτάρια, διαχωριστικά, γάντζοι, ράβδοι κρέμασης ή άλλες εσωτερικές προσθήκες.", "Πρόσθετα Χαρακτηριστικά: Ρόδες για εύκολη μετακίνηση, ειδικές βάσεις, ή ενσωματωμένος φωτισμός."]
-    }, {
-      title: "Συμπέρασμα",
-      content: ["Η επιλογή της σωστής μεταλλικής ντουλάπας για το εργοστάσιο ή την αποθήκη σας είναι μια επένδυση που αποδίδει σε οργάνωση, ασφάλεια και παραγωγικότητα. Οι μεταλλικές ντουλάπες είναι ιδανικές για χρήση σε αποθήκευση, αποθήκες, χώρους παραγωγής, προσφέροντας ανθεκτικότητα και μακροζωία που δεν μπορεί να συγκριθεί.", "Ψάχνετε για χονδρική λύση ή προσαρμοσμένες μεταλλικές ντουλάπες; Η Stereom είναι ο έμπειρος συνεργάτης που χρειάζεστε. Με χρόνια εξειδίκευσης στις ποιοτικές μεταλλικές κατασκευές από το 1967, σχεδιάζουμε και κατασκευάζουμε μεταλλικές ντουλάπες και συστήματα αποθήκευσης που ανταποκρίνονται ακριβώς στις δικές σας, μοναδικές απαιτήσεις."]
-    }]
-  }
-}, {
-  id: "lockers-apodytiria",
-  title: "Lockers Αποδυτήριων για Επαγγελματικούς Χώρους: Ο Οδηγός σας για Ασφάλεια, Υγιεινή & Οργάνωση",
-  excerpt: "Στον σύγχρονο επαγγελματικό κόσμο, η ανάγκη για ασφαλή και οργανωμένο προσωπικό χώρο είναι πιο επιτακτική από ποτέ.",
-  date: "2024-01-10",
-  author: "Stereom Team",
-  image: "/lovable-uploads/IMG_13742.webp",
-  category: "Αποδυτήρια",
-  tagline: "Για αποδυτήρια, γυμναστήρια & εταιρικούς χώρους",
-  aspectRatio: "480/650",
-  additionalImages: ["/lovable-uploads/b45217bd-5df5-40d6-bd0d-ffdee487ec34.png", "/lovable-uploads/68227460-1078-4eca-984f-22b4f3aa6c8f.png", "/lovable-uploads/cd7d3102-6fbc-4f47-bf43-317425889dbb.png", "/lovable-uploads/77f8e1a8-fbb0-48a7-9381-408d7c1354c1.png"],
-  content: {
-    intro: "Στον σύγχρονο επαγγελματικό κόσμο, η ανάγκη για ασφαλή και οργανωμένο προσωπικό χώρο είναι πιο επιτακτική από ποτέ. Είτε πρόκειται για εργοστάσια παραγωγής, αθλητικές εγκαταστάσεις, εκπαιδευτήρια ή ακόμα και σύγχρονα γραφεία, οι εργαζόμενοι και οι επισκέπτες χρειάζονται ένα σημείο όπου μπορούν να αποθηκεύσουν με ασφάλεια τα προσωπικά τους αντικείμενα. Τα μεταλλικά lockers είναι απαραίτητα για χώρους όπου οι εργαζόμενοι χρειάζονται προσωπικό αποθηκευτικό χώρο, όπως εργοστάσια, αποδυτήρια, αθλητικές εγκαταστάσεις και σχολεία.\n\nΗ αυξανόμενη ανάγκη για προσωπική ασφάλεια και την προστασία των αντικειμένων έχει κάνει τα lockers αναπόσπαστο κομμάτι της σύγχρονης εργασιακής κουλτούρας. Οι επιχειρήσεις που επενδύουν σε ποιοτικά συστήματα αποθήκευσης δείχνουν σεβασμό προς τους εργαζομένους τους και δημιουργούν ένα περιβάλλον εμπιστοσύνης και επαγγελματισμού. Παράλληλα, η σωστή οργάνωση των προσωπικών χώρων συμβάλλει στη γενικότερη αποδοτικότητα και στη δημιουργία ενός τακτοποιημένου και λειτουργικού εργασιακού περιβάλλοντος.\n\nΣήμερα, οι σύγχρονες εταιρείες αναγνωρίζουν ότι η ευημερία των εργαζομένων συνδέεται άμεσα με την παραγωγικότητα και την ικανοποίηση από την εργασία. Τα lockers αποδυτηρίων αποτελούν έναν από τους πιο σημαντικούς παράγοντες για τη δημιουργία ενός περιβάλλοντος που προάγει την οργάνωση, την ασφάλεια και την άνεση των εργαζομένων.",
-    sections: [{
-      title: "Γιατί τα Μεταλλικά Lockers Αποδυτηρίων Είναι Απαραίτητα;",
-      content: ["Η επένδυση σε ποιοτικά μεταλλικά lockers αποδυτηρίων προσφέρει πολλαπλά οφέλη για κάθε επιχείρηση:", "Ασφάλεια Προσωπικών Αντικειμένων: Προστατεύουν τα υπάρχοντα των εργαζομένων ή επισκεπτών από κλοπή ή απώλεια, δημιουργώντας ένα αίσθημα εμπιστοσύνης και ασφάλειας.", "Οργάνωση και Τάξη: Συμβάλλουν στη διατήρηση της τάξης στον χώρο εργασίας ή στην εγκατάσταση, μειώνοντας την ακαταστασία και βελτιώνοντας την αισθητική.", "Υγιεινή: Με τα κατάλληλα συστήματα εξαερισμού, βοηθούν στην αποφυγή υγρασίας και κακοσμίας εντός των χώρων αποθήκευσης.", "Αύξηση Παραγωγικότητας: Οι εργαζόμενοι που νιώθουν ασφάλεια για τα προσωπικά τους αντικείμενα είναι πιο συγκεντρωμένοι και παραγωγικοί."]
-    }, {
-      title: "Χαρακτηριστικά που Κάνουν τη Διαφορά στην Επιλογή Lockers",
-      content: ["Η επιλογή του κατάλληλου locker απαιτεί προσοχή σε συγκεκριμένα χαρακτηριστικά που εγγυώνται λειτουργικότητα και μακροζωία:", "Ασφάλεια & Μηχανισμοί Κλειδώματος: Με μηχανισμούς κλειδώματος (κλειδί, συνδυασμός, RFID). Τύποι κλειδαριών: Παραδοσιακές με κλειδί, με συνδυασμό ή σύγχρονα συστήματα RFID/κάρτας.", "Αερισμός: Ανοίγματα για αποφυγή υγρασίας και κακοσμίας. Τα ανοίγματα εξαερισμού είναι κρίσιμα για την αποφυγή συσσώρευσης υγρασίας.", "Αντοχή & Υλικό Κατασκευής: Βαριά μεταλλική κατασκευή για μακροχρόνια χρήση. Οι μεταλλικές ντουλάπες και lockers πρέπει να διαθέτουν ενισχυμένο χάλυβα.", "Μοντέρνος Σχεδιασμός & Αισθητική: Κατάλληλος για σύγχρονες εγκαταστάσεις. Ο σχεδιασμός είναι σημαντικός για σύγχρονες εγκαταστάσεις."]
-    }, {
-      title: "Πού Χρησιμοποιούνται οι Lockers Αποδυτηρίων;",
-      content: ["Οι lockers αποδυτηρίων είναι βασικός εξοπλισμός σε ένα ευρύ φάσμα επαγγελματικών και δημόσιων χώρων:", "Εργοστάσια Παραγωγής & Logistics Hubs: Για την ασφαλή φύλαξη προσωπικών αντικειμένων, στολών εργασίας και εξοπλισμού.", "Αθλητικές Εγκαταστάσεις & Γυμναστήρια: Απαραίτητα για τα μέλη και τους επισκέπτες για την αποθήκευση ρούχων, τσαντών και αθλητικού εξοπλισμού.", "Σχολεία & Εκπαιδευτικά Ιδρύματα: Παρέχουν στους μαθητές και τους φοιτητές ασφαλή χώρο για βιβλία, σακίδια και προσωπικά αντικείμενα.", "Δημόσιους Φορείς & Start-ups: Ακόμη και start-ups που επενδύουν στην ευημερία του προσωπικού τους."]
-    }, {
-      title: "Stereom: Η Εγγύηση Ποιότητας & Προσαρμογής στα Lockers",
-      content: ["Στην Stereom, κατανοούμε ότι κάθε επαγγελματικός χώρος έχει μοναδικές ανάγκες. Γι' αυτό, προσφέρουμε λύσεις σε lockers που συνδυάζουν κορυφαία ποιότητα, ασφάλεια και απόλυτη προσαρμογή:", "Προσαρμοσμένες Διαστάσεις & Χρώματα: Προσφέρουμε lockers σε διάφορες διαστάσεις και χρώματα, με δυνατότητα πλήρους προσαρμογής.", "Επιλογές Ασφαλείας & Εξαερισμού: Παρέχουμε πληθώρα επιλογών σε μηχανισμούς κλειδώματος και συστήματα εξαερισμού.", "Ανθεκτικότητα & 10ετής Εγγύηση: Όλα τα προϊόντα μας είναι κατάλληλα για χονδρική προμήθεια και projects μεγάλης κλίμακας.", "Ειδίκευση σε Χονδρική Προμήθεια & Projects: Η Stereom είναι ο ιδανικός συνεργάτης για χονδρική προμήθεια και projects μεγάλης κλίμακας."]
-    }]
-  }
-}];
+import { blogPosts } from "@/data/blogPosts";
+import BlogPostMeta from "@/components/blog/BlogPostMeta";
+import BlogContentSection from "@/components/blog/BlogContentSection";
+import BlogSchema from "@/components/blog/BlogSchema";
 
 export default function Blog() {
   useEffect(() => {
@@ -71,87 +20,15 @@ export default function Blog() {
 
   return (
     <>
-      <SEOHead title="Οδηγός Επιλογής Μεταλλικής Ντουλάπας για Βιομηχανικούς Χώρους | Stereom Blog" description="Μεταλλικές ντουλάπες εργοστασίων & αποθήκες – Ανθεκτικές, ασφαλείς, με δυνατότητα προσαρμογής. Χονδρική διάθεση σε επαγγελματίες." canonical="/blog" image="/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png" type="website" />
+      <SEOHead 
+        title="Οδηγός Επιλογής Μεταλλικής Ντουλάπας για Βιομηχανικούς Χώρους | Stereom Blog" 
+        description="Μεταλλικές ντουλάπες εργοστασίων & αποθήκες – Ανθεκτικές, ασφαλείς, με δυνατότητα προσαρμογής. Χονδρική διάθεση σε επαγγελματίες." 
+        canonical="/blog" 
+        image="/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png" 
+        type="website" 
+      />
       
-      {/* Schema Markup for Blog */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Blog",
-          "name": "Stereom Blog - Μεταλλικές Ντουλάπες & Lockers",
-          "description": "Οδηγοί και συμβουλές για μεταλλικές ντουλάπες, lockers και συστήματα αποθήκευσης",
-          "url": "https://stereom.lovable.app/blog",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Stereom",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png"
-            }
-          },
-          "blogPost": blogPosts.map(post => ({
-            "@type": "BlogPosting",
-            "headline": post.title,
-            "image": `https://stereom.lovable.app${post.image}`,
-            "author": {
-              "@type": "Organization",
-              "name": post.author
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Stereom"
-            },
-            "datePublished": post.date,
-            "url": `https://stereom.lovable.app/blog/${post.id}`
-          }))
-        })}
-      </script>
-
-      {/* Individual BlogPosting Schema for first post */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": "Μεταλλικές Ντουλάπες για Εργοστάσια και Αποθήκες",
-          "image": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png",
-          "author": {
-            "@type": "Organization",
-            "name": "Stereom Team"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Stereom",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png"
-            }
-          },
-          "datePublished": "2024-01-15"
-        })}
-      </script>
-
-      {/* Individual BlogPosting Schema for second post */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": "Lockers Αποδυτηρίων για Επαγγελματικούς Χώρους",
-          "image": "https://stereom.lovable.app/lovable-uploads/IMG_13742.webp",
-          "author": {
-            "@type": "Organization",
-            "name": "Stereom Team"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Stereom",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://stereom.lovable.app/lovable-uploads/IMG_13742.webp"
-            }
-          },
-          "datePublished": "2024-01-10"
-        })}
-      </script>
+      <BlogSchema />
       
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -188,7 +65,6 @@ export default function Blog() {
                   className="bg-white rounded-2xl shadow-sm overflow-hidden"
                 >
                   <div className="p-8">
-                    {/* Hero Tagline */}
                     <div className="flex items-center gap-2 mb-6 text-sm text-metal-400">
                       <Wrench size={16} />
                       <span>{post.tagline}</span>
@@ -198,164 +74,23 @@ export default function Blog() {
                       {post.title}
                     </h2>
 
-                    {/* Author & Date Info */}
-                    <div className="flex items-center gap-4 text-sm text-metal-600 mb-8">
-                      <div className="flex items-center gap-1">
-                        <Calendar size={14} />
-                        {new Date(post.date).toLocaleDateString('el-GR')}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <User size={14} />
-                        {post.author}
-                      </div>
-                    </div>
+                    <BlogPostMeta date={post.date} author={post.author} />
 
-                    {/* Introduction - Full width without image */}
                     <div className="mb-8">
                       <p className="text-metal-600 leading-relaxed text-lg" style={{ lineHeight: '1.7' }}>
                         {post.content.intro}
                       </p>
                     </div>
                     
-                    {/* Content sections with alternating images */}
-                    {post.content.sections.map((section, sectionIndex) => {
-                      const isEven = sectionIndex % 2 === 0;
-                      const imageIndex = sectionIndex % (post.additionalImages || []).length;
-                      const hasAdditionalImage = post.additionalImages && post.additionalImages[imageIndex];
-                      
-                      return (
-                        <div key={sectionIndex} className="mb-8">
-                          <h3 className="text-xl font-semibold mb-4 text-black">
-                            {section.title}
-                          </h3>
-                          
-                          {hasAdditionalImage ? (
-                            <div className={`grid grid-cols-1 lg:grid-cols-5 gap-8 ${isEven ? '' : 'lg:grid-flow-col-dense'}`}>
-                              <div className={`lg:col-span-2 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                                <div className="overflow-hidden rounded-xl h-96 bg-gray-50 flex items-center justify-center">
-                                  <img 
-                                    src={post.additionalImages[imageIndex]} 
-                                    alt={`${post.title} - Επιπλέον εικόνα ${imageIndex + 1}`} 
-                                    className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300" 
-                                  />
-                                </div>
-                              </div>
-                              <div className={`lg:col-span-3 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                                {section.content.map((paragraph, paragraphIndex) => (
-                                  <p key={paragraphIndex} className="text-metal-600 leading-relaxed mb-3" style={{ lineHeight: '1.6' }}>
-                                    {paragraph.includes("μεταλλικές ντουλάπες") && !paragraph.includes("Stereom") ? (
-                                      <>
-                                        {paragraph.split("μεταλλικές ντουλάπες")[0]}
-                                        <Link to="/metallic-cabinets" className="text-blue-600 hover:text-blue-700 underline">
-                                          μεταλλικές ντουλάπες
-                                        </Link>
-                                        {paragraph.split("μεταλλικές ντουλάπες")[1]}
-                                      </>
-                                    ) : paragraph.includes("lockers") && !paragraph.includes("Προσφέρουμε") ? (
-                                      <>
-                                        {paragraph.split("lockers")[0]}
-                                        <Link to="/metallic-lockers" className="text-blue-600 hover:text-blue-700 underline">
-                                          lockers
-                                        </Link>
-                                        {paragraph.split("lockers")[1]}
-                                      </>
-                                    ) : paragraph.includes("συστήματα αποθήκευσης") ? (
-                                      <>
-                                        {paragraph.split("συστήματα αποθήκευσης")[0]}
-                                        <Link to="/products" className="text-blue-600 hover:text-blue-700 underline">
-                                          συστήματα αποθήκευσης
-                                        </Link>
-                                        {paragraph.split("συστήματα αποθήκευσης")[1]}
-                                      </>
-                                    ) : paragraph.includes("Συρταριέρες") ? (
-                                      <>
-                                        {paragraph.split("Συρταριέρες")[0]}
-                                        <Link to="/metallic-drawers" className="text-blue-600 hover:text-blue-700 underline">
-                                          Συρταριέρες
-                                        </Link>
-                                        {paragraph.split("Συρταριέρες")[1]}
-                                      </>
-                                    ) : paragraph.includes("μελέτες περίπτωσης") ? (
-                                      <>
-                                        {paragraph.split("μελέτες περίπτωσης")[0]}
-                                        <Link to="/?scrollTo=projects" className="text-blue-600 hover:text-blue-700 underline">
-                                          μελέτες περίπτωσης
-                                        </Link>
-                                        {paragraph.split("μελέτες περίπτωσης")[1]}
-                                      </>
-                                    ) : paragraph.includes("χονδρική προμήθεια") ? (
-                                      <>
-                                        {paragraph.split("χονδρική προμήθεια")[0]}
-                                        <Link to="/?scrollTo=contact" className="text-blue-600 hover:text-blue-700 underline">
-                                          χονδρική προμήθεια
-                                        </Link>
-                                        {paragraph.split("χονδρική προμήθεια")[1]}
-                                      </>
-                                    ) : paragraph}
-                                  </p>
-                                ))}
-                              </div>
-                            </div>
-                          ) : (
-                            <div>
-                              {section.content.map((paragraph, paragraphIndex) => (
-                                <p key={paragraphIndex} className="text-metal-600 leading-relaxed mb-3" style={{ lineHeight: '1.6' }}>
-                                  {paragraph.includes("μεταλλικές ντουλάπες") && !paragraph.includes("Stereom") ? (
-                                    <>
-                                      {paragraph.split("μεταλλικές ντουλάπες")[0]}
-                                      <Link to="/metallic-cabinets" className="text-blue-600 hover:text-blue-700 underline">
-                                        μεταλλικές ντουλάπες
-                                      </Link>
-                                      {paragraph.split("μεταλλικές ντουλάπες")[1]}
-                                    </>
-                                  ) : paragraph.includes("lockers") && !paragraph.includes("Προσφέρουμε") ? (
-                                    <>
-                                      {paragraph.split("lockers")[0]}
-                                      <Link to="/metallic-lockers" className="text-blue-600 hover:text-blue-700 underline">
-                                        lockers
-                                      </Link>
-                                      {paragraph.split("lockers")[1]}
-                                    </>
-                                  ) : paragraph.includes("συστήματα αποθήκευσης") ? (
-                                    <>
-                                      {paragraph.split("συστήματα αποθήκευσης")[0]}
-                                      <Link to="/products" className="text-blue-600 hover:text-blue-700 underline">
-                                        συστήματα αποθήκευσης
-                                      </Link>
-                                      {paragraph.split("συστήματα αποθήκευσης")[1]}
-                                    </>
-                                  ) : paragraph.includes("Συρταριέρες") ? (
-                                    <>
-                                      {paragraph.split("Συρταριέρες")[0]}
-                                      <Link to="/metallic-drawers" className="text-blue-600 hover:text-blue-700 underline">
-                                        Συρταριέρες
-                                      </Link>
-                                      {paragraph.split("Συρταριέρες")[1]}
-                                    </>
-                                  ) : paragraph.includes("μελέτες περίπτωσης") ? (
-                                    <>
-                                      {paragraph.split("μελέτες περίπτωσης")[0]}
-                                      <Link to="/?scrollTo=projects" className="text-blue-600 hover:text-blue-700 underline">
-                                        μελέτες περίπτωσης
-                                      </Link>
-                                      {paragraph.split("μελέτες περίπτωσης")[1]}
-                                    </>
-                                  ) : paragraph.includes("χονδρική προμήθεια") ? (
-                                    <>
-                                      {paragraph.split("χονδρική προμήθεια")[0]}
-                                      <Link to="/?scrollTo=contact" className="text-blue-600 hover:text-blue-700 underline">
-                                        χονδρική προμήθεια
-                                      </Link>
-                                      {paragraph.split("χονδρική προμήθεια")[1]}
-                                    </>
-                                  ) : paragraph}
-                                </p>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
+                    {post.content.sections.map((section, sectionIndex) => (
+                      <BlogContentSection
+                        key={sectionIndex}
+                        section={section}
+                        sectionIndex={sectionIndex}
+                        additionalImages={post.additionalImages}
+                        title={post.title}
+                      />
+                    ))}
                     
                     <div className="flex flex-col sm:flex-row gap-4 mt-8">
                       <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl">
