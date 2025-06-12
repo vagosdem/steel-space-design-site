@@ -25,10 +25,8 @@ export default function BlogContentSection({
     const linkMap = {
       "μεταλλικές ντουλάπες": "/metallic-cabinets",
       "lockers": "/metallic-lockers",
-      "συστήματα αποθήκευσης": "/products",
       "Συρταριέρες": "/metallic-drawers",
-      "μελέτες περίπτωσης": "/?scrollTo=projects",
-      "χονδρική προμήθεια": "/?scrollTo=contact"
+      "μελέτες περίπτωσης": "/?scrollTo=projects"
     };
 
     for (const [text, link] of Object.entries(linkMap)) {

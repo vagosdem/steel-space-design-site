@@ -2,6 +2,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Main Pages -->
   <url>
     <loc>https://stereom.gr/</loc>
     <lastmod>2025-01-27</lastmod>
@@ -9,14 +10,34 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://stereom.gr/lovable-uploads/IMG_054822.webp</image:loc>
-      <image:title>Μεταλλικές Ντουλάπες Stereon</image:title>
+      <image:title>Μεταλλικές Ντουλάπες Stereom</image:title>
+      <image:caption>Ποιοτικές μεταλλικές ντουλάπες και lockers χονδρική</image:caption>
     </image:image>
   </url>
+  
   <url>
     <loc>https://stereom.gr/products</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  
+  <!-- Blog Section -->
+  <url>
+    <loc>https://stereom.gr/blog</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://stereom.gr/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png</image:loc>
+      <image:title>Οδηγός Επιλογής Μεταλλικής Ντουλάπας για Βιομηχανικούς Χώρους</image:title>
+      <image:caption>Συμβουλές για επιλογή μεταλλικών ντουλαπών σε εργοστάσια</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://stereom.gr/lovable-uploads/IMG_13742.webp</image:loc>
+      <image:title>Lockers Αποδυτηρίων για Επαγγελματικούς Χώρους</image:title>
+      <image:caption>Οδηγός για lockers αποδυτηρίων και επαγγελματικών χώρων</image:caption>
+    </image:image>
   </url>
   
   <!-- Category Pages -->
@@ -28,8 +49,10 @@
     <image:image>
       <image:loc>https://stereom.gr/lovable-uploads/IMG_054822.webp</image:loc>
       <image:title>Μεταλλικές Ντουλάπες Χονδρική Ελλάδα</image:title>
+      <image:caption>Επαγγελματικές μεταλλικές ντουλάπες για εργοστάσια</image:caption>
     </image:image>
   </url>
+  
   <url>
     <loc>https://stereom.gr/metallic-filing-cabinets</loc>
     <lastmod>2025-01-27</lastmod>
@@ -38,8 +61,10 @@
     <image:image>
       <image:loc>https://stereom.gr/lovable-uploads/IMG_23802.webp</image:loc>
       <image:title>Μεταλλικές Αρχειοθήκες B2B Ελλάδα</image:title>
+      <image:caption>Συρταριέρες και αρχειοθήκες για επαγγελματικούς χώρους</image:caption>
     </image:image>
   </url>
+  
   <url>
     <loc>https://stereom.gr/metallic-lockers</loc>
     <lastmod>2025-01-27</lastmod>
@@ -48,8 +73,10 @@
     <image:image>
       <image:loc>https://stereom.gr/lovable-uploads/b45217bd-5df5-40d6-bd0d-ffdee487ec34.png</image:loc>
       <image:title>Μεταλλικά Lockers Χονδρική Ελλάδα</image:title>
+      <image:caption>Lockers αποδυτηρίων και επαγγελματικών χώρων</image:caption>
     </image:image>
   </url>
+  
   <url>
     <loc>https://stereom.gr/metallic-drawers</loc>
     <lastmod>2025-01-27</lastmod>
@@ -58,15 +85,11 @@
     <image:image>
       <image:loc>https://stereom.gr/lovable-uploads/IMG_23802.webp</image:loc>
       <image:title>Μεταλλικές Συρταριέρες Γραφείου Χονδρική</image:title>
+      <image:caption>Συρταριέρες και συστήματα αρχειοθέτησης</image:caption>
     </image:image>
   </url>
   
-  <url>
-    <loc>https://stereom.gr/blog</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Legal -->
   <url>
     <loc>https://stereom.gr/legal</loc>
     <lastmod>2025-01-27</lastmod>
@@ -74,7 +97,7 @@
     <priority>0.3</priority>
   </url>
   
-  <!-- Product Pages -->
+  <!-- Product Pages - High Priority Products -->
   <url>
     <loc>https://stereom.gr/product/red-black-storage-cabinet</loc>
     <lastmod>2025-01-27</lastmod>
@@ -83,8 +106,10 @@
     <image:image>
       <image:loc>https://stereom.gr/lovable-uploads/IMG_054822.webp</image:loc>
       <image:title>Κόκκινη-Μαύρη Μεταλλική Ντουλάπα Διπλής Πόρτας</image:title>
+      <image:caption>Βιομηχανική μεταλλική ντουλάπα με διπλή πόρτα</image:caption>
     </image:image>
   </url>
+  
   <url>
     <loc>https://stereom.gr/product/modern-locker-system</loc>
     <lastmod>2025-01-27</lastmod>
@@ -93,8 +118,10 @@
     <image:image>
       <image:loc>https://stereom.gr/lovable-uploads/IMG_13722.webp</image:loc>
       <image:title>Μοντέρνο Σύστημα Ντουλαπιών</image:title>
+      <image:caption>Σύγχρονο σύστημα lockers για αποδυτήρια</image:caption>
     </image:image>
   </url>
+  
   <url>
     <loc>https://stereom.gr/product/multi-door-locker-system</loc>
     <lastmod>2025-01-27</lastmod>
@@ -103,152 +130,139 @@
     <image:image>
       <image:loc>https://stereom.gr/lovable-uploads/IMG_13742.webp</image:loc>
       <image:title>Σύστημα Πολλαπλών Ντουλαπιών</image:title>
+      <image:caption>Πολλαπλά lockers για μεγάλους χώρους</image:caption>
     </image:image>
   </url>
+  
+  <!-- Additional Product Pages -->
   <url>
     <loc>https://stereom.gr/product/colorful-school-lockers</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://stereom.gr/lovable-uploads/IMG_21202.webp</image:loc>
-      <image:title>Πολύχρωμα Σχολικά Ντουλάπια</image:title>
-    </image:image>
+    <priority>0.7</priority>
   </url>
+  
   <url>
     <loc>https://stereom.gr/product/industrial-storage-solution</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://stereom.gr/lovable-uploads/IMG_23802.webp</image:loc>
-      <image:title>Μεταλλικές Συρταριέρες Αρχειοθέτησης &amp; Αρχειοθήκες</image:title>
-    </image:image>
+    <priority>0.7</priority>
   </url>
+  
   <url>
     <loc>https://stereom.gr/product/professional-office-lockers</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://stereom.gr/lovable-uploads/IMG_97682.webp</image:loc>
-      <image:title>Επαγγελματικά Ντουλάπια Γραφείου</image:title>
-    </image:image>
+    <priority>0.7</priority>
   </url>
+  
   <url>
     <loc>https://stereom.gr/product/compact-storage-units</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://stereom.gr/lovable-uploads/IMG_99002.webp</image:loc>
-      <image:title>Συμπαγή Αποθηκευτικά Συστήματα</image:title>
-    </image:image>
+    <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://stereom.gr/product/six-door-locker-white</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stereom.gr/product/glass-door-lockers-12</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stereom.gr/product/dark-gray-storage-cabinet</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stereom.gr/product/blue-multi-locker-20</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stereom.gr/product/red-three-door-lockers</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stereom.gr/product/blue-six-door-lockers</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stereom.gr/product/red-frame-gray-doors-12</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stereom.gr/product/brown-frame-three-door</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stereom.gr/product/white-double-door-cabinet</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stereom.gr/product/orange-white-contrast-lockers</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stereom.gr/product/pastel-soft-tone-lockers</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
+  <!-- Filing Cabinet Products -->
   <url>
     <loc>https://stereom.gr/product/secure-gray-filing-cabinet</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://stereom.gr/lovable-uploads/084a688a-d669-4431-9004-bf34d61b6bf7.png</image:loc>
       <image:title>Γκρι Μεταλλική Αρχειοθήκη με Κλειδαριά Ασφαλείας</image:title>
+      <image:caption>Ασφαλής αρχειοθήκη για επαγγελματική χρήση</image:caption>
     </image:image>
   </url>
+  
   <url>
     <loc>https://stereom.gr/product/white-three-drawer-filing-cabinet</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
     <image:image>
       <image:loc>https://stereom.gr/lovable-uploads/9f0e798d-5876-4415-8dfd-ffa267cf127d.png</image:loc>
       <image:title>Λευκή Μεταλλική Αρχειοθήκη 3 Συρταριών</image:title>
+      <image:caption>Τρισύρταρη αρχειοθήκη για γραφείο</image:caption>
     </image:image>
   </url>
   
-  <!-- Blog Pages -->
+  <!-- Lower Priority Product Pages -->
   <url>
-    <loc>https://stereom.gr/blog/odigos-epilogis-metallikis-ntoulapis</loc>
+    <loc>https://stereom.gr/product/six-door-locker-white</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://stereom.gr/blog/metallikes-vs-ksillines-ntoulapes</loc>
+    <loc>https://stereom.gr/product/glass-door-lockers-12</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://stereom.gr/blog/symvoules-organosis-metallikes-ntoulapes</loc>
+    <loc>https://stereom.gr/product/dark-gray-storage-cabinet</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stereom.gr/product/blue-multi-locker-20</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stereom.gr/product/red-three-door-lockers</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stereom.gr/product/blue-six-door-lockers</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stereom.gr/product/red-frame-gray-doors-12</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stereom.gr/product/brown-frame-three-door</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stereom.gr/product/white-double-door-cabinet</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stereom.gr/product/orange-white-contrast-lockers</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://stereom.gr/product/pastel-soft-tone-lockers</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
