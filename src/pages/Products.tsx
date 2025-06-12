@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -25,6 +26,15 @@ export default function Products() {
   const [colorFilter, setColorFilter] = useState("all");
   const [featureFilter, setFeatureFilter] = useState("all");
   
+  // Preload images for next batch
+  const preloadImages = (products: Product[], startIndex: number, endIndex: number) => {
+    const productsToPreload = products.slice(startIndex, endIndex);
+    productsToPreload.forEach(product => {
+      const img = new Image();
+      img.src = product.image;
+    });
+  };
+
   // Handle URL parameters on component mount
   useEffect(() => {
     const urlCategory = searchParams.get('category');
@@ -89,6 +99,15 @@ export default function Products() {
     const startIndex = 0;
     const endIndex = currentPage * PRODUCTS_PER_PAGE;
     setDisplayedProducts(filteredProducts.slice(startIndex, endIndex));
+    
+    // Preload next batch of images in background
+    const nextBatchStart = endIndex;
+    const nextBatchEnd = Math.min(nextBatchStart + PRODUCTS_PER_PAGE, filteredProducts.length);
+    if (nextBatchStart < filteredProducts.length) {
+      setTimeout(() => {
+        preloadImages(filteredProducts, nextBatchStart, nextBatchEnd);
+      }, 100); // Small delay to not interfere with current page loading
+    }
   }, [filteredProducts, currentPage]);
 
   const handleProductClick = (productId: string) => {
