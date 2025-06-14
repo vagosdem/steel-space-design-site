@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 interface BlogContentSectionProps {
@@ -26,7 +25,10 @@ export default function BlogContentSection({
       "μεταλλικές ντουλάπες": "/metallic-cabinets",
       "lockers": "/metallic-lockers",
       "Συρταριέρες": "/metallic-drawers",
-      "μελέτες περίπτωσης": "/?scrollTo=projects"
+      "μελέτες περίπτωσης": "/?scrollTo=projects",
+      "αρχειοθήκες γραφείου": "/metallic-filing-cabinets",
+      "μεταλλικές αρχειοθήκες": "/metallic-filing-cabinets",
+      "συρταριέρες αρχειοθέτησης": "/metallic-drawers"
     };
 
     for (const [text, link] of Object.entries(linkMap)) {

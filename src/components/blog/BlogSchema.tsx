@@ -1,4 +1,3 @@
-
 import { blogPosts } from "@/data/blogPosts";
 
 export default function BlogSchema() {
@@ -81,6 +80,29 @@ export default function BlogSchema() {
             }
           },
           "datePublished": "2024-01-10"
+        })}
+      </script>
+
+      {/* Individual BlogPosting Schema for third post */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Αρχειοθήκες Γραφείου & Επαγγελματικών Χώρων: Οδηγός Επιλογής για Ασφαλή και Αποτελεσματική Οργάνωση",
+          "image": "https://stereom.lovable.app/lovable-uploads/IMG_23802.webp",
+          "author": {
+            "@type": "Organization",
+            "name": "Stereom Team"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Stereom",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png"
+            }
+          },
+          "datePublished": "2024-01-20"
         })}
       </script>
     </>
