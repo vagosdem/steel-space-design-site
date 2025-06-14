@@ -62,7 +62,7 @@ export default function BlogContentSection({
       {hasAdditionalImage ? (
         <div className={`grid grid-cols-1 lg:grid-cols-5 gap-8 ${isEven ? '' : 'lg:grid-flow-col-dense'}`}>
           <div className={`lg:col-span-2 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-            <div className="overflow-hidden rounded-xl h-96 bg-gray-50 flex items-center justify-center">
+            <div className="overflow-hidden rounded-xl h-[30rem] bg-gray-50 flex items-center justify-center mt-6">
               <img 
                 src={additionalImages[imageIndex]} 
                 alt={`${title} - Επιπλέον εικόνα ${imageIndex + 1}`} 
