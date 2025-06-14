@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 interface BlogContentSectionProps {
@@ -18,18 +19,14 @@ export default function BlogContentSection({
 }: BlogContentSectionProps) {
   const isEven = sectionIndex % 2 === 0;
   const imageIndex = sectionIndex % (additionalImages || []).length;
-  const hasAdditionalImage = additionalImages && additionalImages[imageIndex] && section.title !== "Συμπέρασμα";
+  const hasAdditionalImage = additionalImages && additionalImages[imageIndex];
 
   const renderParagraphWithLinks = (paragraph: string, paragraphIndex: number) => {
     const linkMap = {
-      "μεταλλικές αρχειοθήκες": "/metallic-filing-cabinets",
-      "αρχειοθήκες γραφείου": "/metallic-filing-cabinets",
-      "συρταριέρες αρχειοθέτησης": "/metallic-drawers",
       "μεταλλικές ντουλάπες": "/metallic-cabinets",
       "lockers": "/metallic-lockers",
       "Συρταριέρες": "/metallic-drawers",
-      "μελέτες περίπτωσης": "/?scrollTo=projects",
-      "προσαρμογή": "/?scrollTo=contact"
+      "μελέτες περίπτωσης": "/?scrollTo=projects"
     };
 
     for (const [text, link] of Object.entries(linkMap)) {

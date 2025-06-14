@@ -17,15 +17,11 @@ export default function BlogSchema() {
             "name": "Stereom",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://stereom.lovable.app/lovable-uploads/IMG_054822.webp"
+              "url": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png"
             }
           },
           "blogPost": blogPosts.map(post => ({
             "@type": "BlogPosting",
-            "mainEntityOfPage": {
-               "@type": "WebPage",
-               "@id": `https://stereom.lovable.app/blog/${post.id}`
-            },
             "headline": post.title,
             "image": `https://stereom.lovable.app${post.image}`,
             "author": {
@@ -34,15 +30,57 @@ export default function BlogSchema() {
             },
             "publisher": {
               "@type": "Organization",
-              "name": "Stereom",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://stereom.lovable.app/lovable-uploads/IMG_054822.webp"
-              }
+              "name": "Stereom"
             },
             "datePublished": post.date,
             "url": `https://stereom.lovable.app/blog/${post.id}`
           }))
+        })}
+      </script>
+
+      {/* Individual BlogPosting Schema for first post */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Μεταλλικές Ντουλάπες για Εργοστάσια και Αποθήκες",
+          "image": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png",
+          "author": {
+            "@type": "Organization",
+            "name": "Stereom Team"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Stereom",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png"
+            }
+          },
+          "datePublished": "2024-01-15"
+        })}
+      </script>
+
+      {/* Individual BlogPosting Schema for second post */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "Lockers Αποδυτηρίων για Επαγγελματικούς Χώρους",
+          "image": "https://stereom.lovable.app/lovable-uploads/IMG_13742.webp",
+          "author": {
+            "@type": "Organization",
+            "name": "Stereom Team"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Stereom",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://stereom.lovable.app/lovable-uploads/IMG_13742.webp"
+            }
+          },
+          "datePublished": "2024-01-10"
         })}
       </script>
     </>

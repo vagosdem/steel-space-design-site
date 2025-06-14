@@ -38,43 +38,6 @@
       <image:title>Lockers Αποδυτηρίων για Επαγγελματικούς Χώρους</image:title>
       <image:caption>Οδηγός για lockers αποδυτηρίων και επαγγελματικών χώρων</image:caption>
     </image:image>
-    <image:image>
-      <image:loc>https://stereom.gr/lovable-uploads/IMG_23802.webp</image:loc>
-      <image:title>Αρχειοθήκες Γραφείου &amp; Επαγγελματικών Χώρων</image:title>
-      <image:caption>Οδηγός για επιλογή αρχειοθηκών και συρταριέρων</image:caption>
-    </image:image>
-  </url>
-
-  <!-- Blog Posts -->
-  <url>
-    <loc>https://stereom.gr/blog/metallikes-ntoulapes-ergostasia</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://stereom.gr/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png</image:loc>
-      <image:title>Οδηγός Επιλογής Μεταλλικής Ντουλάπας για Βιομηχανικούς Χώρους</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://stereom.gr/blog/lockers-apodytiria</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://stereom.gr/lovable-uploads/IMG_13742.webp</image:loc>
-      <image:title>Lockers Αποδυτηρίων για Επαγγελματικούς Χώρους</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://stereom.gr/blog/arxeiothikes-grafeiou-epaggelmatikwn-xwrwn</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://stereom.gr/lovable-uploads/IMG_23802.webp</image:loc>
-      <image:title>Αρχειοθήκες Γραφείου &amp; Επαγγελματικών Χώρων</image:title>
-    </image:image>
   </url>
   
   <!-- Category Pages -->
