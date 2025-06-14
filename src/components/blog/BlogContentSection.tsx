@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 interface BlogContentSectionProps {
@@ -19,7 +18,7 @@ export default function BlogContentSection({
 }: BlogContentSectionProps) {
   const isEven = sectionIndex % 2 === 0;
   const imageIndex = sectionIndex % (additionalImages || []).length;
-  const hasAdditionalImage = additionalImages && additionalImages[imageIndex];
+  const hasAdditionalImage = additionalImages && additionalImages[imageIndex] && section.title !== "Συμπέρασμα";
 
   const renderParagraphWithLinks = (paragraph: string, paragraphIndex: number) => {
     const linkMap = {

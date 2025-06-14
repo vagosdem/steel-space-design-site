@@ -1,4 +1,3 @@
-
 export const blogPosts = [
   {
     id: "arxeiothikes-grafeiou-epaggelmatikwn-xwrwn",
@@ -10,7 +9,12 @@ export const blogPosts = [
     category: "Επαγγελματικοί Χώροι",
     tagline: "Για γραφεία, δικηγορικά & λογιστικά γραφεία",
     aspectRatio: "480/650",
-    additionalImages: ["/lovable-uploads/gray-filing-cabinet-secure.png", "/lovable-uploads/white-filing-cabinet-three-drawer.png", "/lovable-uploads/IMG_23802.webp"],
+    additionalImages: [
+      "/lovable-uploads/IMG_2835.webp", 
+      "/lovable-uploads/IMG_6831.webp",
+      "/lovable-uploads/gray-filing-cabinet-secure.png", 
+      "/lovable-uploads/white-filing-cabinet-three-drawer.png"
+    ],
     content: {
       intro: "Στο σύγχρονο επαγγελματικό περιβάλλον, όπου ο όγκος των πληροφοριών αυξάνεται συνεχώς, η αποτελεσματική οργάνωση και η ασφαλής φύλαξη των εγγράφων είναι ζωτικής σημασίας. Είτε πρόκειται για σημαντικά εταιρικά αρχεία, νομικά έγγραφα, λογιστικά στοιχεία ή προσωπικά δεδομένα, η ανάγκη για αξιόπιστες λύσεις αρχειοθέτησης είναι αδιαμφισβήτητη. Οι αρχειοθήκες γραφείου και οι συρταριέρες αρχειοθέτησης αποτελούν τον ακρογωνιαίο λίθο κάθε οργανωμένου επαγγελματικού χώρου, προσφέροντας ασφάλεια, τάξη και εύκολη πρόσβαση στην πληροφορία.\n\nΣε αυτόν τον οδηγό, θα αναλύσουμε γιατί οι μεταλλικές αρχειοθήκες αποτελούν την κορυφαία επιλογή, ποια χαρακτηριστικά τις καθιστούν απαραίτητες και πώς μπορείτε να επιλέξετε την ιδανική λύση για τις ανάγκες του δικού σας γραφείου ή επαγγελματικού χώρου.",
       sections: [{
