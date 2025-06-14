@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, User } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -15,54 +15,15 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { blogPosts } from "@/data/blogPosts";
+import BlogPostMeta from "@/components/blog/BlogPostMeta";
+import BlogContentSection from "@/components/blog/BlogContentSection";
 
-const blogContent: Record<string, any> = {
-  "odigos-epilogis-metallikis-ntoulapis": {
-    title: "Οδηγός Επιλογής Μεταλλικής Ντουλάπας",
-    date: "2024-01-15",
-    author: "Stereon Team",
-    image: "/lovable-uploads/IMG_054822.webp",
-    content: `
-      <h2>Γιατί να Επιλέξετε Μεταλλική Ντουλάπα;</h2>
-      <p>Οι μεταλλικές ντουλάπες προσφέρουν ανώτερη αντοχή και μακροχρόνια λειτουργία σε σχέση με άλλα υλικά. Είναι ιδανικές για επαγγελματικούς χώρους, σχολεία, γυμναστήρια και βιομηχανικές εγκαταστάσεις.</p>
-      
-      <h3>Τύποι Μεταλλικών Ντουλαπιών</h3>
-      <ul>
-        <li><strong>Ντουλάπια Γραφείου:</strong> Κομψά και λειτουργικά για επαγγελματικούς χώρους</li>
-        <li><strong>Σχολικά Ντουλάπια (Lockers):</strong> Ανθεκτικά και ασφαλή για εκπαιδευτικούς χώρους</li>
-        <li><strong>Βιομηχανικά Ντουλάπια:</strong> Εξαιρετικής αντοχής για απαιτητικά περιβάλλοντα</li>
-        <li><strong>Ντουλάπια με Γυάλινες Πόρτες:</strong> Συνδυάζουν ορατότητα με προστασία</li>
-      </ul>
-      
-      <h3>Κριτήρια Επιλογής</h3>
-      <p>Κατά την επιλογή μεταλλικής ντουλάπας, λάβετε υπόψη τα παρακάτω:</p>
-      <ul>
-        <li>Διαστάσεις και χωρητικότητα</li>
-        <li>Αριθμός και μέγεθος θέσεων</li>
-        <li>Τύπος κλειδαρίας (κλειδί, κωδικός, RFID)</li>
-        <li>Υλικό κατασκευής και επικάλυψη</li>
-        <li>Χρώμα και αισθητική</li>
-        <li>Σύστημα αερισμού</li>
-      </ul>
-      
-      <h3>Πλεονεκτήματα Μεταλλικών Ντουλαπιών</h3>
-      <p>Οι μεταλλικές ντουλάπες προσφέρουν πολλά πλεονεκτήματα:</p>
-      <ul>
-        <li>Εξαιρετική αντοχή και μακροζωία</li>
-        <li>Αντίσταση σε φθορά και υγρασία</li>
-        <li>Εύκολη συντήρηση και καθαρισμός</li>
-        <li>Πυρασφάλεια</li>
-        <li>Οικονομική επιλογή μακροπρόθεσμα</li>
-        <li>Μεγάλη ποικιλία χρωμάτων και σχεδιασμών</li>
-      </ul>
-    `
-  }
-};
 
 export default function BlogPost() {
   const { postId } = useParams();
   const navigate = useNavigate();
-  const post = postId ? blogContent[postId] : null;
+  const post = blogPosts.find(p => p.id === postId);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -82,8 +43,8 @@ export default function BlogPost() {
   return (
     <>
       <SEOHead 
-        title={`${post.title} | Blog Stereon - Οδηγοί Μεταλλικών Ντουλαπιών`}
-        description={`${post.content.substring(0, 160)}...`}
+        title={`${post.title} | Stereom Blog`}
+        description={post.excerpt}
         canonical={`/blog/${postId}`}
         image={post.image}
         type="article"
@@ -91,7 +52,7 @@ export default function BlogPost() {
       
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow pt-24">
           <div className="container-section">
             <Breadcrumb className="mb-6">
               <BreadcrumbList>
@@ -126,7 +87,20 @@ export default function BlogPost() {
               transition={{ duration: 0.5 }}
               className="max-w-4xl mx-auto"
             >
-              <div className="aspect-video overflow-hidden rounded-2xl mb-8">
+              <header className="mb-8">
+                {post.tagline && (
+                  <div className="mb-4 text-sm text-metal-500 font-semibold">
+                    <span>{post.tagline}</span>
+                  </div>
+                )}
+                <h1 className="text-4xl font-bold mb-6 text-black">{post.title}</h1>
+                <BlogPostMeta date={post.date} author={post.author} />
+              </header>
+
+              <div 
+                className="overflow-hidden rounded-2xl mb-8"
+                style={{ aspectRatio: post.aspectRatio || '16/9' }}
+              >
                 <img 
                   src={post.image} 
                   alt={post.title}
@@ -134,25 +108,21 @@ export default function BlogPost() {
                 />
               </div>
 
-              <header className="mb-8">
-                <h1 className="text-3xl font-bold mb-4 text-black">{post.title}</h1>
+              <div className="text-lg text-metal-600 leading-relaxed" style={{ lineHeight: '1.7' }}>
+                <p className="mb-8 whitespace-pre-wrap">{post.content.intro}</p>
                 
-                <div className="flex items-center gap-6 text-metal-600">
-                  <div className="flex items-center gap-2">
-                    <Calendar size={16} />
-                    <span>{new Date(post.date).toLocaleDateString('el-GR')}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <User size={16} />
-                    <span>{post.author}</span>
-                  </div>
+                <div className="space-y-12">
+                  {post.content.sections.map((section, sectionIndex) => (
+                    <BlogContentSection
+                      key={sectionIndex}
+                      section={section}
+                      sectionIndex={sectionIndex}
+                      additionalImages={post.additionalImages}
+                      title={post.title}
+                    />
+                  ))}
                 </div>
-              </header>
-
-              <div 
-                className="prose prose-lg max-w-none text-metal-700"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
+              </div>
 
               <div className="mt-12 p-6 bg-blue-50 rounded-2xl">
                 <h3 className="text-xl font-semibold mb-4 text-black">
@@ -163,7 +133,7 @@ export default function BlogPost() {
                 </p>
                 <Button 
                   className="bg-blue-600 hover:bg-blue-700"
-                  onClick={() => navigate("/#contact")}
+                  onClick={() => navigate("/?scrollTo=contact")}
                 >
                   Ζητήστε Προσφορά
                 </Button>
