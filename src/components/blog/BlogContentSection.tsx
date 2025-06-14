@@ -23,10 +23,14 @@ export default function BlogContentSection({
 
   const renderParagraphWithLinks = (paragraph: string, paragraphIndex: number) => {
     const linkMap = {
+      "μεταλλικές αρχειοθήκες": "/metallic-filing-cabinets",
+      "αρχειοθήκες γραφείου": "/metallic-filing-cabinets",
+      "συρταριέρες αρχειοθέτησης": "/metallic-drawers",
       "μεταλλικές ντουλάπες": "/metallic-cabinets",
       "lockers": "/metallic-lockers",
       "Συρταριέρες": "/metallic-drawers",
-      "μελέτες περίπτωσης": "/?scrollTo=projects"
+      "μελέτες περίπτωσης": "/?scrollTo=projects",
+      "προσαρμογή": "/?scrollTo=contact"
     };
 
     for (const [text, link] of Object.entries(linkMap)) {

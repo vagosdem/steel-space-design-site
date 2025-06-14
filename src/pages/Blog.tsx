@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -71,7 +70,9 @@ export default function Blog() {
                     </div>
 
                     <h2 className="text-2xl font-bold mb-6 text-black">
-                      {post.title}
+                      <Link to={`/blog/${post.id}`} className="hover:text-blue-600 transition-colors duration-300">
+                        {post.title}
+                      </Link>
                     </h2>
 
                     <BlogPostMeta date={post.date} author={post.author} />

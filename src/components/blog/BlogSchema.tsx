@@ -17,7 +17,7 @@ export default function BlogSchema() {
             "name": "Stereom",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png"
+              "url": "https://stereom.lovable.app/lovable-uploads/IMG_054822.webp"
             }
           },
           "blogPost": blogPosts.map(post => ({
@@ -54,7 +54,7 @@ export default function BlogSchema() {
             "name": "Stereom",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://stereom.lovable.app/lovable-uploads/a63601e3-8843-4a04-8912-e0f557bd198c.png"
+              "url": "https://stereom.lovable.app/lovable-uploads/IMG_054822.webp"
             }
           },
           "datePublished": "2024-01-15"
@@ -77,10 +77,37 @@ export default function BlogSchema() {
             "name": "Stereom",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://stereom.lovable.app/lovable-uploads/IMG_13742.webp"
+              "url": "https://stereom.lovable.app/lovable-uploads/IMG_054822.webp"
             }
           },
           "datePublished": "2024-01-10"
+        })}
+      </script>
+      
+      {/* Individual BlogPosting Schema for third post */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https://stereom.lovable.app/blog/arxeiothikes-grafeiou-epaggelmatikwn-xwrwn"
+          },
+          "headline": "Αρχειοθήκες Γραφείου & Επαγγελματικών Χώρων: Οδηγός Επιλογής για Ασφαλή και Αποτελεσματική Οργάνωση",
+          "image": "https://stereom.lovable.app/lovable-uploads/IMG_23802.webp",
+          "author": {
+            "@type": "Organization",
+            "name": "Stereom Team"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Stereom",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://stereom.lovable.app/lovable-uploads/IMG_054822.webp"
+            }
+          },
+          "datePublished": "2024-01-20"
         })}
       </script>
     </>
