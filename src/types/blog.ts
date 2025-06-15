@@ -1,4 +1,12 @@
 
+import type { CSSProperties } from 'react';
+
+export interface BlogImage {
+  src: string;
+  alt?: string;
+  style?: CSSProperties;
+}
+
 export interface BlogContentSection {
   title: string;
   content: string[];
@@ -19,6 +27,6 @@ export interface BlogPost {
   category: string;
   tagline: string;
   aspectRatio: string;
-  additionalImages: string[];
+  additionalImages: BlogImage[];
   content: BlogContent;
 }

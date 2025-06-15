@@ -1,4 +1,6 @@
+
 import { Link } from "react-router-dom";
+import { BlogImage } from "@/types/blog";
 
 interface BlogContentSectionProps {
   section: {
@@ -6,7 +8,7 @@ interface BlogContentSectionProps {
     content: string[];
   };
   sectionIndex: number;
-  additionalImages?: string[];
+  additionalImages?: BlogImage[];
   title: string;
 }
 
@@ -17,8 +19,8 @@ export default function BlogContentSection({
   title 
 }: BlogContentSectionProps) {
   const isEven = sectionIndex % 2 === 0;
-  const imageIndex = sectionIndex % (additionalImages || []).length;
-  const hasAdditionalImage = additionalImages && additionalImages[imageIndex];
+  const imageIndex = (additionalImages && additionalImages.length > 0) ? sectionIndex % additionalImages.length : 0;
+  const currentImage = (additionalImages && additionalImages.length > 0) ? additionalImages[imageIndex] : null;
 
   const renderParagraphWithLinks = (paragraph: string, paragraphIndex: number) => {
     const linkMap = {
@@ -59,14 +61,15 @@ export default function BlogContentSection({
         {section.title}
       </h3>
       
-      {hasAdditionalImage ? (
+      {currentImage ? (
         <div className={`grid grid-cols-1 lg:grid-cols-5 gap-8 ${isEven ? '' : 'lg:grid-flow-col-dense'}`}>
           <div className={`lg:col-span-2 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
             <div className="overflow-hidden rounded-xl h-96 bg-gray-50 flex items-center justify-center">
               <img 
-                src={additionalImages[imageIndex]} 
-                alt={`${title} - Επιπλέον εικόνα ${imageIndex + 1}`} 
+                src={currentImage.src} 
+                alt={currentImage.alt || `${title} - Επιπλέον εικόνα ${imageIndex + 1}`} 
                 className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300" 
+                style={currentImage.style}
               />
             </div>
           </div>
