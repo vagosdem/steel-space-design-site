@@ -89,7 +89,7 @@ export const blogPosts: BlogPost[] = [{
     {
       src: "/lovable-uploads/fc448f03-9ca0-4107-ade0-d393b0fbbba3.png",
       alt: "Λευκή συρταριέρα αρχειοθέτησης με τρία συρτάρια",
-      style: { transform: 'scale(1.6)', marginTop: '3rem' }
+      style: { transform: 'scale(1.4)', marginTop: '3rem' }
     }
   ],
   content: {
